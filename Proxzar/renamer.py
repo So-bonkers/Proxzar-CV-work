@@ -11,7 +11,7 @@ import pandas as pd
 # In[48]:
 
 
-dataset_path = r"C:\Users\Administrator\Downloads\becnprods4-products-images"
+dataset_path = r"C:\Users\Administrator\Downloads\proxzar_shubhankar\Aug_images\P25 - Visual Search\Augmented images"
 
 
 # In[49]:
