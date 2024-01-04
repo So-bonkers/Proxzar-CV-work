@@ -8,6 +8,14 @@ import cv2
 import os
 import shutil
 import pytesseract
+import PIL
+
+# # Get the path where pytesseract is imported from
+# path_to_pytesseract_module = pytesseract.__file__
+# print("Path to pytesseract module:", path_to_pytesseract_module)
+
+# pytesseract.pytesseract.tesseract_cmd = r''
+# print(pytesseract.pytesseract.tesseract_cmd)
 
 
 # In[20]:
