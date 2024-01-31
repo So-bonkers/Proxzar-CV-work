@@ -21,7 +21,7 @@ P.s. This is before cleaning
 Category | # | subcategories | subcategories-names
 ------
 
-building-materials |   17044 |  5 | decking-railing, hvac, lumber-composites, plywood-osb, skylights-windows
+building-materials |   2835 |  5 | decking-railing, hvac, lumber-composites, plywood-osb, skylights-windows
 
 gutters       |         8265 | 2 | gutter-accessories, gutter-styles
 
