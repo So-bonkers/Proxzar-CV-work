@@ -1,6 +1,6 @@
 Category  |  Count  | Code
 ---------------------------
-roofing   |           18447  |  1
+roofing   |        18447  |  1
 
 tools-equipment  |       11160 | 4
 
@@ -16,19 +16,24 @@ waterproofing  |          1049 | 3
 
 P.s. This is before cleaning
 
-**Augmented bunch**
+**After Augmenting (roofing and tools-equipment not augmented)**
 
-Category
+Category | # | subcategories | subcategories-names
+------
 
-building-materials    17044
+building-materials |   17044 |  5 | decking-railing, hvac, lumber-composites, plywood-osb, skylights-windows
 
-gutters                8265
+gutters       |         8265 | 2 | gutter-accessories, gutter-styles
 
-roofing                7326
+roofing        |        7326 | 1 | commercial-insulation
 
-insulation             5184
+insulation      |       5184 | 8 | batt-insulation, blown-in-insulation-equipment, fiberglass-insulation, foam-board-insulation, mineral-wool-insulation, radiant-barriers, roll-insulation, spray-foam-insulation
 
-waterproofing          4414
+waterproofing   |       4414 | 6 | above-grade-membranes-coatings, air-vapor-barriers, below-grade-membranes-coatings, damp-proofing-coatings, deck-floor-coatings, plaza-deck-waterproofing
+
+tools-equipment  |      7716 | 13 | air-tools-compressors, cleaning-supplies, drill-bits, generators, hand-tools, job-site-supplies, ladders-scaffolding, nails-screws-fasteners, power-tools, saw-blades, tool-bags-belts, welding-soldering, work-wear-safety-gear
+
+siding         |       3358 | 10 | aluminum-siding, composite-siding, engineered-wood-siding, fiber-cement-siding, steel-siding, stone-venner, trim, vapor-barriers-caulk, vinyl-siding, wood-siding
 
 
 # Hyperparameters dictionary
