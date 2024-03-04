@@ -25,7 +25,7 @@ building-materials |   2835 |  5 | decking-railing, hvac, lumber-composites, ply
 
 gutters       |         8265 | 2 | gutter-accessories, gutter-styles
 
-roofing        |        7326 | 1 | commercial-insulation
+roofing        |        7326 | 9 | commercial-insulation, residential-roofing, residential-accessories, pvc, metal-roofing, plain, flashings, commercial-accessories, clay-concrete-tile-roofing, built-up roofs
 
 insulation      |       5184 | 8 | batt-insulation, blown-in-insulation-equipment, fiberglass-insulation, foam-board-insulation, mineral-wool-insulation, radiant-barriers, roll-insulation, spray-foam-insulation
 
