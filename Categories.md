@@ -35,6 +35,17 @@ tools-equipment  |      7716 | 13 | air-tools-compressors, cleaning-supplies, dr
 
 siding         |       3358 | 10 | aluminum-siding, composite-siding, engineered-wood-siding, fiber-cement-siding, steel-siding, stone-venner, trim, vapor-barriers-caulk, vinyl-siding, wood-siding
 
+## For L2 Training
+
+Category: SubCategories
+building-materials: hvac, plywood-osb, skylights-windows, lumber-composites, decking-railing
+gutters: gutter-styles, gutter-accessories
+insulation: batt-insulation, foam-board-insulation, spray-foam-insulation, fiberglass-insulation, technology, board, corporation
+roofing: built-up-roofs, clay-concrete-tile-roofing, metal-roofing, pvc, residential-roofing, low-slope-metals, commercial-insulation, residential-accessories, plain, flashings, commercial-accessories
+siding: vinyl-siding, trim, stone-venner
+tools-equipment: work-wear-safety-gear, power-tools, nails-screws-fasteners, hand-tools
+waterproofing: plaza-deck-waterproofing, deck-floor-coatings, below-grade-membranes-coatings, damp-proofing-coatings, air-vapor-barriers, above-grade-membranes-coatings
+
 
 # Hyperparameters dictionary
 ```python
