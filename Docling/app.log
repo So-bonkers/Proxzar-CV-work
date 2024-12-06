@@ -1,0 +1,425 @@
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug:127.0.0.1 - - [06/Dec/2024 15:55:12] "[31m[1mGET /api/v1/ingest HTTP/1.1[0m" 405 -
+INFO:werkzeug:127.0.0.1 - - [06/Dec/2024 15:55:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\app.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\Lib\\site-packages\\flask\\ctx.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\Lib\\site-packages\\werkzeug\\local.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\abc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\abc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\aifc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\antigravity.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\antigravity.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\argparse.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\argparse.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ast.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ast.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\asynchat.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\asynchat.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\asyncore.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\asyncore.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\base64.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\base64.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\bdb.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\bdb.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\bisect.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\bisect.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\bz2.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\bz2.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\calendar.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\calendar.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cgi.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cgi.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cgitb.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cgitb.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\chunk.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\chunk.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cmd.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cmd.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\code.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\code.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\codecs.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\codecs.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\codeop.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\codeop.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\colorsys.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\colorsys.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\compileall.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\compileall.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\configparser.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\configparser.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\contextlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\contextlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\copy.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\copy.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\copyreg.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\copyreg.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cProfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\cProfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\crypt.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\crypt.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\csv.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\csv.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\dataclasses.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\dataclasses.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\datetime.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\datetime.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\difflib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\difflib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\dis.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\dis.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\doctest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\doctest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\enum.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\enum.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\filecmp.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\filecmp.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\fileinput.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\fileinput.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\fnmatch.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\fnmatch.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\fractions.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\fractions.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ftplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ftplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\functools.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\functools.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\genericpath.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\genericpath.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\getopt.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\getopt.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\getpass.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\getpass.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\gettext.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\gettext.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\glob.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\glob.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\graphlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\graphlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\gzip.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\gzip.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\hashlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\hashlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\heapq.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\heapq.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\hmac.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\hmac.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\imaplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\imaplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\imghdr.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\imghdr.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\imp.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\imp.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\inspect.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\inspect.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\io.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\io.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ipaddress.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ipaddress.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\keyword.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\keyword.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\linecache.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\linecache.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\locale.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\locale.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\lzma.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\lzma.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\mailbox.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\mailbox.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\mailcap.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\mailcap.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\mimetypes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\mimetypes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\modulefinder.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\modulefinder.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\netrc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\netrc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\nntplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\nntplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ntpath.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ntpath.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\nturl2path.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\nturl2path.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\numbers.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\numbers.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\opcode.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\opcode.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\operator.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\operator.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\optparse.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\optparse.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\os.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\os.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pathlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pathlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pdb.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pdb.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pickle.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pickle.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pickletools.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pickletools.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pipes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pipes.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pkgutil.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pkgutil.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\platform.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\platform.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\plistlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\plistlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\poplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\poplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\posixpath.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\posixpath.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pprint.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pprint.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\profile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\profile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pstats.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pstats.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pty.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pty.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pyclbr.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pyclbr.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pydoc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\pydoc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\py_compile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\py_compile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\queue.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\queue.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\quopri.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\quopri.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\random.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\random.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\reprlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\reprlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\rlcompleter.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\rlcompleter.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\runpy.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\runpy.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sched.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sched.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\secrets.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\secrets.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\selectors.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\selectors.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\shelve.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\shelve.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\shlex.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\shlex.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\shutil.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\shutil.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\signal.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\signal.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\site.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\site.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\smtpd.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\smtpd.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\smtplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\smtplib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sndhdr.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sndhdr.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\socket.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\socket.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\socketserver.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\socketserver.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ssl.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\ssl.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\stat.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\stat.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\statistics.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\statistics.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\string.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\string.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\stringprep.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\stringprep.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\subprocess.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\subprocess.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sunau.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sunau.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\symtable.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\symtable.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sysconfig.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\sysconfig.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tabnanny.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tabnanny.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tarfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tarfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\telnetlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\telnetlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tempfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tempfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\textwrap.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\textwrap.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\this.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\this.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\threading.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\threading.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\timeit.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\timeit.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\token.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\token.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tokenize.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tokenize.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\trace.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\trace.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\traceback.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\traceback.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tracemalloc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tracemalloc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tty.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\tty.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\turtle.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\turtle.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\types.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\types.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\typing.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\typing.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\uu.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\uu.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\uuid.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\uuid.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\warnings.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\warnings.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\wave.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\wave.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\weakref.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\weakref.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\webbrowser.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\webbrowser.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\xdrlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\xdrlib.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\zipapp.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\zipapp.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\zipfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\zipfile.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\zipimport.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\zipimport.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_aix_support.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_aix_support.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_bootsubprocess.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_bootsubprocess.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_collections_abc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_collections_abc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_compat_pickle.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_compat_pickle.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_compression.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_compression.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_markupbase.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_markupbase.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_osx_support.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_osx_support.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_pydecimal.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_pydecimal.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_pyio.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_pyio.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_py_abc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_py_abc.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_sitebuiltins.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_sitebuiltins.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_strptime.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_strptime.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_threading_local.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_threading_local.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_weakrefset.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\_weakrefset.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\__future__.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\anaconda3\\pkgs\\python-3.11.9-he1021f5_0\\Lib\\__future__.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 779-022-776
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Detected change in 'C:\\Users\\DELL\\Desktop\\docling\\api_ingest.py', reloading
+INFO:werkzeug: * Restarting with watchdog (windowsapi)
+INFO:root:Copied C:\Users\DELL\Desktop\docling\tests\data\2206.01062v1.pdf to C:\Users\DELL\Desktop\docling\ingested_docs\2206.01062v1.pdf_1733482372
+INFO:root:Copied C:\Users\DELL\Desktop\docling\tests\data\2206.01062v1.pdf to C:\Users\DELL\Desktop\docling\ingested_docs\2206.01062v1_1733482440.pdf
+ERROR:root:Error ingesting file: C:\Users\DELL\Desktop\docling\api_ingest.py, Invalid file format: C:\Users\DELL\Desktop\docling\api_ingest.py
+INFO:root:Copied C:\Users\DELL\Desktop\docling\tests\data\2206.01062v1.pdf to C:\Users\DELL\Desktop\docling\ingested_docs\2206.01062v1_1733482557.pdf
+ERROR:root:Error ingesting file: C:\Users\DELL\Desktop\docling\api_ingest.py, Invalid file format: C:\Users\DELL\Desktop\docling\api_ingest.py

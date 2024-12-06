@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .message {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .success {
+            background-color: #dff0d8;
+            color: #3c763d;
+        }
+        .error {
+            background-color: #f2dede;
+            color: #a94442;
+        }
+        form {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>File Upload</h1>
+    <form method="POST" enctype="multipart/form-data" action="/upload">
+        <input type="file" name="file">
+        <input type="submit" value="Upload">
+    </form>
+    {% if message %}
+        <p class="message {{ message_class }}">{{ message }}</p>
+    {% endif %}
+</body>
+</html>
