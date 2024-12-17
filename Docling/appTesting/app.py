@@ -7,7 +7,7 @@ import logging
 import time
 from werkzeug.utils import secure_filename
 from docling.datamodel.pipeline_options import PdfPipelineOptions
-from docling.document_converter import DocumentConverter, PdfFormatOption
+from docling.document_converter import DocumentConverter, PdfFormatOption, ConversionStatus
 from docling.datamodel.base_models import FigureElement, InputFormat, Table
 from docling_core.types.doc import PictureItem, TableItem
 
