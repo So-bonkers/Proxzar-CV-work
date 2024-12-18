@@ -154,11 +154,10 @@ def process_document(file_path, output_dir):
             "output_dir": str(output_dir),
             "output_json": str(json_path),
         }
-
     except Exception as e:
-        logger.error(f"Error processing file {file_path}: {e}")
-        return {"error": str(e)}
-
+        logger.error(f"Failed to process {file_path}. Error: {e}")
+        return {"error": f"Failed to process {file_path}. Error: {e}"}
+    
 # Routes
 @app.route('/')
 def index():
