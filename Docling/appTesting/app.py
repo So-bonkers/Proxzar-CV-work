@@ -12,7 +12,6 @@ from docling.datamodel.base_models import ConversionStatus, InputFormat
 from docling_core.types.doc import PictureItem, TableItem, ImageRefMode
 
 IMAGE_RESOLUTION_SCALE = 2.0  # Scale for image resolution
-
 # Flask setup
 app = Flask(__name__)
 
@@ -68,7 +67,7 @@ def get_client_output_dir(client_id):
     """Get the output directory for a given Client ID."""
     return Path(config["output_directory"]) / client_id
 
-def process_document(file_path, output_dir):
+def process_document(file_path, output_dir, global_client_id):
     """
     Process the document using Docling, extracting text, figures, and tables.
     Save extracted content as JSON, figures as PNG, tables as both HTML and PNG, 
@@ -108,7 +107,7 @@ def process_document(file_path, output_dir):
         for element, _ in conv_result.document.iterate_items():
             if isinstance(element, PictureItem):  # Save figures as PNG
                 figure_counter += 1
-                figure_path = output_dir / f"{doc_filename}-figure-{figure_counter}.png"
+                figure_path = output_dir / f"{global_client_id}-figure-{figure_counter}.png"
                 with figure_path.open("wb") as fp:
                     element.get_image(conv_result.document).save(fp, "PNG")
                 # Add figure reference to JSON
@@ -116,12 +115,13 @@ def process_document(file_path, output_dir):
             elif isinstance(element, TableItem):  # Save tables as PNG and HTML
                 table_counter += 1
                 # Save table as PNG
-                table_image_path = output_dir / f"{doc_filename}-table-{table_counter}.png"
-                with table_image_path.open("wb") as fp:
-                    element.get_image(conv_result.document).save(fp, "PNG")
+                # table_image_path = output_dir / f"{doc_filename}-table-{table_counter}.png"
+                # with table_image_path.open("wb") as fp:
+                #     element.get_image(conv_result.document).save(fp, "PNG")
                 # Save table as standalone HTML
-                table_html_path = output_dir / f"{doc_filename}-table-{table_counter}.html"
+                table_html_path = output_dir / f"{global_client_id}-table-{table_counter}.html"
                 with table_html_path.open("w", encoding="utf-8") as fp:
+                    print("Exporting to HTML: command is executing now")
                     fp.write(element.export_to_html())
 
 
@@ -142,7 +142,8 @@ def process_document(file_path, output_dir):
         #     json.dump(json_output, fp, indent=4)
 
         # Save the document as HTML with referenced figures and tables
-        html_filename = output_dir / f"{doc_filename}-with-image-refs.html"
+        html_filename = output_dir / f"{global_client_id}-with-image-refs.html"
+        print("Exporting to HTML, main doc: command is executing now")
         conv_result.document.save_as_html(html_filename, image_mode=ImageRefMode.REFERENCED)
 
         end_time = time.time()
@@ -216,7 +217,7 @@ def extract():
         return jsonify({"error": f"Original file not found: {saved_file_path}"}), 404
 
     # Process the document
-    result = process_document(saved_file_path, output_path)
+    result = process_document(saved_file_path, output_path, global_client_id=client_id)
     if "error" in result:
         return jsonify({"error": result["error"]}), 500
 
