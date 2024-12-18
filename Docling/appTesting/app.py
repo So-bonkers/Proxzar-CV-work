@@ -100,7 +100,7 @@ def process_document(file_path, output_dir):
 
         # Prepare for saving outputs
         doc_filename = file_path.stem
-        json_output = {"text": [], "figures": [], "tables": []}  # Initialize JSON structure
+        # json_output = {"text": [], "figures": [], "tables": []}  # Initialize JSON structure
 
         # Process elements (figures and tables)
         figure_counter = 0
@@ -112,7 +112,7 @@ def process_document(file_path, output_dir):
                 with figure_path.open("wb") as fp:
                     element.get_image(conv_result.document).save(fp, "PNG")
                 # Add figure reference to JSON
-                json_output["figures"].append({"id": figure_counter, "path": str(figure_path.name)})
+                # json_output["figures"].append({"id": figure_counter, "path": str(figure_path.name)})
             elif isinstance(element, TableItem):  # Save tables as PNG and HTML
                 table_counter += 1
                 # Save table as PNG
@@ -125,21 +125,21 @@ def process_document(file_path, output_dir):
                     fp.write(element.export_to_html())
 
 
-                # Add table reference to JSON
-                json_output["tables"].append({
-                    "id": table_counter,
-                    "html_path": str(table_html_path.name),
-                    "image_path": str(table_image_path.name)
-                })
+                # # Add table reference to JSON
+                # json_output["tables"].append({
+                #     "id": table_counter,
+                #     "html_path": str(table_html_path.name),
+                #     "image_path": str(table_image_path.name)
+                # })
         
-        # Add textual content to JSON
-        for page in conv_result.document.pages.values():
-            json_output["text"].append(page.text)
+        # # Add textual content to JSON
+        # for page in conv_result.document.pages.values():
+        #     json_output["text"].append(page.text)
 
-        # Save the JSON output
-        json_path = output_dir / f"{doc_filename}.json"
-        with json_path.open("w", encoding="utf-8") as fp:
-            json.dump(json_output, fp, indent=4)
+        # # Save the JSON output
+        # json_path = output_dir / f"{doc_filename}.json"
+        # with json_path.open("w", encoding="utf-8") as fp:
+        #     json.dump(json_output, fp, indent=4)
 
         # Save the document as HTML with referenced figures and tables
         html_filename = output_dir / f"{doc_filename}-with-image-refs.html"
@@ -153,7 +153,7 @@ def process_document(file_path, output_dir):
                 f"{table_counter} tables saved."
             ),
             "output_dir": str(output_dir),
-            "output_json": str(json_path),
+            # "output_json": str(json_path),
             "output_html": str(html_filename)
         }
 
