@@ -1,4 +1,4 @@
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, render_template
 from services.utils import generate_client_id, validate_file_format, save_temp_file, move_file_to_output
 from config.config_loader import load_config
 import json
@@ -8,6 +8,11 @@ ingestion_blueprint = Blueprint('ingestion', __name__)
 config = load_config("config.json")
 
 @ingestion_blueprint.route('/api/v1/ingest', methods=['POST'])
+# Routes
+def index():
+    """Serve the HTML UI."""
+    return render_template(r'templates\index.html')
+
 def ingest():
     """
     Handle file ingestion.

@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from config.config_loader import load_config
 from routes.ingestion_routes import ingestion_blueprint
 from routes.extraction_routes import extraction_blueprint
@@ -15,6 +15,13 @@ app.register_blueprint(ingestion_blueprint)  # Register ingestion routes
 app.register_blueprint(extraction_blueprint)  # Register extraction routes
 app.register_blueprint(download_blueprint)  # Register download routes
 
+# Routes
+@app.route('/')
+def index():
+    """Serve the HTML UI."""
+    return render_template(r'templates\index.html')
+
 if __name__ == '__main__':
     # Run the Flask app in debug mode
+    
     app.run(debug=True)
