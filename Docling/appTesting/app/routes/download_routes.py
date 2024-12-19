@@ -3,7 +3,7 @@ from pathlib import Path
 import logging
 
 # Create a Blueprint for download-related routes
-download_bp = Blueprint('download_routes', __name__)
+download_blueprint = Blueprint('download_routes', __name__)
 logger = logging.getLogger(__name__)
 
 def get_client_output_dir(client_id, base_dir="data/IngestedFiles"):
@@ -12,7 +12,7 @@ def get_client_output_dir(client_id, base_dir="data/IngestedFiles"):
     """
     return Path(base_dir) / client_id
 
-@download_bp.route('/download/<client_id>/<filename>', methods=['GET'])
+@download_blueprint.route('/download/<client_id>/<filename>', methods=['GET'])
 def download_file(client_id, filename):
     """
     Serve files for download based on client ID and file name.
