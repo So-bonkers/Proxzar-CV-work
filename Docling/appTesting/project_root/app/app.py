@@ -19,7 +19,7 @@ app.register_blueprint(download_blueprint)  # Register download routes
 @app.route('/')
 def index():
     """Serve the HTML UI."""
-    return render_template(r'C:\Users\kshubhan\Documents\GitHub\Proxzar-CV-work\Docling\appTesting\app\templates\index.html')
+    return render_template(r'templates\index.html')
 
 if __name__ == '__main__':
     # Run the Flask app in debug mode

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png"
+    href="https://ds4sd.github.io/docling/assets/logo.png"/>
+    <meta charset="UTF-8">
+    <title>
+    Powered by Docling
+    </title>
+    <style>
+    html {
+    background-color: LightGray;
+    }
+    body {
+    margin: 0 auto;
+    width:800px;
+    padding: 30px;
+    background-color: White;
+    font-family: Arial, sans-serif;
+    box-shadow: 10px 10px 10px grey;
+    }
+    figure{
+    display: block;
+    width: 100%;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    img {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 640px;
+    max-height: 640px;
+    }
+    table {
+    min-width:500px;
+    background-color: White;
+    border-collapse: collapse;
+    cell-padding: 5px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    th, td {
+    border: 1px solid black;
+    padding: 8px;
+    }
+    th {
+    font-weight: bold;
+    }
+    table tr:nth-child(even) td{
+    background-color: LightGray;
+    }
+    </style>
+    </head>
+<h2>MONTE CARLO ANALYSIS OF BOID SIMULATIONS WITH OBSTACLES: A PHYSICS-BASED PERSPECTIVE</h2>
+<h2>Quoc Chuong Nguyen</h2>
+<p>Department of Mathematics University at Buffalo New York, NY 14260 quocchuo@buffalo.edu</p>
+<p>December 17, 2024</p>
+<h2>ABSTRACT</h2>
+<p>Boids, developed by Craig W. Reynolds in 1986, is one of the earliest emergent models where the global pattern emerges from the interaction between many individuals within the local scale. In the original model, Boids follow three rules: separation, alignment, and cohesion; which allow them to move around and create a flock without intention in the empty environment. In the real world, however, the Boids' movement also faces obstacles preventing the flock's direction. In this project, I propose two new simple rules of the Boids model to represent the more realistic movement in nature and analyze the model from the physics perspective using the Monte Carlo method. From those results, the physics metrics related to the forming of the flocking phenomenon show that it is reasonable to explain why birds or fishes prefer to move in a flock, rather than sole movement. Code for reproducing my experiments can be found at https://github.com/ChuongQuoc1413017/Multi_Agent_Simulation.</p>
+<p>K eywords Multi-Agent System, Dynamical Simulation, Python, Boid Simulation, Monte Carlo</p>
+<h2>1 Introduction</h2>
+<p>First developed by Craig W. Reynolds in 1986 [1], the Boids model has become popular since then in the study of emergence. In this model, the objects named Boids move independently and finally form large collective flocks without intention. The name "Boid" corresponds to "bird-oid object", which means the bird-like object [2]. Over time, many studies have been constructed to explore this model, see [3, 4, 5, 6, 7, 8]; such as individual Boid behavior research in [6], comparison of clustering methods for flock formulation in large-scale Boids model in [7], and the modified model defines the chance that a boid becomes a leader and tries to escape in [8]. From these studies, I proposed a new analysis to investigate further this model by introducing new rules and physics measures, specifically the flock's size and the motion of Boids. My work can be summarized as follows:</p>
+<ul>
+<li>· Proposed a new version : Developed new rules for the Boids to avoid obstacles and move randomly.</li>
+<li>· Proposed physics metrics : Developed metrics to analyze the Boids model in terms of physics.</li>
+<li>· Validated the natural phenomenon through Extensive Experiments : Conducted comprehensive computational experiments for the variations of separation, alignment, and cohesion weights.</li>
+</ul>
+<p>The report is structured as follows. Section 1 gives a brief overview of the relevant studies and a summary of my work. Section 2 describes the details of a new model. Section 3 presents my computational results, and some concluding remarks are made in Section 4.</p>
+<h2>2 Model</h2>
+<h2>2.1 Description</h2>
+<p>As in [1], the Boids move in the vast environment following three rules as follows:</p>
+<ul>
+<li>· Separation : Each Boid tries to keep a safe distance from others to avoid overcrowding.</li>
+<li>· Alignment : Each Boid tries to change its position corresponding to the other nearby Boid's average velocity.</li>
+<li>· Cohesion : Each Boid tries to move towards the average position (center of mass) of nearby Boids.</li>
+</ul>
+<p>To modify the original work, I included two simple rules to the model:</p>
+<ul>
+<li>· Obstacles Avoidance : Boids steer away from the obstacles (randomly placed in the environment) in their direction.</li>
+<li>· Wander Movement : Boids have a small random movement to represent the actual different identities in nature.</li>
+</ul>
+<p>The five rules are integrated into a weighted system, where each force contributes to the Boid's final velocity vector and position vector based on Newton's laws of motion. The weights assigned to each force determine the priority of each behavior. Detailed descriptions of the rules are provided in Section 2.2.</p>
+<h2>2.2 Mathematical formulations</h2>
+<p>According to Newton's laws of motion, see [9] for the original version, the Boids' movement is updated using the formulas:</p>
+<p>p new = p old +∆ t · v new (1)</p>
+<p>v new = v old +∆ t · a</p>
+<p>(2)</p>
+<p>a new = w s · a sep + w a · a align + w c · a coh + w w · a wan + w o · a obs (3)</p>
+<p>For simplicity, I set m = w w = ∆ t = 1 , where m is the mass of Boids. This leads to the acting force F = a , then the force for the motion is calculated via the accelerations as:</p>
+<p>a sep = Scale   ∑ j ∈ R ( r s ,i ) p i -p j max( ∥ p i -p j ∥ , 1) , F max   (4)</p>
+<p>a align = Scale   1 | R ( r a , i ) |   ∑ j ∈ R ( r a ,i ) v j   -v i , F max   (5)</p>
+<p>a coh = Scale   1 | R ( r c , i ) |   ∑ j ∈ R ( r c ,i ) p j   -p i , F max   (6)</p>
+<p>a obs = Scale ( ∑ k ∈ obstacles p i -p k ∥ p i -p k ∥ , F max ) (7)</p>
+<p>a wan = U [ -r w ,r w ] : uniform distribution (8)</p>
+<p>, where</p>
+<ul>
+<li>· R ( r, i ) = { j |∥ p i -p j ∥ ≤ r } : neighbors of Boid i .</li>
+<li>· r s , r a , r c , r w are separation, alignment, cohesion, and wander radii respectively.</li>
+<li>· p i : position of the current Boid.</li>
+</ul>
+<ul>
+<li>· p j : position of a neighboring Boid.</li>
+<li>· p k : Position of an obstacle</li>
+<li>· v i : velocity of the current Boid.</li>
+<li>· v j : velocity of a neighboring Boid.</li>
+<li>· F max: maximum allowable force.</li>
+</ul>
+<p>For visualization purposes, we will scale the accelerations as:</p>
+<p>Scale ( f , F max ) = { f ∥ f ∥ ≤ F max , F max · f ∥ f ∥ ∥ f ∥ > F max . (9)</p>
+<p>The detailed code was posted on GitHub, check 6 for more information. Fig. 1 illustrates a demo simulation program where we can see that the flocks are formed, and the Boids are moving around. I use Pygame module for visualization.</p>
+<figure><figcaption>Figure 1: the visualization of the Boid simulation using the code in 6. The black triangle represents the Boid, and the red circles are obstacles</figcaption></figure>
+<h2>2.3 Metrics</h2>
+<p>To explore the physics behavior of the Boids model, we need to specify some metrics related to motion to capture the natural collective behavior and smooth movement. In this project, I propose 4 metrics as follows:</p>
+<ul>
+<li>· Average speed of Boids, which assesses the effort Boids exert in their movement compared to the distance they cover in nature</li>
+</ul>
+<p>Average Speed (AS) = 1 N N ∑ i =1 ∥ v i ∥ ,</p>
+<ul>
+<li>· Flocking radius is the mean distance of Boids from the center of mass, which indicates how closely the Boids are clustered around their center of mass</li>
+</ul>
+<p>Flocking Radius (FR) = 1 N N ∑ i =1 ∥ p i -p cm ∥ ,</p>
+<ul>
+<li>· Turn rate measures the average angular change in the velocity direction, which evaluates how often and sharply the Boids change direction</li>
+</ul>
+<p>Turn Rate (TR) = 1 N N ∑ i =1 | θ i | ,</p>
+<ul>
+<li>· Dispersion is the standard deviation of distances of Boids from the center of mass, which quantifies the dispersion of the Boids, with a focus on identifying outliers</li>
+</ul>
+<p>Dispersion (D) = √ √ √ √ 1 N N ∑ i =1 ( ∥ p i -p cm ∥ -Flocking Radius ) 2</p>
+<p>, where</p>
+<ul>
+<li>· v i : current velocity of Boid i .</li>
+<li>· p i : current position of Boid i .</li>
+<li>· p cm: Center of mass of the flock, calculated as: p cm = 1 N ∑ N i =1 p i .</li>
+<li>· θ i : Angle between the current velocity v i and the previous velocity v prev i for Boid i .</li>
+<li>· N : Total number of Boids.</li>
+</ul>
+<h2>3 Experiments</h2>
+<h2>3.1 Experiemental setup</h2>
+<p>The experiments involve 200 Boids and 6 obstacles, which are randomly initialized for each simulation. To gather statistical results, I conducted three experiments by using the Monte Carlo method, each consisting of 100 simulations with 500 iterations for each w s , w a , or w c . The computer utilized for this experiment is an HP ENVY x360 laptop, equipped with an AMD Ryzen 5 8640HS processor and Radeon 760M graphics, running at 3.50 GHz. The hyperparameters are set up as follows:</p>
+<pre>1 # Parameters 2 SPEED = 3 # The initial speed at which Boids move 3 MAX_FORCE = 0.5 # The maximum force (F_{max}) that can be applied to a Boid for it to change direction 4 WANDER_RADIUS = 0.2 # The radius (r_{w}) within which a Boid will wander randomly 5 AVOID = 10 # The degree (weight w_{o}) to which Boids try to avoid the obstacles 6 SEPARATION_RADIUS = 50 # The radius within which Boids will begin to experience separation force 7 ALIGNMENT_RADIUS = 50 # The radius within which Boids will begin to experience alignment force 8 COHESION_RADIUS = 200 # The radius within which Boids will begin to experience cohesion force</pre>
+<p>Listing 1: Hyperparameters settings</p>
+<p>The small separation and alignment radii, along with the large cohesion radius, represent local and global behaviors, respectively. Boids will look for the moving direction in a far vision while keeping their distance from their neighbors. At an initial state, all Boids have the same speed although their directions are different.</p>
+<p>In this project, the three main parameters are w s , w a , and w c . One of these parameters will be varied for each Monte Carlo experiment, while the other two will remain constant to observe their effect on the model.</p>
+<h2>3.2 Experimental Results</h2>
+<p>Fig. 2 depicts the results from using the Monte Carlo method to analyze the collective behavior of the model. While the variation in w a does not significantly affect the behavior of Boids, as shown in Fig.2b, changes in separation or cohesion do influence the formation of the flock's size. Both Fig. 2a and Fig. 2c illustrate that flocks are small (as shown in dispersion and flocking radius plots) when w c exceeds w s and vice versa. This means the Boids are tightly clustered,</p>
+<p>rather than spreading out. Besides that, when w s = w c , the Boids are not moving or just fluctuate about their position due to the "wander" rule and the annihilation of separation and cohesion forces. For long-term behavior, the results also indicate that the velocity of each Boid is stable in both magnitude (as shown by the average speed) and direction (as indicated by the turn rate). In case all Boids have the same potential energy, it becomes evident that their stable speed and minimal turning rate allow for smooth movement. This results in the near conservation of kinetic energy during their flight. This principle helps to explain bird migration. Birds often fly in flocks to save energy, enabling them to maintain a stable velocity and cover greater distances. In this model, the Boids' velocity stabilizes rapidly for any combination of w s , w a , and w c . This stabilization occurs approximately after 50 to 100 iterations, as indicated by the saturation of the average speed and average turn rate.</p>
+<figure><figcaption>(c) The results for different w c ; w s = w a = 1</figcaption></figure>
+<p>Figure 2: The results of the experiment with the setting in 3.1. The variation in w a has minimal impact on the behavior of Boids, as demonstrated in Fig. 2b. However, changes in separation ( w s ) and cohesion ( w c ) significantly influence the size and formation of the flock. Figures 2a and 2c show that flocks remain small and tightly clustered when w c exceeds w s , whereas the opposite causes the flock to spread out. Over time, the results further reveal that the velocity of each Boid remains stable, both in magnitude (evidenced by the average speed) and direction (indicated by the turn rate).</p>
+<h2>4 Discussion and Future Works</h2>
+<p>This project presents a model for non-colliding aggregate motion, similar to the behavior of flocks of birds. The model simulates the actions of each "Boid" independently. Each Boid aims to stay close to its neighbors while also avoiding</p>
+<p>collisions with other Boids and objects in its environment. While the "migration" properties of the model have been analyzed, there are still some aspects that remain unexplored, such as the unification and splitting of flocks as in [7]. In the future, additional rules can be incorporated into the model to represent more realistic behavior, and new techniques, such as machine learning, can be employed to analyze this behavior.</p>
+<h2>5 Contact me</h2>
+<p>You can contact me by email for more information: quocchuo@buffalo.edu.</p>
+<h2>6 Data availability</h2>
+<p>All codes and results of this project are posted on:</p>
+<p>https://github.com/ChuongQuoc1413017/Multi_Agent_Simulation/blob/main/Boids_ Simulation-Final%20Version.ipynb</p>
+<h2>References</h2>
+<ul>
+<li>[1] Craig W. Reynolds. Flocks, herds and schools: A distributed behavioral model. SIGGRAPH Comput. Graph. , 21(4):25-34, August 1987.</li>
+<li>[2] Alec Banks, Jonathan Vincent, and Chukwudi Anyakoha. A review of particle swarm optimization. part i: background and development. Natural Computing , 6(4):467-484, Dec 2007.</li>
+<li>[3] Ed Yong. Autonomous drones flock like birds. Nature , Feb 2014.</li>
+<li>[4] Takashi Ikegami, Yoh-ichi Mototake, Shintaro Kobori, Mizuki Oka, and Yasuhiro Hashimoto. Life as an emergent phenomenon: studies from a large-scale boid simulation and web data. Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences , 375(2109):20160351, 2017.</li>
+<li>[5] Jason B. Clark and David R. Jacques. Flight test results for uavs using boid guidance algorithms. Procedia Computer Science , 8:232-238, 2012. Conference on Systems Engineering Research.</li>
+<li>[6] Brett M. Martin, Ryan D. Winz, Luke J. McFadden, and Tor J. Langehaug. Distributed Boids Simulation: Performance Analysis and Implementation Challenges . In 2023 Congress in Computer Science, Computer Engineering, & Applied Computing (CSCE) , pages 780-785, Los Alamitos, CA, USA, July 2023. IEEE Computer Society.</li>
+<li>[7] Norihiro Maruyama, Daichi Saito, Yasuhiro Hashimoto, and Takashi Ikegami. Dynamic organization of flocking behaviors in a large-scale boids model. Journal of Computational Social Science , 2(1):77-84, Jan 2019.</li>
+<li>[8] Christopher Hartman and Bedrich Benes. Autonomous boids. Computer Animation and Virtual Worlds , 17(34):199-206, 2006.</li>
+<li>[9] Mohit Sajwan, Devashish Gosain, and Sagarkumar Surani. Flocking behaviour simulation: Explanation and enhancements in boid algorithm. International Journal of Computer Science and Information Technologies (IJCSIT) , 5(4):5278-5283, 2014.</li>
+</ul>
+</html>
