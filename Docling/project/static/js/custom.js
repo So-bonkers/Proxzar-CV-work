@@ -4,96 +4,102 @@ document.addEventListener("DOMContentLoaded", () => {
     const extractForm = document.getElementById("extractForm");
     const htmlToJsonForm = document.getElementById("htmlToJsonForm"); // New form for HTML to JSON
 
+    // Utility function to handle responses
+    async function handleResponse(response, resultElement) {
+        const contentType = response.headers.get("content-type");
+        if (contentType && contentType.includes("application/json")) {
+            const data = await response.json();
+            if (data.error) {
+                resultElement.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+            } else {
+                return data;
+            }
+        } else {
+            const text = await response.text();
+            resultElement.innerHTML = `
+                <div class="alert alert-danger">
+                    <p>Unexpected server response:</p>
+                    <pre>${text}</pre>
+                </div>
+            `;
+        }
+    }
+
     // Ingest form submission
     ingestForm.onsubmit = async function (e) {
-        e.preventDefault(); // Prevent default form submission
-        const formData = new FormData(this); // Collect form data
+        e.preventDefault();
+        const formData = new FormData(this);
         const ingestResult = document.getElementById("ingestResult");
 
         // Show a loading spinner while processing
         ingestResult.innerHTML = '<div class="spinner-border text-primary" role="status"></div> Processing...';
 
         try {
-            // Send form data to the server
             const res = await fetch('/api/v1/ingest', { method: 'POST', body: formData });
-            const data = await res.json(); // Parse the JSON response
-            if (data.client_id) {
-                // Display success message with client ID and output path
+            const data = await handleResponse(res, ingestResult);
+            if (data) {
                 ingestResult.innerHTML = `
                     <div class="alert alert-success">
                         <p>Client ID: <strong>${data.client_id}</strong></p>
                         <p>Output Path: <code>${data.output_path}</code></p>
                     </div>
                 `;
-            } else {
-                // Display error message
-                ingestResult.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
             }
         } catch (err) {
-            // Display error message if the request fails
             ingestResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
     };
 
     // Extract form submission
     extractForm.onsubmit = async function (e) {
-        e.preventDefault(); // Prevent default form submission
-        const formData = new FormData(this); // Collect form data
+        e.preventDefault();
+        const formData = new FormData(this);
         const extractResult = document.getElementById("extractResult");
 
         // Show a loading spinner while processing
         extractResult.innerHTML = '<div class="spinner-border text-success" role="status"></div> Processing...';
 
         try {
-            // Send form data to the server
             const res = await fetch('/api/v1/extract', { method: 'POST', body: formData });
-            const data = await res.json(); // Parse the JSON response
-            if (data.message) {
-                // Display success message
+            const data = await handleResponse(res, extractResult);
+            if (data) {
                 extractResult.innerHTML = `
-                    <div class="alert alert-success">${data.message}</div>
+                    <div class="alert alert-success">
+                        ${data.message}
+                        <ul>${(data.files || []).map(file => `<li>${file}</li>`).join('')}</ul>
+                    </div>
                 `;
-            } else {
-                // Display error message
-                extractResult.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
             }
         } catch (err) {
-            // Display error message if the request fails
             extractResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
     };
 
-    // New HTML to JSON form submission
+    // HTML to JSON form submission
     htmlToJsonForm.onsubmit = async function (e) {
-        e.preventDefault(); // Prevent default form submission
-        const client_id_html = document.getElementById("client_id_html").value; // Get client ID from input
+        e.preventDefault();
+        const client_id_html = document.getElementById("client_id_html").value;
         const htmlToJsonResult = document.getElementById("htmlToJsonResult");
 
         // Show a loading spinner while processing
         htmlToJsonResult.innerHTML = '<div class="spinner-border text-warning" role="status"></div> Converting HTML to JSON...';
 
         try {
-            // Send client ID to the server
-            const res = await fetch('/api/v1/html-to-json', {
+            const res = await fetch('/api/v1/htmlToJson', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ client_id: client_id_html })
             });
-            const data = await res.json(); // Parse the JSON response
-            if (data.message) {
-                // Display success message with JSON file path
+            const data = await handleResponse(res, htmlToJsonResult);
+            if (data) {
                 htmlToJsonResult.innerHTML = `
                     <div class="alert alert-success">
                         <p>${data.message}</p>
                         <p>JSON file saved at: <code>${data.json_file}</code></p>
                     </div>
                 `;
-            } else {
-                // Display error message
-                htmlToJsonResult.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
             }
         } catch (err) {
-            // Display error message if the request fails
             htmlToJsonResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
     };
