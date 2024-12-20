@@ -1,10 +1,14 @@
 from flask import Flask
 from app.routes import main_blueprint
-from app.logging_setup import setup_logging
 
 def create_app():
-    app = Flask(__name__)
-    setup_logging()
+    """
+    Create and configure the Flask application.
+    
+    Returns:
+        Flask: The configured Flask application.
+    """
+    app = Flask(__name__, template_folder="templates")
 
     # Register Blueprints
     app.register_blueprint(main_blueprint)

@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 CONFIG_FILE = "config.json"
 
 def load_config():
-    """Load configuration."""
+    """Load configuration from the config file or return default configuration."""
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE) as f:
             logger.info("Loaded configuration file.")
@@ -32,7 +32,7 @@ def load_config():
 config = load_config()
 
 def load_client_mapping():
-    """Load client mapping."""
+    """Load client mapping from the mapping file or return an empty mapping."""
     mapping_file = config["mapping_file"]
     if os.path.exists(mapping_file):
         with open(mapping_file) as f:
@@ -42,7 +42,7 @@ def load_client_mapping():
     return {}, mapping_file
 
 def save_client_mapping(client_mapping, mapping_file):
-    """Save client mapping."""
+    """Save client mapping to the mapping file."""
     with open(mapping_file, "w") as f:
         json.dump(client_mapping, f)
         logger.info("Saved client mapping.")
