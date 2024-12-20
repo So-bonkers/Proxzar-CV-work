@@ -1,1 +1,107 @@
-<table><tbody><tr><th>Hyperparameter</th><th>SD1.4</th><th>SD1.5</th><th>SD2.1</th><th>FLUX.1</th></tr><tr><td>AdamW Learning Rate (LR)</td><td>5e-6</td><td>5e-6</td><td>5e-6</td><td>1e-4</td></tr><tr><td>AdamW β 1</td><td>0.9</td><td>0.9</td><td>0.9</td><td>0.9</td></tr><tr><td>AdamW β 2</td><td>0.999</td><td>0.999</td><td>0.999</td><td>0.999</td></tr><tr><td>AdamW ϵ</td><td>1e-8</td><td>1e-8</td><td>1e-8</td><td>1e-8</td></tr><tr><td>AdamW Weight Decay</td><td>1e-2</td><td>1e-2</td><td>1e-2</td><td>1e-2</td></tr><tr><td>LR scheduler</td><td>Constant</td><td>Constant</td><td>Constant</td><td>Constant</td></tr><tr><td>LR warmup steps</td><td>0</td><td>0</td><td>0</td><td>20</td></tr><tr><td>Training Steps</td><td>24,000</td><td>24,000</td><td>80,000</td><td>24,000</td></tr><tr><td>Local Batch Size</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>Gradient Accumulation</td><td>2</td><td>2</td><td>2</td><td>2</td></tr><tr><td>Training GPUs</td><td>2 × L40S</td><td>2 × L40S</td><td>2 × L40S</td><td>2 × L40S</td></tr><tr><td>Training Resolution</td><td>512 × 512</td><td>512 × 512</td><td>512 × 512</td><td>512 × 512</td></tr><tr><td>Trained Parameters</td><td colspan="3">All parameters of diffusion UNet</td><td>LoRA (rank=16) on all DoubleStreamBlocks</td></tr><tr><td>Prompt Dropout Probability</td><td>10%</td><td>10%</td><td>10%</td><td>10%</td></tr></tbody></table>
+<table>
+  <tbody>
+    <tr>
+      <th>Hyperparameter</th>
+      <th>SD1.4</th>
+      <th>SD1.5</th>
+      <th>SD2.1</th>
+      <th>FLUX.1</th>
+    </tr>
+    <tr>
+      <td>AdamW Learning Rate (LR)</td>
+      <td>5e-6</td>
+      <td>5e-6</td>
+      <td>5e-6</td>
+      <td>1e-4</td>
+    </tr>
+    <tr>
+      <td>AdamW β 1</td>
+      <td>0.9</td>
+      <td>0.9</td>
+      <td>0.9</td>
+      <td>0.9</td>
+    </tr>
+    <tr>
+      <td>AdamW β 2</td>
+      <td>0.999</td>
+      <td>0.999</td>
+      <td>0.999</td>
+      <td>0.999</td>
+    </tr>
+    <tr>
+      <td>AdamW ϵ</td>
+      <td>1e-8</td>
+      <td>1e-8</td>
+      <td>1e-8</td>
+      <td>1e-8</td>
+    </tr>
+    <tr>
+      <td>AdamW Weight Decay</td>
+      <td>1e-2</td>
+      <td>1e-2</td>
+      <td>1e-2</td>
+      <td>1e-2</td>
+    </tr>
+    <tr>
+      <td>LR scheduler</td>
+      <td>Constant</td>
+      <td>Constant</td>
+      <td>Constant</td>
+      <td>Constant</td>
+    </tr>
+    <tr>
+      <td>LR warmup steps</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>Training Steps</td>
+      <td>24,000</td>
+      <td>24,000</td>
+      <td>80,000</td>
+      <td>24,000</td>
+    </tr>
+    <tr>
+      <td>Local Batch Size</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Gradient Accumulation</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>Training GPUs</td>
+      <td>2 × L40S</td>
+      <td>2 × L40S</td>
+      <td>2 × L40S</td>
+      <td>2 × L40S</td>
+    </tr>
+    <tr>
+      <td>Training Resolution</td>
+      <td>512 × 512</td>
+      <td>512 × 512</td>
+      <td>512 × 512</td>
+      <td>512 × 512</td>
+    </tr>
+    <tr>
+      <td>Trained Parameters</td>
+      <td colspan="3">All parameters of diffusion UNet</td>
+      <td>LoRA (rank=16) on all DoubleStreamBlocks</td>
+    </tr>
+    <tr>
+      <td>Prompt Dropout Probability</td>
+      <td>10%</td>
+      <td>10%</td>
+      <td>10%</td>
+      <td>10%</td>
+    </tr>
+  </tbody>
+</table>

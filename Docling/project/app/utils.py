@@ -3,6 +3,7 @@ import random
 import json
 import logging
 import time
+from bs4 import BeautifulSoup
 from pathlib import Path
 from werkzeug.utils import secure_filename
 from docling.datamodel.pipeline_options import PdfPipelineOptions
@@ -18,7 +19,7 @@ IMAGE_RESOLUTION_SCALE = 2.0
 
 CONFIG_FILE = "config.json"
 
-def load_config():
+def loadConfig():
     """Load configuration from the config file or return default configuration."""
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE) as f:
@@ -29,12 +30,14 @@ def load_config():
         "output_directory": r"data\IngestedFiles",
         "temp_directory": r"data\TempFiles",
         "mapping_file": r"client_mapping.json",
-        "supported_formats": [".pdf", ".docx", ".xlsx", ".odt", ".ods", ".png", ".tiff"]
+        "supported_formats": [".pdf", ".docx", ".xlsx", ".odt", ".ods", ".png", ".tiff"],
+        "template_folder": "Docling\\project\\templates",
+        "static_folder": "Docling\\project\\static"
     }
 
-config = load_config()
+config = loadConfig()
 
-def load_client_mapping():
+def loadClientMapping():
     """Load client mapping from the mapping file or return an empty mapping."""
     mapping_file = config["mapping_file"]
     if os.path.exists(mapping_file):
@@ -44,13 +47,13 @@ def load_client_mapping():
     logger.warning("Client mapping file not found. Starting fresh.")
     return {}, mapping_file
 
-def save_client_mapping(client_mapping, mapping_file):
+def saveClientMapping(client_mapping, mapping_file):
     """Save client mapping to the mapping file."""
     with open(mapping_file, "w") as f:
         json.dump(client_mapping, f)
         logger.info("Saved client mapping.")
 
-def generate_client_id(client_mapping):
+def generateClientID(client_mapping):
     """Generate a unique 8-digit Client ID."""
     while True:
         client_id = f"{random.randint(10000000, 99999999)}"
@@ -58,20 +61,20 @@ def generate_client_id(client_mapping):
             logger.info(f"Generated new Client ID: {client_id}")
             return client_id
 
-def validate_file_format(filename):
+def validateFileFormat(filename):
     """Check if the file has a supported format."""
     _, ext = os.path.splitext(filename.lower())
     is_valid = ext in config["supported_formats"]
     logger.info(f"File format validation for {filename}: {'valid' if is_valid else 'invalid'}")
     return is_valid
 
-def get_client_output_dir(client_id):
+def getClientOutputDir(client_id):
     """Get the output directory for a given Client ID."""
     output_dir = Path(config["output_directory"]) / client_id
     logger.info(f"Resolved output directory for Client ID {client_id}: {output_dir}")
     return output_dir
 
-def process_document(file_path, output_dir, global_client_id):
+def processDocument(file_path, output_dir, global_client_id):
     """Process the document using Docling."""
     logger.info(f"Starting document processing for {file_path}.")
     try:
@@ -161,3 +164,75 @@ def process_document(file_path, output_dir, global_client_id):
     except Exception as e:
         logger.error(f"Error processing document {file_path}: {e}")
         raise
+
+def getContentType(element):
+    """
+    Determine the content type of an HTML element and extract its data.
+    
+    Args:
+        element (Tag): A BeautifulSoup Tag object representing an HTML element.
+    
+    Returns:
+        dict: A dictionary containing the content kind and its source data.
+    """
+    if element.name == 'p':
+        return {"contentType": "paragraph", "source": element.text.strip()}
+    elif element.name in ['ul', 'ol']:
+        list_items = [li.text.strip() for li in element.find_all('li')]
+        return {"contentType": "list", "source": list_items}
+    elif element.name == 'table':
+        rows = []
+        for tr in element.find_all('tr'):
+            row = []
+            for cell in tr.find_all(['th', 'td']):
+                row.append(cell.text.strip())
+            rows.append(row)
+        return {"contentType": "table", "source": rows}
+    elif element.name == 'img':
+        return {"contentType": "image", "source": element['src']}
+    return {}
+
+def parseHTMLToJSON(html_file, output_json):
+    """
+    Parse an HTML file and convert its content to a JSON structure.
+    
+    Args:
+        html_file (str): The path to the input HTML file.
+        output_json (str): The path to the output JSON file.
+    """
+    with open(html_file, 'r', encoding='utf-8') as file:
+        soup = BeautifulSoup(file, 'html.parser')
+    
+    json_data = []
+    title = soup.title.string if soup.title else ""
+    url = soup.find('link', rel="canonical")['href'] if soup.find('link', rel="canonical") else ""
+    
+    # Main JSON object
+    document_data = {
+        "url": url,
+        "title": title,
+        "content": []
+    }
+    
+    # Process headers and their content
+    headers = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+    for header in headers:
+        header_data = {
+            "header": header.text.strip(),
+            "subContent": []
+        }
+        
+        # Extract sibling content until the next header
+        for sibling in header.find_next_siblings():
+            if sibling.name and sibling.name.startswith('h'):
+                break
+            content_type = getContentType(sibling)
+            header_data["subContent"].append(content_type)
+        
+        document_data["content"].append(header_data)
+    
+    json_data.append(document_data)
+    
+    # Save to JSON file
+    with open(output_json, 'w', encoding='utf-8') as json_file:
+        json.dump(json_data, json_file, indent=4)
