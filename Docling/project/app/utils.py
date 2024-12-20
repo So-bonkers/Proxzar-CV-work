@@ -19,7 +19,7 @@ IMAGE_RESOLUTION_SCALE = 2.0
 
 CONFIG_FILE = "config.json"
 
-def load_config():
+def loadConfig():
     """Load configuration from the config file or return default configuration."""
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE) as f:
@@ -30,12 +30,14 @@ def load_config():
         "output_directory": r"data\IngestedFiles",
         "temp_directory": r"data\TempFiles",
         "mapping_file": r"client_mapping.json",
-        "supported_formats": [".pdf", ".docx", ".xlsx", ".odt", ".ods", ".png", ".tiff"]
+        "supported_formats": [".pdf", ".docx", ".xlsx", ".odt", ".ods", ".png", ".tiff"],
+        "template_folder": "Docling\\project\\templates",
+        "static_folder": "Docling\\project\\static"
     }
 
-config = load_config()
+config = loadConfig()
 
-def load_client_mapping():
+def loadClientMapping():
     """Load client mapping from the mapping file or return an empty mapping."""
     mapping_file = config["mapping_file"]
     if os.path.exists(mapping_file):
@@ -45,13 +47,13 @@ def load_client_mapping():
     logger.warning("Client mapping file not found. Starting fresh.")
     return {}, mapping_file
 
-def save_client_mapping(client_mapping, mapping_file):
+def saveClientMapping(client_mapping, mapping_file):
     """Save client mapping to the mapping file."""
     with open(mapping_file, "w") as f:
         json.dump(client_mapping, f)
         logger.info("Saved client mapping.")
 
-def generate_client_id(client_mapping):
+def generateClientID(client_mapping):
     """Generate a unique 8-digit Client ID."""
     while True:
         client_id = f"{random.randint(10000000, 99999999)}"
@@ -59,20 +61,20 @@ def generate_client_id(client_mapping):
             logger.info(f"Generated new Client ID: {client_id}")
             return client_id
 
-def validate_file_format(filename):
+def validateFileFormat(filename):
     """Check if the file has a supported format."""
     _, ext = os.path.splitext(filename.lower())
     is_valid = ext in config["supported_formats"]
     logger.info(f"File format validation for {filename}: {'valid' if is_valid else 'invalid'}")
     return is_valid
 
-def get_client_output_dir(client_id):
+def getClientOutputDir(client_id):
     """Get the output directory for a given Client ID."""
     output_dir = Path(config["output_directory"]) / client_id
     logger.info(f"Resolved output directory for Client ID {client_id}: {output_dir}")
     return output_dir
 
-def process_document(file_path, output_dir, global_client_id):
+def processDocument(file_path, output_dir, global_client_id):
     """Process the document using Docling."""
     logger.info(f"Starting document processing for {file_path}.")
     try:
@@ -163,7 +165,7 @@ def process_document(file_path, output_dir, global_client_id):
         logger.error(f"Error processing document {file_path}: {e}")
         raise
 
-def get_content_type(element):
+def getContentType(element):
     """
     Determine the content type of an HTML element and extract its data.
     
@@ -190,7 +192,7 @@ def get_content_type(element):
         return {"contentType": "image", "source": element['src']}
     return {}
 
-def parse_html_to_json(html_file, output_json):
+def parseHTMLToJSON(html_file, output_json):
     """
     Parse an HTML file and convert its content to a JSON structure.
     
@@ -224,7 +226,7 @@ def parse_html_to_json(html_file, output_json):
         for sibling in header.find_next_siblings():
             if sibling.name and sibling.name.startswith('h'):
                 break
-            content_type = get_content_type(sibling)
+            content_type = getContentType(sibling)
             header_data["subContent"].append(content_type)
         
         document_data["content"].append(header_data)

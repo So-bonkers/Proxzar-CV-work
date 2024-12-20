@@ -3,14 +3,14 @@ from flask import Blueprint, render_template, request, jsonify, send_from_direct
 from pathlib import Path
 from werkzeug.utils import secure_filename
 from app.utils import (
-    generate_client_id,
-    validate_file_format,
-    get_client_output_dir,
-    process_document,
-    load_client_mapping,
-    save_client_mapping,
+    generateClientID,
+    validateFileFormat,
+    getClientOutputDir,
+    processDocument,
+    loadClientMapping,
+    saveClientMapping,
+    parseHTMLToJSON,
 )
-from app.utils import parse_html_to_json
 import os
 
 # Set up logging
@@ -18,7 +18,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 main_blueprint = Blueprint("main", __name__)
-client_mapping, mapping_file = load_client_mapping()
+client_mapping, mapping_file = loadClientMapping()
 
 @main_blueprint.route('/')
 def index():
@@ -34,12 +34,12 @@ def ingest():
         logger.error("No file provided for ingestion.")
         return jsonify({"error": "No file provided"}), 400
 
-    if not validate_file_format(file.filename):
+    if not validateFileFormat(file.filename):
         logger.error(f"Unsupported file format: {file.filename}")
         return jsonify({"error": f"Unsupported file format: {file.filename}"}), 400
 
-    client_id = generate_client_id(client_mapping)
-    output_path = get_client_output_dir(client_id)
+    client_id = generateClientID(client_mapping)
+    output_path = getClientOutputDir(client_id)
     output_path.mkdir(parents=True, exist_ok=True)
 
     saved_file_path = output_path / secure_filename(file.filename)
@@ -50,7 +50,7 @@ def ingest():
         "output_path": str(output_path),
         "saved_file": str(saved_file_path),
     }
-    save_client_mapping(client_mapping, mapping_file)
+    saveClientMapping(client_mapping, mapping_file)
 
     logger.info(f"File {file.filename} ingested successfully with Client ID {client_id}.")
     return jsonify({"client_id": client_id, "output_path": str(output_path)})
@@ -75,7 +75,7 @@ def extract():
         logger.error(f"Original file not found: {saved_file_path}")
         return jsonify({"error": f"Original file not found: {saved_file_path}"}), 404
 
-    result = process_document(saved_file_path, output_path, global_client_id=client_id)
+    result = processDocument(saved_file_path, output_path, global_client_id=client_id)
     if "error" in result:
         logger.error(f"Error during extraction: {result['error']}")
         return jsonify({"error": result["error"]}), 500
@@ -87,14 +87,14 @@ def extract():
     })
 
 @main_blueprint.route('/download/<client_id>/<filename>')
-def download_file(client_id, filename):
+def downloadFile(client_id, filename):
     """Serve files for download."""
     logger.info(f"Serving download request for Client ID {client_id}, file {filename}.")
-    output_dir = get_client_output_dir(client_id)
+    output_dir = getClientOutputDir(client_id)
     return send_from_directory(output_dir, filename)
 
-@main_blueprint.route('/api/v1/html-to-json', methods=['POST'])
-def html_to_json():
+@main_blueprint.route('/api/v1/htmlToJson', methods=['POST'])
+def htmlToJson():
     try:
         # Get the client ID from the request
         client_id = request.json.get('client_id')
@@ -110,7 +110,7 @@ def html_to_json():
             return jsonify({"error": f"HTML file for client {client_id} not found"}), 404
         
         # Convert HTML to JSON
-        parse_html_to_json(html_file_path, json_file_path)
+        parseHTMLToJSON(html_file_path, json_file_path)
 
         return jsonify({"message": f"HTML file converted to JSON for client {client_id}", "json_file": json_file_path}), 200
     except Exception as e:
