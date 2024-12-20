@@ -14,6 +14,8 @@ from docling_core.types.doc import PictureItem, TableItem, ImageRefMode
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+IMAGE_RESOLUTION_SCALE = 2.0
+
 CONFIG_FILE = "config.json"
 
 def load_config():
