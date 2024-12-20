@@ -163,6 +163,33 @@ def process_document(file_path, output_dir, global_client_id):
         logger.error(f"Error processing document {file_path}: {e}")
         raise
 
+def get_content_type(element):
+    """
+    Determine the content type of an HTML element and extract its data.
+    
+    Args:
+        element (Tag): A BeautifulSoup Tag object representing an HTML element.
+    
+    Returns:
+        dict: A dictionary containing the content kind and its source data.
+    """
+    if element.name == 'p':
+        return {"contentType": "paragraph", "source": element.text.strip()}
+    elif element.name in ['ul', 'ol']:
+        list_items = [li.text.strip() for li in element.find_all('li')]
+        return {"contentType": "list", "source": list_items}
+    elif element.name == 'table':
+        rows = []
+        for tr in element.find_all('tr'):
+            row = []
+            for cell in tr.find_all(['th', 'td']):
+                row.append(cell.text.strip())
+            rows.append(row)
+        return {"contentType": "table", "source": rows}
+    elif element.name == 'img':
+        return {"contentType": "image", "source": element['src']}
+    return {}
+
 def parse_html_to_json(html_file, output_json):
     """
     Parse an HTML file and convert its content to a JSON structure.

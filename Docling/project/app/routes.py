@@ -103,7 +103,7 @@ def html_to_json():
 
         # Define the file paths
         html_file_path = os.path.join('data', 'IngestedFiles', client_id, f'{client_id}-with-image-refs.html')
-        json_file_path = os.path.join('data', f'{client_id}.json')
+        json_file_path = os.path.join('data', 'convertedToJSON', f'{client_id}.json')
 
         # Check if the HTML file exists
         if not os.path.exists(html_file_path):
@@ -116,29 +116,3 @@ def html_to_json():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
-def get_content_type(element):
-    """
-    Determine the content type of an HTML element and extract its data.
-    
-    Args:
-        element (Tag): A BeautifulSoup Tag object representing an HTML element.
-    
-    Returns:
-        dict: A dictionary containing the content kind and its source data.
-    """
-    if element.name == 'p':
-        return {"contentType": "paragraph", "source": element.text.strip()}
-    elif element.name in ['ul', 'ol']:
-        list_items = [li.text.strip() for li in element.find_all('li')]
-        return {"contentType": "list", "source": list_items}
-    elif element.name == 'table':
-        rows = []
-        for tr in element.find_all('tr'):
-            row = []
-            for cell in tr.find_all(['th', 'td']):
-                row.append(cell.text.strip())
-            rows.append(row)
-        return {"contentType": "table", "source": rows}
-    elif element.name == 'img':
-        return {"contentType": "image", "source": element['src']}
-    return {}
