@@ -2,6 +2,7 @@ import os
 import random
 import json
 import logging
+import time
 from pathlib import Path
 from werkzeug.utils import secure_filename
 from docling.datamodel.pipeline_options import PdfPipelineOptions
