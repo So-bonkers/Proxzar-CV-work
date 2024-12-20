@@ -3,6 +3,7 @@ import random
 import json
 import logging
 import time
+from bs4 import BeautifulSoup
 from pathlib import Path
 from werkzeug.utils import secure_filename
 from docling.datamodel.pipeline_options import PdfPipelineOptions
@@ -161,3 +162,48 @@ def process_document(file_path, output_dir, global_client_id):
     except Exception as e:
         logger.error(f"Error processing document {file_path}: {e}")
         raise
+
+def parse_html_to_json(html_file, output_json):
+    """
+    Parse an HTML file and convert its content to a JSON structure.
+    
+    Args:
+        html_file (str): The path to the input HTML file.
+        output_json (str): The path to the output JSON file.
+    """
+    with open(html_file, 'r', encoding='utf-8') as file:
+        soup = BeautifulSoup(file, 'html.parser')
+    
+    json_data = []
+    title = soup.title.string if soup.title else ""
+    url = soup.find('link', rel="canonical")['href'] if soup.find('link', rel="canonical") else ""
+    
+    # Main JSON object
+    document_data = {
+        "url": url,
+        "title": title,
+        "content": []
+    }
+    
+    # Process headers and their content
+    headers = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+    for header in headers:
+        header_data = {
+            "header": header.text.strip(),
+            "subContent": []
+        }
+        
+        # Extract sibling content until the next header
+        for sibling in header.find_next_siblings():
+            if sibling.name and sibling.name.startswith('h'):
+                break
+            content_type = get_content_type(sibling)
+            header_data["subContent"].append(content_type)
+        
+        document_data["content"].append(header_data)
+    
+    json_data.append(document_data)
+    
+    # Save to JSON file
+    with open(output_json, 'w', encoding='utf-8') as json_file:
+        json.dump(json_data, json_file, indent=4)

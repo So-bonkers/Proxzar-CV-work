@@ -10,6 +10,8 @@ from app.utils import (
     load_client_mapping,
     save_client_mapping,
 )
+from app.utils import parse_html_to_json
+import os
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -90,3 +92,53 @@ def download_file(client_id, filename):
     logger.info(f"Serving download request for Client ID {client_id}, file {filename}.")
     output_dir = get_client_output_dir(client_id)
     return send_from_directory(output_dir, filename)
+
+@main_blueprint.route('/api/v1/html-to-json', methods=['POST'])
+def html_to_json():
+    try:
+        # Get the client ID from the request
+        client_id = request.json.get('client_id')
+        if not client_id:
+            return jsonify({"error": "Client ID is required"}), 400
+
+        # Define the file paths
+        html_file_path = os.path.join('data', 'IngestedFiles', client_id, f'{client_id}-with-image-refs.html')
+        json_file_path = os.path.join('data', f'{client_id}.json')
+
+        # Check if the HTML file exists
+        if not os.path.exists(html_file_path):
+            return jsonify({"error": f"HTML file for client {client_id} not found"}), 404
+        
+        # Convert HTML to JSON
+        parse_html_to_json(html_file_path, json_file_path)
+
+        return jsonify({"message": f"HTML file converted to JSON for client {client_id}", "json_file": json_file_path}), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+def get_content_type(element):
+    """
+    Determine the content type of an HTML element and extract its data.
+    
+    Args:
+        element (Tag): A BeautifulSoup Tag object representing an HTML element.
+    
+    Returns:
+        dict: A dictionary containing the content kind and its source data.
+    """
+    if element.name == 'p':
+        return {"contentType": "paragraph", "source": element.text.strip()}
+    elif element.name in ['ul', 'ol']:
+        list_items = [li.text.strip() for li in element.find_all('li')]
+        return {"contentType": "list", "source": list_items}
+    elif element.name == 'table':
+        rows = []
+        for tr in element.find_all('tr'):
+            row = []
+            for cell in tr.find_all(['th', 'td']):
+                row.append(cell.text.strip())
+            rows.append(row)
+        return {"contentType": "table", "source": rows}
+    elif element.name == 'img':
+        return {"contentType": "image", "source": element['src']}
+    return {}
