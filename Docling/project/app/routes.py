@@ -1,4 +1,5 @@
 import logging
+import requests
 from flask import Blueprint, render_template, request, jsonify, send_from_directory
 from pathlib import Path
 from werkzeug.utils import secure_filename
@@ -63,6 +64,62 @@ def ingest():
 
     logger.info(f"File {file.filename} ingested successfully with Client ID {client_id}.")
     return jsonify({"client_id": client_id, "output_path": str(output_path)})
+
+@main_blueprint.route('/api/v1/ingest-link', methods=['POST'])
+def ingest_link():
+    """Handle ingestion via a file link."""
+    # Parse the JSON payload
+    data = request.get_json()
+    if not data or 'file_link' not in data:
+        logger.error("No file link provided for ingestion.")
+        return jsonify({"error": "No file link provided"}), 400
+
+    file_link = data['file_link']
+
+    # Validate the URL
+    if not file_link.startswith(('http://', 'https://')):
+        logger.error(f"Invalid file link provided: {file_link}")
+        return jsonify({"error": "Invalid file link provided"}), 400
+
+    try:
+        # Fetch the file from the URL
+        response = requests.get(file_link, stream=True)
+        if response.status_code != 200:
+            logger.error(f"Failed to download file from URL: {file_link}")
+            return jsonify({"error": f"Failed to download file from URL: {file_link}"}), 400
+
+        # Extract the file name from the URL
+        file_name = file_link.split('/')[-1]
+        if not validateFileFormat(file_name):
+            logger.error(f"Unsupported file format: {file_name}")
+            return jsonify({"error": f"Unsupported file format: {file_name}"}), 400
+
+        # Generate a unique client ID
+        client_id = generateClientID(client_mapping)
+        # Get the output directory for the client
+        output_path = getClientOutputDir(client_id)
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        # Save the file to the output directory
+        saved_file_path = output_path / secure_filename(file_name)
+        with open(saved_file_path, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+
+        # Update the client mapping with the new file information
+        client_mapping[client_id] = {
+            "original_file": file_name,
+            "output_path": str(output_path),
+            "saved_file": str(saved_file_path),
+        }
+        saveClientMapping(client_mapping, mapping_file)
+
+        logger.info(f"File {file_name} ingested successfully via link with Client ID {client_id}.")
+        return jsonify({"client_id": client_id, "output_path": str(output_path)})
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Error downloading file from URL: {file_link}. Error: {e}")
+        return jsonify({"error": f"Error downloading file from URL: {file_link}. Details: {str(e)}"}), 500
 
 @main_blueprint.route('/api/v1/extract', methods=['POST'])
 def extract():
