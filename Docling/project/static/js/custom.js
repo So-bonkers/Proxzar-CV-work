@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Get references to the forms and containers
+    const ingestPathForm = document.getElementById("ingestPathForm");
+    const ingestLinkForm = document.getElementById("ingestLinkForm");
     const ingestResult = document.getElementById("ingestResult");
     const extractForm = document.getElementById("extractForm");
     const htmlToJsonForm = document.getElementById("htmlToJsonForm");
-
-    let ingestMode = null; // To track which ingest method is selected
 
     // Utility function to handle API responses
     async function handleResponse(response, resultElement) {
@@ -27,54 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Event listeners for ingest buttons
-    document.getElementById("ingestPathBtn").addEventListener("click", () => {
-        ingestMode = "path";
-        ingestResult.innerHTML = `
-            <form id="pathIngestForm" enctype="multipart/form-data">
-                <div class="mb-3">
-                    <label for="file" class="form-label">Choose File</label>
-                    <input
-                        type="file"
-                        class="form-control"
-                        id="file"
-                        name="file"
-                        required
-                    />
-                </div>
-                <button type="submit" class="btn btn-primary">Ingest via Path</button>
-            </form>
-        `;
-
-        const pathIngestForm = document.getElementById("pathIngestForm");
-        pathIngestForm.onsubmit = handleIngestViaPath;
-    });
-
-    document.getElementById("ingestLinkBtn").addEventListener("click", () => {
-        ingestMode = "link";
-        ingestResult.innerHTML = `
-            <form id="linkIngestForm">
-                <div class="mb-3">
-                    <label for="fileLink" class="form-label">Enter File Link</label>
-                    <input
-                        type="url"
-                        class="form-control"
-                        id="fileLink"
-                        name="fileLink"
-                        placeholder="https://example.com/document.pdf"
-                        required
-                    />
-                </div>
-                <button type="submit" class="btn btn-primary">Ingest via Link</button>
-            </form>
-        `;
-
-        const linkIngestForm = document.getElementById("linkIngestForm");
-        linkIngestForm.onsubmit = handleIngestViaLink;
-    });
-
     // Ingest via Path
-    async function handleIngestViaPath(e) {
+    ingestPathForm.onsubmit = async function (e) {
         e.preventDefault();
         const formData = new FormData(e.target);
         ingestResult.innerHTML = '<div class="spinner-border text-primary" role="status"></div> Processing...';
@@ -93,10 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (err) {
             ingestResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
-    }
+    };
 
     // Ingest via Link
-    async function handleIngestViaLink(e) {
+    ingestLinkForm.onsubmit = async function (e) {
         e.preventDefault();
         const fileLink = document.getElementById("fileLink").value.trim();
 
@@ -132,16 +86,14 @@ document.addEventListener("DOMContentLoaded", () => {
         } catch (err) {
             ingestResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
-    }
-
+    };
 
     // Extract form submission
     extractForm.onsubmit = async function (e) {
         e.preventDefault();
-        const formData = new FormData(this);
+        const formData = new FormData(e.target);
         const extractResult = document.getElementById("extractResult");
 
-        // Show a loading spinner while processing
         extractResult.innerHTML = '<div class="spinner-border text-success" role="status"></div> Processing...';
 
         try {
@@ -166,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const client_id_html = document.getElementById("client_id_html").value;
         const htmlToJsonResult = document.getElementById("htmlToJsonResult");
 
-        // Show a loading spinner while processing
         htmlToJsonResult.innerHTML = '<div class="spinner-border text-warning" role="status"></div> Converting HTML to JSON...';
 
         try {
