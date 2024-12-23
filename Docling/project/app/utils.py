@@ -65,26 +65,31 @@ def generateClientID(client_mapping):
 
 def validateFileFormat(filename_or_url):
     """Check if the file or URL has a supported format."""
-    # Extract extension from URL or filename
-    parsed_url = urlparse(filename_or_url)
-    path = parsed_url.path
-    _, ext = os.path.splitext(path.lower())
+    _, ext = os.path.splitext(filename_or_url.lower())
     
-    # Check for valid extension
+    # Check by extension if available
     if ext in config["supported_formats"]:
-        logger.info(f"File format validation for {filename_or_url}: valid")
+        logger.info(f"File format validation for {filename_or_url}: valid (by extension)")
         return True
 
-    # Handle cases where the URL doesn't have an extension
+    # Handle URL validation
+    parsed_url = urlparse(filename_or_url)
     if parsed_url.scheme in ["http", "https"]:
         try:
             response = requests.head(filename_or_url, allow_redirects=True)
-            logger.info(f"Final URL after redirection: {response.url}")
-            logger.info(f"Content-Type for URL {filename_or_url}: {response.headers.get('Content-Type', '')}")
-
             content_type = response.headers.get("Content-Type", "").lower()
-            if any(fmt[1:] in content_type for fmt in config["supported_formats"]):
-                logger.info(f"File format inferred from Content-Type for {filename_or_url}: valid")
+            logger.info(f"Content-Type for URL {filename_or_url}: {content_type}")
+
+            # Match MIME types for known formats
+            mime_types = {
+                ".pdf": "application/pdf",
+                ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                ".png": "image/png",
+                ".tiff": "image/tiff",
+            }
+            if any(mime in content_type for mime in mime_types.values()):
+                logger.info(f"File format validation for {filename_or_url}: valid (by MIME type)")
                 return True
         except requests.RequestException as e:
             logger.error(f"Error validating file format from URL: {e}")
@@ -92,7 +97,6 @@ def validateFileFormat(filename_or_url):
 
     logger.info(f"File format validation for {filename_or_url}: invalid")
     return False
-
 
 def getClientOutputDir(client_id):
     """Get the output directory for a given Client ID."""
