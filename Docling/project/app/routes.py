@@ -67,70 +67,62 @@ def ingest():
 
 @main_blueprint.route('/api/v1/ingest-link', methods=['POST'])
 def ingest_link():
-    """Handle ingestion via a file link."""
-    try:
-        data = request.get_json()
-        logger.info(f"Received file link data: {data}")
+    data = request.get_json()
+    file_link = data.get('file_link', '').strip()
 
-        # Validate request JSON and file_link
-        if not data or 'file_link' not in data or not data['file_link'].strip():
-            logger.error("No file link provided.")
-            return jsonify({"error": "No file link provided."}), 400
+    if not file_link:
+        logger.error("No file link provided.")
+        return jsonify({"error": "No file link provided"}), 400
 
-        file_link = data['file_link'].strip()
-        logger.info(f"Received file link: {file_link}")
-    except Exception as e:
-        logger.error(f"Error parsing request data: {str(e)}")
-        return jsonify({"error": f"Error parsing request data: {str(e)}"}), 400
+    logger.info(f"Received file link: {file_link}")
 
-    file_link = data['file_link']
-
-    # Validate the URL
-    if not file_link.startswith(('http://', 'https://')):
-        logger.error(f"Invalid file link provided: {file_link}")
-        logger.info(f"Received file link: {file_link}")
-        return jsonify({"error": "Invalid file link provided"}), 400
+    # Download the file to a temporary directory
+    temp_directory = Path(config["temp_directory"])
+    temp_directory.mkdir(parents=True, exist_ok=True)
 
     try:
-        # Fetch the file from the URL
-        response = requests.get(file_link, stream=True)
+        response = requests.get(file_link, stream=True, allow_redirects=True)
         if response.status_code != 200:
-            logger.error(f"Failed to download file from URL: {file_link}")
-            return jsonify({"error": f"Failed to download file from URL: {file_link}"}), 400
+            logger.error(f"Failed to fetch file: {response.status_code}")
+            return jsonify({"error": f"Failed to fetch file: {response.status_code}"}), 400
 
-        # Extract the file name from the URL
-        file_name = file_link.split('/')[-1]
-        if not validateFileFormat(file_name):
-            logger.error(f"Unsupported file format: {file_name}")
-            return jsonify({"error": f"Unsupported file format: {file_name}"}), 400
+        # Save the file temporarily
+        temp_file_path = temp_directory / secure_filename(file_link.split('/')[-1])
+        with open(temp_file_path, 'wb') as temp_file:
+            for chunk in response.iter_content(chunk_size=8192):
+                temp_file.write(chunk)
 
-        # Generate a unique client ID
+        # Validate the file format
+        mime_type, _ = mimetypes.guess_type(temp_file_path)
+        logger.info(f"Detected MIME type: {mime_type}")
+
+        if mime_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "image/png", "image/tiff"]:
+            logger.error(f"Unsupported file format: {mime_type}")
+            temp_file_path.unlink()  # Delete the temporary file
+            return jsonify({"error": f"Unsupported file format: {mime_type}"}), 400
+
+        # Move the file to the client's output directory
         client_id = generateClientID(client_mapping)
-        # Get the output directory for the client
         output_path = getClientOutputDir(client_id)
         output_path.mkdir(parents=True, exist_ok=True)
 
-        # Save the file to the output directory
-        saved_file_path = output_path / secure_filename(file_name)
-        with open(saved_file_path, 'wb') as f:
-            for chunk in response.iter_content(chunk_size=8192):
-                f.write(chunk)
+        saved_file_path = output_path / temp_file_path.name
+        temp_file_path.rename(saved_file_path)
 
-        # Update the client mapping with the new file information
+        # Update client mapping
         client_mapping[client_id] = {
-            "original_file": file_name,
+            "original_file": temp_file_path.name,
             "output_path": str(output_path),
             "saved_file": str(saved_file_path),
         }
         saveClientMapping(client_mapping, mapping_file)
 
-        logger.info(f"File {file_name} ingested successfully via link with Client ID {client_id}.")
+        logger.info(f"File successfully ingested for Client ID: {client_id}")
         return jsonify({"client_id": client_id, "output_path": str(output_path)})
-
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Error downloading file from URL: {file_link}. Error: {e}")
-        return jsonify({"error": f"Error downloading file from URL: {file_link}. Details: {str(e)}"}), 500
-
+    except Exception as e:
+        logger.error(f"Error processing file link: {e}")
+        return jsonify({"error": f"Error processing file link: {str(e)}"}), 500
+    
 @main_blueprint.route('/api/v1/extract', methods=['POST'])
 def extract():
     """Handle document extraction."""
