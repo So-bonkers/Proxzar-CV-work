@@ -67,6 +67,10 @@ def validateFileFormat(filename_or_url):
     """Check if the file or URL has a supported format."""
     _, ext = os.path.splitext(filename_or_url.lower())
     
+    if filename_or_url.startswith("https://arxiv.org/pdf/"):
+        logger.info(f"Assuming PDF format for arXiv link: {filename_or_url}")
+        return True
+    
     # Check by extension if available
     if ext in config["supported_formats"]:
         logger.info(f"File format validation for {filename_or_url}: valid (by extension)")

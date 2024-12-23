@@ -1,4 +1,5 @@
 import logging
+import mimetypes
 import requests
 from flask import Blueprint, render_template, request, jsonify, send_from_directory
 from pathlib import Path
@@ -11,12 +12,16 @@ from app.utils import (
     loadClientMapping,
     saveClientMapping,
     parseHTMLToJSON,
+    loadConfig
 )
 import os
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+CONFIG_FILE = "config.json"
+config = loadConfig()
 
 # Create a Blueprint for the main routes
 main_blueprint = Blueprint("main", __name__)
@@ -76,32 +81,38 @@ def ingest_link():
 
     logger.info(f"Received file link: {file_link}")
 
-    # Download the file to a temporary directory
     temp_directory = Path(config["temp_directory"])
     temp_directory.mkdir(parents=True, exist_ok=True)
 
     try:
         response = requests.get(file_link, stream=True, allow_redirects=True)
-        if response.status_code != 200:
-            logger.error(f"Failed to fetch file: {response.status_code}")
-            return jsonify({"error": f"Failed to fetch file: {response.status_code}"}), 400
+        response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
 
-        # Save the file temporarily
-        temp_file_path = temp_directory / secure_filename(file_link.split('/')[-1])
+        # Get filename from Content-Disposition header or URL
+        content_disposition = response.headers.get('Content-Disposition')
+        if content_disposition:
+            filename = content_disposition.split("filename=")[1].strip('"')
+        else:
+            filename = os.path.basename(file_link)
+            if not filename:
+                filename = "downloaded_file" # Default name if no filename can be extracted
+
+        filename = secure_filename(filename) # Sanitize the filename
+        temp_file_path = temp_directory / filename
+
         with open(temp_file_path, 'wb') as temp_file:
             for chunk in response.iter_content(chunk_size=8192):
                 temp_file.write(chunk)
 
-        # Validate the file format
+        # Validate file format based on downloaded file
         mime_type, _ = mimetypes.guess_type(temp_file_path)
-        logger.info(f"Detected MIME type: {mime_type}")
 
-        if mime_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "image/png", "image/tiff"]:
+        if mime_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "image/png", "image/tiff", "image/jpeg"]: #added jpeg
             logger.error(f"Unsupported file format: {mime_type}")
-            temp_file_path.unlink()  # Delete the temporary file
+            temp_file_path.unlink()
             return jsonify({"error": f"Unsupported file format: {mime_type}"}), 400
-
-        # Move the file to the client's output directory
+        
+        # ... (rest of the file processing - client ID generation, moving file, etc.)
         client_id = generateClientID(client_mapping)
         output_path = getClientOutputDir(client_id)
         output_path.mkdir(parents=True, exist_ok=True)
@@ -109,16 +120,19 @@ def ingest_link():
         saved_file_path = output_path / temp_file_path.name
         temp_file_path.rename(saved_file_path)
 
-        # Update client mapping
         client_mapping[client_id] = {
-            "original_file": temp_file_path.name,
-            "output_path": str(output_path),
-            "saved_file": str(saved_file_path),
-        }
+                "original_file": filename,
+                "output_path": str(output_path),
+                "saved_file": str(saved_file_path),
+            }
         saveClientMapping(client_mapping, mapping_file)
 
         logger.info(f"File successfully ingested for Client ID: {client_id}")
         return jsonify({"client_id": client_id, "output_path": str(output_path)})
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Error fetching URL: {e}")
+        return jsonify({"error": f"Error fetching URL: {e}"}), 500
     except Exception as e:
         logger.error(f"Error processing file link: {e}")
         return jsonify({"error": f"Error processing file link: {str(e)}"}), 500
