@@ -1,5 +1,7 @@
 import os
 import random
+import requests
+from urllib.parse import urlparse
 import json
 import logging
 import time
@@ -30,7 +32,7 @@ def loadConfig():
         "output_directory": r"data\IngestedFiles",
         "temp_directory": r"data\TempFiles",
         "mapping_file": r"client_mapping.json",
-        "supported_formats": [".pdf", ".docx", ".xlsx", ".odt", ".ods", ".png", ".tiff"],
+        "supported_formats": ["pdf", "docx", "xlsx", "odt", "ods", "png", "tiff", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel"],
         "template_folder": "Docling\\project\\templates",
         "static_folder": "Docling\\project\\static"
     }
@@ -61,12 +63,36 @@ def generateClientID(client_mapping):
             logger.info(f"Generated new Client ID: {client_id}")
             return client_id
 
-def validateFileFormat(filename):
-    """Check if the file has a supported format."""
-    _, ext = os.path.splitext(filename.lower())
-    is_valid = ext in config["supported_formats"]
-    logger.info(f"File format validation for {filename}: {'valid' if is_valid else 'invalid'}")
-    return is_valid
+def validateFileFormat(filename_or_url):
+    """Check if the file or URL has a supported format."""
+    # Extract extension from URL or filename
+    parsed_url = urlparse(filename_or_url)
+    path = parsed_url.path
+    _, ext = os.path.splitext(path.lower())
+    
+    # Check for valid extension
+    if ext in config["supported_formats"]:
+        logger.info(f"File format validation for {filename_or_url}: valid")
+        return True
+
+    # Handle cases where the URL doesn't have an extension
+    if parsed_url.scheme in ["http", "https"]:
+        try:
+            response = requests.head(filename_or_url, allow_redirects=True)
+            logger.info(f"Final URL after redirection: {response.url}")
+            logger.info(f"Content-Type for URL {filename_or_url}: {response.headers.get('Content-Type', '')}")
+
+            content_type = response.headers.get("Content-Type", "").lower()
+            if any(fmt[1:] in content_type for fmt in config["supported_formats"]):
+                logger.info(f"File format inferred from Content-Type for {filename_or_url}: valid")
+                return True
+        except requests.RequestException as e:
+            logger.error(f"Error validating file format from URL: {e}")
+            return False
+
+    logger.info(f"File format validation for {filename_or_url}: invalid")
+    return False
+
 
 def getClientOutputDir(client_id):
     """Get the output directory for a given Client ID."""

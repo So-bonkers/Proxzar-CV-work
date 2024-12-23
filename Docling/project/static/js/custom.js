@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Event listeners for ingest buttons
-    document.getElementById("ingestViaPathBtn").addEventListener("click", () => {
+    document.getElementById("ingestPathBtn").addEventListener("click", () => {
         ingestMode = "path";
         ingestResult.innerHTML = `
             <form id="pathIngestForm" enctype="multipart/form-data">
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pathIngestForm.onsubmit = handleIngestViaPath;
     });
 
-    document.getElementById("ingestViaLinkBtn").addEventListener("click", () => {
+    document.getElementById("ingestLinkBtn").addEventListener("click", () => {
         ingestMode = "link";
         ingestResult.innerHTML = `
             <form id="linkIngestForm">
@@ -98,7 +98,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ingest via Link
     async function handleIngestViaLink(e) {
         e.preventDefault();
-        const fileLink = document.getElementById("fileLink").value;
+        const fileLink = document.getElementById("fileLink").value.trim();
+
+        // Validate fileLink
+        if (!fileLink) {
+            alert("Please enter a valid file link!");
+            return;
+        }
+
+        const urlPattern = /^(https?:\/\/)[^\s/$.?#].[^\s]*$/;
+        if (!urlPattern.test(fileLink)) {
+            alert("Invalid URL format! Please enter a valid link.");
+            return;
+        }
+
         ingestResult.innerHTML = '<div class="spinner-border text-primary" role="status"></div> Processing...';
 
         try {
@@ -120,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ingestResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
     }
+
 
     // Extract form submission
     extractForm.onsubmit = async function (e) {

@@ -68,17 +68,27 @@ def ingest():
 @main_blueprint.route('/api/v1/ingest-link', methods=['POST'])
 def ingest_link():
     """Handle ingestion via a file link."""
-    # Parse the JSON payload
-    data = request.get_json()
-    if not data or 'file_link' not in data:
-        logger.error("No file link provided for ingestion.")
-        return jsonify({"error": "No file link provided"}), 400
+    try:
+        data = request.get_json()
+        logger.info(f"Received file link data: {data}")
+
+        # Validate request JSON and file_link
+        if not data or 'file_link' not in data or not data['file_link'].strip():
+            logger.error("No file link provided.")
+            return jsonify({"error": "No file link provided."}), 400
+
+        file_link = data['file_link'].strip()
+        logger.info(f"Received file link: {file_link}")
+    except Exception as e:
+        logger.error(f"Error parsing request data: {str(e)}")
+        return jsonify({"error": f"Error parsing request data: {str(e)}"}), 400
 
     file_link = data['file_link']
 
     # Validate the URL
     if not file_link.startswith(('http://', 'https://')):
         logger.error(f"Invalid file link provided: {file_link}")
+        logger.info(f"Received file link: {file_link}")
         return jsonify({"error": "Invalid file link provided"}), 400
 
     try:
