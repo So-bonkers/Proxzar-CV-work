@@ -32,13 +32,23 @@ client_mapping, mapping_file = loadClientMapping()
 
 @main_blueprint.route('/')
 def index():
-    """Serve the HTML UI."""
+    """
+    Serve the HTML UI.
+    
+    Returns:
+        str: Rendered HTML template for the index page.
+    """
     logger.info("Rendering index page.")
     return render_template('index.html')
 
 @main_blueprint.route('/api/v1/ingest', methods=['POST'])
 def ingest():
-    """Handle file ingestion."""
+    """
+    Handle file ingestion.
+    
+    Returns:
+        Response: JSON response with client ID and output path.
+    """
     # Get the file from the request
     file = request.files.get('file')
     if not file:
@@ -73,6 +83,12 @@ def ingest():
 
 @main_blueprint.route('/api/v1/ingest-link', methods=['POST'])
 def ingest_link():
+    """
+    Handle file ingestion from a URL link.
+    
+    Returns:
+        Response: JSON response with client ID and output path.
+    """
     data = request.get_json()
     file_link = data.get('file_link', '').strip()
 
@@ -140,7 +156,12 @@ def ingest_link():
     
 @main_blueprint.route('/api/v1/ingest-stream', methods=['POST'])
 def ingest_stream():
-    """Handle S3 stream ingestion."""
+    """
+    Handle S3 stream ingestion.
+    
+    Returns:
+        Response: JSON response with client ID and output path.
+    """
     data = request.get_json()
     bucket_name = data.get('bucket_name')
     file_key = data.get('file_key')
@@ -183,7 +204,12 @@ def ingest_stream():
     
 @main_blueprint.route('/api/v1/extract', methods=['POST'])
 def extract():
-    """Handle document extraction."""
+    """
+    Handle document extraction.
+    
+    Returns:
+        Response: JSON response with extraction result.
+    """
     # Get the client ID from the request
     client_id = request.form.get('client_id')
     if not client_id:
@@ -218,7 +244,16 @@ def extract():
 
 @main_blueprint.route('/download/<client_id>/<filename>')
 def downloadFile(client_id, filename):
-    """Serve files for download."""
+    """
+    Serve files for download.
+    
+    Args:
+        client_id (str): The client ID.
+        filename (str): The name of the file to download.
+    
+    Returns:
+        Response: The file to be downloaded.
+    """
     logger.info(f"Serving download request for Client ID {client_id}, file {filename}.")
     # Get the output directory for the client
     output_dir = getClientOutputDir(client_id)
@@ -226,7 +261,12 @@ def downloadFile(client_id, filename):
 
 @main_blueprint.route('/api/v1/htmlToJson', methods=['POST'])
 def htmlToJson():
-    """Convert HTML to JSON."""
+    """
+    Convert HTML to JSON.
+    
+    Returns:
+        Response: JSON response with conversion result.
+    """
     try:
         # Get the client ID from the request
         client_id = request.json.get('client_id')

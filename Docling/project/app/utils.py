@@ -20,11 +20,17 @@ from docling.datamodel.base_models import DocumentStream
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Constants
 IMAGE_RESOLUTION_SCALE = 2.0
 CONFIG_FILE = "config.json"
 
 def loadConfig():
-    """Load configuration from the config file or return default configuration."""
+    """
+    Load configuration from the config file or return default configuration.
+    
+    Returns:
+        dict: Configuration dictionary.
+    """
     if os.path.exists(CONFIG_FILE):
         with open(CONFIG_FILE) as f:
             logger.info("Loaded configuration file.")
@@ -42,7 +48,12 @@ def loadConfig():
 config = loadConfig()
 
 def loadClientMapping():
-    """Load client mapping from the mapping file or return an empty mapping."""
+    """
+    Load client mapping from the mapping file or return an empty mapping.
+    
+    Returns:
+        tuple: A tuple containing the client mapping dictionary and the mapping file path.
+    """
     mapping_file = config["mapping_file"]
     if os.path.exists(mapping_file):
         with open(mapping_file) as f:
@@ -52,13 +63,27 @@ def loadClientMapping():
     return {}, mapping_file
 
 def saveClientMapping(client_mapping, mapping_file):
-    """Save client mapping to the mapping file."""
+    """
+    Save client mapping to the mapping file.
+    
+    Args:
+        client_mapping (dict): The client mapping dictionary.
+        mapping_file (str): The path to the mapping file.
+    """
     with open(mapping_file, "w") as f:
         json.dump(client_mapping, f)
         logger.info("Saved client mapping.")
 
 def generateClientID(client_mapping):
-    """Generate a unique 8-digit Client ID."""
+    """
+    Generate a unique 8-digit Client ID.
+    
+    Args:
+        client_mapping (dict): The client mapping dictionary.
+    
+    Returns:
+        str: A unique 8-digit Client ID.
+    """
     while True:
         client_id = f"{random.randint(10000000, 99999999)}"
         if client_id not in client_mapping:
@@ -66,7 +91,15 @@ def generateClientID(client_mapping):
             return client_id
 
 def validateFileFormat(filename_or_url):
-    """Check if the file or URL has a supported format."""
+    """
+    Check if the file or URL has a supported format.
+    
+    Args:
+        filename_or_url (str): The filename or URL to validate.
+    
+    Returns:
+        bool: True if the format is supported, False otherwise.
+    """
     _, ext = os.path.splitext(filename_or_url.lower())
     
     if filename_or_url.startswith("https://arxiv.org/pdf/"):
@@ -105,13 +138,31 @@ def validateFileFormat(filename_or_url):
     return False
 
 def getClientOutputDir(client_id):
-    """Get the output directory for a given Client ID."""
+    """
+    Get the output directory for a given Client ID.
+    
+    Args:
+        client_id (str): The Client ID.
+    
+    Returns:
+        Path: The output directory path.
+    """
     output_dir = Path(config["output_directory"]) / client_id
     logger.info(f"Resolved output directory for Client ID {client_id}: {output_dir}")
     return output_dir
 
 def processDocument(file_path, output_dir, global_client_id):
-    """Process the document using Docling."""
+    """
+    Process the document using Docling.
+    
+    Args:
+        file_path (str): The path to the input file.
+        output_dir (Path): The output directory path.
+        global_client_id (str): The global Client ID.
+    
+    Returns:
+        dict: A dictionary containing the processing result.
+    """
     logger.info(f"Starting document processing for {file_path}.")
     try:
         start_time = time.time()
@@ -164,7 +215,6 @@ def processDocument(file_path, output_dir, global_client_id):
                     print("Exporting to HTML: command is executing now")
                     fp.write(element.export_to_html())
 
-
                 # # Add table reference to JSON
                 # json_output["tables"].append({
                 #     "id": table_counter,
@@ -202,7 +252,12 @@ def processDocument(file_path, output_dir, global_client_id):
         raise
 
 def getS3Client():
-    """Initialize and return an S3 client using configuration."""
+    """
+    Initialize and return an S3 client using configuration.
+    
+    Returns:
+        boto3.client: The S3 client.
+    """
     try:
         with open("aws_access_config.json") as f:
             config = json.load(f)
@@ -218,7 +273,18 @@ def getS3Client():
         raise
 
 def processStreamDocument(bucket_name, file_key, output_dir, client_id):
-    """Process a document directly from S3 stream."""
+    """
+    Process a document directly from S3 stream.
+    
+    Args:
+        bucket_name (str): The name of the S3 bucket.
+        file_key (str): The key of the file in the S3 bucket.
+        output_dir (Path): The output directory path.
+        client_id (str): The Client ID.
+    
+    Returns:
+        dict: A dictionary containing the processing result.
+    """
     logger.info(f"Starting stream document processing for {file_key} from bucket {bucket_name}.")
     try:
         start_time = time.time()
