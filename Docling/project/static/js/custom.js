@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Get references to the forms and containers
     const ingestPathForm = document.getElementById("ingestPathForm");
     const ingestLinkForm = document.getElementById("ingestLinkForm");
+    const ingestStreamForm = document.getElementById("ingestStreamForm"); // New form reference
     const ingestResult = document.getElementById("ingestResult");
     const extractForm = document.getElementById("extractForm");
     const htmlToJsonForm = document.getElementById("htmlToJsonForm");
@@ -80,6 +81,44 @@ document.addEventListener("DOMContentLoaded", () => {
                     <div class="alert alert-success">
                         <p>Client ID: <strong>${data.client_id}</strong></p>
                         <p>Output Path: <code>${data.output_path}</code></p>
+                    </div>
+                `;
+            }
+        } catch (err) {
+            ingestResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
+        }
+    };
+
+    // NEW: Ingest via Stream
+    ingestStreamForm.onsubmit = async function (e) {
+        e.preventDefault();
+        const bucketName = document.getElementById("bucketName").value.trim();
+        const fileKey = document.getElementById("fileKey").value.trim();
+
+        // Validate inputs
+        if (!bucketName || !fileKey) {
+            alert("Please enter both bucket name and file key!");
+            return;
+        }
+
+        ingestResult.innerHTML = '<div class="spinner-border text-info" role="status"></div> Processing stream...';
+
+        try {
+            const res = await fetch('/api/v1/ingest-stream', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    bucket_name: bucketName,
+                    file_key: fileKey
+                })
+            });
+            const data = await handleResponse(res, ingestResult);
+            if (data) {
+                ingestResult.innerHTML = `
+                    <div class="alert alert-success">
+                        <p>Client ID: <strong>${data.client_id}</strong></p>
+                        <p>Output Path: <code>${data.output_path}</code></p>
+                        <p>${data.message}</p>
                     </div>
                 `;
             }

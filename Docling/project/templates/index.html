@@ -46,6 +46,34 @@
       <button type="submit" class="btn btn-secondary">Ingest via Link</button>
     </form>
 
+    <!-- NEW: Ingest via Stream Form -->
+    <h2 class="mt-5">Ingest via Stream</h2>
+    <form id="ingestStreamForm">
+      <div class="mb-3">
+        <label for="bucketName" class="form-label">S3 Bucket Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="bucketName"
+          name="bucketName"
+          placeholder="your-bucket-name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="fileKey" class="form-label">File Key</label>
+        <input
+          type="text"
+          class="form-control"
+          id="fileKey"
+          name="fileKey"
+          placeholder="path/to/your/file.pdf"
+          required
+        />
+      </div>
+      <button type="submit" class="btn btn-info">Ingest via Stream</button>
+    </form>
+
     <div id="ingestResult" class="mt-3"></div>
 
     <!-- Extract Section -->
