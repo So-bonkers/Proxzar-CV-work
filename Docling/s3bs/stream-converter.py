@@ -44,10 +44,14 @@ try:
     print("Current time: ", time.strftime('%H:%M:%S', time.localtime(start_time)))
     result = converter.convert(source)
 
-    # Print or process the result
+    # Save or handle the result
     print("Conversion successful!")
     print("Time taken: ", time.time() - start_time)
-    print("Result:", result)
+    with open("conversion_result.txt", "w", encoding="utf-8") as f:
+        f.write(str(result))  # Convert to string if necessary
+    print("Result saved to conversion_result.txt")
 
 except Exception as e:
     print(f"Error: {e}")
+    import traceback
+    traceback.print_exc()
