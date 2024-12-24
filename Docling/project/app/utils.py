@@ -1,5 +1,7 @@
 import os
 import random
+import requests
+from urllib.parse import urlparse
 import json
 import logging
 import time
@@ -30,7 +32,7 @@ def loadConfig():
         "output_directory": r"data\IngestedFiles",
         "temp_directory": r"data\TempFiles",
         "mapping_file": r"client_mapping.json",
-        "supported_formats": [".pdf", ".docx", ".xlsx", ".odt", ".ods", ".png", ".tiff"],
+        "supported_formats": ["pdf", "docx", "xlsx", "odt", "ods", "png", "tiff", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel"],
         "template_folder": "Docling\\project\\templates",
         "static_folder": "Docling\\project\\static"
     }
@@ -61,12 +63,44 @@ def generateClientID(client_mapping):
             logger.info(f"Generated new Client ID: {client_id}")
             return client_id
 
-def validateFileFormat(filename):
-    """Check if the file has a supported format."""
-    _, ext = os.path.splitext(filename.lower())
-    is_valid = ext in config["supported_formats"]
-    logger.info(f"File format validation for {filename}: {'valid' if is_valid else 'invalid'}")
-    return is_valid
+def validateFileFormat(filename_or_url):
+    """Check if the file or URL has a supported format."""
+    _, ext = os.path.splitext(filename_or_url.lower())
+    
+    if filename_or_url.startswith("https://arxiv.org/pdf/"):
+        logger.info(f"Assuming PDF format for arXiv link: {filename_or_url}")
+        return True
+    
+    # Check by extension if available
+    if ext in config["supported_formats"]:
+        logger.info(f"File format validation for {filename_or_url}: valid (by extension)")
+        return True
+
+    # Handle URL validation
+    parsed_url = urlparse(filename_or_url)
+    if parsed_url.scheme in ["http", "https"]:
+        try:
+            response = requests.head(filename_or_url, allow_redirects=True)
+            content_type = response.headers.get("Content-Type", "").lower()
+            logger.info(f"Content-Type for URL {filename_or_url}: {content_type}")
+
+            # Match MIME types for known formats
+            mime_types = {
+                ".pdf": "application/pdf",
+                ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+                ".xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                ".png": "image/png",
+                ".tiff": "image/tiff",
+            }
+            if any(mime in content_type for mime in mime_types.values()):
+                logger.info(f"File format validation for {filename_or_url}: valid (by MIME type)")
+                return True
+        except requests.RequestException as e:
+            logger.error(f"Error validating file format from URL: {e}")
+            return False
+
+    logger.info(f"File format validation for {filename_or_url}: invalid")
+    return False
 
 def getClientOutputDir(client_id):
     """Get the output directory for a given Client ID."""

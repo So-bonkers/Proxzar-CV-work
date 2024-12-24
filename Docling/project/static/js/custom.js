@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Get references to the forms
-    const ingestForm = document.getElementById("ingestForm");
+    // Get references to the forms and containers
+    const ingestPathForm = document.getElementById("ingestPathForm");
+    const ingestLinkForm = document.getElementById("ingestLinkForm");
+    const ingestResult = document.getElementById("ingestResult");
     const extractForm = document.getElementById("extractForm");
-    const htmlToJsonForm = document.getElementById("htmlToJsonForm"); // New form for HTML to JSON
+    const htmlToJsonForm = document.getElementById("htmlToJsonForm");
 
-    // Utility function to handle responses
+    // Utility function to handle API responses
     async function handleResponse(response, resultElement) {
         const contentType = response.headers.get("content-type");
         if (contentType && contentType.includes("application/json")) {
@@ -25,13 +27,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // Ingest form submission
-    ingestForm.onsubmit = async function (e) {
+    // Ingest via Path
+    ingestPathForm.onsubmit = async function (e) {
         e.preventDefault();
-        const formData = new FormData(this);
-        const ingestResult = document.getElementById("ingestResult");
-
-        // Show a loading spinner while processing
+        const formData = new FormData(e.target);
         ingestResult.innerHTML = '<div class="spinner-border text-primary" role="status"></div> Processing...';
 
         try {
@@ -50,13 +49,51 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
+    // Ingest via Link
+    ingestLinkForm.onsubmit = async function (e) {
+        e.preventDefault();
+        const fileLink = document.getElementById("fileLink").value.trim();
+
+        // Validate fileLink
+        if (!fileLink) {
+            alert("Please enter a valid file link!");
+            return;
+        }
+
+        const urlPattern = /^(https?:\/\/)[^\s/$.?#].[^\s]*$/;
+        if (!urlPattern.test(fileLink)) {
+            alert("Invalid URL format! Please enter a valid link.");
+            return;
+        }
+
+        ingestResult.innerHTML = '<div class="spinner-border text-primary" role="status"></div> Processing...';
+
+        try {
+            const res = await fetch('/api/v1/ingest-link', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ file_link: fileLink })
+            });
+            const data = await handleResponse(res, ingestResult);
+            if (data) {
+                ingestResult.innerHTML = `
+                    <div class="alert alert-success">
+                        <p>Client ID: <strong>${data.client_id}</strong></p>
+                        <p>Output Path: <code>${data.output_path}</code></p>
+                    </div>
+                `;
+            }
+        } catch (err) {
+            ingestResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
+        }
+    };
+
     // Extract form submission
     extractForm.onsubmit = async function (e) {
         e.preventDefault();
-        const formData = new FormData(this);
+        const formData = new FormData(e.target);
         const extractResult = document.getElementById("extractResult");
 
-        // Show a loading spinner while processing
         extractResult.innerHTML = '<div class="spinner-border text-success" role="status"></div> Processing...';
 
         try {
@@ -81,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const client_id_html = document.getElementById("client_id_html").value;
         const htmlToJsonResult = document.getElementById("htmlToJsonResult");
 
-        // Show a loading spinner while processing
         htmlToJsonResult.innerHTML = '<div class="spinner-border text-warning" role="status"></div> Converting HTML to JSON...';
 
         try {

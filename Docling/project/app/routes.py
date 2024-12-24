@@ -1,4 +1,6 @@
 import logging
+import mimetypes
+import requests
 from flask import Blueprint, render_template, request, jsonify, send_from_directory
 from pathlib import Path
 from werkzeug.utils import secure_filename
@@ -10,12 +12,16 @@ from app.utils import (
     loadClientMapping,
     saveClientMapping,
     parseHTMLToJSON,
+    loadConfig
 )
 import os
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+CONFIG_FILE = "config.json"
+config = loadConfig()
 
 # Create a Blueprint for the main routes
 main_blueprint = Blueprint("main", __name__)
@@ -64,6 +70,73 @@ def ingest():
     logger.info(f"File {file.filename} ingested successfully with Client ID {client_id}.")
     return jsonify({"client_id": client_id, "output_path": str(output_path)})
 
+@main_blueprint.route('/api/v1/ingest-link', methods=['POST'])
+def ingest_link():
+    data = request.get_json()
+    file_link = data.get('file_link', '').strip()
+
+    if not file_link:
+        logger.error("No file link provided.")
+        return jsonify({"error": "No file link provided"}), 400
+
+    logger.info(f"Received file link: {file_link}")
+
+    temp_directory = Path(config["temp_directory"])
+    temp_directory.mkdir(parents=True, exist_ok=True)
+
+    try:
+        response = requests.get(file_link, stream=True, allow_redirects=True)
+        response.raise_for_status()  # Raise an exception for bad status codes (4xx or 5xx)
+
+        # Get filename from Content-Disposition header or URL
+        content_disposition = response.headers.get('Content-Disposition')
+        if content_disposition:
+            filename = content_disposition.split("filename=")[1].strip('"')
+        else:
+            filename = os.path.basename(file_link)
+            if not filename:
+                filename = "downloaded_file" # Default name if no filename can be extracted
+
+        filename = secure_filename(filename) # Sanitize the filename
+        temp_file_path = temp_directory / filename
+
+        with open(temp_file_path, 'wb') as temp_file:
+            for chunk in response.iter_content(chunk_size=8192):
+                temp_file.write(chunk)
+
+        # Validate file format based on downloaded file
+        mime_type, _ = mimetypes.guess_type(temp_file_path)
+
+        if mime_type not in ["application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "image/png", "image/tiff", "image/jpeg"]: #added jpeg
+            logger.error(f"Unsupported file format: {mime_type}")
+            temp_file_path.unlink()
+            return jsonify({"error": f"Unsupported file format: {mime_type}"}), 400
+        
+        # ... (rest of the file processing - client ID generation, moving file, etc.)
+        client_id = generateClientID(client_mapping)
+        output_path = getClientOutputDir(client_id)
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        saved_file_path = output_path / temp_file_path.name
+        temp_file_path.rename(saved_file_path)
+
+        client_mapping[client_id] = {
+                "original_file": filename,
+                "output_path": str(output_path),
+                "saved_file": str(saved_file_path),
+            }
+        saveClientMapping(client_mapping, mapping_file)
+
+        logger.info(f"File successfully ingested for Client ID: {client_id}")
+        return jsonify({"client_id": client_id, "output_path": str(output_path)})
+
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Error fetching URL: {e}")
+        return jsonify({"error": f"Error fetching URL: {e}"}), 500
+    except Exception as e:
+        logger.error(f"Error processing file link: {e}")
+        return jsonify({"error": f"Error processing file link: {str(e)}"}), 500
+    
 @main_blueprint.route('/api/v1/extract', methods=['POST'])
 def extract():
     """Handle document extraction."""
