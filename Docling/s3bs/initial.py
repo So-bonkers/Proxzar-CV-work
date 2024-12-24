@@ -17,18 +17,15 @@ s3_client = boto3.client(
 
 # Specify the bucket name
 bucket_name = 'shubankar'
+file_key = '2412.13195v1.pdf'
 
 try:
-    # Initialize a paginator to handle buckets with many files
-    paginator = s3_client.get_paginator('list_objects_v2')
-    pages = paginator.paginate(Bucket=bucket_name)
-
-    print("Files in bucket:")
-    for page in pages:
-        if 'Contents' in page:
-            for obj in page['Contents']:
-                print(obj['Key'])  # Print the file name (Key)
-        else:
-            print("No files found in the bucket.")
+    # Get the object
+    response = s3_client.get_object(Bucket=bucket_name, Key=file_key)
+    
+    # Stream the file content
+    with response['Body'] as stream:
+        for chunk in iter(lambda: stream.read(1024), b""):  # Read in 1 KB chunks
+            print(chunk)  # Process the chunk (for binary files) or decode for text
 except Exception as e:
     print(f"Error: {e}")

@@ -1,0 +1,10 @@
+No errors before the try block
+retrieving the file using the get_object method
+Reading the file content into memory
+Creating a document stream
+Initializing the document converter
+Converting document now...
+Current time:  17:21:32
+Conversion successful!
+Time taken:  109.17247271537781
+Result: Error: 'charmap' codec can't encode character '\u03b1' in position 188479: character maps to <undefined>

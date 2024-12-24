@@ -12,13 +12,15 @@ from docling.datamodel.pipeline_options import PdfPipelineOptions
 from docling.document_converter import DocumentConverter, PdfFormatOption
 from docling.datamodel.base_models import ConversionStatus, InputFormat
 from docling_core.types.doc import PictureItem, TableItem, ImageRefMode
+import boto3
+from io import BytesIO
+from docling.datamodel.base_models import DocumentStream
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 IMAGE_RESOLUTION_SCALE = 2.0
-
 CONFIG_FILE = "config.json"
 
 def loadConfig():
@@ -197,6 +199,91 @@ def processDocument(file_path, output_dir, global_client_id):
         }
     except Exception as e:
         logger.error(f"Error processing document {file_path}: {e}")
+        raise
+
+def getS3Client():
+    """Initialize and return an S3 client using configuration."""
+    try:
+        with open("aws_access_config.json") as f:
+            config = json.load(f)
+        
+        return boto3.client(
+            's3',
+            aws_access_key_id=config['Access-key'],
+            aws_secret_access_key=config['Secret-key'],
+            region_name='us-east-2'
+        )
+    except Exception as e:
+        logger.error(f"Failed to initialize S3 client: {e}")
+        raise
+
+def processStreamDocument(bucket_name, file_key, output_dir, client_id):
+    """Process a document directly from S3 stream."""
+    logger.info(f"Starting stream document processing for {file_key} from bucket {bucket_name}.")
+    try:
+        start_time = time.time()
+
+        # Initialize S3 client
+        s3_client = getS3Client()
+
+        # Stream the file from S3
+        response = s3_client.get_object(Bucket=bucket_name, Key=file_key)
+        binary_stream = response['Body'].read()
+
+        # Create document stream
+        buf = BytesIO(binary_stream)
+        source = DocumentStream(name=file_key, stream=buf)
+
+        # Configure pipeline options for figures and tables
+        pipeline_options = PdfPipelineOptions()
+        pipeline_options.images_scale = IMAGE_RESOLUTION_SCALE
+        pipeline_options.generate_picture_images = True
+        pipeline_options.generate_table_images = True
+
+        # Set up the document converter
+        doc_converter = DocumentConverter(
+            format_options={InputFormat.PDF: PdfFormatOption(pipeline_options=pipeline_options)}
+        )
+
+        # Convert the document
+        conv_result = doc_converter.convert(source)
+
+        # Check conversion status
+        if conv_result.status != ConversionStatus.SUCCESS:
+            end_time = time.time()
+            logger.info(f"Processing time: {end_time - start_time:.2f} seconds; It ended in a Failure")
+            logger.error(f"Failed to process stream from {bucket_name}/{file_key}. Status: {conv_result.status}")
+            return {"error": f"Failed to process stream. Status: {conv_result.status}"}
+
+        # Process elements (figures and tables)
+        figure_counter = 0
+        table_counter = 0
+        for element, _ in conv_result.document.iterate_items():
+            if isinstance(element, PictureItem):
+                figure_counter += 1
+                figure_path = output_dir / f"{client_id}-figure-{figure_counter}.png"
+                with figure_path.open("wb") as fp:
+                    element.get_image(conv_result.document).save(fp, "PNG")
+            elif isinstance(element, TableItem):
+                table_counter += 1
+                table_html_path = output_dir / f"{client_id}-table-{table_counter}.html"
+                with table_html_path.open("w", encoding="utf-8") as fp:
+                    fp.write(element.export_to_html())
+
+        # Save the document as HTML with referenced figures and tables
+        html_filename = output_dir / f"{client_id}-with-image-refs.html"
+        conv_result.document.save_as_html(html_filename, image_mode=ImageRefMode.REFERENCED)
+
+        end_time = time.time()
+        logger.info(f"Processing time: {end_time - start_time:.2f} seconds. Successfully processed stream from {bucket_name}/{file_key}")
+        return {
+            "message": f"Stream processed successfully with {figure_counter} figures and {table_counter} tables saved.",
+            "output_dir": str(output_dir),
+            "output_html": str(html_filename)
+        }
+
+    except Exception as e:
+        logger.error(f"Error processing stream document from {bucket_name}/{file_key}: {e}")
         raise
 
 def getContentType(element):

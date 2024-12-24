@@ -12,7 +12,8 @@ from app.utils import (
     loadClientMapping,
     saveClientMapping,
     parseHTMLToJSON,
-    loadConfig
+    loadConfig,
+    processStreamDocument
 )
 import os
 
@@ -136,6 +137,49 @@ def ingest_link():
     except Exception as e:
         logger.error(f"Error processing file link: {e}")
         return jsonify({"error": f"Error processing file link: {str(e)}"}), 500
+    
+@main_blueprint.route('/api/v1/ingest-stream', methods=['POST'])
+def ingest_stream():
+    """Handle S3 stream ingestion."""
+    data = request.get_json()
+    bucket_name = data.get('bucket_name')
+    file_key = data.get('file_key')
+    
+    if not bucket_name or not file_key:
+        logger.error("Bucket name or file key missing from stream ingestion request.")
+        return jsonify({"error": "Both bucket_name and file_key are required"}), 400
+    
+    try:
+        # Generate a unique client ID
+        client_id = generateClientID(client_mapping)
+        # Get the output directory for the client
+        output_path = getClientOutputDir(client_id)
+        output_path.mkdir(parents=True, exist_ok=True)
+
+        # Process the stream
+        result = processStreamDocument(bucket_name, file_key, output_path, client_id)
+        if "error" in result:
+            return jsonify({"error": result["error"]}), 500
+
+        # Update the client mapping with the stream information
+        client_mapping[client_id] = {
+            "original_file": file_key,
+            "output_path": str(output_path),
+            "bucket_name": bucket_name,
+            "is_stream": True
+        }
+        saveClientMapping(client_mapping, mapping_file)
+
+        logger.info(f"Stream from bucket {bucket_name}, file {file_key} ingested successfully with Client ID {client_id}.")
+        return jsonify({
+            "client_id": client_id, 
+            "output_path": str(output_path),
+            "message": "Stream document processed successfully"
+        })
+
+    except Exception as e:
+        logger.error(f"Error processing stream document: {e}")
+        return jsonify({"error": str(e)}), 500
     
 @main_blueprint.route('/api/v1/extract', methods=['POST'])
 def extract():
