@@ -42,7 +42,7 @@ ipython @ file:///home/conda/feedstock_root/build_artifacts/ipython_170183166389
 jax==0.4.23
 jaxlib==0.4.23+cuda12.cudnn89
 jedi @ file:///home/conda/feedstock_root/build_artifacts/jedi_1696326070614/work
-Jinja2==3.1.2
+Jinja2==3.1.4
 jupyter-client @ file:///home/conda/feedstock_root/build_artifacts/jupyter_client_1654730843242/work
 jupyter_core @ file:///home/conda/feedstock_root/build_artifacts/jupyter_core_1698673647019/work
 keras==2.15.0
