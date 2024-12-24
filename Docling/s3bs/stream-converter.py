@@ -24,7 +24,6 @@ bucket_name = 'shubankar'
 file_key = '2412.13195v1.pdf'
 print("No errors before the try block")
 
-
 try:
     # Stream the file from S3
     print("retrieving the file using the get_object method")
@@ -48,7 +47,7 @@ try:
     # Print or process the result
     print("Conversion successful!")
     print("Time taken: ", time.time() - start_time)
-    print(result)
+    print("Result:", result)
 
 except Exception as e:
     print(f"Error: {e}")
