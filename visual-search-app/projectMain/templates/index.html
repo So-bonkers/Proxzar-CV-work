@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Image Search</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Deep Image Search</h1>
+
+    <form action="/registerClient" method="post" id="registerClientForm">
+        <h2>Register Client</h2>
+        <label for="client_name">Client Name:</label>
+        <input type="text" id="client_name" name="client_name" required>
+        <label for="image_path">Image Path:</label>
+        <input type="text" id="image_path" name="image_path" required>
+        <button type="button" onclick="registerClient()">Register</button>
+        <p id="client_id_output"></p>
+    </form>
+
+    <form action="/runIndexWithExistingImagesOnServer" method="post" enctype="application/json">
+        <h2>Index Images</h2>
+        <label for="client_id">Client ID:</label>
+        <input type="text" id="client_id" name="client_id" required>
+        <label for="folder">Folder:</label>
+        <input type="text" id="folder" name="folder" required>
+        <button type="submit">Index Images</button>
+    </form>
+
+    <form action="/addNewImageToIndex" method="post" enctype="multipart/form-data">
+        <h2>Add New Image</h2>
+        <label for="client_id">Client ID:</label>
+        <input type="text" id="client_id" name="client_id" required>
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" required>
+        <button type="submit">Add Image</button>
+    </form>
+
+    <form action="/getSimilarImages" method="post" enctype="multipart/form-data">
+        <h2>Get Similar Images</h2>
+        <label for="client_id">Client ID:</label>
+        <input type="text" id="client_id" name="client_id" required>
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" required>
+        <label for="num_images">Number of Similar Images:</label>
+        <input type="number" id="num_images" name="num_images" min="1" value="5">
+        <button type="submit">Find Similar Images</button>
+    </form>
+
+    <script>
+        async function registerClient() {
+            const clientName = document.getElementById('client_name').value;
+            const imagePath = document.getElementById('image_path').value;
+
+            const response = await fetch('/registerClient', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ client_name: clientName, image_path: imagePath }),
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                document.getElementById('client_id_output').textContent = `Client ID: ${result.client_id}`;
+            } else {
+                document.getElementById('client_id_output').textContent = `Error: ${result.error}`;
+            }
+        }
+    </script>
+</body>
+</html>
