@@ -73,20 +73,29 @@ def run_index():
         if not client_id or not folder:
             return jsonify({"error": "Missing client_id or folder."}), 400
 
-        # Use raw string and normalize path
+        # Create metadata directory if it doesn't exist
+        metadata_dir = os.path.join(app.config['METADATA_FOLDER'], client_id)
+        os.makedirs(metadata_dir, exist_ok=True)
+
+        # Load images from the correct path
         folder = os.path.normpath(folder)
-        print(f"Checking folder path: {folder}")
+        print(f"Loading images from: {folder}")
         
         if not os.path.exists(folder):
             return jsonify({"error": f"Image folder does not exist at: {folder}"}), 404
 
+        # Initialize search with metadata path
         images = Load_Data().from_folder([folder])
-        print(f"Found {len(images)} images in folder")
+        print(f"Found {len(images)} images")
         
-        search = Search_Setup(image_list=images, model_name=client_id)
+        search = Search_Setup(
+            image_list=images,
+            model_name=client_id,
+            metadata_dir=metadata_dir
+        )
         search.run_index()
 
-        return jsonify({"message": f"Indexing completed for client_id: {client_id}. Processed {len(images)} images"}), 200
+        return jsonify({"message": f"Indexing completed. Processed {len(images)} images"}), 200
     except Exception as e:
         print(f"Error details: {str(e)}")
         return jsonify({"error": str(e)}), 500
