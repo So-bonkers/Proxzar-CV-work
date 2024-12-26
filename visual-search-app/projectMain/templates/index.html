@@ -19,13 +19,14 @@
         <p id="client_id_output"></p>
     </form>
 
-    <form action="/runIndexWithExistingImagesOnServer" method="post" enctype="application/json">
+    <form id="indexImagesForm" onsubmit="return indexImages(event)">
         <h2>Index Images</h2>
-        <label for="client_id">Client ID:</label>
-        <input type="text" id="client_id" name="client_id" required>
+        <label for="index_client_id">Client ID:</label>
+        <input type="text" id="index_client_id" name="client_id" required>
         <label for="folder">Folder:</label>
         <input type="text" id="folder" name="folder" required>
         <button type="submit">Index Images</button>
+        <p id="index_output"></p>
     </form>
 
     <form action="/addNewImageToIndex" method="post" enctype="multipart/form-data">
@@ -67,6 +68,25 @@
             } else {
                 document.getElementById('client_id_output').textContent = `Error: ${result.error}`;
             }
+        }
+
+        async function indexImages(event) {
+            event.preventDefault();
+            const clientId = document.getElementById('index_client_id').value;
+            const folder = document.getElementById('folder').value;
+
+            const response = await fetch('/runIndexWithExistingImagesOnServer', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ client_id: clientId, folder: folder }),
+            });
+
+            const result = await response.json();
+            document.getElementById('index_output').textContent = response.ok ? 
+                'Indexing completed successfully' : `Error: ${result.error}`;
+            return false;
         }
     </script>
 </body>

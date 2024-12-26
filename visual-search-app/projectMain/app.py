@@ -73,20 +73,24 @@ def run_index():
         if not client_id or not folder:
             return jsonify({"error": "Missing client_id or folder."}), 400
 
-        client_folder = os.path.join(app.config['UPLOAD_FOLDER'], client_id)
-        image_folder = os.path.join(client_folder, folder)
+        # Use raw string and normalize path
+        folder = os.path.normpath(folder)
+        print(f"Checking folder path: {folder}")
+        
+        if not os.path.exists(folder):
+            return jsonify({"error": f"Image folder does not exist at: {folder}"}), 404
 
-        if not os.path.exists(image_folder):
-            return jsonify({"error": "Image folder does not exist."}), 404
-
-        images = Load_Data().from_folder([image_folder])
+        images = Load_Data().from_folder([folder])
+        print(f"Found {len(images)} images in folder")
+        
         search = Search_Setup(image_list=images, model_name=client_id)
         search.run_index()
 
-        return jsonify({"message": "Indexing completed for client_id: {}.".format(client_id)}), 200
+        return jsonify({"message": f"Indexing completed for client_id: {client_id}. Processed {len(images)} images"}), 200
     except Exception as e:
+        print(f"Error details: {str(e)}")
         return jsonify({"error": str(e)}), 500
-
+    
 @app.route('/addNewImageToIndex', methods=['POST'])
 def add_image():
     try:
