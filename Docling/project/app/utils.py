@@ -401,20 +401,70 @@ def parseHTMLToJSON(html_file, output_json):
         "content": []
     }
     
+    # Track current page number
+    current_page = 1
+    page_break_class = "page-break"  # Assuming Docling adds this class to page breaks
+    
     # Process headers and their content
     headers = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
     for header in headers:
         header_data = {
             "header": header.text.strip(),
+            "page": current_page,  # Add page number to header
             "subContent": []
         }
         
         # Extract sibling content until the next header
         for sibling in header.find_next_siblings():
+            # Check for page breaks
+            if sibling.get('class') and page_break_class in sibling.get('class'):
+                current_page += 1
+                continue
+                
             if sibling.name and sibling.name.startswith('h'):
                 break
-            content_type = getContentType(sibling)
-            header_data["subContent"].append(content_type)
+                
+            content = {}
+            
+            # Handle different types of content
+            if sibling.name == 'p':
+                content = {
+                    "contentType": "paragraph",
+                    "source": sibling.text.strip(),
+                    "page": current_page
+                }
+            
+            elif sibling.name in ['ul', 'ol']:
+                list_items = [li.text.strip() for li in sibling.find_all('li')]
+                content = {
+                    "contentType": "list",
+                    "source": list_items,
+                    "page": current_page
+                }
+            
+            elif sibling.name == 'table':
+                # Get the table ID from the HTML file name
+                table_id = sibling.get('id', '')
+                if table_id:
+                    content = {
+                        "contentType": "table",
+                        "source": f"{table_id}.html",  # Reference to external table HTML file
+                        "page": current_page
+                    }
+            
+            elif sibling.name == 'img':
+                # Extract figure number from src attribute
+                src = sibling.get('src', '')
+                if src:
+                    content = {
+                        "contentType": "image",
+                        "source": src,  # Reference to external image file
+                        "page": current_page
+                    }
+            
+            # Only append if content was found
+            if content:
+                header_data["subContent"].append(content)
         
         document_data["content"].append(header_data)
     
@@ -422,4 +472,4 @@ def parseHTMLToJSON(html_file, output_json):
     
     # Save to JSON file
     with open(output_json, 'w', encoding='utf-8') as json_file:
-        json.dump(json_data, json_file, indent=4)
+        json.dump(json_data, json_file, indent=4, ensure_ascii=False)   
