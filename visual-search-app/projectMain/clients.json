@@ -1,1 +1,4 @@
-{"66314": {"client_name": "BECN", "image_path": "C:\\SVN_repo\\data"}, "12530": {"client_name": "BEACON", "image_path": "C:\\SVN_repo\\data"}}
+{
+  "66314": { "client_name": "BECN", "image_path": "C:\\SVN_repo\\data" },
+  "12530": { "client_name": "BEACON", "image_path": "C:\\SVN_repo\\data" }
+}
