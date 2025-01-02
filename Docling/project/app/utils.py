@@ -153,15 +153,15 @@ def getClientOutputDir(client_id):
 
 def processDocument(file_path, output_dir, global_client_id):
     """
-    Process the document using Docling.
+    Process the document to extract content grouped by pages with external references for images and tables.
     
     Args:
-        file_path (str): The path to the input file.
-        output_dir (Path): The output directory path.
-        global_client_id (str): The global Client ID.
+        file_path (str): Path to the input file.
+        output_dir (Path): Output directory for processed files.
+        global_client_id (str): Unique identifier for the client.
     
     Returns:
-        dict: A dictionary containing the processing result.
+        dict: Information about processing results.
     """
     logger.info(f"Starting document processing for {file_path}.")
     try:
@@ -183,73 +183,51 @@ def processDocument(file_path, output_dir, global_client_id):
 
         # Check conversion status
         if conv_result.status != ConversionStatus.SUCCESS:
-            end_time = time.time()
-            logger.info(f"Processing time: {end_time - start_time:.2f} seconds; It ended in a Failure")
             logger.error(f"Failed to process {file_path}. Status: {conv_result.status}")
             return {"error": f"Failed to process {file_path}. Status: {conv_result.status}"}
 
-        # Prepare for saving outputs
-        doc_filename = file_path.stem
-        # json_output = {"text": [], "figures": [], "tables": []}  # Initialize JSON structure
-
-        # Process elements (figures and tables)
+        # Build HTML with grouped content by pages
+        html_content = []
         figure_counter = 0
         table_counter = 0
-        for element, _ in conv_result.document.iterate_items():
-            if isinstance(element, PictureItem):  # Save figures as PNG
-                figure_counter += 1
-                figure_path = output_dir / f"{global_client_id}-figure-{figure_counter}.png"
-                with figure_path.open("wb") as fp:
-                    element.get_image(conv_result.document).save(fp, "PNG")
-                # Add figure reference to JSON
-                # json_output["figures"].append({"id": figure_counter, "path": str(figure_path.name)})
-            elif isinstance(element, TableItem):  # Save tables as PNG and HTML
-                table_counter += 1
-                # Save table as PNG
-                # table_image_path = output_dir / f"{doc_filename}-table-{table_counter}.png"
-                # with table_image_path.open("wb") as fp:
-                #     element.get_image(conv_result.document).save(fp, "PNG")
-                # Save table as standalone HTML
-                table_html_path = output_dir / f"{global_client_id}-table-{table_counter}.html"
-                with table_html_path.open("w", encoding="utf-8") as fp:
-                    print("Exporting to HTML: command is executing now")
-                    fp.write(element.export_to_html())
 
-                # # Add table reference to JSON
-                # json_output["tables"].append({
-                #     "id": table_counter,
-                #     "html_path": str(table_html_path.name),
-                #     "image_path": str(table_image_path.name)
-                # })
-        
-        # # Add textual content to JSON
-        # for page in conv_result.document.pages.values():
-        #     json_output["text"].append(page.text)
+        for page_number, page in enumerate(conv_result.document.pages.values(), start=1):
+            page_content = f'<div class="page" data-page-number="{page_number}">'
+            page_content += f'<p>{page.text.strip()}</p>'  # Add text content
+            
+            for element in page.iterate_items():
+                if isinstance(element, PictureItem):
+                    figure_counter += 1
+                    figure_path = output_dir / f"{global_client_id}-figure-{figure_counter}.png"
+                    element.get_image(conv_result.document).save(figure_path, "PNG")
+                    page_content += f'<img src="data/IngestedFiles/{global_client_id}/{global_client_id}-figure-{figure_counter}.png" />'
+                elif isinstance(element, TableItem):
+                    table_counter += 1
+                    table_html_path = output_dir / f"{global_client_id}-table-{table_counter}.html"
+                    with table_html_path.open("w", encoding="utf-8") as fp:
+                        fp.write(element.export_to_html())
+                    page_content += f'<table data-ref="data/IngestedFiles/{global_client_id}/{global_client_id}-table-{table_counter}.html"></table>'
+            
+            page_content += '</div>'
+            html_content.append(page_content)
 
-        # # Save the JSON output
-        # json_path = output_dir / f"{doc_filename}.json"
-        # with json_path.open("w", encoding="utf-8") as fp:
-        #     json.dump(json_output, fp, indent=4)
-
-        # Save the document as HTML with referenced figures and tables
+        # Save the document as HTML with page grouping
         html_filename = output_dir / f"{global_client_id}-with-image-refs.html"
-        print("Exporting to HTML, main doc: command is executing now")
-        conv_result.document.save_as_html(html_filename, image_mode=ImageRefMode.REFERENCED)
+        with open(html_filename, "w", encoding="utf-8") as html_file:
+            html_file.write("<html><body>" + "".join(html_content) + "</body></html>")
 
         end_time = time.time()
-        logger.info(f"Processing time: {end_time - start_time:.2f} seconds. Successfully processed {file_path}")
+        logger.info(f"Successfully processed {file_path} in {end_time - start_time:.2f} seconds.")
         return {
             "message": (
-                f"File processed successfully with {figure_counter} figures and "
-                f"{table_counter} tables saved."
+                f"File processed successfully with {figure_counter} figures and {table_counter} tables."
             ),
-            "output_dir": str(output_dir),
-            # "output_json": str(json_path),
-            "output_html": str(html_filename)
+            "output_html": str(html_filename),
         }
     except Exception as e:
         logger.error(f"Error processing document {file_path}: {e}")
         raise
+
 
 def getS3Client():
     """
@@ -379,97 +357,51 @@ def getContentType(element):
         return {"contentType": "image", "source": element['src']}
     return {}
 
-def parseHTMLToJSON(html_file, output_json):
+def parseHTMLToJSON(html_file_path, json_file_path):
     """
-    Parse an HTML file and convert its content to a JSON structure.
+    Parse an HTML document with external references, grouped by pages, and convert it to JSON.
     
     Args:
-        html_file (str): The path to the input HTML file.
-        output_json (str): The path to the output JSON file.
+        html_file_path (str): Path to the HTML file.
+        json_file_path (str): Path to save the JSON output.
     """
-    with open(html_file, 'r', encoding='utf-8') as file:
-        soup = BeautifulSoup(file, 'html.parser')
-    
-    json_data = []
-    title = soup.title.string if soup.title else ""
-    url = soup.find('link', rel="canonical")['href'] if soup.find('link', rel="canonical") else ""
-    
-    # Main JSON object
-    document_data = {
-        "url": url,
-        "title": title,
-        "content": []
-    }
-    
-    # Track current page number
-    current_page = 1
-    page_break_class = "page-break"  # Assuming Docling adds this class to page breaks
-    
-    # Process headers and their content
-    headers = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
-    for header in headers:
-        header_data = {
-            "header": header.text.strip(),
-            "page": current_page,  # Add page number to header
-            "subContent": []
-        }
-        
-        # Extract sibling content until the next header
-        for sibling in header.find_next_siblings():
-            # Check for page breaks
-            if sibling.get('class') and page_break_class in sibling.get('class'):
-                current_page += 1
-                continue
-                
-            if sibling.name and sibling.name.startswith('h'):
-                break
-                
-            content = {}
-            
-            # Handle different types of content
-            if sibling.name == 'p':
-                content = {
-                    "contentType": "paragraph",
-                    "source": sibling.text.strip(),
-                    "page": current_page
-                }
-            
-            elif sibling.name in ['ul', 'ol']:
-                list_items = [li.text.strip() for li in sibling.find_all('li')]
-                content = {
-                    "contentType": "list",
-                    "source": list_items,
-                    "page": current_page
-                }
-            
-            elif sibling.name == 'table':
-                # Get the table ID from the HTML file name
-                table_id = sibling.get('id', '')
-                if table_id:
-                    content = {
-                        "contentType": "table",
-                        "source": f"{table_id}.html",  # Reference to external table HTML file
-                        "page": current_page
-                    }
-            
-            elif sibling.name == 'img':
-                # Extract figure number from src attribute
-                src = sibling.get('src', '')
-                if src:
-                    content = {
-                        "contentType": "image",
-                        "source": src,  # Reference to external image file
-                        "page": current_page
-                    }
-            
-            # Only append if content was found
-            if content:
-                header_data["subContent"].append(content)
-        
-        document_data["content"].append(header_data)
-    
-    json_data.append(document_data)
-    
-    # Save to JSON file
-    with open(output_json, 'w', encoding='utf-8') as json_file:
-        json.dump(json_data, json_file, indent=4, ensure_ascii=False)   
+    try:
+        with open(html_file_path, "r", encoding="utf-8") as html_file:
+            soup = BeautifulSoup(html_file, "html.parser")
+
+        json_output = {"pages": []}
+
+        # Extract content page by page
+        for page_div in soup.find_all("div", class_="page"):
+            page_number = int(page_div.get("data-page-number", 0))
+            page_data = {"page_number": page_number, "content": []}
+
+            for element in page_div.children:
+                if element.name == "img":
+                    page_data["content"].append({
+                        "type": "image",
+                        "path": element["src"],
+                    })
+                elif element.name == "table":
+                    table_path = element.get("data-ref", None)
+                    if table_path:
+                        page_data["content"].append({
+                            "type": "table",
+                            "path": table_path,
+                        })
+                elif element.name in ["p", "h1", "h2", "h3", "h4", "h5", "h6"]:
+                    page_data["content"].append({
+                        "type": "text",
+                        "content": element.get_text(strip=True),
+                    })
+
+            json_output["pages"].append(page_data)
+
+        # Save JSON output
+        with open(json_file_path, "w", encoding="utf-8") as json_file:
+            json.dump(json_output, json_file, indent=4)
+
+        logger.info(f"Converted HTML to JSON and saved to {json_file_path}.")
+    except Exception as e:
+        logger.error(f"Error parsing HTML to JSON: {e}")
+        raise
