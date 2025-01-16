@@ -188,10 +188,6 @@ def processDocument(file_path, output_dir, global_client_id):
             logger.error(f"Failed to process {file_path}. Status: {conv_result.status}")
             return {"error": f"Failed to process {file_path}. Status: {conv_result.status}"}
 
-        # Prepare for saving outputs
-        doc_filename = file_path.stem
-        # json_output = {"text": [], "figures": [], "tables": []}  # Initialize JSON structure
-
         # Process elements (figures and tables)
         figure_counter = 0
         table_counter = 0
@@ -199,8 +195,8 @@ def processDocument(file_path, output_dir, global_client_id):
             if isinstance(element, PictureItem):  # Save figures as PNG
                 figure_counter += 1
                 figure_path = output_dir / f"{global_client_id}-figure-{figure_counter}.png"
-                with figure_path.open("wb") as fp:
-                    element.get_image(conv_result.document).save(fp, "PNG")
+                # with figure_path.open("wb") as fp:
+                #     element.get_image(conv_result.document).save(fp, "PNG")
                 # Add figure reference to JSON
                 # json_output["figures"].append({"id": figure_counter, "path": str(figure_path.name)})
             elif isinstance(element, TableItem):  # Save tables as PNG and HTML
@@ -232,9 +228,9 @@ def processDocument(file_path, output_dir, global_client_id):
         #     json.dump(json_output, fp, indent=4)
 
         # Save the document as HTML with referenced figures and tables
-        html_filename = output_dir / f"{global_client_id}-with-image-refs.html"
+        json_filename = output_dir / f"{global_client_id}-with-image-refs.json"
         print("Exporting to HTML, main doc: command is executing now")
-        conv_result.document.save_as_html(html_filename, image_mode=ImageRefMode.REFERENCED)
+        conv_result.document.save_as_json(json_filename, image_mode=ImageRefMode.REFERENCED)
 
         end_time = time.time()
         logger.info(f"Processing time: {end_time - start_time:.2f} seconds. Successfully processed {file_path}")
@@ -245,7 +241,7 @@ def processDocument(file_path, output_dir, global_client_id):
             ),
             "output_dir": str(output_dir),
             # "output_json": str(json_path),
-            "output_html": str(html_filename)
+            "output_json": str(json_filename)
         }
     except Exception as e:
         logger.error(f"Error processing document {file_path}: {e}")
@@ -326,10 +322,11 @@ def processStreamDocument(bucket_name, file_key, output_dir, client_id):
         table_counter = 0
         for element, _ in conv_result.document.iterate_items():
             if isinstance(element, PictureItem):
-                figure_counter += 1
-                figure_path = output_dir / f"{client_id}-figure-{figure_counter}.png"
-                with figure_path.open("wb") as fp:
-                    element.get_image(conv_result.document).save(fp, "PNG")
+                """The images are being saved automatically as it is being referenced in the JSON file"""
+                # figure_counter += 1
+                # figure_path = output_dir / f"{client_id}-figure-{figure_counter}.png"
+                # with figure_path.open("wb") as fp:
+                #     element.get_image(conv_result.document).save(fp, "PNG")
             elif isinstance(element, TableItem):
                 table_counter += 1
                 table_html_path = output_dir / f"{client_id}-table-{table_counter}.html"
@@ -337,15 +334,15 @@ def processStreamDocument(bucket_name, file_key, output_dir, client_id):
                     fp.write(element.export_to_html())
 
         # Save the document as HTML with referenced figures and tables
-        html_filename = output_dir / f"{client_id}-with-image-refs.html"
-        conv_result.document.save_as_html(html_filename, image_mode=ImageRefMode.REFERENCED)
+        json_filename = output_dir / f"{client_id}-with-image-refs.json"
+        conv_result.document.save_as_json(json_filename, image_mode=ImageRefMode.REFERENCED)
 
         end_time = time.time()
         logger.info(f"Processing time: {end_time - start_time:.2f} seconds. Successfully processed stream from {bucket_name}/{file_key}")
         return {
             "message": f"Stream processed successfully with {figure_counter} figures and {table_counter} tables saved.",
             "output_dir": str(output_dir),
-            "output_html": str(html_filename)
+            "output_json": str(json_filename)
         }
 
     except Exception as e:
