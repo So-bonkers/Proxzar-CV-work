@@ -4,6 +4,7 @@ import requests
 from flask import Blueprint, render_template, request, jsonify, send_from_directory
 from pathlib import Path
 from werkzeug.utils import secure_filename
+from app.convert import docling_to_custom_json
 from app.utils import (
     generateClientID,
     validateFileFormat,
@@ -287,4 +288,34 @@ def htmlToJson():
         return jsonify({"message": f"HTML file converted to JSON for client {client_id}", "json_file": json_file_path}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@main_blueprint.route('/api/v1/json-conversion', methods=['POST'])
+def json_conversion():
+    """
+    Convert a Docling JSON file to a simplified JSON format.
+
+    Returns:
+        Response: JSON response with the status and output file path.
+    """
+    try:
+        # Get the client ID from the request
+        client_id = request.json.get('client_id')
+        if not client_id:
+            return jsonify({"error": "Client ID is required"}), 400
+
+        # Directory for HTML tables
+        table_dir = config.get("output_directory", "data/IngestedFiles")
+
+        # Perform the conversion
+        result = docling_to_custom_json(client_id, table_dir)
+
+        if "error" in result:
+            return jsonify({"error": result["error"]}), 404
+
+        return jsonify({"message": result["message"], "output_path": result["output_path"]}), 200
+
+    except Exception as e:
+        logger.error(f"Error in JSON conversion: {e}")
+        return jsonify({"error": str(e)}), 500
+
 
