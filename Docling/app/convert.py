@@ -26,7 +26,7 @@ def docling_to_custom_json(client_id, table_dir):
     client_data = client_mapping[client_id]
     global_client_id = client_mapping[client_id]
     input_path = Path(client_data["saved_file"]).parent / f"{client_id}-with-image-refs.json"
-    output_path = Path(client_data["output_path"]) / f"{client_id}-converted.json"
+    output_path = f"data/convertedToJSON/{client_id}-converted.json"
 
     if not input_path.exists():
         return {"error": f"Docling JSON file not found for client ID {client_id}"}
