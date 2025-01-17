@@ -85,7 +85,7 @@ nbclient==0.9.0
 nbconvert==7.14.2
 nbformat==5.9.2
 nest_asyncio @ file:///home/conda/feedstock_root/build_artifacts/nest-asyncio_1705352640985/work
-notebook==7.0.6
+notebook==7.2.2
 notebook_shim==0.2.3
 numpy @ file:///croot/numpy_and_numpy_base_1704311704800/work/dist/numpy-1.26.3-cp310-cp310-linux_x86_64.whl#sha256=a281f24b826e51f1c25bdd24960ab44b4bc294c65d81560441ba7fffd8ddd2a7
 oauthlib @ file:///croot/oauthlib_1679489621486/work
