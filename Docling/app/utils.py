@@ -40,7 +40,7 @@ def loadConfig():
         "output_directory": r"data\IngestedFiles",
         "temp_directory": r"data\TempFiles",
         "mapping_file": r"client_mapping.json",
-        "supported_formats": ["pdf", "docx", "xlsx", "odt", "ods", "png", "tiff", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel"],
+        "supported_formats": ["pdf", "docx", "xlsx", "odt", "ods", "png", "tiff", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", ".pdf"],
         "template_folder": "Docling\\project\\templates",
         "static_folder": "Docling\\project\\static"
     }
@@ -100,18 +100,23 @@ def validateFileFormat(filename_or_url):
     Returns:
         bool: True if the format is supported, False otherwise.
     """
+    # Extract file extension
     _, ext = os.path.splitext(filename_or_url.lower())
-    
+
+    # Log the extension
+    logger.info(f"Validating file with extension: {ext}")
+
+    # Check if it's an arXiv PDF link
     if filename_or_url.startswith("https://arxiv.org/pdf/"):
         logger.info(f"Assuming PDF format for arXiv link: {filename_or_url}")
         return True
-    
-    # Check by extension if available
+
+    # Check by extension using supported_formats in config
     if ext in config["supported_formats"]:
-        logger.info(f"File format validation for {filename_or_url}: valid (by extension)")
+        logger.info(f"File format validation for {filename_or_url}: valid by extension")
         return True
 
-    # Handle URL validation
+    # Validate URL MIME type if the input is a URL
     parsed_url = urlparse(filename_or_url)
     if parsed_url.scheme in ["http", "https"]:
         try:
@@ -128,14 +133,16 @@ def validateFileFormat(filename_or_url):
                 ".tiff": "image/tiff",
             }
             if any(mime in content_type for mime in mime_types.values()):
-                logger.info(f"File format validation for {filename_or_url}: valid (by MIME type)")
+                logger.info(f"File format validation for {filename_or_url}: valid by MIME type")
                 return True
         except requests.RequestException as e:
             logger.error(f"Error validating file format from URL: {e}")
             return False
 
-    logger.info(f"File format validation for {filename_or_url}: invalid")
+    # Log unsupported formats
+    logger.warning(f"Unsupported file format: {filename_or_url}")
     return False
+
 
 def getClientOutputDir(client_id):
     """

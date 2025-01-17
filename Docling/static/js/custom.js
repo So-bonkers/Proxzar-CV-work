@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ingestResult = document.getElementById("ingestResult");
     const extractForm = document.getElementById("extractForm");
     const htmlToJsonForm = document.getElementById("htmlToJsonForm");
+    const jsonConversionForm = document.getElementById("jsonConversionForm");
 
     // Utility function to handle API responses
     async function handleResponse(response, resultElement) {
@@ -176,6 +177,36 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         } catch (err) {
             htmlToJsonResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
+        }
+    };
+
+    jsonConversionForm.onsubmit = async function (e) {
+        e.preventDefault();
+        const client_id = document.getElementById("json_client_id").value.trim();
+        const jsonConversionResult = document.getElementById("jsonConversionResult");
+    
+        jsonConversionResult.innerHTML = '<div class="spinner-border text-primary" role="status"></div> Processing...';
+    
+        try {
+            const res = await fetch('/api/v1/json-conversion', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ client_id: client_id }),
+            });
+            const data = await res.json();
+    
+            if (data.error) {
+                jsonConversionResult.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+            } else {
+                jsonConversionResult.innerHTML = `
+                    <div class="alert alert-success">
+                        <p>${data.message}</p>
+                        <p>JSON file saved at: <code>${data.output_path}</code></p>
+                    </div>
+                `;
+            }
+        } catch (err) {
+            jsonConversionResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
     };
 });

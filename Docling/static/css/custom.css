@@ -55,6 +55,17 @@ button:focus, input:focus {
     border: 1px solid #ced4da;
 }
 
+#jsonConversionResult {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #212529;
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+
 @media (max-width: 576px) {
     form {
         padding: 10px;

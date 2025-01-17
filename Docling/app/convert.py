@@ -3,6 +3,8 @@ import os
 from pathlib import Path
 from app.utils import loadClientMapping
 
+global_client_id = ""
+
 def docling_to_custom_json(client_id, table_dir):
     """
     Converts a Docling JSON file to a simplified, readable JSON format with external table references.
@@ -98,12 +100,9 @@ def docling_to_custom_json(client_id, table_dir):
 
     return {"message": "Conversion successful.", "output_path": str(output_path)}
 
-# Example of usage
-client_id = "12345678"
-table_dir = "/mnt/data"  # Directory containing the HTML table files
 
 # Perform the conversion
-result = html_to_custom_json(client_id, table_dir)
+result = docling_to_custom_json(client_id, table_dir)
 if "error" in result:
     print(result["error"])
 else:
