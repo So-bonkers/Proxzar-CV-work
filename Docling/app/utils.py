@@ -62,8 +62,6 @@ def loadClientMapping():
     logger.warning("Client mapping file not found. Starting fresh.")
     return {}, mapping_file
 
-# Arigato Majima-San!
-
 def saveClientMapping(client_mapping, mapping_file):
     """
     Save client mapping to the mapping file.
