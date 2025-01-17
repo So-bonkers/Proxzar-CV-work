@@ -24,6 +24,7 @@ def docling_to_custom_json(client_id, table_dir):
         return {"error": f"Client ID {client_id} not found in mapping."}
 
     client_data = client_mapping[client_id]
+    global_client_id = client_mapping[client_id]
     input_path = Path(client_data["saved_file"]).parent / f"{client_id}-with-image-refs.json"
     output_path = Path(client_data["output_path"]) / f"{client_id}-converted.json"
 
@@ -100,6 +101,9 @@ def docling_to_custom_json(client_id, table_dir):
 
     return {"message": "Conversion successful.", "output_path": str(output_path)}
 
+# Example of usage
+client_id = global_client_id
+table_dir = f"data/ingestedFiles/{client_id}"  # Directory containing the HTML table files
 
 # Perform the conversion
 result = docling_to_custom_json(client_id, table_dir)
