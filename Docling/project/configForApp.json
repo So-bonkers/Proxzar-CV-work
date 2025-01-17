@@ -1,8 +1,0 @@
-{
-    "output_directory": "data/IngestedFiles",
-    "temp_directory": "data/TempFiles",
-    "mapping_file": "client_mapping.json",
-    "supported_formats": ["pdf", "docx", "xlsx", "odt", "ods", "png", "tiff", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel"],
-    "template_folder": "Docling\\project\\templates",
-    "static_folder": "Docling\\project\\static",
-}
