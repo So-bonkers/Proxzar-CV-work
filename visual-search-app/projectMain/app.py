@@ -7,14 +7,15 @@ import traceback
 import uuid
 from PIL import Image, ImageEnhance
 import numpy as np
+from flask import render_template
 import torch
 import timm
 import faiss
 import pandas as pd
 from torchvision import transforms
 from torch.autograd import Variable
-import projectMain.config as config
-from projectMain.DeepImageSearch import Load_Data, Search_Setup
+import config as config
+from DeepImageSearch import Load_Data, Search_Setup
 
 # Initialize Flask app and Flask-RESTful API
 app = Flask(__name__)
@@ -30,6 +31,10 @@ os.makedirs(METADATA_FOLDER, exist_ok=True)
 
 # Allowed image extensions
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+@app.route('/')
+def home():
+    return render_template("index.html")
 
 def allowed_file(filename):
     """Check if the file has an allowed extension."""
