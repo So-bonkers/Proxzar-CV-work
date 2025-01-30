@@ -184,10 +184,10 @@ class MakeIndex(Resource):
             return {"error": str(e)}, 500
 
 # Register API Endpoints
-api.add_resource(RunIndex, "/runIndexWithExistingImagesOnServer")
-api.add_resource(AddNewImage, "/addNewImageToIndex")
-api.add_resource(GetSimilarImages, "/getSimilarImages")
-api.add_resource(MakeIndex, "/makeIndex")
+api.add_resource(RunIndex, "/api/v1/runIndexWithExistingImagesOnServer")
+api.add_resource(AddNewImage, "/api/v1/addNewImageToIndex")
+api.add_resource(GetSimilarImages, "/api/v1/getSimilarImages")
+api.add_resource(MakeIndex, "/api/v1/makeIndex")
 
 @app.route('/')
 def home():
