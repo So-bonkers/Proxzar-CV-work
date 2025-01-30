@@ -1,146 +1,184 @@
-from flask import Flask, request, jsonify, render_template
 import os
-import json
-import random
-from DeepImageSearch.DeepImageSearch import Load_Data, Search_Setup
+import shutil
+from flask import Flask, request, jsonify, send_file
+from flask_restful import Api, Resource
 from werkzeug.utils import secure_filename
+import traceback
+import uuid
+from PIL import Image, ImageEnhance
+import numpy as np
+import torch
+import timm
+import faiss
+import pandas as pd
+from torchvision import transforms
+from torch.autograd import Variable
+import projectMain.config as config
+from projectMain.DeepImageSearch import Load_Data, Search_Setup
 
+# Initialize Flask app and Flask-RESTful API
 app = Flask(__name__)
+api = Api(app)
 
-# Configuration
-UPLOAD_FOLDER = os.path.join(os.getcwd(), 'uploaded_images')
-METADATA_FOLDER = os.path.join(os.getcwd(), 'metadata-files')
-CLIENTS_JSON = os.path.join(os.getcwd(), 'clients.json')
+# Define upload folder for storing uploaded images
+UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
+
+# Ensure metadata files exist for each client
+METADATA_FOLDER = 'metadata-files'
 os.makedirs(METADATA_FOLDER, exist_ok=True)
 
-# Initialize clients.json if not present
-if not os.path.exists(CLIENTS_JSON):
-    with open(CLIENTS_JSON, 'w') as f:
-        json.dump({}, f)
+# Allowed image extensions
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-# Flask configuration
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['METADATA_FOLDER'] = METADATA_FOLDER
+def allowed_file(filename):
+    """Check if the file has an allowed extension."""
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+def apply_transformations(image_path):
+    """Applies transformations to an image: rotation, scaling, hue modification, noise addition."""
+    img = Image.open(image_path).convert('RGB')
+    transformations = []
 
-@app.route('/registerClient', methods=['POST'])
-def register_client():
-    try:
-        data = request.json
-        client_name = data.get('client_name')
-        image_path = data.get('image_path')
+    # Rotation
+    for angle in [90, 180, 270]:
+        transformations.append(img.rotate(angle))
 
-        if not client_name or not image_path:
-            return jsonify({"error": "Missing client_name or image_path."}), 400
+    # Scaling (resize by 20%)
+    w, h = img.size
+    transformations.append(img.resize((int(w * 1.2), int(h * 1.2))))
 
-        with open(CLIENTS_JSON, 'r') as f:
-            clients = json.load(f)
+    # Hue modification
+    enhancer = ImageEnhance.Color(img)
+    transformations.append(enhancer.enhance(1.5))
 
-        # Check if the client already exists
-        for client_id, info in clients.items():
-            if info['client_name'] == client_name and info['image_path'] == image_path:
-                return jsonify({"client_id": client_id}), 200
+    # Adding noise
+    img_np = np.array(img)
+    noise = np.random.normal(0, 25, img_np.shape).astype(np.uint8)
+    noisy_img = Image.fromarray(np.clip(img_np + noise, 0, 255).astype(np.uint8))
+    transformations.append(noisy_img)
 
-        # Generate a new 5-digit client ID
-        client_id = str(random.randint(10000, 99999))
-        while client_id in clients:
-            client_id = str(random.randint(10000, 99999))
+    # Save transformed images and return their paths
+    transformed_paths = []
+    for idx, transformed_img in enumerate(transformations):
+        transformed_path = f"{image_path.rsplit('.', 1)[0]}_trans_{idx}.jpg"
+        transformed_img.save(transformed_path)
+        transformed_paths.append(transformed_path)
 
-        # Add new client
-        clients[client_id] = {
-            "client_name": client_name,
-            "image_path": image_path
-        }
+    return transformed_paths
 
-        with open(CLIENTS_JSON, 'w') as f:
-            json.dump(clients, f)
+class RunIndex(Resource):
+    """Loads the index for a specific client."""
+    def post(self):
+        try:
+            client_id = request.form.get('client_id')
+            if not client_id:
+                return {"error": "Missing client_id"}, 400
+            
+            index_folder = os.path.join(METADATA_FOLDER, client_id)
+            if not os.path.exists(index_folder):
+                return {"error": f"Index not found for client {client_id}"}, 404
 
-        return jsonify({"client_id": client_id}), 201
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+            return {"message": f"Index loaded for client {client_id}"}, 200
+        except Exception as e:
+            return {"error": str(e)}, 500
 
-@app.route('/runIndexWithExistingImagesOnServer', methods=['POST'])
-def run_index():
-    try:
-        data = request.json
-        client_id = data.get('client_id')
-        folder = data.get('folder')
+class AddNewImage(Resource):
+    """Adds a new image to an existing index after transformations."""
+    def post(self):
+        try:
+            client_id = request.form.get('client_id')
+            if 'file' not in request.files:
+                return {"error": "No file uploaded"}, 400
 
-        if not client_id or not folder:
-            return jsonify({"error": "Missing client_id or folder."}), 400
+            file = request.files['file']
+            if file.filename == '':
+                return {"error": "Empty filename"}, 400
 
-        # Create metadata directory if it doesn't exist
-        metadata_dir = os.path.join(app.config['METADATA_FOLDER'], client_id)
-        os.makedirs(metadata_dir, exist_ok=True)
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                temp_path = os.path.join(UPLOAD_FOLDER, filename)
+                file.save(temp_path)
 
-        # Load images from the correct path
-        folder = os.path.normpath(folder)
-        print(f"Loading images from: {folder}")
-        
-        if not os.path.exists(folder):
-            return jsonify({"error": f"Image folder does not exist at: {folder}"}), 404
+                # Apply transformations
+                transformed_paths = apply_transformations(temp_path)
+                transformed_paths.append(temp_path)  # Add original image
 
-        # Initialize search with metadata path
-        images = Load_Data().from_folder([folder])
-        print(f"Found {len(images)} images")
-        
-        search = Search_Setup(
-            image_list=images,
-            model_name=client_id,
-            metadata_dir=metadata_dir
-        )
-        search.run_index()
+                # Add images to index
+                index_folder = os.path.join(METADATA_FOLDER, client_id)
+                os.makedirs(index_folder, exist_ok=True)
+                search_instance = Search_Setup(image_list=[], model_name=client_id, pretrained=True)
+                search_instance.add_images_to_index(transformed_paths)
 
-        return jsonify({"message": f"Indexing completed. Processed {len(images)} images"}), 200
-    except Exception as e:
-        print(f"Error details: {str(e)}")
-        return jsonify({"error": str(e)}), 500
-    
-@app.route('/addNewImageToIndex', methods=['POST'])
-def add_image():
-    try:
-        client_id = request.form.get('client_id')
-        image_file = request.files.get('image')
+                # Delete images after processing
+                for img_path in transformed_paths:
+                    os.remove(img_path)
 
-        if not client_id or not image_file:
-            return jsonify({"error": "Missing client_id or image."}), 400
+                return {"message": "Images added to index"}, 200
+            else:
+                return {"error": "Invalid file type"}, 400
+        except Exception as e:
+            return {"error": str(e)}, 500
 
-        client_folder = os.path.join(app.config['UPLOAD_FOLDER'], client_id)
-        os.makedirs(client_folder, exist_ok=True)
+class GetSimilarImages(Resource):
+    """Finds similar images for an uploaded image."""
+    def post(self):
+        try:
+            client_id = request.form.get('client_id')
+            if 'file' not in request.files:
+                return {"error": "No file uploaded"}, 400
 
-        image_path = os.path.join(client_folder, secure_filename(image_file.filename))
-        image_file.save(image_path)
+            file = request.files['file']
+            if file.filename == '':
+                return {"error": "Empty filename"}, 400
 
-        search = Search_Setup(image_list=[], model_name=client_id)
-        search.add_images_to_index([image_path])
+            if file and allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                temp_path = os.path.join(UPLOAD_FOLDER, filename)
+                file.save(temp_path)
 
-        return jsonify({"message": "Image added to index for client_id: {}.".format(client_id)}), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+                # Perform image search
+                search_instance = Search_Setup(image_list=[], model_name=client_id, pretrained=True)
+                results = search_instance.get_similar_images(temp_path, 10)
 
-@app.route('/getSimilarImages', methods=['POST'])
-def get_similar_images():
-    try:
-        client_id = request.form.get('client_id')
-        image_file = request.files.get('image')
-        num_images = int(request.form.get('num_images', 5))
+                # Delete uploaded image after processing
+                os.remove(temp_path)
 
-        if not client_id or not image_file:
-            return jsonify({"error": "Missing client_id or image."}), 400
+                return {"similar_images": list(results.values())}, 200
+            else:
+                return {"error": "Invalid file type"}, 400
+        except Exception as e:
+            return {"error": str(e)}, 500
 
-        query_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(image_file.filename))
-        image_file.save(query_path)
+class MakeIndex(Resource):
+    """Creates an index for a specific client."""
+    def post(self):
+        try:
+            client_id = request.form.get('client_id')
+            folder_path = request.form.get('path')
 
-        search = Search_Setup(image_list=[], model_name=client_id)
-        similar_images = search.get_similar_images(query_path, number_of_images=num_images)
+            if not os.path.exists(folder_path):
+                return {"error": "Invalid folder path"}, 400
 
-        return jsonify({"similar_images": similar_images}), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+            # Load images from folder and index them
+            loader = Load_Data()
+            image_paths = loader.from_folder([folder_path])
+
+            index_folder = os.path.join(METADATA_FOLDER, client_id)
+            os.makedirs(index_folder, exist_ok=True)
+
+            search_instance = Search_Setup(image_list=image_paths, model_name=client_id, pretrained=True)
+            search_instance.run_index()
+
+            return {"message": f"Index created for client {client_id}"}, 200
+        except Exception as e:
+            return {"error": str(e)}, 500
+
+# Register API Endpoints
+api.add_resource(RunIndex, "/runIndexWithExistingImagesOnServer")
+api.add_resource(AddNewImage, "/addNewImageToIndex")
+api.add_resource(GetSimilarImages, "/getSimilarImages")
+api.add_resource(MakeIndex, "/makeIndex")
 
 if __name__ == '__main__':
     app.run(debug=True)
