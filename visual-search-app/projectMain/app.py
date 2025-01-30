@@ -1,76 +1,70 @@
 import os
+import json
 import shutil
-from flask import Flask, request, jsonify, send_file
+from datetime import datetime
+from flask import Flask, request, jsonify, render_template
 from flask_restful import Api, Resource
 from werkzeug.utils import secure_filename
-import traceback
-import uuid
-from PIL import Image, ImageEnhance
-import numpy as np
-from flask import render_template
-import torch
-import timm
-import faiss
-import pandas as pd
-from torchvision import transforms
-from torch.autograd import Variable
-import config as config
 from DeepImageSearch import Load_Data, Search_Setup
 
-# Initialize Flask app and Flask-RESTful API
 app = Flask(__name__)
 api = Api(app)
 
-# Define upload folder for storing uploaded images
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Ensure metadata files exist for each client
 METADATA_FOLDER = 'metadata-files'
 os.makedirs(METADATA_FOLDER, exist_ok=True)
+
+CLIENTS_FILE = "clients.json"
 
 # Allowed image extensions
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
-@app.route('/')
-def home():
-    return render_template("index.html")
-
 def allowed_file(filename):
-    """Check if the file has an allowed extension."""
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-def apply_transformations(image_path):
-    """Applies transformations to an image: rotation, scaling, hue modification, noise addition."""
-    img = Image.open(image_path).convert('RGB')
-    transformations = []
+# --------------- CLIENT MANAGEMENT UTILITIES ----------------
 
-    # Rotation
-    for angle in [90, 180, 270]:
-        transformations.append(img.rotate(angle))
+def load_clients():
+    """Loads the clients.json file."""
+    if not os.path.exists(CLIENTS_FILE):
+        with open(CLIENTS_FILE, "w") as f:
+            json.dump({"clients": {}}, f)
+    with open(CLIENTS_FILE, "r") as f:
+        return json.load(f)
 
-    # Scaling (resize by 20%)
-    w, h = img.size
-    transformations.append(img.resize((int(w * 1.2), int(h * 1.2))))
+def save_clients(data):
+    """Saves the updated client data to clients.json."""
+    with open(CLIENTS_FILE, "w") as f:
+        json.dump(data, f, indent=4)
 
-    # Hue modification
-    enhancer = ImageEnhance.Color(img)
-    transformations.append(enhancer.enhance(1.5))
+def register_client(client_id, index_path, image_count):
+    """Registers a new client in clients.json."""
+    data = load_clients()
+    if client_id in data["clients"]:
+        return False  # Client already exists
+    data["clients"][client_id] = {
+        "index_path": index_path,
+        "image_count": image_count,
+        "created_at": datetime.now().isoformat()
+    }
+    save_clients(data)
+    return True
 
-    # Adding noise
-    img_np = np.array(img)
-    noise = np.random.normal(0, 25, img_np.shape).astype(np.uint8)
-    noisy_img = Image.fromarray(np.clip(img_np + noise, 0, 255).astype(np.uint8))
-    transformations.append(noisy_img)
+def update_client_image_count(client_id, new_images_count):
+    """Updates the image count when new images are added."""
+    data = load_clients()
+    if client_id in data["clients"]:
+        data["clients"][client_id]["image_count"] += new_images_count
+        save_clients(data)
 
-    # Save transformed images and return their paths
-    transformed_paths = []
-    for idx, transformed_img in enumerate(transformations):
-        transformed_path = f"{image_path.rsplit('.', 1)[0]}_trans_{idx}.jpg"
-        transformed_img.save(transformed_path)
-        transformed_paths.append(transformed_path)
+def client_exists(client_id):
+    """Checks if a client is registered."""
+    data = load_clients()
+    return client_id in data["clients"]
 
-    return transformed_paths
+# --------------- API ENDPOINTS ----------------
 
 class RunIndex(Resource):
     """Loads the index for a specific client."""
@@ -80,19 +74,21 @@ class RunIndex(Resource):
             if not client_id:
                 return {"error": "Missing client_id"}, 400
             
-            index_folder = os.path.join(METADATA_FOLDER, client_id)
-            if not os.path.exists(index_folder):
-                return {"error": f"Index not found for client {client_id}"}, 404
+            if not client_exists(client_id):
+                return {"error": f"Client {client_id} not found!"}, 404
 
             return {"message": f"Index loaded for client {client_id}"}, 200
         except Exception as e:
             return {"error": str(e)}, 500
 
 class AddNewImage(Resource):
-    """Adds a new image to an existing index after transformations."""
+    """Adds a new image to an existing index and updates image count."""
     def post(self):
         try:
             client_id = request.form.get('client_id')
+            if not client_exists(client_id):
+                return {"error": f"Client {client_id} does not exist!"}, 404
+
             if 'file' not in request.files:
                 return {"error": "No file uploaded"}, 400
 
@@ -105,21 +101,17 @@ class AddNewImage(Resource):
                 temp_path = os.path.join(UPLOAD_FOLDER, filename)
                 file.save(temp_path)
 
-                # Apply transformations
-                transformed_paths = apply_transformations(temp_path)
-                transformed_paths.append(temp_path)  # Add original image
-
-                # Add images to index
-                index_folder = os.path.join(METADATA_FOLDER, client_id)
-                os.makedirs(index_folder, exist_ok=True)
+                # Add image to index
                 search_instance = Search_Setup(image_list=[], model_name=client_id, pretrained=True)
-                search_instance.add_images_to_index(transformed_paths)
+                search_instance.add_images_to_index([temp_path])
 
-                # Delete images after processing
-                for img_path in transformed_paths:
-                    os.remove(img_path)
+                # Delete image after processing
+                os.remove(temp_path)
 
-                return {"message": "Images added to index"}, 200
+                # Update client’s image count
+                update_client_image_count(client_id, 1)
+
+                return {"message": "Image added to index and count updated"}, 200
             else:
                 return {"error": "Invalid file type"}, 400
         except Exception as e:
@@ -130,6 +122,9 @@ class GetSimilarImages(Resource):
     def post(self):
         try:
             client_id = request.form.get('client_id')
+            if not client_exists(client_id):
+                return {"error": f"Client {client_id} does not exist!"}, 404
+
             if 'file' not in request.files:
                 return {"error": "No file uploaded"}, 400
 
@@ -156,16 +151,22 @@ class GetSimilarImages(Resource):
             return {"error": str(e)}, 500
 
 class MakeIndex(Resource):
-    """Creates an index for a specific client."""
+    """Creates an index for a specific client and registers it in clients.json."""
     def post(self):
         try:
             client_id = request.form.get('client_id')
             folder_path = request.form.get('path')
 
+            if not client_id or not folder_path:
+                return {"error": "Client ID and folder path are required"}, 400
+
             if not os.path.exists(folder_path):
                 return {"error": "Invalid folder path"}, 400
 
-            # Load images from folder and index them
+            if client_exists(client_id):
+                return {"error": f"Client {client_id} already exists!"}, 409
+
+            # Load images and create index
             loader = Load_Data()
             image_paths = loader.from_folder([folder_path])
 
@@ -174,6 +175,9 @@ class MakeIndex(Resource):
 
             search_instance = Search_Setup(image_list=image_paths, model_name=client_id, pretrained=True)
             search_instance.run_index()
+
+            # Register client
+            register_client(client_id, index_folder, len(image_paths))
 
             return {"message": f"Index created for client {client_id}"}, 200
         except Exception as e:
@@ -184,6 +188,10 @@ api.add_resource(RunIndex, "/runIndexWithExistingImagesOnServer")
 api.add_resource(AddNewImage, "/addNewImageToIndex")
 api.add_resource(GetSimilarImages, "/getSimilarImages")
 api.add_resource(MakeIndex, "/makeIndex")
+
+@app.route('/')
+def home():
+    return render_template("index.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
