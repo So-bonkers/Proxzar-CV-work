@@ -3,91 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deep Image Search</title>
-    <link rel="stylesheet" href="/static/styles.css">
+    <title>WearWatcher API Tester</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 90%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .image-box {
+            width: 150px;
+            margin: 10px;
+            border: 2px solid #ddd;
+            padding: 5px;
+            background: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        img {
+            width: 100%;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Deep Image Search</h1>
 
-    <form action="/registerClient" method="post" id="registerClientForm">
-        <h2>Register Client</h2>
-        <label for="client_name">Client Name:</label>
-        <input type="text" id="client_name" name="client_name" required>
-        <label for="image_path">Image Path:</label>
-        <input type="text" id="image_path" name="image_path" required>
-        <button type="button" onclick="registerClient()">Register</button>
-        <p id="client_id_output"></p>
-    </form>
+    <div class="container">
+        <h2>WearWatcher API Tester</h2>
 
-    <form id="indexImagesForm" onsubmit="return indexImages(event)">
-        <h2>Index Images</h2>
-        <label for="index_client_id">Client ID:</label>
-        <input type="text" id="index_client_id" name="client_id" required>
-        <label for="folder">Folder:</label>
-        <input type="text" id="folder" name="folder" required>
-        <button type="submit">Index Images</button>
-        <p id="index_output"></p>
-    </form>
-
-    <form action="/addNewImageToIndex" method="post" enctype="multipart/form-data">
-        <h2>Add New Image</h2>
         <label for="client_id">Client ID:</label>
-        <input type="text" id="client_id" name="client_id" required>
-        <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image" required>
-        <button type="submit">Add Image</button>
-    </form>
+        <input type="text" id="client_id" placeholder="Enter client ID">
 
-    <form action="/getSimilarImages" method="post" enctype="multipart/form-data">
-        <h2>Get Similar Images</h2>
-        <label for="client_id">Client ID:</label>
-        <input type="text" id="client_id" name="client_id" required>
-        <label for="image">Upload Image:</label>
-        <input type="file" id="image" name="image" required>
-        <label for="num_images">Number of Similar Images:</label>
-        <input type="number" id="num_images" name="num_images" min="1" value="5">
-        <button type="submit">Find Similar Images</button>
-    </form>
+        <h3>1. Create Index</h3>
+        <label for="folder_path">Folder Path:</label>
+        <input type="text" id="folder_path" placeholder="Enter folder path">
+        <button onclick="makeIndex()">Create Index</button>
+
+        <h3>2. Load Index</h3>
+        <button onclick="loadIndex()">Load Index</button>
+
+        <h3>3. Add Image to Index</h3>
+        <input type="file" id="add_image" accept="image/*">
+        <button onclick="addImageToIndex()">Upload & Index Image</button>
+
+        <h3>4. Search Similar Images</h3>
+        <input type="file" id="search_image" accept="image/*">
+        <button onclick="getSimilarImages()">Find Similar</button>
+
+        <h3>Results:</h3>
+        <div class="results" id="results"></div>
+    </div>
 
     <script>
-        async function registerClient() {
-            const clientName = document.getElementById('client_name').value;
-            const imagePath = document.getElementById('image_path').value;
+        const API_URL = "http://127.0.0.1:5000"; // Update with your server URL if deployed
 
-            const response = await fetch('/registerClient', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ client_name: clientName, image_path: imagePath }),
-            });
+        async function makeIndex() {
+            const client_id = document.getElementById("client_id").value;
+            const folder_path = document.getElementById("folder_path").value;
 
-            const result = await response.json();
-            if (response.ok) {
-                document.getElementById('client_id_output').textContent = `Client ID: ${result.client_id}`;
-            } else {
-                document.getElementById('client_id_output').textContent = `Error: ${result.error}`;
+            if (!client_id || !folder_path) {
+                alert("Please enter both Client ID and Folder Path");
+                return;
             }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+            formData.append("path", folder_path);
+
+            const response = await fetch(`${API_URL}/makeIndex`, { method: "POST", body: formData });
+            const data = await response.json();
+            alert(data.message || data.error);
         }
 
-        async function indexImages(event) {
-            event.preventDefault();
-            const clientId = document.getElementById('index_client_id').value;
-            const folder = document.getElementById('folder').value;
+        async function loadIndex() {
+            const client_id = document.getElementById("client_id").value;
 
-            const response = await fetch('/runIndexWithExistingImagesOnServer', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ client_id: clientId, folder: folder }),
+            if (!client_id) {
+                alert("Please enter Client ID");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+
+            const response = await fetch(`${API_URL}/runIndexWithExistingImagesOnServer`, { method: "POST", body: formData });
+            const data = await response.json();
+            alert(data.message || data.error);
+        }
+
+        async function addImageToIndex() {
+            const client_id = document.getElementById("client_id").value;
+            const file = document.getElementById("add_image").files[0];
+
+            if (!client_id || !file) {
+                alert("Please select a file and enter Client ID");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+            formData.append("file", file);
+
+            const response = await fetch(`${API_URL}/addNewImageToIndex`, { method: "POST", body: formData });
+            const data = await response.json();
+            alert(data.message || data.error);
+        }
+
+        async function getSimilarImages() {
+            const client_id = document.getElementById("client_id").value;
+            const file = document.getElementById("search_image").files[0];
+
+            if (!client_id || !file) {
+                alert("Please select a file and enter Client ID");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+            formData.append("file", file);
+
+            const response = await fetch(`${API_URL}/getSimilarImages`, { method: "POST", body: formData });
+            const data = await response.json();
+
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+
+            // Display results
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = ""; // Clear previous results
+
+            data.similar_images.forEach(imgPath => {
+                const imgBox = document.createElement("div");
+                imgBox.className = "image-box";
+
+                const imgElement = document.createElement("img");
+                imgElement.src = imgPath;
+                imgElement.alt = "Similar Image";
+
+                imgBox.appendChild(imgElement);
+                resultsDiv.appendChild(imgBox);
             });
-
-            const result = await response.json();
-            document.getElementById('index_output').textContent = response.ok ? 
-                'Indexing completed successfully' : `Error: ${result.error}`;
-            return false;
         }
     </script>
+
 </body>
 </html>
