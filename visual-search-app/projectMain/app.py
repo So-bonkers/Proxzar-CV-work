@@ -1,4 +1,5 @@
 import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import json
 from datetime import datetime
 from flask import Flask, request, render_template, jsonify
@@ -136,7 +137,7 @@ def add_new_image():
             file.save(temp_path)
 
             # Add image to index
-            search_instance = Search_Setup(image_list=[], model_name=client_id, pretrained=True)
+            search_instance = Search_Setup(image_list=[], client_id=client_id ,model_name="vgg19", pretrained=True)
             search_instance.add_images_to_index([temp_path])
 
             # Delete image after processing
@@ -172,7 +173,7 @@ def get_similar_images():
             file.save(temp_path)
 
             # Perform image search
-            search_instance = Search_Setup(image_list=[], model_name=client_id, pretrained=True)
+            search_instance = Search_Setup(image_list=[], client_id=client_id, model_name="vgg19", pretrained=True)
             results = search_instance.get_similar_images(temp_path, 10)
 
             # Delete uploaded image after processing

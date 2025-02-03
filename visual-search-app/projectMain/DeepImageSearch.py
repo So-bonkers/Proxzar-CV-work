@@ -155,6 +155,7 @@ class Search_Setup:
         features_matrix = np.vstack(image_data['features'].values).astype(np.float32)
         index.add(features_matrix)  # Check if features are being added
 
+        print(f"\033[94m FAISS Index Size: {index.ntotal} images")
         # Save FAISS index
         index_path = config.image_features_vectors_idx(self.client_id, self.model_name)
         print(f"\033[94m Saving FAISS index at: {index_path}")
@@ -234,11 +235,23 @@ class Search_Setup:
         print(f"\033[92m New images added to the index: {len(new_image_paths)}")
 
     def _search_by_vector(self, v, n: int):
-        self.v = v
-        self.n = n
-        index = faiss.read_index(config.image_features_vectors_idx(self.model_name))
-        D, I = index.search(np.array([self.v], dtype=np.float32), self.n)
-        return dict(zip(I[0], self.image_data.iloc[I[0]]['images_paths'].to_list()))
+        index_path = config.image_features_vectors_idx(self.client_id, self.model_name)
+
+        if not os.path.exists(index_path):
+            raise FileNotFoundError(f"FAISS index file not found: {index_path}")
+
+        index = faiss.read_index(index_path)
+        D, I = index.search(np.array([v], dtype=np.float32), n)
+
+        # Fix: Filter out out-of-bounds indices
+        valid_indices = [i for i in I[0] if 0 <= i < len(self.image_data)]
+    
+        if not valid_indices:
+            print("\033[91m No valid indices found in FAISS search.")
+            return {}
+
+        return dict(zip(valid_indices, self.image_data.iloc[valid_indices]['images_paths'].to_list()))
+
 
     def _get_query_vector(self, image_path: str):
         self.image_path = image_path
