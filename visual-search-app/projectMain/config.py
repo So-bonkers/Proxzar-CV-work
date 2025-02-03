@@ -1,9 +1,9 @@
-import os 
+import os
 
-def image_data_with_features_pkl(model_name):
-    image_data_with_features_pkl = os.path.join('metadata-files/',f'{model_name}/','image_data_features.pkl')
-    return image_data_with_features_pkl
+def image_data_with_features_pkl(client_id, model_name="vgg19"):
+    """Return the path for saving the image data features file with client ID prefix."""
+    return os.path.join('metadata-files/', f'{client_id}_{model_name}_image_data_features.pkl')
 
-def image_features_vectors_idx(model_name):
-    image_features_vectors_idx = os.path.join('metadata-files/',f'{model_name}/','image_features_vectors.idx')
-    return image_features_vectors_idx
+def image_features_vectors_idx(client_id, model_name="vgg19"):
+    """Return the path for saving the FAISS index file with client ID prefix."""
+    return os.path.join('metadata-files/', f'{client_id}_{model_name}_image_features_vectors.idx')

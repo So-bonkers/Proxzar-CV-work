@@ -57,41 +57,44 @@ class Load_Data:
 
 class Search_Setup:
     """ A class for setting up and running image similarity search."""
-    def __init__(self, image_list: list, model_name='vgg19', pretrained=True, image_count: int = None):
+    def __init__(self, image_list: list, client_id: str, model_name='vgg19', pretrained=True, image_count: int = None):
         """
         Parameters:
         -----------
         image_list : list
-        A list of images to be indexed and searched.
+            A list of images to be indexed and searched.
+        client_id : str
+            Unique identifier for the client, used for saving index files.
         model_name : str, optional (default='vgg19')
-        The name of the pre-trained model to use for feature extraction.
+            The name of the pre-trained model to use for feature extraction.
         pretrained : bool, optional (default=True)
-        Whether to use the pre-trained weights for the chosen model.
+            Whether to use the pre-trained weights for the chosen model.
         image_count : int, optional (default=None)
-        The number of images to be indexed and searched. If None, all images in the image_list will be used.
+            The number of images to be indexed and searched. If None, all images in the image_list will be used.
         """
+        self.client_id = client_id  # Store the client_id for file naming
         self.model_name = model_name
         self.pretrained = pretrained
         self.image_data = pd.DataFrame()
         self.d = None
-        if image_count==None:
-            self.image_list = image_list
-        else:
-            self.image_list = image_list[:image_count]
+        self.image_list = image_list if image_count is None else image_list[:image_count]
 
-        if f'metadata-files/{self.model_name}' not in os.listdir():
-            try:
-                os.makedirs(f'metadata-files/{self.model_name}')
-            except Exception as e:
-                # Handle the exception
-                print(f'\033[91m An error occurred while creating the directory: metadata-files/{self.model_name}')
-                print(f'\033[91m  Error Details: {e}')
-        # Load the pre-trained model and remove the last layer
-        print("\033[91m Please Wait Model Is Loading or Downloading From Server!")
+        os.makedirs('metadata-files/', exist_ok=True)
+                
+        # Ensure client-specific metadata folder exists
+        self.index_folder = os.path.join("metadata-files", f"{self.client_id}_{self.model_name}")
+        os.makedirs(self.index_folder, exist_ok=True)
+
+        # Define the correct paths for saving metadata and FAISS index
+        self.image_data_with_features_pkl = config.image_data_with_features_pkl(self.client_id, self.model_name)
+        self.image_features_vectors_idx = config.image_features_vectors_idx(self.client_id, self.model_name)
+        
+        # Use a valid model name (vgg19)
+        print("\033[91m Please Wait, Model Is Loading...")
         base_model = timm.create_model(self.model_name, pretrained=self.pretrained)
         self.model = torch.nn.Sequential(*list(base_model.children())[:-1])
         self.model.eval()
-        print(f"\033[92m Model Loaded Successfully: {model_name}")
+        print(f"\033[92m Model Loaded Successfully: {self.model_name}")
 
     def _extract(self, img):
         # Resize and convert the image
@@ -126,44 +129,72 @@ class Search_Setup:
         return features
 
     def _start_feature_extraction(self):
+        """Extracts image features and saves them with client-specific filenames."""
         image_data = pd.DataFrame()
         image_data['images_paths'] = self.image_list
         f_data = self._get_feature(self.image_list)
         image_data['features'] = f_data
         image_data = image_data.dropna().reset_index(drop=True)
-        image_data.to_pickle(config.image_data_with_features_pkl(self.model_name))
-        print(f"\033[94m Image Meta Information Saved: [metadata-files/{self.model_name}/image_data_features.pkl]")
+
+        # Fix: Pass both client_id and model_name
+        metadata_path = config.image_data_with_features_pkl(self.client_id, self.model_name)
+        print(f"\033[94m Saving metadata file at: {metadata_path}")
+
+        image_data.to_pickle(metadata_path)
+        print(f"\033[92m Image Metadata Saved Successfully at: {metadata_path}")
+
         return image_data
 
     def _start_indexing(self, image_data):
+        """Indexes image features and saves FAISS index with client-specific filenames."""
         self.image_data = image_data
-        d = len(image_data['features'][0])  # Length of item vector that will be indexed
+        d = len(image_data['features'][0])  # Check if features exist
         self.d = d
+
         index = faiss.IndexFlatL2(d)
         features_matrix = np.vstack(image_data['features'].values).astype(np.float32)
-        index.add(features_matrix)  # Add the features matrix to the index
-        faiss.write_index(index, config.image_features_vectors_idx(self.model_name))
-        print("\033[94m Saved The Indexed File:" + f"[metadata-files/{self.model_name}/image_features_vectors.idx]")
+        index.add(features_matrix)  # Check if features are being added
+
+        # Save FAISS index
+        index_path = config.image_features_vectors_idx(self.client_id, self.model_name)
+        print(f"\033[94m Saving FAISS index at: {index_path}")
+        faiss.write_index(index, config.image_features_vectors_idx(self.client_id, self.model_name))
+
+        print(f"\033[92m FAISS Index Saved Successfully at: {index_path}")
+
 
     def run_index(self):
         """
         Indexes the images in the image_list and creates an index file for fast similarity search.
         """
-        if len(os.listdir(f'metadata-files/{self.model_name}')) == 0:
+        client_model_folder = f'metadata-files/{self.client_id}_{self.model_name}'
+        
+        # Ensure client-specific folder exists
+        os.makedirs(client_model_folder, exist_ok=True)
+
+        # Check if folder exists and is not empty
+        if not os.path.exists(client_model_folder) or not os.listdir(client_model_folder):
             data = self._start_feature_extraction()
             self._start_indexing(data)
         else:
-            print("\033[91m Metadata and Features are already present, Do you want Extract Again? Enter yes or no")
+            print("\033[91m Metadata and Features are already present, Do you want to extract again? Enter yes or no")
             flag = str(input())
             if flag.lower() == 'yes':
                 data = self._start_feature_extraction()
                 self._start_indexing(data)
             else:
                 print("\033[93m Meta data already Present, Please Apply Search!")
-                print(os.listdir(f'metadata-files/{self.model_name}'))
-        self.image_data = pd.read_pickle(config.image_data_with_features_pkl(self.model_name))
+                print(os.listdir(client_model_folder))
+
+        # Fix: Load metadata file only if it exists
+        metadata_path = config.image_data_with_features_pkl(self.client_id, self.model_name)
+        if not os.path.exists(metadata_path):
+            raise FileNotFoundError(f"Metadata file not found: {metadata_path}")
+
+        self.image_data = pd.read_pickle(metadata_path)
         self.f = len(self.image_data['features'][0])
 
+        
     def add_images_to_index(self, new_image_paths: list):
         """
         Adds new images to the existing index.
@@ -195,8 +226,10 @@ class Search_Setup:
             index.add(np.array([feature], dtype=np.float32))
 
         # Save the updated metadata and index
-        self.image_data.to_pickle(config.image_data_with_features_pkl(self.model_name))
-        faiss.write_index(index, config.image_features_vectors_idx(self.model_name))
+        # Save metadata file with client ID prefix
+        self.image_data.to_pickle(config.image_data_with_features_pkl(self.client_id))
+        # Save FAISS index with client ID prefix
+        faiss.write_index(index, config.image_features_vectors_idx(self.client_id))
 
         print(f"\033[92m New images added to the index: {len(new_image_paths)}")
 
@@ -265,6 +298,7 @@ class Search_Setup:
         query_vector = self._get_query_vector(self.image_path)
         img_dict = self._search_by_vector(query_vector, self.number_of_images)
         return img_dict
+    
     def get_image_metadata_file(self):
         """
         Returns the metadata file containing information about the indexed images.
@@ -274,5 +308,5 @@ class Search_Setup:
         DataFrame
             The Panda DataFrame of the metadata file.
         """
-        self.image_data = pd.read_pickle(config.image_data_with_features_pkl(self.model_name))
+        self.image_data = pd.read_pickle(config.image_data_with_features_pkl(self.client_id, self.model_name))
         return self.image_data

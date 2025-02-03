@@ -1,0 +1,14 @@
+{
+    "clients": {
+        "kagglesweater": {
+            "index_path": "metadata-files\\kagglesweater",
+            "image_count": 500,
+            "created_at": "2025-02-03T12:28:46.176203"
+        },
+        "kagglehoodie": {
+            "index_path": "metadata-files\\kagglehoodie_vgg19",
+            "image_count": 500,
+            "created_at": "2025-02-03T14:45:39.073379"
+        }
+    }
+}
