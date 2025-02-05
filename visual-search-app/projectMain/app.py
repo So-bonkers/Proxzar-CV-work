@@ -192,24 +192,44 @@ def get_similar_images():
         temp_path = os.path.join(UPLOAD_FOLDER, filename)
         file.save(temp_path)
 
-        # Get the loaded client and generate a plot of similar images
+        # Ensure the Search_Setup instance is loaded
         search_instance = loaded_clients[client_id]
 
-        plt.figure()  # Start a new figure
-        search_instance.plot_similar_images(temp_path, 10)
+        plt.figure()
+        try:
+            search_instance.plot_similar_images(temp_path, 10)
+            print(f"\033[92m Successfully generated plot for: {temp_path}")
+        except Exception as e:
+            print(f"\033[91m Error while plotting similar images: {e}")
+            traceback.print_exc()
+            return jsonify({"error": f"Plotting error: {str(e)}"}), 500
 
         plot_path = os.path.join(UPLOAD_FOLDER, f"similar_images_{client_id}.png")
-        plt.savefig(plot_path, bbox_inches='tight')  # Save the plot
-        plt.close()  # Close the figure to avoid memory leaks
 
-        # Delete the uploaded query image after processing
-        os.remove(temp_path)
+        try:
+            plt.savefig(plot_path, bbox_inches='tight')  # Save the plot
+            print(f"\033[92m Plot saved at: {plot_path}")
+        except Exception as e:
+            print(f"\033[91m Error saving plot: {e}")
+            traceback.print_exc()
+            return jsonify({"error": f"Error saving plot: {str(e)}"}), 500
+
+        plt.close()  # Ensure Matplotlib figure is closed
+
+        # Verify that the plot file exists before sending
+        if not os.path.exists(plot_path):
+            print("\033[91m ERROR: Plot file not found before sending!")
+            return jsonify({"error": "Plot file was not generated"}), 500
+
+        os.remove(temp_path)  # Delete the uploaded query image after processing
 
         return send_file(plot_path, mimetype='image/png')
 
     except Exception as e:
+        print("\033[91m Unexpected Error: ", str(e))
+        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
-  
+ 
 @app.route('/')
 def home():
     return render_template("index.html")
