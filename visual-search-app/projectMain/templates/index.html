@@ -34,24 +34,12 @@
         button:hover {
             background-color: #0056b3;
         }
-        .results {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+        .result-img {
             margin-top: 20px;
-        }
-        .image-box {
-            width: 150px;
-            margin: 10px;
+            max-width: 80%;
             border: 2px solid #ddd;
-            padding: 5px;
-            background: white;
+            border-radius: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
-        img {
-            width: 100%;
-            border-radius: 5px;
         }
     </style>
 </head>
@@ -68,7 +56,7 @@
         <button onclick="getSimilarImages()">Find Similar</button>
 
         <h3>Results:</h3>
-        <div class="results" id="results"></div>
+        <img id="resultImage" class="result-img" style="display: none;" alt="Similar Images">
     </div>
 
     <script>
@@ -88,31 +76,16 @@
             formData.append("file", file);
 
             const response = await fetch(`${API_URL}/getSimilarImages`, { method: "POST", body: formData });
-            const data = await response.json();
 
-            if (data.error) {
-                alert(data.error);
+            if (!response.ok) {
+                alert("Error processing request.");
                 return;
             }
 
-            displayResults(data.similar_images);
-        }
-
-        function displayResults(images) {
-            const resultsDiv = document.getElementById("results");
-            resultsDiv.innerHTML = ""; // Clear previous results
-
-            images.forEach(imgPath => {
-                const imgBox = document.createElement("div");
-                imgBox.className = "image-box";
-
-                const imgElement = document.createElement("img");
-                imgElement.src = imgPath;
-                imgElement.alt = "Similar Image";
-
-                imgBox.appendChild(imgElement);
-                resultsDiv.appendChild(imgBox);
-            });
+            // Set the result image source to the returned plot image
+            const resultImage = document.getElementById("resultImage");
+            resultImage.src = URL.createObjectURL(await response.blob());
+            resultImage.style.display = "block";
         }
     </script>
 
