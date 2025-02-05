@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Search</title>
+    <title>Visual Search App</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -46,12 +46,24 @@
 <body>
 
     <div class="container">
-        <h2>Image Search API</h2>
+        <h2>Image Search</h2>
 
         <label for="client_id">Client ID:</label>
         <input type="text" id="client_id" placeholder="Enter client ID">
 
-        <h3>Upload Image for Similar Search</h3>
+        <h3>1️⃣ Create Index</h3>
+        <label for="folder_path">Folder Path:</label>
+        <input type="text" id="folder_path" placeholder="Enter folder path">
+        <button onclick="makeIndex()">Create Index</button>
+
+        <h3>2️⃣ Load Existing Index</h3>
+        <button onclick="loadIndex()">Load Index</button>
+
+        <h3>3️⃣ Add New Image to Index</h3>
+        <input type="file" id="add_image" accept="image/*">
+        <button onclick="addImageToIndex()">Upload & Index Image</button>
+
+        <h3>4️⃣ Search for Similar Images</h3>
         <input type="file" id="search_image" accept="image/*">
         <button onclick="getSimilarImages()">Find Similar</button>
 
@@ -61,6 +73,58 @@
 
     <script>
         const API_URL = "http://127.0.0.1:5000/api/v1"; // Update if needed
+
+        async function makeIndex() {
+            const client_id = document.getElementById("client_id").value;
+            const folder_path = document.getElementById("folder_path").value;
+
+            if (!client_id || !folder_path) {
+                alert("Please enter both Client ID and Folder Path");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+            formData.append("path", folder_path);
+
+            const response = await fetch(`${API_URL}/makeIndex`, { method: "POST", body: formData });
+            const data = await response.json();
+            alert(data.message || data.error);
+        }
+
+        async function loadIndex() {
+            const client_id = document.getElementById("client_id").value;
+
+            if (!client_id) {
+                alert("Please enter Client ID");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+
+            const response = await fetch(`${API_URL}/runIndexWithExistingImagesOnServer`, { method: "POST", body: formData });
+            const data = await response.json();
+            alert(data.message || data.error);
+        }
+
+        async function addImageToIndex() {
+            const client_id = document.getElementById("client_id").value;
+            const file = document.getElementById("add_image").files[0];
+
+            if (!client_id || !file) {
+                alert("Please select a file and enter Client ID");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+            formData.append("file", file);
+
+            const response = await fetch(`${API_URL}/addNewImageToIndex`, { method: "POST", body: formData });
+            const data = await response.json();
+            alert(data.message || data.error);
+        }
 
         async function getSimilarImages() {
             const client_id = document.getElementById("client_id").value;
