@@ -1,5 +1,6 @@
 import config as config
 import os
+import pickle
 import pandas as pd
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -249,7 +250,7 @@ class Search_Setup:
         print(f"\033[92m New images added to the index: {len(new_image_paths)}")
 
     def _search_by_vector(self, v, n: int):
-        """Search for similar images using FAISS and return raw indices."""
+        """Search for similar images using FAISS and return valid indices."""
         index_path = config.image_features_vectors_idx(self.client_id, self.model_name)
 
         if not os.path.exists(index_path):
@@ -266,11 +267,17 @@ class Search_Setup:
         D, I = index.search(np.array([v], dtype=np.float32), n)
 
         # Print Raw FAISS Results
-        print(f"\033[93m Raw FAISS Indices (Attempt {n}): {I[0]}")
+        print(f"\033[93m Raw FAISS Indices: {I[0]}")
         print(f"\033[93m Raw FAISS Distances: {D[0]}")
 
-        return I[0]  # Return indices directly without filtering
+        # Ensure indices are valid before returning
+        valid_indices = [i for i in I[0] if i != -1]
 
+        if not valid_indices:
+            print("\033[91m WARNING: FAISS returned no valid matches!")
+            return []
+
+        return valid_indices
 
     def _get_query_vector(self, image_path: str):
         self.image_path = image_path
@@ -292,7 +299,7 @@ class Search_Setup:
         query_vector = self._get_query_vector(image_path)
         results = self._search_by_vector(query_vector, number_of_images)
 
-        # ✅ Show the query image first
+        # Show the query image first
         fig = plt.figure(figsize=(15, 10))
         plt.subplot(2, math.ceil(number_of_images / 2), 1)
         plt.axis('off')
@@ -300,7 +307,7 @@ class Search_Setup:
         query_img = Image.open(image_path)
         plt.imshow(query_img)
 
-        # ✅ Plot retrieved images
+        # Plot retrieved images
         for i, (idx, img_path) in enumerate(results.items()):
             plt.subplot(2, math.ceil(number_of_images / 2), i + 2)
             plt.axis('off')
@@ -321,14 +328,41 @@ class Search_Setup:
             The path to the query image.
         number_of_images : int, optional (default=10)
             The number of most similar images to the query image to be returned.
-        """
-        results = self._search_by_vector(self._get_query_vector(image_path), number_of_images)
-
-        # Plot results
-        if results:
-            self.plot_similar_images(image_path, number_of_images)
         
-        return results
+        Returns:
+        --------
+        list
+            List of file paths of the most similar images.
+        """
+        indices = self._search_by_vector(self._get_query_vector(image_path), number_of_images)
+
+        if not indices:
+            print("\033[91m WARNING: No similar images found!")
+            return []
+
+        # Construct dynamic metadata path
+        metadata_path = f'metadata-files/{self.client_id}_{self.model_name}/{self.client_id}_{self.model_name}_image_data_features.pkl'
+
+        if not os.path.exists(metadata_path):
+            print(f"\033[91m ERROR: Metadata file not found - {metadata_path}")
+            return []
+
+        try:
+            # Load the metadata file and convert it to a DataFrame
+            with open(metadata_path, 'rb') as file:
+                data = pickle.load(file)
+
+            df = pd.DataFrame(data)  # Convert to DataFrame
+
+            # Retrieve image paths for valid indices
+            similar_images = df["images_paths"].iloc[indices].tolist()
+
+            return similar_images
+
+        except Exception as e:
+            print(f"\033[91m ERROR: Failed to retrieve image paths from metadata - {e}")
+            return []
+
     
     def get_image_metadata_file(self):
         """

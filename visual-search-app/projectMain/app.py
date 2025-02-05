@@ -86,7 +86,7 @@ def get_image_path(client_id, model_name, index):
     if index < 0 or index >= len(data['images_paths']):
         raise IndexError(f"Index {index} is out of bounds for image metadata.")
 
-    return data['images_paths'][index]
+    return data['images_paths'][index] 
 
 # --------------- API ENDPOINTS ----------------
 
@@ -213,18 +213,18 @@ def get_similar_images():
 
         # Get the loaded client and retrieve similar image indices
         search_instance = loaded_clients[client_id]
-        indices = search_instance.get_similar_images(temp_path, 10)
+        indices = search_instance.get_similar_images(temp_path, 10)  # `indices` is a LIST
 
         os.remove(temp_path)  # Delete the uploaded query image after processing
 
         # Retrieve image paths from metadata
         similar_images = []
-        for idx in indices:
+        for idx in indices:  # Iterate directly over list
             try:
                 image_path = get_image_path(client_id, "vgg19", idx)
                 similar_images.append(image_path)
             except Exception as e:
-                print(f"\033[91m WARNING: Could not retrieve image at index {idx}: {e}")
+                print(f"\033[91m {idx}")
 
         if not similar_images:
             return jsonify({"error": "No valid images found."}), 404
