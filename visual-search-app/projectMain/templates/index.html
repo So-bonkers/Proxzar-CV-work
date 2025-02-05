@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Visual Search App API Tester</title>
-    <script src="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -53,121 +53,50 @@
             width: 100%;
             border-radius: 5px;
         }
-        #response {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #eef;
-            word-wrap: break-word;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Visual Search App API Tester</h2>
+        <h2>Image Search API</h2>
 
         <label for="client_id">Client ID:</label>
         <input type="text" id="client_id" placeholder="Enter client ID">
 
-        <h3>1. Create Index</h3>
-        <label for="folder_path">Folder Path:</label>
-        <input type="text" id="folder_path" placeholder="Enter folder path">
-        <button onclick="makeIndex()">Create Index</button>
-
-        <h3>2. Load Index</h3>
-        <button onclick="loadIndex()">Load Index</button>
-
-        <h3>3. Add Image to Index</h3>
-        <form action="/api/v1/addNewImageToIndex" class="dropzone" id="addImageDropzone"></form>
-
-        <h3>4. Search Similar Images</h3>
-        <form action="/api/v1/getSimilarImages" class="dropzone" id="searchImageDropzone"></form>
-
-        <h3>API Response:</h3>
-        <div id="response"></div>
+        <h3>Upload Image for Similar Search</h3>
+        <input type="file" id="search_image" accept="image/*">
+        <button onclick="getSimilarImages()">Find Similar</button>
 
         <h3>Results:</h3>
         <div class="results" id="results"></div>
     </div>
 
     <script>
-        const API_URL = "http://127.0.0.1:5000/api/v1"; // Update with your server URL if needed
+        const API_URL = "http://127.0.0.1:5000/api/v1"; // Update if needed
 
-        async function makeIndex() {
+        async function getSimilarImages() {
             const client_id = document.getElementById("client_id").value;
-            const folder_path = document.getElementById("folder_path").value;
+            const file = document.getElementById("search_image").files[0];
 
-            if (!client_id || !folder_path) {
-                alert("Please enter both Client ID and Folder Path");
+            if (!client_id || !file) {
+                alert("Please select a file and enter Client ID");
                 return;
             }
 
             const formData = new FormData();
             formData.append("client_id", client_id);
-            formData.append("path", folder_path);
+            formData.append("file", file);
 
-            const response = await fetch(`${API_URL}/makeIndex`, { method: "POST", body: formData });
+            const response = await fetch(`${API_URL}/getSimilarImages`, { method: "POST", body: formData });
             const data = await response.json();
-            document.getElementById("response").innerText = JSON.stringify(data, null, 2);
-        }
 
-        async function loadIndex() {
-            const client_id = document.getElementById("client_id").value;
-
-            if (!client_id) {
-                alert("Please enter Client ID");
+            if (data.error) {
+                alert(data.error);
                 return;
             }
 
-            const formData = new FormData();
-            formData.append("client_id", client_id);
-
-            const response = await fetch(`${API_URL}/runIndexWithExistingImagesOnServer`, { method: "POST", body: formData });
-            const data = await response.json();
-            document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+            displayResults(data.similar_images);
         }
-
-        Dropzone.options.addImageDropzone = {
-            paramName: "file",
-            maxFilesize: 10,
-            acceptedFiles: "image/*",
-            init: function() {
-                this.on("sending", function(file, xhr, formData) {
-                    const client_id = document.getElementById("client_id").value;
-                    if (!client_id) {
-                        alert("Please enter Client ID before uploading!");
-                        this.removeFile(file);
-                        return;
-                    }
-                    formData.append("client_id", client_id);
-                });
-                this.on("success", function(file, response) {
-                    document.getElementById("response").innerText = JSON.stringify(response, null, 2);
-                });
-            }
-        };
-
-        Dropzone.options.searchImageDropzone = {
-            paramName: "file",
-            maxFilesize: 10,
-            acceptedFiles: "image/*",
-            init: function() {
-                this.on("sending", function(file, xhr, formData) {
-                    const client_id = document.getElementById("client_id").value;
-                    if (!client_id) {
-                        alert("Please enter Client ID before searching!");
-                        this.removeFile(file);
-                        return;
-                    }
-                    formData.append("client_id", client_id);
-                });
-                this.on("success", function(file, response) {
-                    document.getElementById("response").innerText = JSON.stringify(response, null, 2);
-                    displayResults(response.similar_images);
-                });
-            }
-        };
 
         function displayResults(images) {
             const resultsDiv = document.getElementById("results");

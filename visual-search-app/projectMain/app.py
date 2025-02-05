@@ -1,8 +1,10 @@
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import json
+import io
+import matplotlib.pyplot as plt
 from datetime import datetime
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, send_file
 from werkzeug.utils import secure_filename
 from DeepImageSearch import Load_Data, Search_Setup
 
@@ -154,11 +156,11 @@ def add_new_image():
 
 @app.route('/api/v1/getSimilarImages', methods=['POST'])
 def get_similar_images():
-    """Finds similar images for an uploaded image."""
+    """Finds similar images and returns the plot as an image response."""
     try:
         client_id = request.form.get('client_id')
-        if not client_exists(client_id):
-            return jsonify({"error": f"Client {client_id} does not exist!"}), 404
+        if not client_id:
+            return jsonify({"error": "Missing client_id"}), 400
 
         if 'file' not in request.files:
             return jsonify({"error": "No file uploaded"}), 400
@@ -167,24 +169,29 @@ def get_similar_images():
         if file.filename == '':
             return jsonify({"error": "Empty filename"}), 400
 
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            temp_path = os.path.join(UPLOAD_FOLDER, filename)
-            file.save(temp_path)
+        filename = secure_filename(file.filename)
+        temp_path = os.path.join(UPLOAD_FOLDER, filename)
+        file.save(temp_path)
 
-            # Perform image search
-            search_instance = Search_Setup(image_list=[], client_id=client_id, model_name="vgg19", pretrained=True)
-            results = search_instance.get_similar_images(temp_path, 10)
+        # Use Search_Setup to find and plot similar images
+        search_instance = Search_Setup(image_list=[], client_id=client_id, model_name="vgg19", pretrained=True)
+        plt.figure()  # Create a new figure
+        search_instance.plot_similar_images(temp_path, 10)
 
-            # Delete uploaded image after processing
-            os.remove(temp_path)
+        # Save the figure to a temporary file
+        plot_path = os.path.join(UPLOAD_FOLDER, f"similar_images_{client_id}.png")
+        plt.savefig(plot_path)
+        plt.close()  # Close the figure to free memory
 
-            return jsonify({"similar_images": list(results.values())}), 200
-        else:
-            return jsonify({"error": "Invalid file type"}), 400
+        # Delete uploaded image after processing
+        os.remove(temp_path)
+
+        # Return the plot as an image response
+        return send_file(plot_path, mimetype='image/png')
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
+    
 @app.route('/')
 def home():
     return render_template("index.html")

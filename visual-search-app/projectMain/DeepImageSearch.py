@@ -2,14 +2,13 @@ import config as config
 import os
 import pandas as pd
 import matplotlib.pyplot as plt
-from PIL import Image
 from tqdm import tqdm
 import numpy as np
 from torchvision import transforms
 import torch
 from torch.autograd import Variable
 import timm
-from PIL import ImageOps
+from PIL import ImageOps, Image
 import math
 import faiss
 
@@ -111,8 +110,14 @@ class Search_Setup:
 
         # Extract features
         feature = self.model(x)
-        feature = feature.data.numpy().flatten()
-        return feature / np.linalg.norm(feature)
+        feature = feature.detach().numpy().flatten()
+        feature_norm = feature / np.linalg.norm(feature)
+        
+        # Print Feature Vector Debugging
+        # print(f"\033[94m Query Image Feature Vector (First 10 Values): {feature_norm[:10]}")
+
+        return feature_norm
+
 
     def _get_feature(self, image_data: list):
         self.image_data = image_data
@@ -205,10 +210,19 @@ class Search_Setup:
         new_image_paths : list
             A list of paths to the new images to be added to the index.
         """
-        # Load existing metadata and index
-        self.image_data = pd.read_pickle(config.image_data_with_features_pkl(self.model_name))
-        index = faiss.read_index(config.image_features_vectors_idx(self.model_name))
+        
+        metadata_path = config.image_data_with_features_pkl(self.client_id, self.model_name)
+        index_path = config.image_features_vectors_idx(self.client_id, self.model_name)
 
+        if not os.path.exists(metadata_path):
+            raise FileNotFoundError(f"Metadata file not found: {metadata_path}")
+
+        if not os.path.exists(index_path):
+            raise FileNotFoundError(f"FAISS index file not found: {index_path}")
+
+        self.image_data = pd.read_pickle(metadata_path)
+        index = faiss.read_index(index_path)
+        
         for new_image_path in tqdm(new_image_paths):
             # Extract features from the new image
             try:
@@ -240,18 +254,26 @@ class Search_Setup:
         if not os.path.exists(index_path):
             raise FileNotFoundError(f"FAISS index file not found: {index_path}")
 
+        print(f"\033[94m Loading FAISS index from: {index_path}")
         index = faiss.read_index(index_path)
+        print(f"\033[94m FAISS Index Size: {index.ntotal}")
+        
+        # Ensure FAISS has indexed images
+        if index.ntotal == 0:
+            print("\033[91m WARNING: FAISS index is empty! No images indexed.")
+            return {}
+        
         D, I = index.search(np.array([v], dtype=np.float32), n)
 
-        # Fix: Filter out out-of-bounds indices
-        valid_indices = [i for i in I[0] if 0 <= i < len(self.image_data)]
-    
-        if not valid_indices:
-            print("\033[91m No valid indices found in FAISS search.")
+        if I[0][0] == -1:
+            print("\033[91m WARNING: FAISS returned no matches! Consider reindexing.")
             return {}
 
-        return dict(zip(valid_indices, self.image_data.iloc[valid_indices]['images_paths'].to_list()))
+        # Debugging: Print Top Results
+        print(f"\033[92m FAISS Returned Indices: {I[0]}")
+        print(f"\033[92m FAISS Distances: {D[0]}")
 
+        return dict(zip(I[0], self.image_data.iloc[I[0]]['images_paths'].to_list()))
 
     def _get_query_vector(self, image_path: str):
         self.image_path = image_path
@@ -270,30 +292,27 @@ class Search_Setup:
         number_of_images : int, optional (default=6)
             The number of most similar images to the query image to be plotted.
         """
-        input_img = Image.open(image_path)
-        input_img_resized = ImageOps.fit(input_img, (224, 224), Image.LANCZOS)
-        plt.figure(figsize=(5, 5))
-        plt.axis('off')
-        plt.title('Input Image', fontsize=18)
-        plt.imshow(input_img_resized)
-        plt.show()
-
         query_vector = self._get_query_vector(image_path)
-        img_list = list(self._search_by_vector(query_vector, number_of_images).values())
+        results = self._search_by_vector(query_vector, number_of_images)
 
-        grid_size = math.ceil(math.sqrt(number_of_images))
-        axes = []
-        fig = plt.figure(figsize=(20, 15))
-        for a in range(number_of_images):
-            axes.append(fig.add_subplot(grid_size, grid_size, a + 1))
+        # ✅ Show the query image first
+        fig = plt.figure(figsize=(15, 10))
+        plt.subplot(2, math.ceil(number_of_images / 2), 1)
+        plt.axis('off')
+        plt.title("Query Image")
+        query_img = Image.open(image_path)
+        plt.imshow(query_img)
+
+        # ✅ Plot retrieved images
+        for i, (idx, img_path) in enumerate(results.items()):
+            plt.subplot(2, math.ceil(number_of_images / 2), i + 2)
             plt.axis('off')
-            img = Image.open(img_list[a])
-            img_resized = ImageOps.fit(img, (224, 224), Image.LANCZOS)
-            plt.imshow(img_resized)
-        fig.tight_layout()
-        fig.subplots_adjust(top=0.93)
-        fig.suptitle('Similar Result Found', fontsize=22)
-        plt.show(fig)
+            plt.title(f"Match {i+1}")
+            retrieved_img = Image.open(img_path)
+            plt.imshow(retrieved_img)
+
+        plt.tight_layout()
+        plt.show()
 
     def get_similar_images(self, image_path: str, number_of_images: int = 10):
         """
@@ -306,11 +325,13 @@ class Search_Setup:
         number_of_images : int, optional (default=10)
             The number of most similar images to the query image to be returned.
         """
-        self.image_path = image_path
-        self.number_of_images = number_of_images
-        query_vector = self._get_query_vector(self.image_path)
-        img_dict = self._search_by_vector(query_vector, self.number_of_images)
-        return img_dict
+        results = self._search_by_vector(self._get_query_vector(image_path), number_of_images)
+
+        # Plot results
+        if results:
+            self.plot_similar_images(image_path, number_of_images)
+        
+        return results
     
     def get_image_metadata_file(self):
         """
