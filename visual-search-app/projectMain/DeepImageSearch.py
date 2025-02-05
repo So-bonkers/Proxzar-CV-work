@@ -249,6 +249,7 @@ class Search_Setup:
         print(f"\033[92m New images added to the index: {len(new_image_paths)}")
 
     def _search_by_vector(self, v, n: int):
+        """Search for similar images using FAISS and return raw indices."""
         index_path = config.image_features_vectors_idx(self.client_id, self.model_name)
 
         if not os.path.exists(index_path):
@@ -257,21 +258,19 @@ class Search_Setup:
         print(f"\033[94m Loading FAISS index from: {index_path}")
         index = faiss.read_index(index_path)
         print(f"\033[94m FAISS Index Size: {index.ntotal}")
-        
-        # Ensure FAISS has indexed images
+
         if index.ntotal == 0:
             print("\033[91m WARNING: FAISS index is empty! No images indexed.")
-            return {}
-        
+            return []
+
         D, I = index.search(np.array([v], dtype=np.float32), n)
 
-        valid_indices = [i for i in I[0] if 0 <= i < len(self.image_data)]
-    
-        if not valid_indices:
-            print("\033[91m WARNING: No valid indices found in FAISS search.")
-            return {}
+        # Print Raw FAISS Results
+        print(f"\033[93m Raw FAISS Indices (Attempt {n}): {I[0]}")
+        print(f"\033[93m Raw FAISS Distances: {D[0]}")
 
-        return dict(zip(valid_indices, self.image_data.iloc[valid_indices]['images_paths'].to_list()))
+        return I[0]  # Return indices directly without filtering
+
 
     def _get_query_vector(self, image_path: str):
         self.image_path = image_path

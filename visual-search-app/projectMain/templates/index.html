@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WearWatcher - Image Search</title>
+    <title>Image Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,18 +34,31 @@
         button:hover {
             background-color: #0056b3;
         }
-        .result-img {
+        .results {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-top: 20px;
-            max-width: 80%;
+        }
+        .image-box {
+            width: 150px;
+            margin: 10px;
             border: 2px solid #ddd;
-            border-radius: 10px;
+            padding: 5px;
+            background: white;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        img {
+            width: 100%;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>WearWatcher - Image Search</h2>
+        <h2>Image Search</h2>
 
         <h3>1️⃣ Load Multiple Clients</h3>
         <input type="text" id="client_ids" placeholder="Enter comma-separated client IDs">
@@ -65,40 +78,39 @@
         <button onclick="getSimilarImages()">Find Similar</button>
 
         <h3>Results:</h3>
-        <img id="resultImage" class="result-img" style="display: none;" alt="Similar Images">
+        <div class="results" id="results"></div>
     </div>
 
     <script>
-        const API_URL = "http://127.0.0.1:5000/api/v1"; // Update if needed
+        const API_URL = "http://127.0.0.1:5000/api/v1";
 
         async function loadMultipleClients() {
-    const client_ids = document.getElementById("client_ids").value.split(",").map(id => id.trim());
+            const client_ids = document.getElementById("client_ids").value.split(",").map(id => id.trim());
 
-    if (client_ids.length === 0 || client_ids[0] === "") {
-        alert("Please enter at least one client ID.");
-        return;
-    }
+            if (client_ids.length === 0 || client_ids[0] === "") {
+                alert("Please enter at least one client ID.");
+                return;
+            }
 
-    const response = await fetch(`${API_URL}/runIndexWithExistingImagesOnServer`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },  // Fix: Explicitly set JSON type
-        body: JSON.stringify({ client_ids })
-    });
+            const response = await fetch(`${API_URL}/runIndexWithExistingImagesOnServer`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ client_ids })
+            });
 
-    const data = await response.json();
-    alert(data.message || data.error);
+            const data = await response.json();
+            alert(data.message || data.error);
 
-    if (data.newly_loaded.length > 0) {
-        const select = document.getElementById("selected_client");
-        data.newly_loaded.forEach(client_id => {
-            let option = document.createElement("option");
-            option.value = client_id;
-            option.textContent = client_id;
-            select.appendChild(option);
-        });
-    }
-}
-
+            if (data.newly_loaded.length > 0) {
+                const select = document.getElementById("selected_client");
+                data.newly_loaded.forEach(client_id => {
+                    let option = document.createElement("option");
+                    option.value = client_id;
+                    option.textContent = client_id;
+                    select.appendChild(option);
+                });
+            }
+        }
 
         async function addImageToIndex() {
             const client_id = document.getElementById("selected_client").value;
@@ -142,16 +154,31 @@
             formData.append("file", file);
 
             const response = await fetch(`${API_URL}/getSimilarImages`, { method: "POST", body: formData });
+            const data = await response.json();
 
-            if (!response.ok) {
-                alert("Error processing request.");
+            if (data.error) {
+                alert(data.error);
                 return;
             }
 
-            // Set the result image source to the returned plot image
-            const resultImage = document.getElementById("resultImage");
-            resultImage.src = URL.createObjectURL(await response.blob());
-            resultImage.style.display = "block";
+            displayResults(data.similar_images);
+        }
+
+        function displayResults(images) {
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = ""; // Clear previous results
+
+            images.forEach(imgPath => {
+                const imgBox = document.createElement("div");
+                imgBox.className = "image-box";
+
+                const imgElement = document.createElement("img");
+                imgElement.src = imgPath;
+                imgElement.alt = "Similar Image";
+
+                imgBox.appendChild(imgElement);
+                resultsDiv.appendChild(imgBox);
+            });
         }
     </script>
 

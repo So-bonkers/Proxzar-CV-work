@@ -6,6 +6,7 @@ import matplotlib
 matplotlib.use('Agg') 
 import matplotlib.pyplot as plt
 import traceback
+import pickle
 from datetime import datetime
 from flask import Flask, request, render_template, jsonify, send_file
 from werkzeug.utils import secure_filename
@@ -68,6 +69,24 @@ def client_exists(client_id):
     """Checks if a client is registered."""
     data = load_clients()
     return client_id in data["clients"]
+
+def get_image_path(client_id, model_name, index):
+    """Retrieve the image path from the indexed metadata file."""
+    metadata_path = f'metadata-files/{client_id}_{model_name}/image_data_features.pkl'
+
+    if not os.path.exists(metadata_path):
+        raise FileNotFoundError(f"Metadata file not found: {metadata_path}")
+
+    with open(metadata_path, 'rb') as file:
+        data = pickle.load(file)
+
+    if not isinstance(data, dict) or 'images_paths' not in data:
+        raise ValueError(f"Invalid metadata format in {metadata_path}")
+
+    if index < 0 or index >= len(data['images_paths']):
+        raise IndexError(f"Index {index} is out of bounds for image metadata.")
+
+    return data['images_paths'][index]
 
 # --------------- API ENDPOINTS ----------------
 
@@ -172,7 +191,7 @@ def add_new_image():
 
 @app.route('/api/v1/getSimilarImages', methods=['POST'])
 def get_similar_images():
-    """Finds similar images and returns the plot as an image response."""
+    """Finds similar images and returns their paths as JSON."""
     try:
         client_id = request.form.get('client_id')
         if not client_id:
@@ -192,44 +211,29 @@ def get_similar_images():
         temp_path = os.path.join(UPLOAD_FOLDER, filename)
         file.save(temp_path)
 
-        # Ensure the Search_Setup instance is loaded
+        # Get the loaded client and retrieve similar image indices
         search_instance = loaded_clients[client_id]
-
-        plt.figure()
-        try:
-            search_instance.plot_similar_images(temp_path, 10)
-            print(f"\033[92m Successfully generated plot for: {temp_path}")
-        except Exception as e:
-            print(f"\033[91m Error while plotting similar images: {e}")
-            traceback.print_exc()
-            return jsonify({"error": f"Plotting error: {str(e)}"}), 500
-
-        plot_path = os.path.join(UPLOAD_FOLDER, f"similar_images_{client_id}.png")
-
-        try:
-            plt.savefig(plot_path, bbox_inches='tight')  # Save the plot
-            print(f"\033[92m Plot saved at: {plot_path}")
-        except Exception as e:
-            print(f"\033[91m Error saving plot: {e}")
-            traceback.print_exc()
-            return jsonify({"error": f"Error saving plot: {str(e)}"}), 500
-
-        plt.close()  # Ensure Matplotlib figure is closed
-
-        # Verify that the plot file exists before sending
-        if not os.path.exists(plot_path):
-            print("\033[91m ERROR: Plot file not found before sending!")
-            return jsonify({"error": "Plot file was not generated"}), 500
+        indices = search_instance.get_similar_images(temp_path, 10)
 
         os.remove(temp_path)  # Delete the uploaded query image after processing
 
-        return send_file(plot_path, mimetype='image/png')
+        # Retrieve image paths from metadata
+        similar_images = []
+        for idx in indices:
+            try:
+                image_path = get_image_path(client_id, "vgg19", idx)
+                similar_images.append(image_path)
+            except Exception as e:
+                print(f"\033[91m WARNING: Could not retrieve image at index {idx}: {e}")
+
+        if not similar_images:
+            return jsonify({"error": "No valid images found."}), 404
+
+        return jsonify({"similar_images": similar_images}), 200
 
     except Exception as e:
-        print("\033[91m Unexpected Error: ", str(e))
-        traceback.print_exc()
         return jsonify({"error": str(e)}), 500
- 
+
 @app.route('/')
 def home():
     return render_template("index.html")
