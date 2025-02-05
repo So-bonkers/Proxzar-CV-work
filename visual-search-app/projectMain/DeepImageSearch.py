@@ -265,15 +265,13 @@ class Search_Setup:
         
         D, I = index.search(np.array([v], dtype=np.float32), n)
 
-        if I[0][0] == -1:
-            print("\033[91m WARNING: FAISS returned no matches! Consider reindexing.")
+        valid_indices = [i for i in I[0] if 0 <= i < len(self.image_data)]
+    
+        if not valid_indices:
+            print("\033[91m WARNING: No valid indices found in FAISS search.")
             return {}
 
-        # Debugging: Print Top Results
-        print(f"\033[92m FAISS Returned Indices: {I[0]}")
-        print(f"\033[92m FAISS Distances: {D[0]}")
-
-        return dict(zip(I[0], self.image_data.iloc[I[0]]['images_paths'].to_list()))
+        return dict(zip(valid_indices, self.image_data.iloc[valid_indices]['images_paths'].to_list()))
 
     def _get_query_vector(self, image_path: str):
         self.image_path = image_path
