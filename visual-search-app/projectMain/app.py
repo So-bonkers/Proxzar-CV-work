@@ -2,7 +2,10 @@ import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import json
 import io
+import matplotlib
+matplotlib.use('Agg') 
 import matplotlib.pyplot as plt
+import traceback
 from datetime import datetime
 from flask import Flask, request, render_template, jsonify, send_file
 from werkzeug.utils import secure_filename
@@ -192,12 +195,12 @@ def get_similar_images():
         # Get the loaded client and generate a plot of similar images
         search_instance = loaded_clients[client_id]
 
-        plt.figure()
+        plt.figure()  # Start a new figure
         search_instance.plot_similar_images(temp_path, 10)
 
         plot_path = os.path.join(UPLOAD_FOLDER, f"similar_images_{client_id}.png")
-        plt.savefig(plot_path)
-        plt.close()
+        plt.savefig(plot_path, bbox_inches='tight')  # Save the plot
+        plt.close()  # Close the figure to avoid memory leaks
 
         # Delete the uploaded query image after processing
         os.remove(temp_path)
@@ -206,7 +209,7 @@ def get_similar_images():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-   
+  
 @app.route('/')
 def home():
     return render_template("index.html")
