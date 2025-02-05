@@ -21,6 +21,8 @@ CLIENTS_FILE = "clients.json"
 # Allowed image extensions
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
+loaded_clients = {}  # Stores loaded clients to avoid reloading
+
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
@@ -103,18 +105,31 @@ def make_index():
 
 
 @app.route('/api/v1/runIndexWithExistingImagesOnServer', methods=['POST'])
-def run_index():
-    """Loads the index for a specific client."""
+def load_multiple_clients():
+    """Loads multiple client indices into memory if not already loaded."""
     try:
-        client_id = request.form.get('client_id')
+        client_ids = request.json.get("client_ids")
+        if not client_ids:
+            return jsonify({"error": "No client IDs provided"}), 400
 
-        if not client_id:
-            return jsonify({"error": "Missing client_id"}), 400
+        already_loaded = []
+        newly_loaded = []
 
-        if not client_exists(client_id):
-            return jsonify({"error": f"Client {client_id} not found!"}), 404
+        for client_id in client_ids:
+            if client_id in loaded_clients:
+                already_loaded.append(client_id)
+                continue  # Skip if already loaded
 
-        return jsonify({"message": f"Index loaded for client {client_id}"}), 200
+            search_instance = Search_Setup(image_list=[], client_id=client_id, model_name="vgg19", pretrained=True)
+            loaded_clients[client_id] = search_instance
+            newly_loaded.append(client_id)
+
+        return jsonify({
+            "message": "Clients loaded successfully",
+            "already_loaded": already_loaded,
+            "newly_loaded": newly_loaded
+        }), 200
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -123,44 +138,11 @@ def add_new_image():
     """Adds a new image to an existing index and updates image count."""
     try:
         client_id = request.form.get('client_id')
-        if not client_exists(client_id):
-            return jsonify({"error": f"Client {client_id} does not exist!"}), 404
-
-        if 'file' not in request.files:
-            return jsonify({"error": "No file uploaded"}), 400
-
-        file = request.files['file']
-        if file.filename == '':
-            return jsonify({"error": "Empty filename"}), 400
-
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            temp_path = os.path.join(UPLOAD_FOLDER, filename)
-            file.save(temp_path)
-
-            # Add image to index
-            search_instance = Search_Setup(image_list=[], client_id=client_id ,model_name="vgg19", pretrained=True)
-            search_instance.add_images_to_index([temp_path])
-
-            # Delete image after processing
-            os.remove(temp_path)
-
-            # Update client’s image count
-            update_client_image_count(client_id, 1)
-
-            return jsonify({"message": "Image added to index and count updated"}), 200
-        else:
-            return jsonify({"error": "Invalid file type"}), 400
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
-
-@app.route('/api/v1/getSimilarImages', methods=['POST'])
-def get_similar_images():
-    """Finds similar images and returns the plot as an image response."""
-    try:
-        client_id = request.form.get('client_id')
         if not client_id:
             return jsonify({"error": "Missing client_id"}), 400
+
+        if client_id not in loaded_clients:
+            return jsonify({"error": f"Client {client_id} is not loaded! Please load it first."}), 400
 
         if 'file' not in request.files:
             return jsonify({"error": "No file uploaded"}), 400
@@ -173,25 +155,58 @@ def get_similar_images():
         temp_path = os.path.join(UPLOAD_FOLDER, filename)
         file.save(temp_path)
 
-        # Use Search_Setup to find and plot similar images
-        search_instance = Search_Setup(image_list=[], client_id=client_id, model_name="vgg19", pretrained=True)
-        plt.figure()  # Create a new figure
-        search_instance.plot_similar_images(temp_path, 10)
+        # Get the loaded client and add the image to the FAISS index
+        search_instance = loaded_clients[client_id]
+        search_instance.add_images_to_index([temp_path])
 
-        # Save the figure to a temporary file
-        plot_path = os.path.join(UPLOAD_FOLDER, f"similar_images_{client_id}.png")
-        plt.savefig(plot_path)
-        plt.close()  # Close the figure to free memory
-
-        # Delete uploaded image after processing
+        # Delete the uploaded image after processing
         os.remove(temp_path)
 
-        # Return the plot as an image response
+        return jsonify({"message": f"Image added to index for client {client_id}"}), 200
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/v1/getSimilarImages', methods=['POST'])
+def get_similar_images():
+    """Finds similar images and returns the plot as an image response."""
+    try:
+        client_id = request.form.get('client_id')
+        if not client_id:
+            return jsonify({"error": "Missing client_id"}), 400
+
+        if client_id not in loaded_clients:
+            return jsonify({"error": f"Client {client_id} is not loaded! Please load it first."}), 400
+
+        if 'file' not in request.files:
+            return jsonify({"error": "No file uploaded"}), 400
+
+        file = request.files['file']
+        if file.filename == '':
+            return jsonify({"error": "Empty filename"}), 400
+
+        filename = secure_filename(file.filename)
+        temp_path = os.path.join(UPLOAD_FOLDER, filename)
+        file.save(temp_path)
+
+        # Get the loaded client and generate a plot of similar images
+        search_instance = loaded_clients[client_id]
+
+        plt.figure()
+        search_instance.plot_similar_images(temp_path, 10)
+
+        plot_path = os.path.join(UPLOAD_FOLDER, f"similar_images_{client_id}.png")
+        plt.savefig(plot_path)
+        plt.close()
+
+        # Delete the uploaded query image after processing
+        os.remove(temp_path)
+
         return send_file(plot_path, mimetype='image/png')
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-    
+   
 @app.route('/')
 def home():
     return render_template("index.html")
