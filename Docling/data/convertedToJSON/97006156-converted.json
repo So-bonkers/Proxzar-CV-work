@@ -1,0 +1,366 @@
+{
+    "url": "Yaswanth_K.pdf",
+    "title": "Yaswanth_K",
+    "content": [
+        {
+            "header": "Image 1",
+            "subContent": [
+                {
+                    "contentType": "image",
+                    "source": "data/ingestedFiles/97006156/97006156-with-image-refs_artifacts\\image_000000_bd14c73b54ea2c3cce587b029ff40dfe131a6d0e37d35dc4cd037829089ef079.png"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "+91-8519971945 kakunuri.1@iitj.ac.in kakunuriyashwanth39@gmail.com Github"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Kakunuri Yaswanth"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Roll No.:B20EE028 B.Tech"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Electrical Engineering"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Indian Institute Of Technology, Jodhpur"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "linkedin.com/in/yaswanth-kakunuri-3990b0205"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Education"
+                }
+            ]
+        },
+        {
+            "header": "Table 1",
+            "subContent": [
+                {
+                    "contentType": "table",
+                    "source": "data/ingestedFiles/97006156/97006156-table-1.html"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Experience"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "\u00b7 CADVision Engineers Pvt. Ltd."
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Software Engineering Intern"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Jul 2023 - Aug. 2023"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Hyderabad"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "-Conducted in-depth research to identify and recommend the integration of the Django Filter library, enhancing data filtering capabilities in the web application."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Implemented and fine-tuned the filtering system, allowing users to customize and efficiently retrieve specific data sets, resulting in a more streamlined and user-friendly experience."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Revamped the user interface, leveraging user research findings, resulting in a more intuitive, ultimately improving overall user satisfaction and engagement."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Collaborated closely with the development team, actively participating in discussions and providing valuable insights that contributed to project planning and decision-making."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Projects"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "\u00b7 Face Mask detection using Microcontroller"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Course Project"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Feb. 2023 - Apr. 2023"
+                },
+                {
+                    "contentType": "text",
+                    "source": "GitHub"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "-Tools & technologies used : Numpy, Pandas, TensorFlow, OpenCV"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Designed and implemented a real-time face mask detection system using Raspberry Pi and camera module, achieving a commendable 93% accuracy on test data."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Leveraged OpenCV for efficient face detection, seamlessly integrating with a pre-trained Convolutional Neural Network (CNN) model for classification."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Data Analytics for the disease diagnosis using Nano-Sensors"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Design Project"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Mar. 2022 - Jul. 2022"
+                },
+                {
+                    "contentType": "text",
+                    "source": "GitHub"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "-Tools & technologies used : Numpy, Pandas, Scipy, Matplotlib, Scikit learn"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Applied data preprocessing techniques and employed Principal Component Analysis (PCA) to analyze Raman spectra data, successfully identifying the presence of Rhodamine B and categorizing samples accordingly."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Implemented KMeans Clustering methodology post PCA, utilizing cluster centers for accurate classification and differentiation of samples based on spectral characteristics."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Customer and Booking Management System"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Self-Learning Project"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "May. 2023 - Jun. 2023"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Github"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "-Tools & technologies used : Django, HTML, CSS"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Developed a Django-based web app for streamlined customer data and booking management."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "-Established clear data relationships between 'Customer' and 'Booking' entities for efficient data retrieval and organization."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Key Courses Taken"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Data Structures and Algorithms, Pattern Recognition and Machine Learning, Introduction to Computer Science, Computer Architecture, Embedded Systems, Linear Algebra, Calculus, Probability and Statistics, Signals and Systems"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Technical Skills"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Programming: C/C++, Python, Matlab"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Machine Learning: Jupyter Notebook, Google Colab, Pandas, Matplotlib, Numpy, scikit-learn, Pytorch"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Web Skills: HTML/CSS, Django"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Others: Git, Latex, Verilog"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Position of Responsibility"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Assistant Head Varchas'22, IIT Jodhpur"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Mar.2022 - Apr.2022"
+                }
+            ]
+        }
+    ]
+}

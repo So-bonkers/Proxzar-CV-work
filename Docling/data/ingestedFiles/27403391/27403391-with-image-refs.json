@@ -1,0 +1,4238 @@
+{
+  "schema_name": "DoclingDocument",
+  "version": "1.0.0",
+  "name": "VINAY_K_DataScientist",
+  "origin": {
+    "mimetype": "application/pdf",
+    "binary_hash": 15794889092697458203,
+    "filename": "VINAY_K_DataScientist.pdf"
+  },
+  "furniture": {
+    "self_ref": "#/furniture",
+    "children": [],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "body": {
+    "self_ref": "#/body",
+    "children": [
+      {
+        "$ref": "#/texts/0"
+      },
+      {
+        "$ref": "#/texts/1"
+      },
+      {
+        "$ref": "#/texts/2"
+      },
+      {
+        "$ref": "#/groups/0"
+      },
+      {
+        "$ref": "#/texts/4"
+      },
+      {
+        "$ref": "#/texts/5"
+      },
+      {
+        "$ref": "#/texts/6"
+      },
+      {
+        "$ref": "#/texts/7"
+      },
+      {
+        "$ref": "#/groups/1"
+      },
+      {
+        "$ref": "#/texts/17"
+      },
+      {
+        "$ref": "#/texts/18"
+      },
+      {
+        "$ref": "#/groups/2"
+      },
+      {
+        "$ref": "#/texts/29"
+      },
+      {
+        "$ref": "#/groups/3"
+      },
+      {
+        "$ref": "#/texts/34"
+      },
+      {
+        "$ref": "#/texts/35"
+      },
+      {
+        "$ref": "#/groups/4"
+      },
+      {
+        "$ref": "#/texts/43"
+      },
+      {
+        "$ref": "#/groups/5"
+      },
+      {
+        "$ref": "#/texts/48"
+      },
+      {
+        "$ref": "#/groups/6"
+      },
+      {
+        "$ref": "#/texts/52"
+      },
+      {
+        "$ref": "#/groups/7"
+      },
+      {
+        "$ref": "#/texts/59"
+      },
+      {
+        "$ref": "#/groups/8"
+      },
+      {
+        "$ref": "#/texts/63"
+      },
+      {
+        "$ref": "#/groups/9"
+      },
+      {
+        "$ref": "#/groups/10"
+      },
+      {
+        "$ref": "#/texts/76"
+      },
+      {
+        "$ref": "#/texts/77"
+      },
+      {
+        "$ref": "#/texts/78"
+      },
+      {
+        "$ref": "#/groups/11"
+      },
+      {
+        "$ref": "#/texts/80"
+      },
+      {
+        "$ref": "#/groups/12"
+      },
+      {
+        "$ref": "#/texts/82"
+      },
+      {
+        "$ref": "#/groups/13"
+      },
+      {
+        "$ref": "#/groups/14"
+      },
+      {
+        "$ref": "#/texts/94"
+      },
+      {
+        "$ref": "#/groups/15"
+      },
+      {
+        "$ref": "#/groups/16"
+      },
+      {
+        "$ref": "#/texts/109"
+      },
+      {
+        "$ref": "#/texts/110"
+      },
+      {
+        "$ref": "#/texts/111"
+      },
+      {
+        "$ref": "#/groups/17"
+      },
+      {
+        "$ref": "#/texts/122"
+      },
+      {
+        "$ref": "#/groups/18"
+      },
+      {
+        "$ref": "#/texts/124"
+      },
+      {
+        "$ref": "#/texts/125"
+      },
+      {
+        "$ref": "#/groups/19"
+      }
+    ],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "groups": [
+    {
+      "self_ref": "#/groups/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/3"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/8"
+        },
+        {
+          "$ref": "#/texts/9"
+        },
+        {
+          "$ref": "#/texts/10"
+        },
+        {
+          "$ref": "#/texts/11"
+        },
+        {
+          "$ref": "#/texts/12"
+        },
+        {
+          "$ref": "#/texts/13"
+        },
+        {
+          "$ref": "#/texts/14"
+        },
+        {
+          "$ref": "#/texts/15"
+        },
+        {
+          "$ref": "#/texts/16"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/19"
+        },
+        {
+          "$ref": "#/texts/20"
+        },
+        {
+          "$ref": "#/texts/21"
+        },
+        {
+          "$ref": "#/texts/22"
+        },
+        {
+          "$ref": "#/texts/23"
+        },
+        {
+          "$ref": "#/texts/24"
+        },
+        {
+          "$ref": "#/texts/25"
+        },
+        {
+          "$ref": "#/texts/26"
+        },
+        {
+          "$ref": "#/texts/27"
+        },
+        {
+          "$ref": "#/texts/28"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/30"
+        },
+        {
+          "$ref": "#/texts/31"
+        },
+        {
+          "$ref": "#/texts/32"
+        },
+        {
+          "$ref": "#/texts/33"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/36"
+        },
+        {
+          "$ref": "#/texts/37"
+        },
+        {
+          "$ref": "#/texts/38"
+        },
+        {
+          "$ref": "#/texts/39"
+        },
+        {
+          "$ref": "#/texts/40"
+        },
+        {
+          "$ref": "#/texts/41"
+        },
+        {
+          "$ref": "#/texts/42"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/44"
+        },
+        {
+          "$ref": "#/texts/45"
+        },
+        {
+          "$ref": "#/texts/46"
+        },
+        {
+          "$ref": "#/texts/47"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/6",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/49"
+        },
+        {
+          "$ref": "#/texts/50"
+        },
+        {
+          "$ref": "#/texts/51"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/7",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/53"
+        },
+        {
+          "$ref": "#/texts/54"
+        },
+        {
+          "$ref": "#/texts/55"
+        },
+        {
+          "$ref": "#/texts/56"
+        },
+        {
+          "$ref": "#/texts/57"
+        },
+        {
+          "$ref": "#/texts/58"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/8",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/60"
+        },
+        {
+          "$ref": "#/texts/61"
+        },
+        {
+          "$ref": "#/texts/62"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/9",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/64"
+        },
+        {
+          "$ref": "#/texts/65"
+        },
+        {
+          "$ref": "#/texts/66"
+        },
+        {
+          "$ref": "#/texts/67"
+        },
+        {
+          "$ref": "#/texts/68"
+        },
+        {
+          "$ref": "#/texts/69"
+        },
+        {
+          "$ref": "#/texts/70"
+        },
+        {
+          "$ref": "#/texts/71"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/10",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/72"
+        },
+        {
+          "$ref": "#/texts/73"
+        },
+        {
+          "$ref": "#/texts/74"
+        },
+        {
+          "$ref": "#/texts/75"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/11",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/79"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/12",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/81"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/13",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/83"
+        },
+        {
+          "$ref": "#/texts/84"
+        },
+        {
+          "$ref": "#/texts/85"
+        },
+        {
+          "$ref": "#/texts/86"
+        },
+        {
+          "$ref": "#/texts/87"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/14",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/88"
+        },
+        {
+          "$ref": "#/texts/89"
+        },
+        {
+          "$ref": "#/texts/90"
+        },
+        {
+          "$ref": "#/texts/91"
+        },
+        {
+          "$ref": "#/texts/92"
+        },
+        {
+          "$ref": "#/texts/93"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/15",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/95"
+        },
+        {
+          "$ref": "#/texts/96"
+        },
+        {
+          "$ref": "#/texts/97"
+        },
+        {
+          "$ref": "#/texts/98"
+        },
+        {
+          "$ref": "#/texts/99"
+        },
+        {
+          "$ref": "#/texts/100"
+        },
+        {
+          "$ref": "#/texts/101"
+        },
+        {
+          "$ref": "#/texts/102"
+        },
+        {
+          "$ref": "#/texts/103"
+        },
+        {
+          "$ref": "#/texts/104"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/16",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/105"
+        },
+        {
+          "$ref": "#/texts/106"
+        },
+        {
+          "$ref": "#/texts/107"
+        },
+        {
+          "$ref": "#/texts/108"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/17",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/112"
+        },
+        {
+          "$ref": "#/texts/113"
+        },
+        {
+          "$ref": "#/texts/114"
+        },
+        {
+          "$ref": "#/texts/115"
+        },
+        {
+          "$ref": "#/texts/116"
+        },
+        {
+          "$ref": "#/texts/117"
+        },
+        {
+          "$ref": "#/texts/118"
+        },
+        {
+          "$ref": "#/texts/119"
+        },
+        {
+          "$ref": "#/texts/120"
+        },
+        {
+          "$ref": "#/texts/121"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/18",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/123"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/19",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/126"
+        },
+        {
+          "$ref": "#/texts/127"
+        },
+        {
+          "$ref": "#/texts/128"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    }
+  ],
+  "texts": [
+    {
+      "self_ref": "#/texts/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 73.80000305175781,
+            "t": 741.0159912109375,
+            "r": 161.51400756835938,
+            "b": 729.9010009765625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            14
+          ]
+        }
+      ],
+      "orig": "DATA SCIENTIST",
+      "text": "DATA SCIENTIST",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 73.80000305175781,
+            "t": 725.6530151367188,
+            "r": 139.5540008544922,
+            "b": 714.5380249023438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Vinay Katuru",
+      "text": "Vinay Katuru",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 73.802001953125,
+            "t": 713.052001953125,
+            "r": 250.14300537109375,
+            "b": 701.93701171875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            33
+          ]
+        }
+      ],
+      "orig": "Email ID: vinaykataru01@gmail.com",
+      "text": "Email ID: vinaykataru01@gmail.com",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/3",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 394.68,
+            "t": 713.037,
+            "r": 445.06499999999994,
+            "b": 701.942,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "Contact No",
+      "text": "Contact No"
+    },
+    {
+      "self_ref": "#/texts/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 445.0799865722656,
+            "t": 713.0369873046875,
+            "r": 530.35400390625,
+            "b": 701.9420166015625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            16
+          ]
+        }
+      ],
+      "orig": ": +91 9550836645",
+      "text": ": +91 9550836645"
+    },
+    {
+      "self_ref": "#/texts/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 79.3219985961914,
+            "t": 685.5449829101562,
+            "r": 128.00799560546875,
+            "b": 675.5009765625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            8
+          ]
+        }
+      ],
+      "orig": "Summary:",
+      "text": "Summary:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/6",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 79.9219970703125,
+            "t": 673.7849731445312,
+            "r": 512.2109985351562,
+            "b": 641.4210205078125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            237
+          ]
+        }
+      ],
+      "orig": "3+ years of experience in Data Science, Machine learning, Python, and developing Chatbots, which provides solutions to business through research and in-depth analysis of data that helps  in decision-making and different business domains.",
+      "text": "3+ years of experience in Data Science, Machine learning, Python, and developing Chatbots, which provides solutions to business through research and in-depth analysis of data that helps  in decision-making and different business domains."
+    },
+    {
+      "self_ref": "#/texts/7",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 79.31999969482422,
+            "t": 629.3699951171875,
+            "r": 165.73599243164062,
+            "b": 619.344970703125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "Professional Skills:",
+      "text": "Professional Skills:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/8",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 606.9299926757812,
+            "r": 515.3070068359375,
+            "b": 580.5830078125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            130
+          ]
+        }
+      ],
+      "orig": "\uf076 Worked on advanced analytical projects to reduce operation time, cost, and strategy teams within the different business domains.",
+      "text": "\uf076 Worked on advanced analytical projects to reduce operation time, cost, and strategy teams within the different business domains.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/9",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 574.2899780273438,
+            "r": 505.92999267578125,
+            "b": 531.6199951171875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            214
+          ]
+        }
+      ],
+      "orig": "\uf076 Leveraged supervised and unsupervised machine learning algorithms to build models and perform them, which gives automated solutions that reduce operational costs or improve operational efficiency in the industry.",
+      "text": "\uf076 Leveraged supervised and unsupervised machine learning algorithms to build models and perform them, which gives automated solutions that reduce operational costs or improve operational efficiency in the industry.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/10",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 525.3300170898438,
+            "r": 514.4149780273438,
+            "b": 482.5419921875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            215
+          ]
+        }
+      ],
+      "orig": "\uf076 Applied analytical theory to real-world problems on dynamic datasets  and performed hands-on to identify different data concerns. And getting data from different domains by using different web scraping techniques.",
+      "text": "\uf076 Applied analytical theory to real-world problems on dynamic datasets  and performed hands-on to identify different data concerns. And getting data from different domains by using different web scraping techniques.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/11",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 476.25,
+            "r": 495.4750061035156,
+            "b": 449.9049987792969,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            126
+          ]
+        }
+      ],
+      "orig": "\uf076 To analyze the data, we used visualization techniques like univariate and bivariate analysis through a statistical approach.",
+      "text": "\uf076 To analyze the data, we used visualization techniques like univariate and bivariate analysis through a statistical approach.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/12",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 443.6099853515625,
+            "r": 527.2260131835938,
+            "b": 417.1440124511719,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            140
+          ]
+        }
+      ],
+      "orig": "\uf076 Improved the quality of data we have used Preprocessing steps like Outlier treatment, Null value treatment, and Label Encoding techniques.",
+      "text": "\uf076 Improved the quality of data we have used Preprocessing steps like Outlier treatment, Null value treatment, and Label Encoding techniques.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/13",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 410.7300109863281,
+            "r": 510.47900390625,
+            "b": 384.3819885253906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            174
+          ]
+        }
+      ],
+      "orig": "\uf076 Competence in data visualization using Matplotlib, Seaborn, and Plotly and making it easy for stakeholders to understand in designing advanced dashboards to make decisions.",
+      "text": "\uf076 Competence in data visualization using Matplotlib, Seaborn, and Plotly and making it easy for stakeholders to understand in designing advanced dashboards to make decisions.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/14",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 378.10400390625,
+            "r": 506.4280090332031,
+            "b": 335.3039855957031,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            200
+          ]
+        }
+      ],
+      "orig": "\uf076 Strong knowledge in creating analytical datasets using Oracle SQL, queries, and joins , and performed data operations. Had an experience in different deployment tools like AWS, Streamlit, and Flask.",
+      "text": "\uf076 Strong knowledge in creating analytical datasets using Oracle SQL, queries, and joins , and performed data operations. Had an experience in different deployment tools like AWS, Streamlit, and Flask.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/15",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 329.010009765625,
+            "r": 484.4530029296875,
+            "b": 302.5429992675781,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            169
+          ]
+        }
+      ],
+      "orig": "\uf076 Leveraged data analytics and data science techniques to drive optimization, improvement of promotional strategies, and marketing techniques to assess the effectiveness",
+      "text": "\uf076 Leveraged data analytics and data science techniques to drive optimization, improvement of promotional strategies, and marketing techniques to assess the effectiveness",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/16",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 296.1300048828125,
+            "r": 499.0299987792969,
+            "b": 253.46400451660156,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            227
+          ]
+        }
+      ],
+      "orig": "\uf076 Worked with stakeholders throughout the project in identifying the opportunities for leveraging company data to drive business solutions and coordinate with different functional teams to implement models and monitor outcomes.",
+      "text": "\uf076 Worked with stakeholders throughout the project in identifying the opportunities for leveraging company data to drive business solutions and coordinate with different functional teams to implement models and monitor outcomes.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/17",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 79.91999816894531,
+            "t": 231.80999755859375,
+            "r": 170.72999572753906,
+            "b": 221.78500366210938,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "Technical Skill Sets:",
+      "text": "Technical Skill Sets:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/18",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 79.9219970703125,
+            "t": 207.947998046875,
+            "r": 129.68800354003906,
+            "b": 197.9040069580078,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            11
+          ]
+        }
+      ],
+      "orig": "Algorithms:",
+      "text": "Algorithms:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/19",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 195.69000244140625,
+            "r": 190.32699584960938,
+            "b": 185.6649932861328,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            19
+          ]
+        }
+      ],
+      "orig": "\uf076 Linear Regression",
+      "text": "\uf076 Linear Regression",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/20",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 181.77000427246094,
+            "r": 195.98599243164062,
+            "b": 171.7449951171875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "\uf076 Logistic Regression",
+      "text": "\uf076 Logistic Regression",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/21",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 167.97000122070312,
+            "r": 197.30799865722656,
+            "b": 157.94500732421875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "\uf076 K Means Clustering",
+      "text": "\uf076 K Means Clustering",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/22",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 154.0500030517578,
+            "r": 175.58399963378906,
+            "b": 133.2220001220703,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            26
+          ]
+        }
+      ],
+      "orig": "\uf076 Agglomerative Clustering",
+      "text": "\uf076 Agglomerative Clustering",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/23",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 129.4499969482422,
+            "r": 192.97799682617188,
+            "b": 119.42500305175781,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "\uf076 KNN Classification",
+      "text": "\uf076 KNN Classification",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/24",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 115.29000091552734,
+            "r": 174.13800048828125,
+            "b": 105.26499938964844,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            15
+          ]
+        }
+      ],
+      "orig": "\uf076 Decision Tree",
+      "text": "\uf076 Decision Tree",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/25",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 101.37000274658203,
+            "r": 180.71499633789062,
+            "b": 91.34500122070312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            15
+          ]
+        }
+      ],
+      "orig": "\uf076 Random Forest",
+      "text": "\uf076 Random Forest",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/26",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 87.46900177001953,
+            "r": 138.68800354003906,
+            "b": 77.42500305175781,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "\uf076 SVM",
+      "text": "\uf076 SVM",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/27",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 73.52999877929688,
+            "r": 209.30499267578125,
+            "b": 63.505001068115234,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            24
+          ]
+        }
+      ],
+      "orig": "\uf076 Na\u00efve Bayes Classifier",
+      "text": "\uf076 Na\u00efve Bayes Classifier",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/28",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 59.72999954223633,
+            "r": 197.57699584960938,
+            "b": 49.70500183105469,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "\uf076 Boosting algorithms",
+      "text": "\uf076 Boosting algorithms",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/29",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 322.44000244140625,
+            "t": 207.69000244140625,
+            "r": 409.60101318359375,
+            "b": 197.6649932861328,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            19
+          ]
+        }
+      ],
+      "orig": "Project Management:",
+      "text": "Project Management:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/30",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 193.52999877929688,
+            "r": 429.5069885253906,
+            "b": 183.5050048828125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "\uf076 Jupyter Notebook",
+      "text": "\uf076 Jupyter Notebook",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/31",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 182.49000549316406,
+            "r": 414.1990051269531,
+            "b": 172.46499633789062,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            14
+          ]
+        }
+      ],
+      "orig": "\uf076 Google Colab",
+      "text": "\uf076 Google Colab",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/32",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 171.58900451660156,
+            "r": 395.7279968261719,
+            "b": 161.5449981689453,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "\uf076 VS Code",
+      "text": "\uf076 VS Code",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/33",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.3630065917969,
+            "t": 160.41000366210938,
+            "r": 389.4119873046875,
+            "b": 150.38499450683594,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "\uf076 Git Hub",
+      "text": "\uf076 Git Hub",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/34",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 322.4460144042969,
+            "t": 146.50999450683594,
+            "r": 354.3070068359375,
+            "b": 136.46600341796875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            6
+          ]
+        }
+      ],
+      "orig": "Python",
+      "text": "Python",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/35",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 322.4460144042969,
+            "t": 132.34500122070312,
+            "r": 369.0880126953125,
+            "b": 122.3010025024414,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "Packages:",
+      "text": "Packages:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/36",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 119.7300033569336,
+            "r": 407.4230041503906,
+            "b": 109.70500183105469,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            14
+          ]
+        }
+      ],
+      "orig": "\uf076 SciKit Learn",
+      "text": "\uf076 SciKit Learn",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/37",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 109.4280014038086,
+            "r": 388.64801025390625,
+            "b": 99.38400268554688,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            7
+          ]
+        }
+      ],
+      "orig": "\uf076 Numpy",
+      "text": "\uf076 Numpy",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/38",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 98.50800323486328,
+            "r": 381.9280090332031,
+            "b": 88.46399688720703,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            7
+          ]
+        }
+      ],
+      "orig": "\uf076 Scipy",
+      "text": "\uf076 Scipy",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/39",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 87.34600067138672,
+            "r": 390.8080139160156,
+            "b": 77.302001953125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            8
+          ]
+        }
+      ],
+      "orig": "\uf076 Pandas",
+      "text": "\uf076 Pandas",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/40",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 76.42500305175781,
+            "r": 407.8479919433594,
+            "b": 66.38099670410156,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            13
+          ]
+        }
+      ],
+      "orig": "\uf076 Stats model",
+      "text": "\uf076 Stats model",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/41",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 65.38700103759766,
+            "r": 377.12799072265625,
+            "b": 55.34299850463867,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "\uf076 NLP",
+      "text": "\uf076 NLP",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/42",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 339.2449951171875,
+            "t": 54.345001220703125,
+            "r": 384.447998046875,
+            "b": 44.301998138427734,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            6
+          ]
+        }
+      ],
+      "orig": "\uf076 RASA",
+      "text": "\uf076 RASA",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/43",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 73.80000305175781,
+            "t": 728.3699951171875,
+            "r": 153.35400390625,
+            "b": 718.344970703125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "Visualization Skills:",
+      "text": "Visualization Skills:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/44",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 716.2670288085938,
+            "r": 158.60800170898438,
+            "b": 706.2230224609375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "\uf076 Matplotlib",
+      "text": "\uf076 Matplotlib",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/45",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 700.7849731445312,
+            "r": 153.92799377441406,
+            "b": 690.7410278320312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "\uf076 Seaborn",
+      "text": "\uf076 Seaborn",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/46",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 686.7440185546875,
+            "r": 141.3280029296875,
+            "b": 676.7000122070312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            8
+          ]
+        }
+      ],
+      "orig": "\uf076 Plotly",
+      "text": "\uf076 Plotly",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/47",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 672.8099975585938,
+            "r": 154.6750030517578,
+            "b": 651.9810180664062,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "\uf076 Microsoft office",
+      "text": "\uf076 Microsoft office",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/48",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 79.91999816894531,
+            "t": 622.5570068359375,
+            "r": 182.22500610351562,
+            "b": 611.4619750976562,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            19
+          ]
+        }
+      ],
+      "orig": "Working Experience:",
+      "text": "Working Experience:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/49",
+      "parent": {
+        "$ref": "#/groups/6"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24,
+            "t": 593.25,
+            "r": 249.674,
+            "b": 583.225,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            34
+          ]
+        }
+      ],
+      "orig": "Company : Sunfra Software Services",
+      "text": "Company : Sunfra Software Services"
+    },
+    {
+      "self_ref": "#/texts/50",
+      "parent": {
+        "$ref": "#/groups/6"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.242,
+            "t": 580.546,
+            "r": 190.168,
+            "b": 570.502,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "Experience: 3.2 years",
+      "text": "Experience: 3.2 years"
+    },
+    {
+      "self_ref": "#/texts/51",
+      "parent": {
+        "$ref": "#/groups/6"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24,
+            "t": 568.89,
+            "r": 178.104,
+            "b": 558.865,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "Role: Data Scientist",
+      "text": "Role: Data Scientist"
+    },
+    {
+      "self_ref": "#/texts/52",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 79.31999969482422,
+            "t": 531.9719848632812,
+            "r": 182.4669952392578,
+            "b": 519.6749877929688,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "Career Experience:",
+      "text": "Career Experience:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/53",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 79.322,
+            "t": 504.465,
+            "r": 142.203,
+            "b": 494.421,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Project Name",
+      "text": "Project Name"
+    },
+    {
+      "self_ref": "#/texts/54",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 199.44,
+            "t": 504.44999999999993,
+            "r": 443.23,
+            "b": 494.42500000000007,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            51
+          ]
+        }
+      ],
+      "orig": "Reducing Customer Churn through predictive Analysis",
+      "text": "Reducing Customer Churn through predictive Analysis"
+    },
+    {
+      "self_ref": "#/texts/55",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 79.322,
+            "t": 487.788,
+            "r": 107.13,
+            "b": 477.744,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "Tools",
+      "text": "Tools"
+    },
+    {
+      "self_ref": "#/texts/56",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 199.481,
+            "t": 487.788,
+            "r": 290.968,
+            "b": 477.744,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "Python, SQL Server",
+      "text": "Python, SQL Server"
+    },
+    {
+      "self_ref": "#/texts/57",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 79.32,
+            "t": 470.73,
+            "r": 131.793,
+            "b": 460.705,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "Techniques",
+      "text": "Techniques"
+    },
+    {
+      "self_ref": "#/texts/58",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 199.282,
+            "t": 470.73,
+            "r": 332.272,
+            "b": 460.705,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            31
+          ]
+        }
+      ],
+      "orig": "Statistics, Logistic Regression",
+      "text": "Statistics, Logistic Regression"
+    },
+    {
+      "self_ref": "#/texts/59",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 79.3219985961914,
+            "t": 453.5849914550781,
+            "r": 136.88800048828125,
+            "b": 443.5409851074219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Description:",
+      "text": "Description:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/60",
+      "parent": {
+        "$ref": "#/groups/8"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 436.1700134277344,
+            "r": 492.6910095214844,
+            "b": 411.7409973144531,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            144
+          ]
+        }
+      ],
+      "orig": "\uf076 Client Company was one of the leading premium card subscription-based retailers. Every year customers will pay $120 for a yearly subscription.",
+      "text": "\uf076 Client Company was one of the leading premium card subscription-based retailers. Every year customers will pay $120 for a yearly subscription.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/61",
+      "parent": {
+        "$ref": "#/groups/8"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 402.92999267578125,
+            "r": 527.7979736328125,
+            "b": 378.6199951171875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            119
+          ]
+        }
+      ],
+      "orig": "\uf076 As the new year approaches they would like to understand how many customers will not renew their cards for next month",
+      "text": "\uf076 As the new year approaches they would like to understand how many customers will not renew their cards for next month",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/62",
+      "parent": {
+        "$ref": "#/groups/8"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 369.0899963378906,
+            "r": 395.4010009765625,
+            "b": 359.06500244140625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            70
+          ]
+        }
+      ],
+      "orig": "\uf076 We have built a model that predicts whether the customer will churn.",
+      "text": "\uf076 We have built a model that predicts whether the customer will churn.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/63",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 79.3219985961914,
+            "t": 352.4259948730469,
+            "r": 157.4080047607422,
+            "b": 342.3819885253906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "Responsibilities:",
+      "text": "Responsibilities:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/64",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 335.25,
+            "r": 528.7349853515625,
+            "b": 302.90301513671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            212
+          ]
+        }
+      ],
+      "orig": "\uf076 Responsible for  collecting  data  from  various sources such  as customer  demographics,  transactional data, and credit history. The data will be preprocessed to remove any inconsistencies and missing values.",
+      "text": "\uf076 Responsible for  collecting  data  from  various sources such  as customer  demographics,  transactional data, and credit history. The data will be preprocessed to remove any inconsistencies and missing values.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/65",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 295.8900146484375,
+            "r": 525.1519775390625,
+            "b": 263.5409851074219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            215
+          ]
+        }
+      ],
+      "orig": "\uf076 Performed exploratory data analysis (EDA) to identify patterns and trends in the data. Visualizations such as histograms, scatterplots, and heat maps will be used to understand the relationships between variables.",
+      "text": "\uf076 Performed exploratory data analysis (EDA) to identify patterns and trends in the data. Visualizations such as histograms, scatterplots, and heat maps will be used to understand the relationships between variables.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/66",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 256.7699890136719,
+            "r": 522.3939819335938,
+            "b": 204.26199340820312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            407
+          ]
+        }
+      ],
+      "orig": "\uf076 Handle imbalanced datasets with the help of Smote technique. Responsible for designing test and train  data  sets  and  executing  supervised  machine  learning  algorithms  such  as  logistic  regression, decision trees, and random forests will be used to develop the classification  model. The model  will be trained using historical data and validated using a holdout set of data to ensure its accuracy",
+      "text": "\uf076 Handle imbalanced datasets with the help of Smote technique. Responsible for designing test and train  data  sets  and  executing  supervised  machine  learning  algorithms  such  as  logistic  regression, decision trees, and random forests will be used to develop the classification  model. The model  will be trained using historical data and validated using a holdout set of data to ensure its accuracy",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/67",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 197.3699951171875,
+            "r": 527.4849853515625,
+            "b": 173.30299377441406,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            107
+          ]
+        }
+      ],
+      "orig": "\uf076 Analyzed the classification report, accuracy score, and ROC curve to gauge the performance of the models.",
+      "text": "\uf076 Analyzed the classification report, accuracy score, and ROC curve to gauge the performance of the models.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/68",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 166.2899932861328,
+            "r": 491.2120056152344,
+            "b": 156.26499938964844,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            90
+          ]
+        }
+      ],
+      "orig": "\uf076 Identified the TPR and FPR for the models and communicated the KPIs to the stakeholders.",
+      "text": "\uf076 Identified the TPR and FPR for the models and communicated the KPIs to the stakeholders.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/69",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 149.38800048828125,
+            "r": 523.9979858398438,
+            "b": 117.02300262451172,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            213
+          ]
+        }
+      ],
+      "orig": "\uf076 Conducted feature selection Feature selection techniques such as correlation analysis, feature importance, and stepwise regression will be used to identify the most important features that impact customer churn.",
+      "text": "\uf076 Conducted feature selection Feature selection techniques such as correlation analysis, feature importance, and stepwise regression will be used to identify the most important features that impact customer churn.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/70",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 110.01000213623047,
+            "r": 514.625,
+            "b": 99.98500061035156,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            102
+          ]
+        }
+      ],
+      "orig": "\uf076 Increase the model accuracy by performing multicollinearity, and variance inflation factor analysis.",
+      "text": "\uf076 Increase the model accuracy by performing multicollinearity, and variance inflation factor analysis.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/71",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 93.08999633789062,
+            "r": 503.4280090332031,
+            "b": 68.78399658203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            112
+          ]
+        }
+      ],
+      "orig": "\uf076 Used K folded technique to compare the accuracies across the models and pushed the results of the best models.",
+      "text": "\uf076 Used K folded technique to compare the accuracies across the models and pushed the results of the best models.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/72",
+      "parent": {
+        "$ref": "#/groups/10"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 322.44,
+            "t": 725.13,
+            "r": 400.267,
+            "b": 715.105,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "Deployment Tools:",
+      "text": "Deployment Tools:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/73",
+      "parent": {
+        "$ref": "#/groups/10"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 339.245,
+            "t": 708.9460000000001,
+            "r": 396.088,
+            "b": 698.902,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            11
+          ]
+        }
+      ],
+      "orig": "\uf076 Streamlit",
+      "text": "\uf076 Streamlit",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/74",
+      "parent": {
+        "$ref": "#/groups/10"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 339.245,
+            "t": 697.9059999999998,
+            "r": 381.328,
+            "b": 687.8620000000001,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            7
+          ]
+        }
+      ],
+      "orig": "\uf076 Flask",
+      "text": "\uf076 Flask",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/75",
+      "parent": {
+        "$ref": "#/groups/10"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 339.245,
+            "t": 686.986,
+            "r": 380.248,
+            "b": 676.942,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "\uf076 AWS",
+      "text": "\uf076 AWS",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/76",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 79.31999969482422,
+            "t": 736.6500244140625,
+            "r": 139.70599365234375,
+            "b": 726.625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Project Name",
+      "text": "Project Name",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/77",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 217.5260009765625,
+            "t": 736.6500244140625,
+            "r": 409.5060119628906,
+            "b": 726.625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            39
+          ]
+        }
+      ],
+      "orig": "Sentiment Analysis of Customer Reviews.",
+      "text": "Sentiment Analysis of Customer Reviews.",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/78",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 79.31999969482422,
+            "t": 719.489990234375,
+            "r": 189.71299743652344,
+            "b": 709.4650268554688,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            22
+          ]
+        }
+      ],
+      "orig": "Environment/Technology",
+      "text": "Environment/Technology",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/79",
+      "parent": {
+        "$ref": "#/groups/11"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 218.15999999999997,
+            "t": 714.93,
+            "r": 451.036,
+            "b": 693.501,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            80
+          ]
+        }
+      ],
+      "orig": "Python, SQL, scikit-learn, NLTK Algorithms: Na\u00efve Bayes, Random Forest, TF-IDF .",
+      "text": "Python, SQL, scikit-learn, NLTK Algorithms: Na\u00efve Bayes, Random Forest, TF-IDF ."
+    },
+    {
+      "self_ref": "#/texts/80",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 82.56099700927734,
+            "t": 685.5449829101562,
+            "r": 140.1280059814453,
+            "b": 675.5009765625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Description:",
+      "text": "Description:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/81",
+      "parent": {
+        "$ref": "#/groups/12"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 668.1300048828125,
+            "r": 492.02899169921875,
+            "b": 601.2249755859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            422
+          ]
+        }
+      ],
+      "orig": "\uf076 This project focuses on analyzing customer reviews in the retail industry to extract sentiment and gain insights into customer satisfaction. By applying natural language processing (NLP) techniques, the project aims to automatically classify customer reviews as positive, negative, or neutral. The sentiment analysis results will help retailers identify areas for improvement and enhance the overall customer experience.",
+      "text": "\uf076 This project focuses on analyzing customer reviews in the retail industry to extract sentiment and gain insights into customer satisfaction. By applying natural language processing (NLP) techniques, the project aims to automatically classify customer reviews as positive, negative, or neutral. The sentiment analysis results will help retailers identify areas for improvement and enhance the overall customer experience.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/82",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 79.91999816894531,
+            "t": 587.8499755859375,
+            "r": 201.08799743652344,
+            "b": 577.8250122070312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            27
+          ]
+        }
+      ],
+      "orig": "Roles and Responsibilities:",
+      "text": "Roles and Responsibilities:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/83",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 560.72998046875,
+            "r": 489.6050109863281,
+            "b": 550.7050170898438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            89
+          ]
+        }
+      ],
+      "orig": "\uf076 Collect and preprocess customer review data, removing noise and irrelevant information.",
+      "text": "\uf076 Collect and preprocess customer review data, removing noise and irrelevant information.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/84",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 548.8499755859375,
+            "r": 400.6889953613281,
+            "b": 538.8250122070312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            67
+          ]
+        }
+      ],
+      "orig": "\uf076 Apply NLP techniques to tokenize, clean, and represent text data.",
+      "text": "\uf076 Apply NLP techniques to tokenize, clean, and represent text data.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/85",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 536.969970703125,
+            "r": 406.4989929199219,
+            "b": 526.9450073242188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            72
+          ]
+        }
+      ],
+      "orig": "\uf076 Train and fine-tune text classification models for sentiment analysis.",
+      "text": "\uf076 Train and fine-tune text classification models for sentiment analysis.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/86",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 525.0900268554688,
+            "r": 504.1889953613281,
+            "b": 503.18499755859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            101
+          ]
+        }
+      ],
+      "orig": "\uf076 Evaluate model performance using appropriate metrics and iterate on the models to improve accuracy.",
+      "text": "\uf076 Evaluate model performance using appropriate metrics and iterate on the models to improve accuracy.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/87",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 501.3299865722656,
+            "r": 532.2940063476562,
+            "b": 479.30499267578125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            136
+          ]
+        }
+      ],
+      "orig": "\uf076 Generate insights and visualizations from the sentiment analysis results to guide business decisions and improve customer satisfaction",
+      "text": "\uf076 Generate insights and visualizations from the sentiment analysis results to guide business decisions and improve customer satisfaction",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/88",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 79.92,
+            "t": 456.69,
+            "r": 140.44,
+            "b": 446.66499999999996,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Project Name",
+      "text": "Project Name",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/89",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 212.959,
+            "t": 456.69,
+            "r": 472.309,
+            "b": 446.66499999999996,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            56
+          ]
+        }
+      ],
+      "orig": "Specifying the top-performing Warehouses across specific",
+      "text": "Specifying the top-performing Warehouses across specific"
+    },
+    {
+      "self_ref": "#/texts/90",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 212.399,
+            "t": 439.544,
+            "r": 275.248,
+            "b": 429.5,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Geographies.",
+      "text": "Geographies."
+    },
+    {
+      "self_ref": "#/texts/91",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 79.32,
+            "t": 422.7490000000001,
+            "r": 195.277,
+            "b": 398.9049999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            34
+          ]
+        }
+      ],
+      "orig": "Environment/Technology Methodology",
+      "text": "Environment/Technology Methodology",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/92",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 212.64,
+            "t": 422.73,
+            "r": 300.649,
+            "b": 412.705,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "Oracle SQL, Python",
+      "text": "Oracle SQL, Python"
+    },
+    {
+      "self_ref": "#/texts/93",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 213.315,
+            "t": 408.93,
+            "r": 417.293,
+            "b": 398.9049999999999,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            44
+          ]
+        }
+      ],
+      "orig": "K Means Clustering, Agglomerative Clustering",
+      "text": "K Means Clustering, Agglomerative Clustering"
+    },
+    {
+      "self_ref": "#/texts/94",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 79.3219985961914,
+            "t": 384.4670104980469,
+            "r": 157.4080047607422,
+            "b": 374.4230041503906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "Responsibilities:",
+      "text": "Responsibilities:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/95",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 367.04998779296875,
+            "r": 510.78399658203125,
+            "b": 342.9809875488281,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            122
+          ]
+        }
+      ],
+      "orig": "\uf076 Raw data Extraction, data cleansing, validation of data and Data reformat using Excel as per the client's specification.",
+      "text": "\uf076 Raw data Extraction, data cleansing, validation of data and Data reformat using Excel as per the client's specification.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/96",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 335.9700012207031,
+            "r": 419.3900146484375,
+            "b": 325.94500732421875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            75
+          ]
+        }
+      ],
+      "orig": "\uf076 Created SQL datasets and Descriptive Statistics analysis by using Python.",
+      "text": "\uf076 Created SQL datasets and Descriptive Statistics analysis by using Python.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/97",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 318.92999267578125,
+            "r": 461.2820129394531,
+            "b": 294.8609924316406,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            104
+          ]
+        }
+      ],
+      "orig": "\uf076 Cluster Analysis for grouping the shop type (Market Segmentation) which gives similar characteristics.",
+      "text": "\uf076 Cluster Analysis for grouping the shop type (Market Segmentation) which gives similar characteristics.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/98",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 287.9700012207031,
+            "r": 509.6549987792969,
+            "b": 263.5409851074219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            131
+          ]
+        }
+      ],
+      "orig": "\uf076 Expertise in Analyzing and giving insights into the client's queries by using statistical procedures like Means, Univariate, etc.",
+      "text": "\uf076 Expertise in Analyzing and giving insights into the client's queries by using statistical procedures like Means, Univariate, etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/99",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 256.5299987792969,
+            "r": 508.7659912109375,
+            "b": 232.46400451660156,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            120
+          ]
+        }
+      ],
+      "orig": "\uf076 Providing insights using retail sales data from the previous and current periods to determine the patterns and trends.",
+      "text": "\uf076 Providing insights using retail sales data from the previous and current periods to determine the patterns and trends.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/100",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 225.3300018310547,
+            "r": 524.2520141601562,
+            "b": 201.26300048828125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            172
+          ]
+        }
+      ],
+      "orig": "\uf076 Data management activities like merging, appending datasets, handling missing values reading raw data files, handling programming errors, and accessing and managing data.",
+      "text": "\uf076 Data management activities like merging, appending datasets, handling missing values reading raw data files, handling programming errors, and accessing and managing data.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/101",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.11900329589844,
+            "t": 194.1300048828125,
+            "r": 398.1839904785156,
+            "b": 184.10499572753906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            71
+          ]
+        }
+      ],
+      "orig": "\uf076 Providing weekly and monthly reports as per the client's requirement.",
+      "text": "\uf076 Providing weekly and monthly reports as per the client's requirement.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/102",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 177.2100067138672,
+            "r": 509.8739929199219,
+            "b": 153.02200317382812,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            173
+          ]
+        }
+      ],
+      "orig": "\uf076 Classifying variables into different segments basis various customer variables like: - Wallet size, website visit frequency, time spent on the website, Product views, etc.",
+      "text": "\uf076 Classifying variables into different segments basis various customer variables like: - Wallet size, website visit frequency, time spent on the website, Product views, etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/103",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 146.25,
+            "r": 512.9329833984375,
+            "b": 108.14299774169922,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            193
+          ]
+        }
+      ],
+      "orig": "\uf076 Coming up with meaningful customer segments that were given to CRM and social channels like Facebook and LinkedIn for targeting them with relevant offers and increase the revenue per customer",
+      "text": "\uf076 Coming up with meaningful customer segments that were given to CRM and social channels like Facebook and LinkedIn for targeting them with relevant offers and increase the revenue per customer",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/104",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 96.24199676513672,
+            "t": 744.343017578125,
+            "r": 518.4149780273438,
+            "b": 706.2230224609375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            207
+          ]
+        }
+      ],
+      "orig": "\uf076 Identifying customer basis parameters like: - last transaction date, number of returned orders, number of calls, etc., that have the highest probability of not returning to the website in the next 90 days.",
+      "text": "\uf076 Identifying customer basis parameters like: - last transaction date, number of returned orders, number of calls, etc., that have the highest probability of not returning to the website in the next 90 days.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/105",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 68.04,
+            "t": 683.13,
+            "r": 127.923,
+            "b": 673.105,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Project Name",
+      "text": "Project Name",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/106",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 185.531,
+            "t": 683.13,
+            "r": 288.279,
+            "b": 673.105,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            22
+          ]
+        }
+      ],
+      "orig": "Face emotion detection",
+      "text": "Face emotion detection"
+    },
+    {
+      "self_ref": "#/texts/107",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 68.04,
+            "t": 668.97,
+            "r": 178.433,
+            "b": 658.945,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            22
+          ]
+        }
+      ],
+      "orig": "Environment/Technology",
+      "text": "Environment/Technology"
+    },
+    {
+      "self_ref": "#/texts/108",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 188.431,
+            "t": 668.97,
+            "r": 403.866,
+            "b": 658.945,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            45
+          ]
+        }
+      ],
+      "orig": "Python, OpenCV ,YOLOv8, YOLOs ,Deep learning.",
+      "text": "Python, OpenCV ,YOLOv8, YOLOs ,Deep learning."
+    },
+    {
+      "self_ref": "#/texts/109",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 68.04000091552734,
+            "t": 655.0499877929688,
+            "r": 123.0250015258789,
+            "b": 645.0250244140625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Description:",
+      "text": "Description:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/110",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 113.76000213623047,
+            "t": 640.8900146484375,
+            "r": 536.5960083007812,
+            "b": 595.2249755859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            374
+          ]
+        }
+      ],
+      "orig": "Spearheaded a project focused on real-time facial emotion detection using state of the art computer vision techniques, specifically YOLOv8 and YOLOs (You Only Look Once) models. Successfully developed a system that accurately detects and classifies facial emotions in images and video streams, contributing to applications in customer sentiment analysis and market research.",
+      "text": "Spearheaded a project focused on real-time facial emotion detection using state of the art computer vision techniques, specifically YOLOv8 and YOLOs (You Only Look Once) models. Successfully developed a system that accurately detects and classifies facial emotions in images and video streams, contributing to applications in customer sentiment analysis and market research."
+    },
+    {
+      "self_ref": "#/texts/111",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 68.04000091552734,
+            "t": 582.6119995117188,
+            "r": 159.1219940185547,
+            "b": 570.3150024414062,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "Responsibilities:",
+      "text": "Responsibilities:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/112",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.12300109863281,
+            "t": 557.010009765625,
+            "r": 528.3980102539062,
+            "b": 546.9849853515625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            95
+          ]
+        }
+      ],
+      "orig": "\uf076 Researched and selected appropriate pre-trained YOLOv8 and YOLOs models for object detection.",
+      "text": "\uf076 Researched and selected appropriate pre-trained YOLOv8 and YOLOs models for object detection.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/113",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 545.1300048828125,
+            "r": 520.9429931640625,
+            "b": 523.344970703125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            114
+          ]
+        }
+      ],
+      "orig": "\uf076 Designed and implemented a custom dataset by collecting and annotating facial images depicting various emotions.",
+      "text": "\uf076 Designed and implemented a custom dataset by collecting and annotating facial images depicting various emotions.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/114",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 521.489990234375,
+            "r": 521.4329833984375,
+            "b": 499.4649963378906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            117
+          ]
+        }
+      ],
+      "orig": "\uf076 Pre processed the dataset, including image resizing, augmentation, and normalization, to improve model performance.",
+      "text": "\uf076 Pre processed the dataset, including image resizing, augmentation, and normalization, to improve model performance.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/115",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.12300109863281,
+            "t": 497.6099853515625,
+            "r": 474.5069885253906,
+            "b": 487.5849914550781,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            85
+          ]
+        }
+      ],
+      "orig": "\uf076 Fine-tuned the selected YOLO models using transfer learning on the emotion dataset.",
+      "text": "\uf076 Fine-tuned the selected YOLO models using transfer learning on the emotion dataset.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/116",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 485.7300109863281,
+            "r": 504.65301513671875,
+            "b": 463.7049865722656,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            109
+          ]
+        }
+      ],
+      "orig": "\uf076 Integrated OpenCV to capture real-time video streams from webcams and process frames for emotion detection.",
+      "text": "\uf076 Integrated OpenCV to capture real-time video streams from webcams and process frames for emotion detection.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/117",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.12300109863281,
+            "t": 461.9700012207031,
+            "r": 487.3789978027344,
+            "b": 451.94500732421875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            93
+          ]
+        }
+      ],
+      "orig": "\uf076 Developed a user-friendly interface to display real-time video with emotion labels overlay.",
+      "text": "\uf076 Developed a user-friendly interface to display real-time video with emotion labels overlay.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/118",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 449.9700012207031,
+            "r": 527.1339721679688,
+            "b": 428.18499755859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            109
+          ]
+        }
+      ],
+      "orig": "\uf076 Conducted extensive testing to evaluate the accuracy and robustness of the models across diverse scenarios.",
+      "text": "\uf076 Conducted extensive testing to evaluate the accuracy and robustness of the models across diverse scenarios.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/119",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 428.052001953125,
+            "r": 492.79901123046875,
+            "b": 404.30499267578125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            104
+          ]
+        }
+      ],
+      "orig": "\uf076 Optimized model parameters and hyperparameters to achieve higher accuracy and faster processing speed.",
+      "text": "\uf076 Optimized model parameters and hyperparameters to achieve higher accuracy and faster processing speed.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/120",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.12300109863281,
+            "t": 402.57000732421875,
+            "r": 533.864990234375,
+            "b": 392.5450134277344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            104
+          ]
+        }
+      ],
+      "orig": "\uf076 Collaborated with UX/UI team to design intuitive visuals for the interface, enhancing user experience.",
+      "text": "\uf076 Collaborated with UX/UI team to design intuitive visuals for the interface, enhancing user experience.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/121",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 114.24199676513672,
+            "t": 392.4119873046875,
+            "r": 524.3690185546875,
+            "b": 368.6650085449219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            120
+          ]
+        }
+      ],
+      "orig": "\uf076 Documented the entire process, including data collection, model selection, training strategies, and technical details.",
+      "text": "\uf076 Documented the entire process, including data collection, model selection, training strategies, and technical details.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/122",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 79.31999969482422,
+            "t": 340.7969970703125,
+            "r": 205.3280029296875,
+            "b": 329.7019958496094,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            26
+          ]
+        }
+      ],
+      "orig": "Educational Qualification:",
+      "text": "Educational Qualification:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/123",
+      "parent": {
+        "$ref": "#/groups/18"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 79.92,
+            "t": 327.827,
+            "r": 286.56,
+            "b": 279.865,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            128
+          ]
+        }
+      ],
+      "orig": "Universities/Institutes: NBKR Institute of Science and Technology, Andhra Pradesh. Qualification: Bachelor of Technology (2019).",
+      "text": "Universities/Institutes: NBKR Institute of Science and Technology, Andhra Pradesh. Qualification: Bachelor of Technology (2019)."
+    },
+    {
+      "self_ref": "#/texts/124",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 79.31800079345703,
+            "t": 263.0570068359375,
+            "r": 142.79400634765625,
+            "b": 251.94200134277344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Declaration:",
+      "text": "Declaration:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/125",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 79.91999816894531,
+            "t": 250.1699981689453,
+            "r": 492.0509948730469,
+            "b": 240.14500427246094,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            102
+          ]
+        }
+      ],
+      "orig": "I hereby declare that the information furnished above is true and correct to the best of my knowledge.",
+      "text": "I hereby declare that the information furnished above is true and correct to the best of my knowledge."
+    },
+    {
+      "self_ref": "#/texts/126",
+      "parent": {
+        "$ref": "#/groups/19"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 93.72,
+            "t": 218.125,
+            "r": 181.773,
+            "b": 206.59299999999996,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "Place: - Bangalore",
+      "text": "Place: - Bangalore"
+    },
+    {
+      "self_ref": "#/texts/127",
+      "parent": {
+        "$ref": "#/groups/19"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 451.167,
+            "t": 218.125,
+            "r": 514.883,
+            "b": 206.59299999999996,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Vinay Katuru",
+      "text": "Vinay Katuru"
+    },
+    {
+      "self_ref": "#/texts/128",
+      "parent": {
+        "$ref": "#/groups/19"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 436.56000000000006,
+            "t": 199.885,
+            "r": 519.295,
+            "b": 188.35300000000007,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            14
+          ]
+        }
+      ],
+      "orig": "+91 9550836645",
+      "text": "+91 9550836645"
+    }
+  ],
+  "pictures": [],
+  "tables": [],
+  "key_value_items": [],
+  "pages": {
+    "1": {
+      "size": {
+        "width": 612.0,
+        "height": 792.0
+      },
+      "page_no": 1
+    },
+    "2": {
+      "size": {
+        "width": 612.0,
+        "height": 792.0
+      },
+      "page_no": 2
+    },
+    "3": {
+      "size": {
+        "width": 612.0,
+        "height": 792.0
+      },
+      "page_no": 3
+    },
+    "4": {
+      "size": {
+        "width": 612.0,
+        "height": 792.0
+      },
+      "page_no": 4
+    }
+  }
+}

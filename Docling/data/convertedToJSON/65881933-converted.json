@@ -1,0 +1,375 @@
+{
+    "url": "Sneha.pdf",
+    "title": "Sneha",
+    "content": [
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Sneha"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "+91 8105137580"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "sneharao.me@gmail.com"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Objective: To achieve professional satisfaction, progress and personal development by working in a stimulating environment that encourages learning and growth"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Summary :"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Results-driven IT Support Specialist with extensive experience in Linux server administration and cPanel/WHM management."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Proficient in using Linux commands for system maintenance and scripting, with a strong understanding of web hosting environments and control panel configuration."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Skilled in performing L2 support tasks, including troubleshooting complex issues."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Proven ability to handle escalated support requests, provide effective solutions, and communicate technical information clearly to both technical and non-technical stakeholders."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Technical Proficiency:"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Programming language: Python, Java"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Database: SQL."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Training Undergone :"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Undergone Software Testing course from Besant Technology. The course includes Basics Python,Core Java,Sql."
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project Profile:"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Client: GlowTouch"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Role: As a Web Administrator L2"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Description: The company is a part of GlowTouch working together to delight clients on web hosting. Its one of the largest tech companies in Mangaluru."
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Duration: October 2019 - April 2024 Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Troubleshoot a varient of technical and non-technical issues customers are having with their web hosting plans and services."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Provided a technical support for admin issues via ticket systems."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Installing,configuring and maintaining services such as Apache,MySQL and Exim."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Have an outstanding customer service skills and dedication to the customer service experience."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Technical Skills:"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Python"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Have a knowlege of basics of Python and have a knowledge on OOPS concepts like Inheritance, Polymorphism, Abstraction and Encapsulation.."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Have a knowledge of list,directory comprehension and specialized sorts in python."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Core Java"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Very strong knowledge on OOPS concepts like Inheritance, Polymorphism, Abstraction and Encapsulation."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7Good knowledge on Method Overloading, Method Overriding."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Very good knowledge of Constructors and Interface."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Manual Testing"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Very good in Manual Testing Skills."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Very good knowledge on SDLC, STLC and Defect Life Cycle"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Good knowledge of BLACK BOX TESTING and WHITE BOX TESTING."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Having very good knowledge in Smoke, Functional, Integration and System Testing."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Extensive knowledge in Writing Test Cases, Reviewing Test Cases."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "SQL"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Good knowledge in writing SQL queries."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Solid knowledge in DDL, DML, TCL."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Good knowledge in Grouping and Functions."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Good knowledge in Joins."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7  Basic knowledge in Normalization."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Education Details"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf0b7 Completed B.E(CSE) in the year 2018 with Aggregate of 59%"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf0b7 I have Completed my 12 th in the year 2014 with Aggregate of 64%"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf0b7 I have Completed my SSLC in the year 2012 with Aggregate of 82%"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Personal Details"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Name:"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Sneha Rao"
+                },
+                {
+                    "contentType": "text",
+                    "source": "DOB:"
+                },
+                {
+                    "contentType": "text",
+                    "source": "25-05-1997"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Languages:"
+                },
+                {
+                    "contentType": "text",
+                    "source": "English, Hindi, Kannada, Tulu"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Bengaluru"
+                }
+            ]
+        },
+        {
+            "header": "page_footer",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Sneha"
+                }
+            ]
+        }
+    ]
+}

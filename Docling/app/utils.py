@@ -235,9 +235,9 @@ def processDocument(file_path, output_dir, global_client_id):
         #     json.dump(json_output, fp, indent=4)
 
         # Save the document as HTML with referenced figures and tables
-        json_filename = output_dir / f"{global_client_id}-with-image-refs.json"
+        json_filename = output_dir / f"{global_client_id}-with-image-refs.html"
         print("Exporting to HTML, main doc: command is executing now")
-        conv_result.document.save_as_json(json_filename, image_mode=ImageRefMode.REFERENCED)
+        conv_result.document.save_as_html(json_filename, image_mode=ImageRefMode.REFERENCED)
 
         end_time = time.time()
         logger.info(f"Processing time: {end_time - start_time:.2f} seconds. Successfully processed {file_path}")
