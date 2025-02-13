@@ -1,8 +1,14 @@
 import os
 os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 import json
+import io
+import matplotlib
+matplotlib.use('Agg') 
+import matplotlib.pyplot as plt
+import traceback
+import pickle
 from datetime import datetime
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, jsonify, send_file
 from werkzeug.utils import secure_filename
 from DeepImageSearch import Load_Data, Search_Setup
 
@@ -18,6 +24,8 @@ CLIENTS_FILE = "clients.json"
 
 # Allowed image extensions
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+loaded_clients = {}  # Stores loaded clients to avoid reloading
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -62,6 +70,24 @@ def client_exists(client_id):
     data = load_clients()
     return client_id in data["clients"]
 
+def get_image_path(client_id, model_name, index):
+    """Retrieve the image path from the indexed metadata file."""
+    metadata_path = f'metadata-files/{client_id}_{model_name}/image_data_features.pkl'
+
+    if not os.path.exists(metadata_path):
+        raise FileNotFoundError(f"Metadata file not found: {metadata_path}")
+
+    with open(metadata_path, 'rb') as file:
+        data = pickle.load(file)
+
+    if not isinstance(data, dict) or 'images_paths' not in data:
+        raise ValueError(f"Invalid metadata format in {metadata_path}")
+
+    if index < 0 or index >= len(data['images_paths']):
+        raise IndexError(f"Index {index} is out of bounds for image metadata.")
+
+    return data['images_paths'][index] 
+
 # --------------- API ENDPOINTS ----------------
 
 @app.route('/api/v1/makeIndex', methods=['POST'])
@@ -101,18 +127,31 @@ def make_index():
 
 
 @app.route('/api/v1/runIndexWithExistingImagesOnServer', methods=['POST'])
-def run_index():
-    """Loads the index for a specific client."""
+def load_multiple_clients():
+    """Loads multiple client indices into memory if not already loaded."""
     try:
-        client_id = request.form.get('client_id')
+        client_ids = request.json.get("client_ids")
+        if not client_ids:
+            return jsonify({"error": "No client IDs provided"}), 400
 
-        if not client_id:
-            return jsonify({"error": "Missing client_id"}), 400
+        already_loaded = []
+        newly_loaded = []
 
-        if not client_exists(client_id):
-            return jsonify({"error": f"Client {client_id} not found!"}), 404
+        for client_id in client_ids:
+            if client_id in loaded_clients:
+                already_loaded.append(client_id)
+                continue  # Skip if already loaded
 
-        return jsonify({"message": f"Index loaded for client {client_id}"}), 200
+            search_instance = Search_Setup(image_list=[], client_id=client_id, model_name="vgg19", pretrained=True)
+            loaded_clients[client_id] = search_instance
+            newly_loaded.append(client_id)
+
+        return jsonify({
+            "message": "Clients loaded successfully",
+            "already_loaded": already_loaded,
+            "newly_loaded": newly_loaded
+        }), 200
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -121,8 +160,11 @@ def add_new_image():
     """Adds a new image to an existing index and updates image count."""
     try:
         client_id = request.form.get('client_id')
-        if not client_exists(client_id):
-            return jsonify({"error": f"Client {client_id} does not exist!"}), 404
+        if not client_id:
+            return jsonify({"error": "Missing client_id"}), 400
+
+        if client_id not in loaded_clients:
+            return jsonify({"error": f"Client {client_id} is not loaded! Please load it first."}), 400
 
         if 'file' not in request.files:
             return jsonify({"error": "No file uploaded"}), 400
@@ -131,34 +173,32 @@ def add_new_image():
         if file.filename == '':
             return jsonify({"error": "Empty filename"}), 400
 
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            temp_path = os.path.join(UPLOAD_FOLDER, filename)
-            file.save(temp_path)
+        filename = secure_filename(file.filename)
+        temp_path = os.path.join(UPLOAD_FOLDER, filename)
+        file.save(temp_path)
 
-            # Add image to index
-            search_instance = Search_Setup(image_list=[], client_id=client_id ,model_name="vgg19", pretrained=True)
-            search_instance.add_images_to_index([temp_path])
+        # Get the loaded client and add the image to the FAISS index
+        search_instance = loaded_clients[client_id]
+        search_instance.add_images_to_index([temp_path])
 
-            # Delete image after processing
-            os.remove(temp_path)
+        # Delete the uploaded image after processing
+        os.remove(temp_path)
 
-            # Update client’s image count
-            update_client_image_count(client_id, 1)
+        return jsonify({"message": f"Image added to index for client {client_id}"}), 200
 
-            return jsonify({"message": "Image added to index and count updated"}), 200
-        else:
-            return jsonify({"error": "Invalid file type"}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
 @app.route('/api/v1/getSimilarImages', methods=['POST'])
 def get_similar_images():
-    """Finds similar images for an uploaded image."""
+    """Finds similar images and returns their paths as JSON."""
     try:
         client_id = request.form.get('client_id')
-        if not client_exists(client_id):
-            return jsonify({"error": f"Client {client_id} does not exist!"}), 404
+        if not client_id:
+            return jsonify({"error": "Missing client_id"}), 400
+
+        if client_id not in loaded_clients:
+            return jsonify({"error": f"Client {client_id} is not loaded! Please load it first."}), 400
 
         if 'file' not in request.files:
             return jsonify({"error": "No file uploaded"}), 400
@@ -167,21 +207,30 @@ def get_similar_images():
         if file.filename == '':
             return jsonify({"error": "Empty filename"}), 400
 
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            temp_path = os.path.join(UPLOAD_FOLDER, filename)
-            file.save(temp_path)
+        filename = secure_filename(file.filename)
+        temp_path = os.path.join(UPLOAD_FOLDER, filename)
+        file.save(temp_path)
 
-            # Perform image search
-            search_instance = Search_Setup(image_list=[], client_id=client_id, model_name="vgg19", pretrained=True)
-            results = search_instance.get_similar_images(temp_path, 10)
+        # Get the loaded client and retrieve similar image indices
+        search_instance = loaded_clients[client_id]
+        indices = search_instance.get_similar_images(temp_path, 10)  # `indices` is a LIST
 
-            # Delete uploaded image after processing
-            os.remove(temp_path)
+        os.remove(temp_path)  # Delete the uploaded query image after processing
 
-            return jsonify({"similar_images": list(results.values())}), 200
-        else:
-            return jsonify({"error": "Invalid file type"}), 400
+        # Retrieve image paths from metadata
+        similar_images = []
+        for idx in indices:  # Iterate directly over list
+            try:
+                image_path = get_image_path(client_id, "vgg19", idx)
+                similar_images.append(image_path)
+            except Exception as e:
+                print(f"\033[91m {idx}")
+
+        if not similar_images:
+            return jsonify({"error": "No valid images found."}), 404
+
+        return jsonify({"similar_images": similar_images}), 200
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

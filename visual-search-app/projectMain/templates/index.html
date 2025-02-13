@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Visual Search App API Tester</title>
-    <script src="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/dropzone@5.9.3/dist/min/dropzone.min.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
         }
-        input, button {
+        input, button, select {
             margin: 10px 0;
             padding: 10px;
             width: 90%;
@@ -53,121 +53,116 @@
             width: 100%;
             border-radius: 5px;
         }
-        #response {
-            margin-top: 20px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #eef;
-            word-wrap: break-word;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h2>Visual Search App API Tester</h2>
+        <h2>Image Search</h2>
 
-        <label for="client_id">Client ID:</label>
-        <input type="text" id="client_id" placeholder="Enter client ID">
+        <h3>1️⃣ Load Multiple Clients</h3>
+        <input type="text" id="client_ids" placeholder="Enter comma-separated client IDs">
+        <button onclick="loadMultipleClients()">Load Clients</button>
 
-        <h3>1. Create Index</h3>
-        <label for="folder_path">Folder Path:</label>
-        <input type="text" id="folder_path" placeholder="Enter folder path">
-        <button onclick="makeIndex()">Create Index</button>
+        <h3>2️⃣ Select a Client</h3>
+        <select id="selected_client">
+            <option value="">-- Select a Loaded Client --</option>
+        </select>
 
-        <h3>2. Load Index</h3>
-        <button onclick="loadIndex()">Load Index</button>
+        <h3>3️⃣ Add New Image to Index</h3>
+        <input type="file" id="add_image">
+        <button onclick="addImageToIndex()">Upload & Index Image</button>
 
-        <h3>3. Add Image to Index</h3>
-        <form action="/api/v1/addNewImageToIndex" class="dropzone" id="addImageDropzone"></form>
-
-        <h3>4. Search Similar Images</h3>
-        <form action="/api/v1/getSimilarImages" class="dropzone" id="searchImageDropzone"></form>
-
-        <h3>API Response:</h3>
-        <div id="response"></div>
+        <h3>4️⃣ Search for Similar Images</h3>
+        <input type="file" id="search_image">
+        <button onclick="getSimilarImages()">Find Similar</button>
 
         <h3>Results:</h3>
         <div class="results" id="results"></div>
     </div>
 
     <script>
-        const API_URL = "http://127.0.0.1:5000/api/v1"; // Update with your server URL if needed
+        const API_URL = "http://127.0.0.1:5000/api/v1";
 
-        async function makeIndex() {
-            const client_id = document.getElementById("client_id").value;
-            const folder_path = document.getElementById("folder_path").value;
+        async function loadMultipleClients() {
+            const client_ids = document.getElementById("client_ids").value.split(",").map(id => id.trim());
 
-            if (!client_id || !folder_path) {
-                alert("Please enter both Client ID and Folder Path");
+            if (client_ids.length === 0 || client_ids[0] === "") {
+                alert("Please enter at least one client ID.");
                 return;
             }
 
-            const formData = new FormData();
-            formData.append("client_id", client_id);
-            formData.append("path", folder_path);
+            const response = await fetch(`${API_URL}/runIndexWithExistingImagesOnServer`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ client_ids })
+            });
 
-            const response = await fetch(`${API_URL}/makeIndex`, { method: "POST", body: formData });
             const data = await response.json();
-            document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+            alert(data.message || data.error);
+
+            if (data.newly_loaded.length > 0) {
+                const select = document.getElementById("selected_client");
+                data.newly_loaded.forEach(client_id => {
+                    let option = document.createElement("option");
+                    option.value = client_id;
+                    option.textContent = client_id;
+                    select.appendChild(option);
+                });
+            }
         }
 
-        async function loadIndex() {
-            const client_id = document.getElementById("client_id").value;
+        async function addImageToIndex() {
+            const client_id = document.getElementById("selected_client").value;
+            const file = document.getElementById("add_image").files[0];
 
             if (!client_id) {
-                alert("Please enter Client ID");
+                alert("Please select a client.");
+                return;
+            }
+
+            if (!file) {
+                alert("Please select an image to upload.");
                 return;
             }
 
             const formData = new FormData();
             formData.append("client_id", client_id);
+            formData.append("file", file);
 
-            const response = await fetch(`${API_URL}/runIndexWithExistingImagesOnServer`, { method: "POST", body: formData });
+            const response = await fetch(`${API_URL}/addNewImageToIndex`, { method: "POST", body: formData });
             const data = await response.json();
-            document.getElementById("response").innerText = JSON.stringify(data, null, 2);
+            alert(data.message || data.error);
         }
 
-        Dropzone.options.addImageDropzone = {
-            paramName: "file",
-            maxFilesize: 10,
-            acceptedFiles: "image/*",
-            init: function() {
-                this.on("sending", function(file, xhr, formData) {
-                    const client_id = document.getElementById("client_id").value;
-                    if (!client_id) {
-                        alert("Please enter Client ID before uploading!");
-                        this.removeFile(file);
-                        return;
-                    }
-                    formData.append("client_id", client_id);
-                });
-                this.on("success", function(file, response) {
-                    document.getElementById("response").innerText = JSON.stringify(response, null, 2);
-                });
-            }
-        };
+        async function getSimilarImages() {
+            const client_id = document.getElementById("selected_client").value;
+            const file = document.getElementById("search_image").files[0];
 
-        Dropzone.options.searchImageDropzone = {
-            paramName: "file",
-            maxFilesize: 10,
-            acceptedFiles: "image/*",
-            init: function() {
-                this.on("sending", function(file, xhr, formData) {
-                    const client_id = document.getElementById("client_id").value;
-                    if (!client_id) {
-                        alert("Please enter Client ID before searching!");
-                        this.removeFile(file);
-                        return;
-                    }
-                    formData.append("client_id", client_id);
-                });
-                this.on("success", function(file, response) {
-                    document.getElementById("response").innerText = JSON.stringify(response, null, 2);
-                    displayResults(response.similar_images);
-                });
+            if (!client_id) {
+                alert("Please select a client.");
+                return;
             }
-        };
+
+            if (!file) {
+                alert("Please select an image to search.");
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append("client_id", client_id);
+            formData.append("file", file);
+
+            const response = await fetch(`${API_URL}/getSimilarImages`, { method: "POST", body: formData });
+            const data = await response.json();
+
+            if (data.error) {
+                alert(data.error);
+                return;
+            }
+
+            displayResults(data.similar_images);
+        }
 
         function displayResults(images) {
             const resultsDiv = document.getElementById("results");
