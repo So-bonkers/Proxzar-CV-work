@@ -1,0 +1,4539 @@
+{
+  "schema_name": "DoclingDocument",
+  "version": "1.0.0",
+  "name": "Reena_Latest_Resume",
+  "origin": {
+    "mimetype": "application/pdf",
+    "binary_hash": 11768118801009731285,
+    "filename": "Reena_Latest_Resume.pdf"
+  },
+  "furniture": {
+    "self_ref": "#/furniture",
+    "children": [],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "body": {
+    "self_ref": "#/body",
+    "children": [
+      {
+        "$ref": "#/texts/0"
+      },
+      {
+        "$ref": "#/texts/1"
+      },
+      {
+        "$ref": "#/texts/2"
+      },
+      {
+        "$ref": "#/texts/3"
+      },
+      {
+        "$ref": "#/texts/4"
+      },
+      {
+        "$ref": "#/texts/5"
+      },
+      {
+        "$ref": "#/groups/0"
+      },
+      {
+        "$ref": "#/texts/24"
+      },
+      {
+        "$ref": "#/texts/25"
+      },
+      {
+        "$ref": "#/texts/26"
+      },
+      {
+        "$ref": "#/texts/27"
+      },
+      {
+        "$ref": "#/texts/28"
+      },
+      {
+        "$ref": "#/texts/29"
+      },
+      {
+        "$ref": "#/texts/30"
+      },
+      {
+        "$ref": "#/groups/1"
+      },
+      {
+        "$ref": "#/texts/43"
+      },
+      {
+        "$ref": "#/texts/44"
+      },
+      {
+        "$ref": "#/groups/2"
+      },
+      {
+        "$ref": "#/texts/47"
+      },
+      {
+        "$ref": "#/texts/48"
+      },
+      {
+        "$ref": "#/texts/49"
+      },
+      {
+        "$ref": "#/texts/50"
+      },
+      {
+        "$ref": "#/groups/3"
+      },
+      {
+        "$ref": "#/texts/68"
+      },
+      {
+        "$ref": "#/groups/4"
+      },
+      {
+        "$ref": "#/texts/71"
+      },
+      {
+        "$ref": "#/texts/72"
+      },
+      {
+        "$ref": "#/groups/5"
+      },
+      {
+        "$ref": "#/texts/81"
+      },
+      {
+        "$ref": "#/groups/6"
+      },
+      {
+        "$ref": "#/texts/82"
+      },
+      {
+        "$ref": "#/texts/83"
+      },
+      {
+        "$ref": "#/texts/84"
+      },
+      {
+        "$ref": "#/groups/7"
+      },
+      {
+        "$ref": "#/texts/94"
+      },
+      {
+        "$ref": "#/groups/8"
+      },
+      {
+        "$ref": "#/texts/97"
+      },
+      {
+        "$ref": "#/texts/98"
+      },
+      {
+        "$ref": "#/groups/9"
+      },
+      {
+        "$ref": "#/texts/107"
+      },
+      {
+        "$ref": "#/groups/10"
+      },
+      {
+        "$ref": "#/texts/110"
+      },
+      {
+        "$ref": "#/texts/111"
+      },
+      {
+        "$ref": "#/groups/11"
+      },
+      {
+        "$ref": "#/groups/12"
+      },
+      {
+        "$ref": "#/texts/119"
+      },
+      {
+        "$ref": "#/groups/13"
+      },
+      {
+        "$ref": "#/texts/123"
+      },
+      {
+        "$ref": "#/texts/124"
+      },
+      {
+        "$ref": "#/texts/125"
+      },
+      {
+        "$ref": "#/groups/14"
+      },
+      {
+        "$ref": "#/texts/129"
+      },
+      {
+        "$ref": "#/groups/15"
+      },
+      {
+        "$ref": "#/texts/132"
+      },
+      {
+        "$ref": "#/groups/16"
+      },
+      {
+        "$ref": "#/groups/17"
+      },
+      {
+        "$ref": "#/texts/138"
+      },
+      {
+        "$ref": "#/texts/139"
+      }
+    ],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "groups": [
+    {
+      "self_ref": "#/groups/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/6"
+        },
+        {
+          "$ref": "#/texts/7"
+        },
+        {
+          "$ref": "#/texts/8"
+        },
+        {
+          "$ref": "#/texts/9"
+        },
+        {
+          "$ref": "#/texts/10"
+        },
+        {
+          "$ref": "#/texts/11"
+        },
+        {
+          "$ref": "#/texts/12"
+        },
+        {
+          "$ref": "#/texts/13"
+        },
+        {
+          "$ref": "#/texts/14"
+        },
+        {
+          "$ref": "#/texts/15"
+        },
+        {
+          "$ref": "#/texts/16"
+        },
+        {
+          "$ref": "#/texts/17"
+        },
+        {
+          "$ref": "#/texts/18"
+        },
+        {
+          "$ref": "#/texts/19"
+        },
+        {
+          "$ref": "#/texts/20"
+        },
+        {
+          "$ref": "#/texts/21"
+        },
+        {
+          "$ref": "#/texts/22"
+        },
+        {
+          "$ref": "#/texts/23"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/31"
+        },
+        {
+          "$ref": "#/texts/32"
+        },
+        {
+          "$ref": "#/texts/33"
+        },
+        {
+          "$ref": "#/texts/34"
+        },
+        {
+          "$ref": "#/texts/35"
+        },
+        {
+          "$ref": "#/texts/36"
+        },
+        {
+          "$ref": "#/texts/37"
+        },
+        {
+          "$ref": "#/texts/38"
+        },
+        {
+          "$ref": "#/texts/39"
+        },
+        {
+          "$ref": "#/texts/40"
+        },
+        {
+          "$ref": "#/texts/41"
+        },
+        {
+          "$ref": "#/texts/42"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/45"
+        },
+        {
+          "$ref": "#/texts/46"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/51"
+        },
+        {
+          "$ref": "#/texts/52"
+        },
+        {
+          "$ref": "#/texts/53"
+        },
+        {
+          "$ref": "#/texts/54"
+        },
+        {
+          "$ref": "#/texts/55"
+        },
+        {
+          "$ref": "#/texts/56"
+        },
+        {
+          "$ref": "#/texts/57"
+        },
+        {
+          "$ref": "#/texts/58"
+        },
+        {
+          "$ref": "#/texts/59"
+        },
+        {
+          "$ref": "#/texts/60"
+        },
+        {
+          "$ref": "#/texts/61"
+        },
+        {
+          "$ref": "#/texts/62"
+        },
+        {
+          "$ref": "#/texts/63"
+        },
+        {
+          "$ref": "#/texts/64"
+        },
+        {
+          "$ref": "#/texts/65"
+        },
+        {
+          "$ref": "#/texts/66"
+        },
+        {
+          "$ref": "#/texts/67"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/69"
+        },
+        {
+          "$ref": "#/texts/70"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/73"
+        },
+        {
+          "$ref": "#/texts/74"
+        },
+        {
+          "$ref": "#/texts/75"
+        },
+        {
+          "$ref": "#/texts/76"
+        },
+        {
+          "$ref": "#/texts/77"
+        },
+        {
+          "$ref": "#/texts/78"
+        },
+        {
+          "$ref": "#/texts/79"
+        },
+        {
+          "$ref": "#/texts/80"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/6",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/7",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/85"
+        },
+        {
+          "$ref": "#/texts/86"
+        },
+        {
+          "$ref": "#/texts/87"
+        },
+        {
+          "$ref": "#/texts/88"
+        },
+        {
+          "$ref": "#/texts/89"
+        },
+        {
+          "$ref": "#/texts/90"
+        },
+        {
+          "$ref": "#/texts/91"
+        },
+        {
+          "$ref": "#/texts/92"
+        },
+        {
+          "$ref": "#/texts/93"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/8",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/95"
+        },
+        {
+          "$ref": "#/texts/96"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/9",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/99"
+        },
+        {
+          "$ref": "#/texts/100"
+        },
+        {
+          "$ref": "#/texts/101"
+        },
+        {
+          "$ref": "#/texts/102"
+        },
+        {
+          "$ref": "#/texts/103"
+        },
+        {
+          "$ref": "#/texts/104"
+        },
+        {
+          "$ref": "#/texts/105"
+        },
+        {
+          "$ref": "#/texts/106"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/10",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/108"
+        },
+        {
+          "$ref": "#/texts/109"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/11",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/112"
+        },
+        {
+          "$ref": "#/texts/113"
+        },
+        {
+          "$ref": "#/texts/114"
+        },
+        {
+          "$ref": "#/texts/115"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/12",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/116"
+        },
+        {
+          "$ref": "#/texts/117"
+        },
+        {
+          "$ref": "#/texts/118"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/13",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/120"
+        },
+        {
+          "$ref": "#/texts/121"
+        },
+        {
+          "$ref": "#/texts/122"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/14",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/126"
+        },
+        {
+          "$ref": "#/texts/127"
+        },
+        {
+          "$ref": "#/texts/128"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/15",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/130"
+        },
+        {
+          "$ref": "#/texts/131"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/16",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/133"
+        },
+        {
+          "$ref": "#/texts/134"
+        },
+        {
+          "$ref": "#/texts/135"
+        },
+        {
+          "$ref": "#/texts/136"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/17",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/137"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    }
+  ],
+  "texts": [
+    {
+      "self_ref": "#/texts/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 43.2239990234375,
+            "t": 805.6840209960938,
+            "r": 86.36600494384766,
+            "b": 789.3700561523438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "Reena",
+      "text": "Reena",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 787.9240112304688,
+            "r": 251.802001953125,
+            "b": 771.6100463867188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            30
+          ]
+        }
+      ],
+      "orig": "E-Mail:-9reenadahiya@gmail.com",
+      "text": "E-Mail:-9reenadahiya@gmail.com",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 770.1640625,
+            "r": 285.9020080566406,
+            "b": 753.8500366210938,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            34
+          ]
+        }
+      ],
+      "orig": "Mobile: +91-9813788421, 9990014624",
+      "text": "Mobile: +91-9813788421, 9990014624"
+    },
+    {
+      "self_ref": "#/texts/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 48.263999938964844,
+            "t": 741.9400634765625,
+            "r": 169.02999877929688,
+            "b": 727.8760375976562,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "Professional Summary",
+      "text": "Professional Summary",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 43.704002380371094,
+            "t": 715.0780639648438,
+            "r": 562.52001953125,
+            "b": 662.5390625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            344
+          ]
+        }
+      ],
+      "orig": "Sr. QA Engineer with ~8+ years of experience in testing of software solutions and has worked with National and International clients on several projects ranging from Functional testing to manual/automation web & Mobile app testing over various domains like e-learning, e-commerce, hospitality, travel, resource management, payment gateways etc.",
+      "text": "Sr. QA Engineer with ~8+ years of experience in testing of software solutions and has worked with National and International clients on several projects ranging from Functional testing to manual/automation web & Mobile app testing over various domains like e-learning, e-commerce, hospitality, travel, resource management, payment gateways etc."
+    },
+    {
+      "self_ref": "#/texts/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 48.263999938964844,
+            "t": 647.3500366210938,
+            "r": 80.90399932861328,
+            "b": 633.2860107421875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            6
+          ]
+        }
+      ],
+      "orig": "Skills",
+      "text": "Skills",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/6",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 616.8980102539062,
+            "r": 357.10400390625,
+            "b": 603.9590454101562,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            60
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience of 8+ years in software testing on Web & Mobile",
+      "text": "\u25cf Experience of 8+ years in software testing on Web & Mobile",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/7",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 603.6980590820312,
+            "r": 271.0890197753906,
+            "b": 590.759033203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            41
+          ]
+        }
+      ],
+      "orig": "\u25cf 3+ Years of experience in team handling",
+      "text": "\u25cf 3+ Years of experience in team handling",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/8",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 590.258056640625,
+            "r": 377.29400634765625,
+            "b": 577.3190307617188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            61
+          ]
+        }
+      ],
+      "orig": "\u25cf 2+Years of experience in Web automation using Selenium java",
+      "text": "\u25cf 2+Years of experience in Web automation using Selenium java",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/9",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 577.0580444335938,
+            "r": 357.9410095214844,
+            "b": 564.1190185546875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            58
+          ]
+        }
+      ],
+      "orig": "\u25cf 2+ years of experience in Mobile automation using Appium",
+      "text": "\u25cf 2+ years of experience in Mobile automation using Appium",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/10",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 563.6180419921875,
+            "r": 417.19000244140625,
+            "b": 550.6790161132812,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            67
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience in Framework designing like Cucumber using POM, TestNG",
+      "text": "\u25cf Experience in Framework designing like Cucumber using POM, TestNG",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/11",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 550.3880004882812,
+            "r": 339.8260192871094,
+            "b": 537.4490356445312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            55
+          ]
+        }
+      ],
+      "orig": "\u25cf Working experience with code management tool like GIT",
+      "text": "\u25cf Working experience with code management tool like GIT",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/12",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 536.947998046875,
+            "r": 408.8890075683594,
+            "b": 524.009033203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            72
+          ]
+        }
+      ],
+      "orig": "\u25cf Working experience with CI/CD tool like Jenkins and in creating builds",
+      "text": "\u25cf Working experience with CI/CD tool like Jenkins and in creating builds",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/13",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 523.748046875,
+            "r": 428.8390197753906,
+            "b": 510.80902099609375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            72
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience with Deployment of pipelines for test environment using AWS",
+      "text": "\u25cf Experience with Deployment of pipelines for test environment using AWS",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/14",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 510.3080139160156,
+            "r": 264.8390197753906,
+            "b": 497.3690185546875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            43
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience in checking logs using logz.io",
+      "text": "\u25cf Experience in checking logs using logz.io",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/15",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 497.1080322265625,
+            "r": 456.67901611328125,
+            "b": 484.1690368652344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            79
+          ]
+        }
+      ],
+      "orig": "\u25cf Good Experience of Cross Browser and Platform testing (windows,IOS & android)",
+      "text": "\u25cf Good Experience of Cross Browser and Platform testing (windows,IOS & android)",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/16",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 483.66802978515625,
+            "r": 339.2690124511719,
+            "b": 470.7290344238281,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            54
+          ]
+        }
+      ],
+      "orig": "\u25cf REST Assured API testing using Postman , Swagger Doc",
+      "text": "\u25cf REST Assured API testing using Postman , Swagger Doc",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/17",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 470.4480285644531,
+            "r": 397.2690124511719,
+            "b": 457.509033203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            64
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience in database testing using MySQL workbench, DynamoDB",
+      "text": "\u25cf Experience in database testing using MySQL workbench, DynamoDB",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/18",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 457.0080261230469,
+            "r": 539.60302734375,
+            "b": 430.8690185546875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            146
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience in testing Payments using different devices/methods like Stripe, Adyen, Gpay, izettle, iDeal, Paypal, Gift card,  Split payments etc.",
+      "text": "\u25cf Experience in testing Payments using different devices/methods like Stripe, Adyen, Gpay, izettle, iDeal, Paypal, Gift card,  Split payments etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/19",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 430.3680114746094,
+            "r": 559.197021484375,
+            "b": 404.2290344238281,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            133
+          ]
+        }
+      ],
+      "orig": "\u25cf Experienced in Mobile Application Testing on Android and iOS and experience with different devices like Tabs, Kiosk, POS, Elo etc .",
+      "text": "\u25cf Experienced in Mobile Application Testing on Android and iOS and experience with different devices like Tabs, Kiosk, POS, Elo etc .",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/20",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 403.72802734375,
+            "r": 324.3890075683594,
+            "b": 390.7890319824219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            52
+          ]
+        }
+      ],
+      "orig": "\u25cf Knowledge of SDLC & STLC models, Agile -Scrum etc.",
+      "text": "\u25cf Knowledge of SDLC & STLC models, Agile -Scrum etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/21",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 390.5080261230469,
+            "r": 424.03900146484375,
+            "b": 377.56903076171875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            74
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience in analyzing requirements/functional specification documents.",
+      "text": "\u25cf Experience in analyzing requirements/functional specification documents.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/22",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 377.0680236816406,
+            "r": 508.7790222167969,
+            "b": 364.1290283203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            98
+          ]
+        }
+      ],
+      "orig": "\u25cf Proficient in identifying & reporting defects on tools like Jira, , Redmine, PMS, Test link etc.",
+      "text": "\u25cf Proficient in identifying & reporting defects on tools like Jira, , Redmine, PMS, Test link etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/23",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 363.6280212402344,
+            "r": 404.5690002441406,
+            "b": 350.68902587890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            73
+          ]
+        }
+      ],
+      "orig": "\u25cf Extensive experience in preparing test scenarios & writing Test cases .",
+      "text": "\u25cf Extensive experience in preparing test scenarios & writing Test cases .",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/24",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 349.9310302734375,
+            "r": 64.29299926757812,
+            "b": 337.62200927734375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            1
+          ]
+        }
+      ],
+      "orig": "\u25cf",
+      "text": "\u25cf"
+    },
+    {
+      "self_ref": "#/texts/25",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 72.02400207519531,
+            "t": 350.4280090332031,
+            "r": 322.6369934082031,
+            "b": 337.489013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            55
+          ]
+        }
+      ],
+      "orig": "Responsible for testing deliverable like Test strategy,",
+      "text": "Responsible for testing deliverable like Test strategy,"
+    },
+    {
+      "self_ref": "#/texts/26",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 322.9200134277344,
+            "t": 350.4280090332031,
+            "r": 401.7900085449219,
+            "b": 337.489013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            15
+          ]
+        }
+      ],
+      "orig": "Test estimation",
+      "text": "Test estimation"
+    },
+    {
+      "self_ref": "#/texts/27",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 401.8999938964844,
+            "t": 350.4280090332031,
+            "r": 406.3860168457031,
+            "b": 337.489013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            1
+          ]
+        }
+      ],
+      "orig": ",",
+      "text": ","
+    },
+    {
+      "self_ref": "#/texts/28",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 406.46002197265625,
+            "t": 350.4280090332031,
+            "r": 453.1809997558594,
+            "b": 337.489013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "Test plan",
+      "text": "Test plan"
+    },
+    {
+      "self_ref": "#/texts/29",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 453.2900085449219,
+            "t": 350.4280090332031,
+            "r": 560.0180053710938,
+            "b": 337.489013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "and Test scenarios on",
+      "text": "and Test scenarios on"
+    },
+    {
+      "self_ref": "#/texts/30",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 72.02400207519531,
+            "t": 336.9880065917969,
+            "r": 155.83900451660156,
+            "b": 324.04901123046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "assigned projects",
+      "text": "assigned projects"
+    },
+    {
+      "self_ref": "#/texts/31",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 323.78802490234375,
+            "r": 410.3590087890625,
+            "b": 310.8490295410156,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            72
+          ]
+        }
+      ],
+      "orig": "\u25cf Work closely with the development team to identify and resolve defects",
+      "text": "\u25cf Work closely with the development team to identify and resolve defects",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/32",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 310.3480224609375,
+            "r": 407.2090148925781,
+            "b": 297.4090270996094,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            73
+          ]
+        }
+      ],
+      "orig": "\u25cf Participate in product design and review meetings to ensure testability",
+      "text": "\u25cf Participate in product design and review meetings to ensure testability",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/33",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 297.1180114746094,
+            "r": 535.6270141601562,
+            "b": 270.739013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            107
+          ]
+        }
+      ],
+      "orig": "\u25cf Provide feedback to the development team on usability, functionality and performance of software products",
+      "text": "\u25cf Provide feedback to the development team on usability, functionality and performance of software products",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/34",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 270.47802734375,
+            "r": 373.1289978027344,
+            "b": 257.53900146484375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            64
+          ]
+        }
+      ],
+      "orig": "\u25cf Designing & optimizing Test cases using Test Design techniques",
+      "text": "\u25cf Designing & optimizing Test cases using Test Design techniques",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/35",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 257.03802490234375,
+            "r": 532.0250244140625,
+            "b": 230.89901733398438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            113
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience in Functional testing , Regression testing , Smoke testing , Sanity testing , Retesting testing etc.",
+      "text": "\u25cf Experience in Functional testing , Regression testing , Smoke testing , Sanity testing , Retesting testing etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/36",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 230.39801025390625,
+            "r": 542.77001953125,
+            "b": 204.239013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            115
+          ]
+        }
+      ],
+      "orig": "\u25cf Coordination with Release Manage, Business Analysts & Delivery team to establish project priorities and estimates",
+      "text": "\u25cf Coordination with Release Manage, Business Analysts & Delivery team to establish project priorities and estimates",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/37",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 203.73800659179688,
+            "r": 533.9340209960938,
+            "b": 177.59901428222656,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            145
+          ]
+        }
+      ],
+      "orig": "\u25cf Experience using industry standard software and tools and developing test scenarios, test cases to authenticate the quality of software release",
+      "text": "\u25cf Experience using industry standard software and tools and developing test scenarios, test cases to authenticate the quality of software release",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/38",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 177.09800720214844,
+            "r": 487.17901611328125,
+            "b": 164.1590118408203,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            90
+          ]
+        }
+      ],
+      "orig": "\u25cf Detecting bugs & classifying them based on Severity , Priority and attending Triage call",
+      "text": "\u25cf Detecting bugs & classifying them based on Severity , Priority and attending Triage call",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/39",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 163.89801025390625,
+            "r": 541.31201171875,
+            "b": 137.51901245117188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            149
+          ]
+        }
+      ],
+      "orig": "\u25cf Proven ability in working individually or as a part of a team, Problem solving, Process improvement activities, Reporting and Assisting to Manager.",
+      "text": "\u25cf Proven ability in working individually or as a part of a team, Problem solving, Process improvement activities, Reporting and Assisting to Manager.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/40",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 137.22801208496094,
+            "r": 550.718017578125,
+            "b": 110.84900665283203,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            120
+          ]
+        }
+      ],
+      "orig": "\u25cf Analytical skills, communication skills, work ethics, and the Ability to take ownership and work under own initiative.",
+      "text": "\u25cf Analytical skills, communication skills, work ethics, and the Ability to take ownership and work under own initiative.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/41",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 110.35200500488281,
+            "r": 557.8389892578125,
+            "b": 84.21300506591797,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            114
+          ]
+        }
+      ],
+      "orig": "\u25cf Ability to Multi Task and A hard worker with 'go and get it' attitude to Meet Strict Deadlines of assigned tasks",
+      "text": "\u25cf Ability to Multi Task and A hard worker with 'go and get it' attitude to Meet Strict Deadlines of assigned tasks",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/42",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 83.71200561523438,
+            "r": 290.30902099609375,
+            "b": 70.77300262451172,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            47
+          ]
+        }
+      ],
+      "orig": "\u25cf Keep learning new things with all enthusiasm.",
+      "text": "\u25cf Keep learning new things with all enthusiasm.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/43",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "page_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 805.300048828125,
+            "r": 120.52999877929688,
+            "b": 791.2360229492188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Work History",
+      "text": "Work History"
+    },
+    {
+      "self_ref": "#/texts/44",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 45.384002685546875,
+            "t": 776.7880249023438,
+            "r": 250.6890106201172,
+            "b": 763.8490600585938,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            37
+          ]
+        }
+      ],
+      "orig": "Company:  ImpactQA (03/2022- Present)",
+      "text": "Company:  ImpactQA (03/2022- Present)",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/45",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 43.224000886486415,
+            "t": 763.1080398315986,
+            "r": 227.16900465903743,
+            "b": 750.1690391562277,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            39
+          ]
+        }
+      ],
+      "orig": "Client:      Vitamojo(Web , Mobile app)",
+      "text": "Client:      Vitamojo(Web , Mobile app)"
+    },
+    {
+      "self_ref": "#/texts/46",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 43.224000886486415,
+            "t": 748.4680390674413,
+            "r": 173.61900356077376,
+            "b": 735.5290383920702,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            31
+          ]
+        }
+      ],
+      "orig": "Role:         Sr. Test Engineer",
+      "text": "Role:         Sr. Test Engineer"
+    },
+    {
+      "self_ref": "#/texts/47",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 43.2239990234375,
+            "t": 720.5980224609375,
+            "r": 567.531982421875,
+            "b": 679.8190307617188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            313
+          ]
+        }
+      ],
+      "orig": "Vita Mojo is a leading brand in the UK in the hospitality business providing services to almost 20000 stores to digitize their operations by reducing their manual efforts and staff shortage. Providing a vast range of products like web application, Mobile application, KIOSK and Back in store tools for management.",
+      "text": "Vita Mojo is a leading brand in the UK in the hospitality business providing services to almost 20000 stores to digitize their operations by reducing their manual efforts and staff shortage. Providing a vast range of products like web application, Mobile application, KIOSK and Back in store tools for management."
+    },
+    {
+      "self_ref": "#/texts/48",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 49.224002838134766,
+            "t": 664.9180297851562,
+            "r": 494.5,
+            "b": 651.97900390625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            88
+          ]
+        }
+      ],
+      "orig": "Project : Web Based/Mobile application for placing orders for pickup, Delivery and OPAT.",
+      "text": "Project : Web Based/Mobile application for placing orders for pickup, Delivery and OPAT."
+    },
+    {
+      "self_ref": "#/texts/49",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 49.224002838134766,
+            "t": 650.758056640625,
+            "r": 212.2080078125,
+            "b": 637.8190307617188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            29
+          ]
+        }
+      ],
+      "orig": "Team Size: Web (6)/Mobile (2)",
+      "text": "Team Size: Web (6)/Mobile (2)",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/50",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 49.224002838134766,
+            "t": 636.5780029296875,
+            "r": 184.1790008544922,
+            "b": 623.6390380859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            25
+          ]
+        }
+      ],
+      "orig": "Roles & Responsibilities:",
+      "text": "Roles & Responsibilities:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/51",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 608.498046875,
+            "r": 542.5910034179688,
+            "b": 582.3590087890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            202
+          ]
+        }
+      ],
+      "orig": "1. Have successfully delivered several features to facilitate the end user to place food orders for pickup from  stores, deliver to doorsteps and orders to pay at table inside a restaurant at one place.",
+      "text": "1. Have successfully delivered several features to facilitate the end user to place food orders for pickup from  stores, deliver to doorsteps and orders to pay at table inside a restaurant at one place.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/52",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 581.1380004882812,
+            "r": 558.864013671875,
+            "b": 554.759033203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            200
+          ]
+        }
+      ],
+      "orig": "2. Tested end to end flow from creating the account, selection of dine type, add food in cart and proceed to pay flow in Web for desktop/mobile browsers and Mobile application for both Android and IOS",
+      "text": "2. Tested end to end flow from creating the account, selection of dine type, add food in cart and proceed to pay flow in Web for desktop/mobile browsers and Mobile application for both Android and IOS",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/53",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 553.748046875,
+            "r": 411.4739990234375,
+            "b": 540.8090209960938,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            66
+          ]
+        }
+      ],
+      "orig": "3. Writing automation scripts using Cucumber framework in Selenium",
+      "text": "3. Writing automation scripts using Cucumber framework in Selenium",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/54",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 539.5880126953125,
+            "r": 557.3290405273438,
+            "b": 513.4490356445312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            105
+          ]
+        }
+      ],
+      "orig": "4. Analyzing automation reports and checking failures, minimizing script failures to achieve 100% success",
+      "text": "4. Analyzing automation reports and checking failures, minimizing script failures to achieve 100% success",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/55",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 512.22802734375,
+            "r": 248.5290069580078,
+            "b": 499.2890319824219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            39
+          ]
+        }
+      ],
+      "orig": "5. Updating scripts as per requirements",
+      "text": "5. Updating scripts as per requirements",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/56",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 498.0680236816406,
+            "r": 382.0090026855469,
+            "b": 485.1290283203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            67
+          ]
+        }
+      ],
+      "orig": "6. API testing using Postman and validate response, data and status",
+      "text": "6. API testing using Postman and validate response, data and status",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/57",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 484.14801025390625,
+            "r": 477.5790100097656,
+            "b": 471.2090148925781,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            90
+          ]
+        }
+      ],
+      "orig": "7. DB testing using Mysql and validating data for updation, deletion and addition in table",
+      "text": "7. DB testing using Mysql and validating data for updation, deletion and addition in table",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/58",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 469.968017578125,
+            "r": 286.7720031738281,
+            "b": 457.0290222167969,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            45
+          ]
+        }
+      ],
+      "orig": "8. Assigning and reviewing task of junior QAs",
+      "text": "8. Assigning and reviewing task of junior QAs",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/59",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 455.8080139160156,
+            "r": 536.0440063476562,
+            "b": 429.6690368652344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            132
+          ]
+        }
+      ],
+      "orig": "9. Tested the integration of information with restaurants screens for correct info for right stores with right details of the order.",
+      "text": "9. Tested the integration of information with restaurants screens for correct info for right stores with right details of the order.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/60",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 428.4480285644531,
+            "r": 550.0889892578125,
+            "b": 415.509033203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            106
+          ]
+        }
+      ],
+      "orig": "10. Assess clients' needs, identifies and documents requirements critical to achieving business objectives",
+      "text": "10. Assess clients' needs, identifies and documents requirements critical to achieving business objectives",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/61",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 414.52801513671875,
+            "r": 394.489013671875,
+            "b": 401.5890197753906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            74
+          ]
+        }
+      ],
+      "orig": "11. Designed detailed level test scenarios, system integration test cases.",
+      "text": "11. Designed detailed level test scenarios, system integration test cases.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/62",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 400.3680114746094,
+            "r": 368.0890197753906,
+            "b": 387.42901611328125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            68
+          ]
+        }
+      ],
+      "orig": "12. Regression testing, Defect analysis, Defect logging and tracking",
+      "text": "12. Regression testing, Defect analysis, Defect logging and tracking",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/63",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 386.1880187988281,
+            "r": 323.66900634765625,
+            "b": 373.2490234375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            56
+          ]
+        }
+      ],
+      "orig": "13. Integration system testing between different systems",
+      "text": "13. Integration system testing between different systems",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/64",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 372.26800537109375,
+            "r": 556.8090209960938,
+            "b": 359.3290100097656,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            110
+          ]
+        }
+      ],
+      "orig": "14. Part of stand-ups, sprint planning, retros and defect triage calls and responsible for KTs for new joiners",
+      "text": "14. Part of stand-ups, sprint planning, retros and defect triage calls and responsible for KTs for new joiners",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/65",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 358.1080322265625,
+            "r": 201.69900512695312,
+            "b": 345.16900634765625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            31
+          ]
+        }
+      ],
+      "orig": "15. Sanity Testing and Hotfixes",
+      "text": "15. Sanity Testing and Hotfixes",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/66",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 343.9480285644531,
+            "r": 268.2090148925781,
+            "b": 331.0090026855469,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            45
+          ]
+        }
+      ],
+      "orig": "16. Analyzing automation reports for failures",
+      "text": "16. Analyzing automation reports for failures",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/67",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 330.02801513671875,
+            "r": 561.6090087890625,
+            "b": 317.0890197753906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            110
+          ]
+        }
+      ],
+      "orig": "17. Testing different Payment methods like Stripe, Adyen, Gpay, Izettle, Paypal, ideal and split payments etc.",
+      "text": "17. Testing different Payment methods like Stripe, Adyen, Gpay, Izettle, Paypal, ideal and split payments etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/68",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 287.7580261230469,
+            "r": 283.80902099609375,
+            "b": 274.8190002441406,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            44
+          ]
+        }
+      ],
+      "orig": "Company:  Netlink Software (09/2020-03/2022)",
+      "text": "Company:  Netlink Software (09/2020-03/2022)",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/69",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 274.0780143059237,
+            "r": 115.99900237903799,
+            "b": 261.13901363055277,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "Client:         RA",
+      "text": "Client:         RA"
+    },
+    {
+      "self_ref": "#/texts/70",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 259.4380135417664,
+            "r": 170.9790035066297,
+            "b": 246.49901286639533,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            31
+          ]
+        }
+      ],
+      "orig": "Role:         Sr. Test Engineer",
+      "text": "Role:         Sr. Test Engineer"
+    },
+    {
+      "self_ref": "#/texts/71",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 231.59800720214844,
+            "r": 559.6420288085938,
+            "b": 176.87901306152344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            341
+          ]
+        }
+      ],
+      "orig": "Rainforest Alliance is an international non-profit organization which is building an alliance to protect forests, improve the livelihoods of farmers and forest communities, and promote their human rights. They provides business solutions to farmers and organizations through signing legal agreement and getting certifications for their crops",
+      "text": "Rainforest Alliance is an international non-profit organization which is building an alliance to protect forests, improve the livelihoods of farmers and forest communities, and promote their human rights. They provides business solutions to farmers and organizations through signing legal agreement and getting certifications for their crops"
+    },
+    {
+      "self_ref": "#/texts/72",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 161.97801208496094,
+            "r": 533.4990234375,
+            "b": 135.11900329589844,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            129
+          ]
+        }
+      ],
+      "orig": "Project : Web Based/Mobile application for registering and getting certification by signing agreement Roles and Responsibilities:",
+      "text": "Project : Web Based/Mobile application for registering and getting certification by signing agreement Roles and Responsibilities:"
+    },
+    {
+      "self_ref": "#/texts/73",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 118.98800659179688,
+            "r": 369.04901123046875,
+            "b": 106.04900360107422,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            64
+          ]
+        }
+      ],
+      "orig": "1. Independent preparation of Test cases and executing the same.",
+      "text": "1. Independent preparation of Test cases and executing the same.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/74",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 104.8320083618164,
+            "r": 426.4389953613281,
+            "b": 91.89300537109375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            77
+          ]
+        }
+      ],
+      "orig": "2. Perform regression, retesting, ad-hoc,smoke,integration and system testing",
+      "text": "2. Perform regression, retesting, ad-hoc,smoke,integration and system testing",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/75",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 90.67200469970703,
+            "r": 199.0590057373047,
+            "b": 77.73300170898438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            30
+          ]
+        }
+      ],
+      "orig": "3. Sanity testing and Hotfixes",
+      "text": "3. Sanity testing and Hotfixes",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/76",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 76.75200653076172,
+            "r": 343.45599365234375,
+            "b": 63.50400161743164,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            58
+          ]
+        }
+      ],
+      "orig": "4. Handling junior QAs and helping them to deliver on time",
+      "text": "4. Handling junior QAs and helping them to deliver on time",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/77",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 62.592002868652344,
+            "r": 555.2640380859375,
+            "b": 36.189002990722656,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            112
+          ]
+        }
+      ],
+      "orig": "5. Check the status of every issue across each module day to day and keep tracking bugs and retesting the bugs .",
+      "text": "5. Check the status of every issue across each module day to day and keep tracking bugs and retesting the bugs .",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/78",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 805.8280639648438,
+            "r": 321.5090026855469,
+            "b": 792.8890380859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            57
+          ]
+        }
+      ],
+      "orig": "6. Writing the scripts in selenium for regression testing",
+      "text": "6. Writing the scripts in selenium for regression testing",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/79",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 791.6680297851562,
+            "r": 556.8090209960938,
+            "b": 778.7290649414062,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            109
+          ]
+        }
+      ],
+      "orig": "7. Part of stand-ups, sprint planning, retros and defect triage calls and responsible for KTs for new joiners",
+      "text": "7. Part of stand-ups, sprint planning, retros and defect triage calls and responsible for KTs for new joiners",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/80",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 777.748046875,
+            "r": 347.4490051269531,
+            "b": 764.8090209960938,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            58
+          ]
+        }
+      ],
+      "orig": "8. Coordination with developers to understand them defects",
+      "text": "8. Coordination with developers to understand them defects",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/81",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 43.2239990234375,
+            "t": 749.4280395507812,
+            "r": 309.5090026855469,
+            "b": 736.489013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            50
+          ]
+        }
+      ],
+      "orig": "Company:  Abbie IT Mart Pvt. Ltd (01/2019-08/2020)",
+      "text": "Company:  Abbie IT Mart Pvt. Ltd (01/2019-08/2020)",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/82",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 36.02400207519531,
+            "t": 735.0280151367188,
+            "r": 176.0189971923828,
+            "b": 722.0890502929688,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            32
+          ]
+        }
+      ],
+      "orig": "Role:            Software Tester",
+      "text": "Role:            Software Tester"
+    },
+    {
+      "self_ref": "#/texts/83",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 706.4380493164062,
+            "r": 529.3179931640625,
+            "b": 666.8590087890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            234
+          ]
+        }
+      ],
+      "orig": "Abbie IT Mart is the IT and Media industry. They have major products and services in various fields like media, live broadcast etc. They help customers to advertise their business, offers through lift media and through live broadcast.",
+      "text": "Abbie IT Mart is the IT and Media industry. They have major products and services in various fields like media, live broadcast etc. They help customers to advertise their business, offers through lift media and through live broadcast."
+    },
+    {
+      "self_ref": "#/texts/84",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 643.7780151367188,
+            "r": 551.0490112304688,
+            "b": 613.3190307617188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            129
+          ]
+        }
+      ],
+      "orig": "Project:  Web Based/Mobile application for managing customers data and organizing media functionality Roles and Responsibilities:",
+      "text": "Project:  Web Based/Mobile application for managing customers data and organizing media functionality Roles and Responsibilities:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/85",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 594.3380126953125,
+            "r": 554.4089965820312,
+            "b": 581.3990478515625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            102
+          ]
+        }
+      ],
+      "orig": "1. Independent preparation of Test scenarios, Test cases based on requirements and executing the same.",
+      "text": "1. Independent preparation of Test scenarios, Test cases based on requirements and executing the same.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/86",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 579.6980590820312,
+            "r": 553.5640258789062,
+            "b": 553.5590209960938,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            182
+          ]
+        }
+      ],
+      "orig": "2. Perform regression testing and Involved in Execution and creating Reusable functions which improves the robustness, reusability and maintainability of the test scripts in Selenium",
+      "text": "2. Perform regression testing and Involved in Execution and creating Reusable functions which improves the robustness, reusability and maintainability of the test scripts in Selenium",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/87",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 552.3080444335938,
+            "r": 541.7659912109375,
+            "b": 525.9290161132812,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            129
+          ]
+        }
+      ],
+      "orig": "3. Check the status of every issue across each module day to day and Keep tracking bugs, retesting and updating the bug's status.",
+      "text": "3. Check the status of every issue across each module day to day and Keep tracking bugs, retesting and updating the bug's status.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/88",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 524.947998046875,
+            "r": 332.54901123046875,
+            "b": 512.009033203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            58
+          ]
+        }
+      ],
+      "orig": "4. Writing the scripts in selenium for regression testing.",
+      "text": "4. Writing the scripts in selenium for regression testing.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/89",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 510.78802490234375,
+            "r": 419.47900390625,
+            "b": 497.8490295410156,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            74
+          ]
+        }
+      ],
+      "orig": "5. Help the developers to understand the bugs and Reporting to the IT Head",
+      "text": "5. Help the developers to understand the bugs and Reporting to the IT Head",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/90",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 496.8680114746094,
+            "r": 408.16900634765625,
+            "b": 483.92901611328125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            76
+          ]
+        }
+      ],
+      "orig": "6. Involved in the end to end testing for each sprint version of the product",
+      "text": "6. Involved in the end to end testing for each sprint version of the product",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/91",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 482.7080383300781,
+            "r": 301.8290100097656,
+            "b": 469.7690124511719,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            50
+          ]
+        }
+      ],
+      "orig": "7. Helping in building QA team and took interviews",
+      "text": "7. Helping in building QA team and took interviews",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/92",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 468.52801513671875,
+            "r": 421.8789978027344,
+            "b": 455.5890197753906,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            78
+          ]
+        }
+      ],
+      "orig": "8. Prepared Test plan for team, part of efforts estimation and sprint planning",
+      "text": "8. Prepared Test plan for team, part of efforts estimation and sprint planning",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/93",
+      "parent": {
+        "$ref": "#/groups/7"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 454.6080322265625,
+            "r": 345.2690124511719,
+            "b": 441.6690368652344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            58
+          ]
+        }
+      ],
+      "orig": "9. Represented and demo new functionalities to other teams",
+      "text": "9. Represented and demo new functionalities to other teams",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/94",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 412.1280212402344,
+            "r": 305.66900634765625,
+            "b": 399.18902587890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            47
+          ]
+        }
+      ],
+      "orig": "Company: Yugasa Software Labs (10/2017-01/2019)",
+      "text": "Company: Yugasa Software Labs (10/2017-01/2019)",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/95",
+      "parent": {
+        "$ref": "#/groups/8"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 398.2080207850806,
+            "r": 181.29900371828387,
+            "b": 385.2690201097095,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            28
+          ]
+        }
+      ],
+      "orig": "Clients:  US,Denmark, Indian",
+      "text": "Clients:  US,Denmark, Indian"
+    },
+    {
+      "self_ref": "#/texts/96",
+      "parent": {
+        "$ref": "#/groups/8"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 384.0280200449336,
+            "r": 142.3990029204789,
+            "b": 371.08901936956255,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "Role:    Associate QA",
+      "text": "Role:    Associate QA"
+    },
+    {
+      "self_ref": "#/texts/97",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 356.1880187988281,
+            "r": 538.6370239257812,
+            "b": 330.04901123046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            106
+          ]
+        }
+      ],
+      "orig": "Project: Websites/Web portals, Mobile apps( PikNik App, Halo app, Locate-M, Appotek, Headsup, Raffl etc. )",
+      "text": "Project: Websites/Web portals, Mobile apps( PikNik App, Halo app, Locate-M, Appotek, Headsup, Raffl etc. )"
+    },
+    {
+      "self_ref": "#/texts/98",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 325.22802734375,
+            "r": 183.9390106201172,
+            "b": 312.28900146484375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            27
+          ]
+        }
+      ],
+      "orig": "Roles and Responsibilities:",
+      "text": "Roles and Responsibilities:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/99",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 296.15802001953125,
+            "r": 382.968994140625,
+            "b": 283.2190246582031,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            66
+          ]
+        }
+      ],
+      "orig": "1. Understanding the designing, Functional and other Requirements.",
+      "text": "1. Understanding the designing, Functional and other Requirements.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/100",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 281.51800537109375,
+            "r": 412.03900146484375,
+            "b": 268.5790100097656,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            73
+          ]
+        }
+      ],
+      "orig": "2. Preparing the Test Cases and executing test cases as per requirements.",
+      "text": "2. Preparing the Test Cases and executing test cases as per requirements.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/101",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 268.3180236816406,
+            "r": 358.968994140625,
+            "b": 255.37901306152344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            63
+          ]
+        }
+      ],
+      "orig": "3. Testing on different browsers and devices for compatibility.",
+      "text": "3. Testing on different browsers and devices for compatibility.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/102",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 254.8780059814453,
+            "r": 223.32901000976562,
+            "b": 241.9390106201172,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            33
+          ]
+        }
+      ],
+      "orig": "4. Reporting and tracking of bugs",
+      "text": "4. Reporting and tracking of bugs",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/103",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 241.67800903320312,
+            "r": 523.4190063476562,
+            "b": 228.739013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            99
+          ]
+        }
+      ],
+      "orig": "5. Performed smoke testing once the build is ready to test. Interaction with clients and developers",
+      "text": "5. Performed smoke testing once the build is ready to test. Interaction with clients and developers",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/104",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 228.23800659179688,
+            "r": 274.2090148925781,
+            "b": 215.29901123046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            45
+          ]
+        }
+      ],
+      "orig": "6. Independently manage the all testing task.",
+      "text": "6. Independently manage the all testing task.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/105",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 214.29800415039062,
+            "r": 343.8290100097656,
+            "b": 201.3590087890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            59
+          ]
+        }
+      ],
+      "orig": "7. Preparing test script for mobile automation using appium",
+      "text": "7. Preparing test script for mobile automation using appium",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/106",
+      "parent": {
+        "$ref": "#/groups/9"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 200.1380157470703,
+            "r": 428.5989990234375,
+            "b": 187.19900512695312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            77
+          ]
+        }
+      ],
+      "orig": "8. Daily automation reports analysis and updating scripts as per requirements",
+      "text": "8. Daily automation reports analysis and updating scripts as per requirements",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/107",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 158.1380157470703,
+            "r": 393.04901123046875,
+            "b": 145.19900512695312,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            67
+          ]
+        }
+      ],
+      "orig": "Company: Magic Software ( Payroll on Stratosphere)(04/2017-09/2017)",
+      "text": "Company: Magic Software ( Payroll on Stratosphere)(04/2017-09/2017)",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/108",
+      "parent": {
+        "$ref": "#/groups/10"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 144.2180075276808,
+            "r": 107.11900219691695,
+            "b": 131.27900685230975,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            11
+          ]
+        }
+      ],
+      "orig": "Client: HMH",
+      "text": "Client: HMH"
+    },
+    {
+      "self_ref": "#/texts/109",
+      "parent": {
+        "$ref": "#/groups/10"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 130.26800679953908,
+            "r": 150.31900308291114,
+            "b": 117.32900612416802,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "Role: Testing Trainee",
+      "text": "Role: Testing Trainee"
+    },
+    {
+      "self_ref": "#/texts/110",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 3,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 102.4320068359375,
+            "r": 545.1430053710938,
+            "b": 47.733001708984375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            328
+          ]
+        }
+      ],
+      "orig": "Houghton Mifflin Harcourt s an American publisher of textbooks, instructional technology materials, assessments, and reference works. HMH provides educational content and related services for grades K-12 via set of online learning platforms, including but not limited to ThinkCentral, HMOF, Write Source, and ClassZone platforms",
+      "text": "Houghton Mifflin Harcourt s an American publisher of textbooks, instructional technology materials, assessments, and reference works. HMH provides educational content and related services for grades K-12 via set of online learning platforms, including but not limited to ThinkCentral, HMOF, Write Source, and ClassZone platforms"
+    },
+    {
+      "self_ref": "#/texts/111",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 791.9080200195312,
+            "r": 539.0490112304688,
+            "b": 765.0490112304688,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            124
+          ]
+        }
+      ],
+      "orig": "Projects: E-Books, Game/Mobile app (Personal Math Trainer (PMT), Games, Books and Drawing Tools) Roles and Responsibilities:",
+      "text": "Projects: E-Books, Game/Mobile app (Personal Math Trainer (PMT), Games, Books and Drawing Tools) Roles and Responsibilities:"
+    },
+    {
+      "self_ref": "#/texts/112",
+      "parent": {
+        "$ref": "#/groups/11"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 750.1480102539062,
+            "r": 314.54901123046875,
+            "b": 737.2090454101562,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            52
+          ]
+        }
+      ],
+      "orig": "1. Involvement in Test cases and executing the same.",
+      "text": "1. Involvement in Test cases and executing the same.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/113",
+      "parent": {
+        "$ref": "#/groups/11"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 736.9480590820312,
+            "r": 475.17901611328125,
+            "b": 724.009033203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            83
+          ]
+        }
+      ],
+      "orig": "2. Preparing Test Summary and Test cases based on the Functional document received.",
+      "text": "2. Preparing Test Summary and Test cases based on the Functional document received.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/114",
+      "parent": {
+        "$ref": "#/groups/11"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 723.47802734375,
+            "r": 435.79901123046875,
+            "b": 710.5390625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            80
+          ]
+        }
+      ],
+      "orig": "3. Updated to the team lead on a daily basis through emails and status trackers.",
+      "text": "3. Updated to the team lead on a daily basis through emails and status trackers.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/115",
+      "parent": {
+        "$ref": "#/groups/11"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 710.0380249023438,
+            "r": 487.33502197265625,
+            "b": 697.0990600585938,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            89
+          ]
+        }
+      ],
+      "orig": "4. Keep tracking bugs and retesting the bugs and updating the bug's status with comments.",
+      "text": "4. Keep tracking bugs and retesting the bugs and updating the bug's status with comments.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/116",
+      "parent": {
+        "$ref": "#/groups/12"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 681.9580355958493,
+            "r": 312.86900641666944,
+            "b": 669.0190349204784,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            53
+          ]
+        }
+      ],
+      "orig": "Company: Avantha Business solutions (2015-April 2017)",
+      "text": "Company: Avantha Business solutions (2015-April 2017)"
+    },
+    {
+      "self_ref": "#/texts/117",
+      "parent": {
+        "$ref": "#/groups/12"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 668.0380348692735,
+            "r": 214.89900440739046,
+            "b": 655.0990341939025,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            37
+          ]
+        }
+      ],
+      "orig": "Client: Healthcare Project(US client)",
+      "text": "Client: Healthcare Project(US client)"
+    },
+    {
+      "self_ref": "#/texts/118",
+      "parent": {
+        "$ref": "#/groups/12"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 654.1180341426976,
+            "r": 157.51900323057689,
+            "b": 641.1790334673266,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            23
+          ]
+        }
+      ],
+      "orig": "Role: Process Associate",
+      "text": "Role: Process Associate"
+    },
+    {
+      "self_ref": "#/texts/119",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 40.82400131225586,
+            "t": 609.8900146484375,
+            "r": 141.41000366210938,
+            "b": 595.8260498046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "Education Details",
+      "text": "Education Details",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/120",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 580.1780395507812,
+            "r": 417.0790100097656,
+            "b": 567.239013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            70
+          ]
+        }
+      ],
+      "orig": "\u25cf M.Tech(CSE) from SGT College Of Engineering, MDU University with 68%",
+      "text": "\u25cf M.Tech(CSE) from SGT College Of Engineering, MDU University with 68%",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/121",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 566.0180053710938,
+            "r": 354.40899658203125,
+            "b": 553.0790405273438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            57
+          ]
+        }
+      ],
+      "orig": "\u25cf B.Tech(CSE) from SWIET college, MDU University with 73%",
+      "text": "\u25cf B.Tech(CSE) from SWIET college, MDU University with 73%",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/122",
+      "parent": {
+        "$ref": "#/groups/13"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 50.42399978637695,
+            "t": 552.0680541992188,
+            "r": 382.72900390625,
+            "b": 539.1290283203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            63
+          ]
+        }
+      ],
+      "orig": "\u25cf Schooling from Haryana Board with 77% in 10th and 68% in 12th",
+      "text": "\u25cf Schooling from Haryana Board with 77% in 10th and 68% in 12th",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/123",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 36.02400207519531,
+            "t": 525.6200561523438,
+            "r": 112.63899993896484,
+            "b": 511.5560302734375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            13
+          ]
+        }
+      ],
+      "orig": "Certification",
+      "text": "Certification",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/124",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 498.02001953125,
+            "r": 304.22900390625,
+            "b": 483.9560241699219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            51
+          ]
+        }
+      ],
+      "orig": "Certification in Manual Software Testing from DUCAT",
+      "text": "Certification in Manual Software Testing from DUCAT"
+    },
+    {
+      "self_ref": "#/texts/125",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 40.58399963378906,
+            "t": 470.1600341796875,
+            "r": 142.85000610351562,
+            "b": 456.0960388183594,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            17
+          ]
+        }
+      ],
+      "orig": "Personal Strength",
+      "text": "Personal Strength",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/126",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 53.30400085449219,
+            "t": 438.04803466796875,
+            "r": 386.3290100097656,
+            "b": 425.1090087890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            67
+          ]
+        }
+      ],
+      "orig": "\u25cf Optimistic, Honest, Responsible, Reliable, Confident and Dynamic.",
+      "text": "\u25cf Optimistic, Honest, Responsible, Reliable, Confident and Dynamic.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/127",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 53.30400085449219,
+            "t": 424.1280212402344,
+            "r": 304.468994140625,
+            "b": 411.18902587890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            50
+          ]
+        }
+      ],
+      "orig": "\u25cf Team player, quick learner with can-do attitude.",
+      "text": "\u25cf Team player, quick learner with can-do attitude.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/128",
+      "parent": {
+        "$ref": "#/groups/14"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 53.30400085449219,
+            "t": 410.9280090332031,
+            "r": 279.2489929199219,
+            "b": 397.989013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            42
+          ]
+        }
+      ],
+      "orig": "\u25cf Likely to maintain good Time management.",
+      "text": "\u25cf Likely to maintain good Time management.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/129",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 40.82400131225586,
+            "t": 382.3000183105469,
+            "r": 220.15000915527344,
+            "b": 368.23602294921875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            31
+          ]
+        }
+      ],
+      "orig": "Achievements & Extra Curricular",
+      "text": "Achievements & Extra Curricular",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/130",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 351.6280212402344,
+            "r": 350.0890197753906,
+            "b": 338.68902587890625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            60
+          ]
+        }
+      ],
+      "orig": "\u25cf Participated in school level debate and essay competition.",
+      "text": "\u25cf Participated in school level debate and essay competition.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/131",
+      "parent": {
+        "$ref": "#/groups/15"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 54.02400207519531,
+            "t": 338.4280090332031,
+            "r": 370.0090026855469,
+            "b": 325.489013671875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            65
+          ]
+        }
+      ],
+      "orig": "\u25cf Event organizer in all school and college annual day functions.",
+      "text": "\u25cf Event organizer in all school and college annual day functions.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/132",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 40.82400131225586,
+            "t": 306.4300231933594,
+            "r": 160.87001037597656,
+            "b": 292.36602783203125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "Personal Information",
+      "text": "Personal Information",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/133",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 277.91801450635853,
+            "r": 199.0590040825259,
+            "b": 251.05901310441163,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            77
+          ]
+        }
+      ],
+      "orig": "Full Name:               Reena Dahiya DOB:                         09/05/1990",
+      "text": "Full Name:               Reena Dahiya DOB:                         09/05/1990"
+    },
+    {
+      "self_ref": "#/texts/134",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 249.8380130406797,
+            "r": 151.9990031173665,
+            "b": 236.89901236530864,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            30
+          ]
+        }
+      ],
+      "orig": "Passport:                  Yes",
+      "text": "Passport:                  Yes"
+    },
+    {
+      "self_ref": "#/texts/135",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 235.91801231410375,
+            "r": 167.37900343279682,
+            "b": 222.9790116387327,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            32
+          ]
+        }
+      ],
+      "orig": "Nationality:              Indian",
+      "text": "Nationality:              Indian"
+    },
+    {
+      "self_ref": "#/texts/136",
+      "parent": {
+        "$ref": "#/groups/16"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 221.73801157395678,
+            "r": 298.94900613118244,
+            "b": 208.79901089858572,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            60
+          ]
+        }
+      ],
+      "orig": "Address:                    Sec-10, Sonepat, Haryana(131001)",
+      "text": "Address:                    Sec-10, Sonepat, Haryana(131001)"
+    },
+    {
+      "self_ref": "#/texts/137",
+      "parent": {
+        "$ref": "#/groups/17"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400088156423,
+            "t": 151.65800791602317,
+            "r": 84.05300172385348,
+            "b": 138.7190072406521,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "Date:",
+      "text": "Date:"
+    },
+    {
+      "self_ref": "#/texts/138",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 403.1000061035156,
+            "t": 151.6580047607422,
+            "r": 444.1990051269531,
+            "b": 138.71900939941406,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "Reena",
+      "text": "Reena"
+    },
+    {
+      "self_ref": "#/texts/139",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 4,
+          "bbox": {
+            "l": 42.98400115966797,
+            "t": 137.7080078125,
+            "r": 569.0490112304688,
+            "b": 124.76900482177734,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            14
+          ]
+        }
+      ],
+      "orig": "Place: Sonepat",
+      "text": "Place: Sonepat"
+    }
+  ],
+  "pictures": [],
+  "tables": [],
+  "key_value_items": [],
+  "pages": {
+    "1": {
+      "size": {
+        "width": 595.2000122070312,
+        "height": 841.9200439453125
+      },
+      "page_no": 1
+    },
+    "2": {
+      "size": {
+        "width": 595.2000122070312,
+        "height": 841.9200439453125
+      },
+      "page_no": 2
+    },
+    "3": {
+      "size": {
+        "width": 595.2000122070312,
+        "height": 841.9200439453125
+      },
+      "page_no": 3
+    },
+    "4": {
+      "size": {
+        "width": 595.2000122070312,
+        "height": 841.9200439453125
+      },
+      "page_no": 4
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+    "url": "Sudheer_P.pdf",
+    "title": "Sudheer_P",
+    "content": [
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Parlapati Sudheer Kumar                                                                               Email: parlapati.sudheer@gmail.com"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Mobile Number:"
+                },
+                {
+                    "contentType": "text",
+                    "source": "8074158392"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Objective:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 A Computer Science graduate with comprehensive knowledge of SDLC and STLC, along with expertise in key testing phases. Proficient in Testing methodologies and experienced in utilizing test management tools such as JIRA. Skilled in automation testing using Selenium with Java and Cucumber BDD Framework. Seeking a challenging position where I can leverage my skills in automation testing, SDLC, and agile methodologies to contribute to high-quality software development."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Education:"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u2022 B. Tech (CSE) from B. V. Raju Institute of Technology, Vishnupur, Telangana.               (2019-2023) -- 67%"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u2022 Intermediate (MPC) from Sri Chaitanya Junior College, Hyderabad.                                (2017-2019)"
+                },
+                {
+                    "contentType": "text",
+                    "source": "- 87%"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u2022 SSC from Gayatri Grammar School, Hyderabad.                                                                   (2016-2017)"
+                },
+                {
+                    "contentType": "text",
+                    "source": "- 90%"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Skills:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Programming Languages: C, Java, Python, SQL"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Testing Frameworks: Selenium WebDriver, Cucumber (BDD), TestNG, POM, REST API, Jenkins."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Testing Methodologies: Manual/Automation testing, API testing, Agile methodologies, Scrum, SDLC, STLC, Unit Testing, Integration Testing, etc."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Test Management Tools: JIRA, ALM, Test Tool Management"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Version Control Systems: GitHub"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 CI/CD Pipelines: Familiar with CI/CD concepts"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Trainings:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Have undergone exclusive training on Software Testing course which includes both Manual & Automation Testing at Q-Icon, Hyderabad."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Conducted  manual  and  automated  testing  activities,  including  test  case  creation,  execution  and  defect tracking."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Utilized TestNG and Cucumber for automation testing, ensuring robust test coverage and reliability."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Certifications:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Participated in OOPs in Java at Udemy, Great Learning Academy."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Participated in Software Testing at Great Learning Academy."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Projects:"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "a. Auditory responses to sign language conversion:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "This project describes the development of a sign language translator that coverts sign language into speech and text using wearable devices and makes abled citizen lives easy to communicate with everyone."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "b. Traffic sign recognition:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "This project classifies traffic signs on the road and provides information about traffic rules, road conditions, route directions, and assists drivers for better and safe driving."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "c. Smart Eat:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Smart Eat is an online food ordering website that can encourage many small restaurants by making their work easy."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Strengths:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Smart Learning and Positive Attitude."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Creative Thinking and Energetic."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u00b7 Active Listening, Hardworking and Team Player."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Declaration:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "I hereby affirm that the information in this document is accurate and true to the best of my knowledge."
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Place: Hyderabad                                                                                                                                    P. Sudheer Kumar"
+                }
+            ]
+        }
+    ]
+}

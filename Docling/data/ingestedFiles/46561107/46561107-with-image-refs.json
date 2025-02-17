@@ -1,0 +1,1458 @@
+{
+  "schema_name": "DoclingDocument",
+  "version": "1.0.0",
+  "name": "HEMA-PATANKAR_CV",
+  "origin": {
+    "mimetype": "application/pdf",
+    "binary_hash": 4962485928857797782,
+    "filename": "HEMA-PATANKAR_CV.pdf"
+  },
+  "furniture": {
+    "self_ref": "#/furniture",
+    "children": [],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "body": {
+    "self_ref": "#/body",
+    "children": [
+      {
+        "$ref": "#/texts/0"
+      },
+      {
+        "$ref": "#/texts/1"
+      },
+      {
+        "$ref": "#/texts/2"
+      },
+      {
+        "$ref": "#/texts/3"
+      },
+      {
+        "$ref": "#/pictures/0"
+      },
+      {
+        "$ref": "#/texts/4"
+      },
+      {
+        "$ref": "#/texts/5"
+      },
+      {
+        "$ref": "#/groups/0"
+      },
+      {
+        "$ref": "#/pictures/1"
+      },
+      {
+        "$ref": "#/texts/15"
+      },
+      {
+        "$ref": "#/texts/16"
+      },
+      {
+        "$ref": "#/texts/17"
+      },
+      {
+        "$ref": "#/texts/18"
+      },
+      {
+        "$ref": "#/texts/19"
+      },
+      {
+        "$ref": "#/texts/20"
+      },
+      {
+        "$ref": "#/texts/21"
+      },
+      {
+        "$ref": "#/texts/22"
+      },
+      {
+        "$ref": "#/groups/1"
+      },
+      {
+        "$ref": "#/pictures/2"
+      },
+      {
+        "$ref": "#/texts/26"
+      },
+      {
+        "$ref": "#/texts/27"
+      },
+      {
+        "$ref": "#/groups/2"
+      },
+      {
+        "$ref": "#/groups/3"
+      },
+      {
+        "$ref": "#/texts/33"
+      },
+      {
+        "$ref": "#/groups/4"
+      },
+      {
+        "$ref": "#/texts/36"
+      },
+      {
+        "$ref": "#/groups/5"
+      }
+    ],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "groups": [
+    {
+      "self_ref": "#/groups/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/6"
+        },
+        {
+          "$ref": "#/texts/7"
+        },
+        {
+          "$ref": "#/texts/8"
+        },
+        {
+          "$ref": "#/texts/9"
+        },
+        {
+          "$ref": "#/texts/10"
+        },
+        {
+          "$ref": "#/texts/11"
+        },
+        {
+          "$ref": "#/texts/12"
+        },
+        {
+          "$ref": "#/texts/13"
+        },
+        {
+          "$ref": "#/texts/14"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/23"
+        },
+        {
+          "$ref": "#/texts/24"
+        },
+        {
+          "$ref": "#/texts/25"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/28"
+        },
+        {
+          "$ref": "#/texts/29"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/30"
+        },
+        {
+          "$ref": "#/texts/31"
+        },
+        {
+          "$ref": "#/texts/32"
+        }
+      ],
+      "name": "group",
+      "label": "form_area"
+    },
+    {
+      "self_ref": "#/groups/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/34"
+        },
+        {
+          "$ref": "#/texts/35"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/37"
+        },
+        {
+          "$ref": "#/texts/38"
+        },
+        {
+          "$ref": "#/texts/39"
+        },
+        {
+          "$ref": "#/texts/40"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    }
+  ],
+  "texts": [
+    {
+      "self_ref": "#/texts/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 802.6279907226562,
+            "r": 272.4599914550781,
+            "b": 780.6300048828125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            13
+          ]
+        }
+      ],
+      "orig": "HEMA PATANKAR",
+      "text": "HEMA PATANKAR",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 86.4020004272461,
+            "t": 765.6220092773438,
+            "r": 139.95199584960938,
+            "b": 755.1220092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Betul, India",
+      "text": "Betul, India"
+    },
+    {
+      "self_ref": "#/texts/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 86.4020004272461,
+            "t": 737.1220092773438,
+            "r": 198.7729949951172,
+            "b": 726.6220092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "hpatankar0@gmail.com",
+      "text": "hpatankar0@gmail.com"
+    },
+    {
+      "self_ref": "#/texts/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 90.9729995727539,
+            "t": 673.5369873046875,
+            "r": 199.56199645996094,
+            "b": 660.0369873046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            16
+          ]
+        }
+      ],
+      "orig": "Career Objective",
+      "text": "Career Objective",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 646.3720092773438,
+            "r": 522.6170043945312,
+            "b": 581.8720092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            378
+          ]
+        }
+      ],
+      "orig": "Innovative and motivated MCA graduate with a passion for leveraging technology to solve complex problems. Seeking a challenging opportunity where I can use my skills for the success of the organization. To utilize my technical skills and provide a professional service to the company by applying and honoring my knowledge and working in a challenging and motivating environment.",
+      "text": "Innovative and motivated MCA graduate with a passion for leveraging technology to solve complex problems. Seeking a challenging opportunity where I can use my skills for the success of the organization. To utilize my technical skills and provide a professional service to the company by applying and honoring my knowledge and working in a challenging and motivating environment."
+    },
+    {
+      "self_ref": "#/texts/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 90.9729995727539,
+            "t": 555.7869873046875,
+            "r": 156.27499389648438,
+            "b": 542.2869873046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "Education",
+      "text": "Education",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/6",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270001071926,
+            "t": 528.6220018272195,
+            "r": 260.1490004099262,
+            "b": 518.1220017909254,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            37
+          ]
+        }
+      ],
+      "orig": "Master's of Computer Application(MCA)",
+      "text": "Master's of Computer Application(MCA)"
+    },
+    {
+      "self_ref": "#/texts/7",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270001071926,
+            "t": 515.1220017805557,
+            "r": 269.1740004241472,
+            "b": 504.6220017442618,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            41
+          ]
+        }
+      ],
+      "orig": "Sam College Of Engineering And Technology",
+      "text": "Sam College Of Engineering And Technology"
+    },
+    {
+      "self_ref": "#/texts/8",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 460.5230007256628,
+            "t": 528.6220018272195,
+            "r": 527.2280008307722,
+            "b": 518.1220017909254,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            15
+          ]
+        }
+      ],
+      "orig": "2023  |  Bhopal",
+      "text": "2023  |  Bhopal"
+    },
+    {
+      "self_ref": "#/texts/9",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270001071926,
+            "t": 490.3720016950057,
+            "r": 299.40800047178806,
+            "b": 479.87200165871167,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            48
+          ]
+        }
+      ],
+      "orig": "Bachelor's of Science in Computer Science (Hons)",
+      "text": "Bachelor's of Science in Computer Science (Hons)"
+    },
+    {
+      "self_ref": "#/texts/10",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270001071926,
+            "t": 476.872001648342,
+            "r": 266.09500041929556,
+            "b": 466.372001612048,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            44
+          ]
+        }
+      ],
+      "orig": "Institute For Excellence In Higher Education",
+      "text": "Institute For Excellence In Higher Education"
+    },
+    {
+      "self_ref": "#/texts/11",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 459.9020007246843,
+            "t": 490.3720016950057,
+            "r": 527.2280008307722,
+            "b": 479.87200165871167,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            15
+          ]
+        }
+      ],
+      "orig": "2020  |  Bhopal",
+      "text": "2020  |  Bhopal"
+    },
+    {
+      "self_ref": "#/texts/12",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270001071926,
+            "t": 452.12200156279187,
+            "r": 177.43400027958918,
+            "b": 441.62200152649785,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            20
+          ]
+        }
+      ],
+      "orig": "12th HSC Mathematics",
+      "text": "12th HSC Mathematics"
+    },
+    {
+      "self_ref": "#/texts/13",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270001071926,
+            "t": 438.62200151612814,
+            "r": 231.97700036553456,
+            "b": 428.1220014798341,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            35
+          ]
+        }
+      ],
+      "orig": "Govt. Girls Higher Secondary School",
+      "text": "Govt. Girls Higher Secondary School"
+    },
+    {
+      "self_ref": "#/texts/14",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 440.88300069471535,
+            "t": 452.12200156279187,
+            "r": 527.2380008307881,
+            "b": 441.62200152649785,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            19
+          ]
+        }
+      ],
+      "orig": "2017  |  Bhainsdehi",
+      "text": "2017  |  Bhainsdehi"
+    },
+    {
+      "self_ref": "#/texts/15",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 90.9729995727539,
+            "t": 402.0369873046875,
+            "r": 155.3939971923828,
+            "b": 388.5369873046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "Key Skills",
+      "text": "Key Skills",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/16",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 375.62200927734375,
+            "r": 280.7090148925781,
+            "b": 365.12200927734375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            40
+          ]
+        }
+      ],
+      "orig": "Programming Languages - Python, C++,Java",
+      "text": "Programming Languages - Python, C++,Java"
+    },
+    {
+      "self_ref": "#/texts/17",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 356.8730163574219,
+            "r": 199.3330078125,
+            "b": 346.3730163574219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            25
+          ]
+        }
+      ],
+      "orig": "Databases - MySQL, Oracle",
+      "text": "Databases - MySQL, Oracle"
+    },
+    {
+      "self_ref": "#/texts/18",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 338.1230163574219,
+            "r": 277.1520080566406,
+            "b": 327.6230163574219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            39
+          ]
+        }
+      ],
+      "orig": "Web Development - HTML, CSS, JavaScript",
+      "text": "Web Development - HTML, CSS, JavaScript"
+    },
+    {
+      "self_ref": "#/texts/19",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 319.3730163574219,
+            "r": 287.9989929199219,
+            "b": 308.87298583984375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            46
+          ]
+        }
+      ],
+      "orig": "Data Analysis Tools - Power BI, Tableau, Excel",
+      "text": "Data Analysis Tools - Power BI, Tableau, Excel"
+    },
+    {
+      "self_ref": "#/texts/20",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 300.62298583984375,
+            "r": 183.9969940185547,
+            "b": 290.12298583984375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            21
+          ]
+        }
+      ],
+      "orig": "Query Languages - SQL",
+      "text": "Query Languages - SQL"
+    },
+    {
+      "self_ref": "#/texts/21",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 281.87298583984375,
+            "r": 287.84100341796875,
+            "b": 271.37298583984375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            45
+          ]
+        }
+      ],
+      "orig": "Microsoft office - Word, Power Point, Outlook",
+      "text": "Microsoft office - Word, Power Point, Outlook"
+    },
+    {
+      "self_ref": "#/texts/22",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 90.9729995727539,
+            "t": 245.28799438476562,
+            "r": 165.1490020751953,
+            "b": 231.78799438476562,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Certificates",
+      "text": "Certificates",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/23",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270001071926,
+            "t": 218.12300075395763,
+            "r": 196.5150003096558,
+            "b": 167.12300057767254,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            85
+          ]
+        }
+      ],
+      "orig": "Excel Basics for Data Analysis Complete excel basics for Data analysis for begginers.",
+      "text": "Excel Basics for Data Analysis Complete excel basics for Data analysis for begginers."
+    },
+    {
+      "self_ref": "#/texts/24",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 228.09400035941596,
+            "t": 218.12300075395763,
+            "r": 362.6480005714376,
+            "b": 180.6230006243362,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            62
+          ]
+        }
+      ],
+      "orig": "Databases and SQL for Data Science Understanding of relational",
+      "text": "Databases and SQL for Data Science Understanding of relational"
+    },
+    {
+      "self_ref": "#/texts/25",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 228.09400035941596,
+            "t": 177.6230006139665,
+            "r": 314.8020004960449,
+            "b": 167.12300057767254,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "database concepts.",
+      "text": "database concepts."
+    },
+    {
+      "self_ref": "#/texts/26",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 90.9729995727539,
+            "t": 127.53800201416016,
+            "r": 142.10299682617188,
+            "b": 114.03800201416016,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            8
+          ]
+        }
+      ],
+      "orig": "Projects",
+      "text": "Projects",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/27",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 101.12300109863281,
+            "r": 284.78399658203125,
+            "b": 90.62300109863281,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            42
+          ]
+        }
+      ],
+      "orig": "Online Application Dashboard using Tableau",
+      "text": "Online Application Dashboard using Tableau",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/28",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 87.62300109863281,
+            "r": 499.25,
+            "b": 63.62300109863281,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            146
+          ]
+        }
+      ],
+      "orig": "\u00b7 Developed and executed an interactive and visually engaging dashboard using Tableau to analyze and visualize streaming data for the application.",
+      "text": "\u00b7 Developed and executed an interactive and visually engaging dashboard using Tableau to analyze and visualize streaming data for the application.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/29",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 60.62300109863281,
+            "r": 524.468017578125,
+            "b": 36.62300109863281,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            103
+          ]
+        }
+      ],
+      "orig": "\u00b7 Extracted and transformed data from diverse sources to construct a comprehensive view of the content.",
+      "text": "\u00b7 Extracted and transformed data from diverse sources to construct a comprehensive view of the content.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/30",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 326.5080005144905,
+            "t": 768.6220026567966,
+            "r": 382.1370006021471,
+            "b": 758.1220026205025,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "8989127039",
+      "text": "8989127039"
+    },
+    {
+      "self_ref": "#/texts/31",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 326.5080005144905,
+            "t": 747.6220025842085,
+            "r": 500.4190007885283,
+            "b": 737.1220025479146,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            33
+          ]
+        }
+      ],
+      "orig": "https://www.linkedin.com/in/hema-",
+      "text": "https://www.linkedin.com/in/hema-"
+    },
+    {
+      "self_ref": "#/texts/32",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 326.5080005144905,
+            "t": 734.1220025375449,
+            "r": 422.6980006660606,
+            "b": 723.6220025012508,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            18
+          ]
+        }
+      ],
+      "orig": "patankar-2024a1196",
+      "text": "patankar-2024a1196"
+    },
+    {
+      "self_ref": "#/texts/33",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 388.1600036621094,
+            "t": 218.1230010986328,
+            "r": 516.9219970703125,
+            "b": 153.6230010986328,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            93
+          ]
+        }
+      ],
+      "orig": "Microsoft Certified Azure Fundamentals It is for beginner to understand the working of azure.",
+      "text": "Microsoft Certified Azure Fundamentals It is for beginner to understand the working of azure."
+    },
+    {
+      "self_ref": "#/texts/34",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 802.3720092773438,
+            "r": 523.43798828125,
+            "b": 778.3720092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            179
+          ]
+        }
+      ],
+      "orig": "\u00b7 Leveraged advanced Tableau features to build predictive models for user engagement and content preferences, contributing to a 20% enhancement in content recommendation accuracy.",
+      "text": "\u00b7 Leveraged advanced Tableau features to build predictive models for user engagement and content preferences, contributing to a 20% enhancement in content recommendation accuracy.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/35",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 775.3720092773438,
+            "r": 524.3090209960938,
+            "b": 751.3720092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            117
+          ]
+        }
+      ],
+      "orig": "\u00b7 Demonstrated expertise in data visualization, analytics, and translating complex data into userfriendly dashboards.",
+      "text": "\u00b7 Demonstrated expertise in data visualization, analytics, and translating complex data into userfriendly dashboards.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/36",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 68.0270004272461,
+            "t": 737.1220092773438,
+            "r": 193.5,
+            "b": 726.6220092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            26
+          ]
+        }
+      ],
+      "orig": "Store Analysis using Excel",
+      "text": "Store Analysis using Excel",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/37",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 723.6220092773438,
+            "r": 510.3470153808594,
+            "b": 699.6220092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            123
+          ]
+        }
+      ],
+      "orig": "\u00b7 A comprehensive analysis of the Store's performance utilizing advanced Excel functions and data visualization techniques.",
+      "text": "\u00b7 A comprehensive analysis of the Store's performance utilizing advanced Excel functions and data visualization techniques.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/38",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 696.6220092773438,
+            "r": 509.4100036621094,
+            "b": 672.6220092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            110
+          ]
+        }
+      ],
+      "orig": "\u00b7 Collected and organized diverse datasets related to the Store's sales, inventory, and customer interactions.",
+      "text": "\u00b7 Collected and organized diverse datasets related to the Store's sales, inventory, and customer interactions.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/39",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 669.6220092773438,
+            "r": 516.4530029296875,
+            "b": 645.6220092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            159
+          ]
+        }
+      ],
+      "orig": "\u00b7 Utilized Excel's advanced features, including pivot tables, data visualization, resulting in a 15% increase in sales and a 20% reduction in excess inventory.",
+      "text": "\u00b7 Utilized Excel's advanced features, including pivot tables, data visualization, resulting in a 15% increase in sales and a 20% reduction in excess inventory.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/40",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 77.4729995727539,
+            "t": 642.6220092773438,
+            "r": 467.4729919433594,
+            "b": 632.1220092773438,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            87
+          ]
+        }
+      ],
+      "orig": "\u00b7 The project showcased proficiency in Excel, data analysis, and business intelligence.",
+      "text": "\u00b7 The project showcased proficiency in Excel, data analysis, and business intelligence.",
+      "enumerated": false,
+      "marker": "-"
+    }
+  ],
+  "pictures": [
+    {
+      "self_ref": "#/pictures/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "picture",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 69.76319885253906,
+            "t": 673.3265991210938,
+            "r": 82.08332061767578,
+            "b": 657.8697509765625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            0
+          ]
+        }
+      ],
+      "captions": [],
+      "references": [],
+      "footnotes": [],
+      "image": {
+        "mimetype": "image/png",
+        "dpi": 144,
+        "size": {
+          "width": 24.0,
+          "height": 31.0
+        },
+        "uri": "46561107-with-image-refs_artifacts\\image_000000_5f4008f8d2220b2464bd87034c89320906798de090615d06cf8f054e4c2a4f28.png"
+      },
+      "annotations": []
+    },
+    {
+      "self_ref": "#/pictures/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "picture",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 67.3735580444336,
+            "t": 402.9565124511719,
+            "r": 83.30439758300781,
+            "b": 387.4370422363281,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            0
+          ]
+        }
+      ],
+      "captions": [],
+      "references": [],
+      "footnotes": [],
+      "image": {
+        "mimetype": "image/png",
+        "dpi": 144,
+        "size": {
+          "width": 32.0,
+          "height": 31.0
+        },
+        "uri": "46561107-with-image-refs_artifacts\\image_000001_65cebcb5d3505ed70988c91775543df78a7cb3013c6741f727bcc279182e98dc.png"
+      },
+      "annotations": []
+    },
+    {
+      "self_ref": "#/pictures/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "picture",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 67.29496002197266,
+            "t": 127.5565185546875,
+            "r": 84.07845306396484,
+            "b": 113.3736572265625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            0
+          ]
+        }
+      ],
+      "captions": [],
+      "references": [],
+      "footnotes": [],
+      "image": {
+        "mimetype": "image/png",
+        "dpi": 144,
+        "size": {
+          "width": 33.0,
+          "height": 28.0
+        },
+        "uri": "46561107-with-image-refs_artifacts\\image_000002_2032ab1780fb66a4bb0edfcb9a7148385e61385c8dcb3ba527a42c7ce34beafa.png"
+      },
+      "annotations": []
+    }
+  ],
+  "tables": [],
+  "key_value_items": [],
+  "pages": {
+    "1": {
+      "size": {
+        "width": 594.9599609375,
+        "height": 841.9199829101562
+      },
+      "page_no": 1
+    },
+    "2": {
+      "size": {
+        "width": 594.9599609375,
+        "height": 841.9199829101562
+      },
+      "page_no": 2
+    }
+  }
+}

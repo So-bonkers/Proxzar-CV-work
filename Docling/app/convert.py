@@ -1,119 +1,112 @@
 import json
 import os
+import re
 from pathlib import Path
 from app.utils import loadClientMapping
 
-def docling_to_custom_json(client_id, table_dir):
+def docling_to_custom_json(client_id, input_dir):
     """
-    Converts a Docling JSON file to a simplified, readable JSON format with external references for images, tables, lists, and forms.
+    Converts an HTML file to a structured JSON format with external references for images, tables, lists, and headers.
 
     Args:
-        client_id (str): The client ID to locate the Docling JSON file.
-        table_dir (str): Directory where external table HTML files are located.
+        client_id (str): The client ID to locate the HTML file.
+        input_dir (Path): The directory containing the input HTML file.
 
     Returns:
         dict: A dictionary containing the status and the output path.
     """
-    # Load the client mapping
-    client_mapping, _ = loadClientMapping()
-
-    # Retrieve the Docling JSON file path based on client ID
-    if client_id not in client_mapping:
-        return {"error": f"Client ID {client_id} not found in mapping."}
-
-    client_data = client_mapping[client_id]
-    input_path = Path(client_data["saved_file"]).parent / f"{client_id}-with-image-refs.json"
+    input_path = Path(input_dir) / str(client_id) / f"{client_id}-with-image-refs.html"
     output_path = f"data/convertedToJSON/{client_id}-converted.json"
 
     if not input_path.exists():
-        return {"error": f"Docling JSON file not found for client ID {client_id}"}
+        print(f"Error: HTML file not found at {input_path}")
+        return {"error": f"HTML file not found for client ID {client_id} at {input_path}"}
 
     with open(input_path, 'r', encoding='utf-8') as infile:
-        docling_data = json.load(infile)
+        content = infile.read().strip()
+
+    if not content:
+        print(f"Error: HTML file {input_path} is empty.")
+        return {"error": f"HTML file {input_path} is empty."}
 
     # Initialize the output JSON structure
     simplified_json = {
-        "url": docling_data.get("origin", {}).get("filename", ""),
-        "title": docling_data.get("name", ""),
+        "url": "",
+        "title": input_path.name,
         "content": []
     }
 
-    # Helper function to resolve references
-    def resolve_ref(ref):
-        ref_type, ref_index = ref.split("/")[1], int(ref.split("/")[-1])
-        return docling_data.get(ref_type, [])[ref_index]
+    # Extract URL if available in meta tags
+    meta_url_match = re.search(r'<meta[^>]+property=["\']og:url["\'][^>]+content=["\']([^"\']+)["\']', content)
+    if meta_url_match:
+        simplified_json["url"] = meta_url_match.group(1)
 
-    # Process the body of the document
-    for item in docling_data.get("body", {}).get("children", []):
-        reference = item.get("$ref", "")
+    # Process the document elements
+    sections = []
+    current_section = None
+    table_count = 0  # Tracks actual table count
+    h2_count = 0  # Tracks consecutive H2 tags
 
-        if reference.startswith("#/texts/"):
-            text_item = resolve_ref(reference)
-            section_header = text_item.get("label", "unknown")
+    # Splitting the HTML content into elements while preserving structure
+    elements = re.split(r'(<h2.*?>.*?</h2>)', content, flags=re.DOTALL)
 
-            # Append the text content
-            simplified_json["content"].append({
-                "header": section_header,
-                "subContent": [
-                    {
-                        "contentType": "text",
-                        "source": text_item.get("text", "")
-                    }
-                ]
-            })
-
-        elif reference.startswith("#/tables/"):
-            index = int(reference.split("/")[-1])
-            table_file = f"data/ingestedFiles/{client_id}/{client_id}-table-{index + 1}.html"
-
-            # Add table reference
-            simplified_json["content"].append({
-                "header": f"Table {index + 1}",
-                "subContent": [
-                    {
-                        "contentType": "table",
-                        "source": table_file
-                    }
-                ]
-            })
-
-        elif reference.startswith("#/pictures/"):
-            pic_item = resolve_ref(reference)
-            index = int(reference.split("/")[-1])
-            image_file = f"image_{index:06d}_*.png"
-            image_folder = f"data/ingestedFiles/{client_id}/{client_id}-with-image-refs_artifacts"
+    for element in elements:
+        h2_match = re.match(r'<h2.*?>(.*?)</h2>', element, flags=re.DOTALL)
+        if h2_match:
+            # If a new H2 tag appears and the previous section exists, save it
+            if current_section:
+                sections.append(current_section)
             
-            # Find the correct image file in the folder
-            matching_files = [f for f in os.listdir(image_folder) if f.startswith(f"image_{index:06d}_")]
-            source = os.path.join(image_folder, matching_files[0]) if matching_files else "unknown"
-
-            # Append image content
-            simplified_json["content"].append({
-                "header": f"Image {index + 1}",
-                "subContent": [
-                    {
+            # Track consecutive H2 tags
+            if current_section and not current_section["subContent"]:
+                current_section["header"] += " " + h2_match.group(1).strip()
+            else:
+                current_section = {"header": h2_match.group(1).strip(), "subContent": []}
+                h2_count += 1
+        elif current_section:
+            try:
+                paragraphs = re.findall(r'<p.*?>(.*?)</p>', element, flags=re.DOTALL)
+                for para in paragraphs:
+                    current_section["subContent"].append({
+                        "contentType": "text",
+                        "source": re.sub(r'<.*?>', '', para).strip()
+                    })
+                
+                img_matches = re.findall(r'<img[^>]+src=["\']([^"\']+)["\']', element)
+                for img_src in img_matches:
+                    caption_match = re.search(r'<figcaption.*?>(.*?)</figcaption>', content, flags=re.DOTALL)
+                    caption = caption_match.group(1).strip() if caption_match else ""
+                    current_section["subContent"].append({
                         "contentType": "image",
-                        "source": source
-                    }
-                ]
-            })
+                        "source": {"caption": caption, "path": img_src.replace("\\", "/")}
+                    })
+                
+                table_matches = re.findall(r'<table.*?</table>', element, flags=re.DOTALL)
+                for _ in table_matches:
+                    caption_match = re.search(r'<caption.*?>(.*?)</caption>', element, flags=re.DOTALL)
+                    table_count += 1  # Increment table count for unique table references
+                    table_path = f"data/ingestedFiles/{client_id}/{client_id}-table-{table_count}.html"
+                    caption = caption_match.group(1).strip() if caption_match else ""
+                    current_section["subContent"].append({
+                        "contentType": "table",
+                        "source": {"caption": caption, "path": table_path}
+                    })
+                
+                list_matches = re.findall(r'<ul.*?</ul>|<ol.*?</ol>', element, flags=re.DOTALL)
+                for list_element in list_matches:
+                    list_items = re.findall(r'<li.*?>(.*?)</li>', list_element, flags=re.DOTALL)
+                    current_section["subContent"].append({
+                        "contentType": "list",
+                        "items": [item.strip() for item in list_items]
+                    })
+            except Exception as e:
+                print(f"Error processing element: {e}")
+                continue
+    
+    if current_section:
+        sections.append(current_section)
 
-        elif reference.startswith("#/groups/"):
-            group = resolve_ref(reference)
-            group_label = group.get("label", "group")
-            group_items = []
-
-            for child in group.get("children", []):
-                child_ref = resolve_ref(child.get("$ref", ""))
-                group_items.append({
-                    "contentType": "text" if child_ref.get("label") != "list_item" else "list_item",
-                    "source": child_ref.get("text", "")
-                })
-
-            simplified_json["content"].append({
-                "header": group_label,
-                "subContent": group_items
-            })
+    simplified_json["content"] = sections
 
     # Write the converted JSON to the output path
     with open(output_path, 'w', encoding='utf-8') as outfile:
@@ -123,10 +116,10 @@ def docling_to_custom_json(client_id, table_dir):
 
 # Example of usage
 client_id = "11283833"  # Replace with the actual client ID
-table_dir = f"data/ingestedFiles/{client_id}"  # Directory containing the HTML table files
+input_dir = "data/ingestedFiles"  # Directory containing the HTML file
 
 # Perform the conversion
-result = docling_to_custom_json(client_id, table_dir)
+result = docling_to_custom_json(client_id, input_dir)
 if "error" in result:
     print(result["error"])
 else:

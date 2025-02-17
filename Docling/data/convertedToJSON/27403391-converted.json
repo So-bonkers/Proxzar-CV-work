@@ -1,0 +1,767 @@
+{
+    "url": "VINAY_K_DataScientist.pdf",
+    "title": "VINAY_K_DataScientist",
+    "content": [
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "DATA SCIENTIST"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Vinay Katuru"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Email ID: vinaykataru01@gmail.com"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Contact No"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": ": +91 9550836645"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Summary:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "3+ years of experience in Data Science, Machine learning, Python, and developing Chatbots, which provides solutions to business through research and in-depth analysis of data that helps  in decision-making and different business domains."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Professional Skills:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Worked on advanced analytical projects to reduce operation time, cost, and strategy teams within the different business domains."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Leveraged supervised and unsupervised machine learning algorithms to build models and perform them, which gives automated solutions that reduce operational costs or improve operational efficiency in the industry."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Applied analytical theory to real-world problems on dynamic datasets  and performed hands-on to identify different data concerns. And getting data from different domains by using different web scraping techniques."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 To analyze the data, we used visualization techniques like univariate and bivariate analysis through a statistical approach."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Improved the quality of data we have used Preprocessing steps like Outlier treatment, Null value treatment, and Label Encoding techniques."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Competence in data visualization using Matplotlib, Seaborn, and Plotly and making it easy for stakeholders to understand in designing advanced dashboards to make decisions."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Strong knowledge in creating analytical datasets using Oracle SQL, queries, and joins , and performed data operations. Had an experience in different deployment tools like AWS, Streamlit, and Flask."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Leveraged data analytics and data science techniques to drive optimization, improvement of promotional strategies, and marketing techniques to assess the effectiveness"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Worked with stakeholders throughout the project in identifying the opportunities for leveraging company data to drive business solutions and coordinate with different functional teams to implement models and monitor outcomes."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Technical Skill Sets:"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Algorithms:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Linear Regression"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Logistic Regression"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 K Means Clustering"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Agglomerative Clustering"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 KNN Classification"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Decision Tree"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Random Forest"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 SVM"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Na\u00efve Bayes Classifier"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Boosting algorithms"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project Management:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Jupyter Notebook"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Google Colab"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 VS Code"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Git Hub"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Python"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Packages:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 SciKit Learn"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Numpy"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Scipy"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Pandas"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Stats model"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 NLP"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 RASA"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Visualization Skills:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Matplotlib"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Seaborn"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Plotly"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Microsoft office"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Working Experience:"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Company : Sunfra Software Services"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Experience: 3.2 years"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Role: Data Scientist"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Career Experience:"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project Name"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Reducing Customer Churn through predictive Analysis"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Tools"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Python, SQL Server"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Techniques"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Statistics, Logistic Regression"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Description:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Client Company was one of the leading premium card subscription-based retailers. Every year customers will pay $120 for a yearly subscription."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 As the new year approaches they would like to understand how many customers will not renew their cards for next month"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 We have built a model that predicts whether the customer will churn."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Responsible for  collecting  data  from  various sources such  as customer  demographics,  transactional data, and credit history. The data will be preprocessed to remove any inconsistencies and missing values."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Performed exploratory data analysis (EDA) to identify patterns and trends in the data. Visualizations such as histograms, scatterplots, and heat maps will be used to understand the relationships between variables."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Handle imbalanced datasets with the help of Smote technique. Responsible for designing test and train  data  sets  and  executing  supervised  machine  learning  algorithms  such  as  logistic  regression, decision trees, and random forests will be used to develop the classification  model. The model  will be trained using historical data and validated using a holdout set of data to ensure its accuracy"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Analyzed the classification report, accuracy score, and ROC curve to gauge the performance of the models."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Identified the TPR and FPR for the models and communicated the KPIs to the stakeholders."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Conducted feature selection Feature selection techniques such as correlation analysis, feature importance, and stepwise regression will be used to identify the most important features that impact customer churn."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Increase the model accuracy by performing multicollinearity, and variance inflation factor analysis."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Used K folded technique to compare the accuracies across the models and pushed the results of the best models."
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Deployment Tools:"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Streamlit"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Flask"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 AWS"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project Name"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Sentiment Analysis of Customer Reviews."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Environment/Technology"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Python, SQL, scikit-learn, NLTK Algorithms: Na\u00efve Bayes, Random Forest, TF-IDF ."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Description:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 This project focuses on analyzing customer reviews in the retail industry to extract sentiment and gain insights into customer satisfaction. By applying natural language processing (NLP) techniques, the project aims to automatically classify customer reviews as positive, negative, or neutral. The sentiment analysis results will help retailers identify areas for improvement and enhance the overall customer experience."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Roles and Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Collect and preprocess customer review data, removing noise and irrelevant information."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Apply NLP techniques to tokenize, clean, and represent text data."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Train and fine-tune text classification models for sentiment analysis."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Evaluate model performance using appropriate metrics and iterate on the models to improve accuracy."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Generate insights and visualizations from the sentiment analysis results to guide business decisions and improve customer satisfaction"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project Name"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Specifying the top-performing Warehouses across specific"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Geographies."
+                },
+                {
+                    "contentType": "text",
+                    "source": "Environment/Technology Methodology"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Oracle SQL, Python"
+                },
+                {
+                    "contentType": "text",
+                    "source": "K Means Clustering, Agglomerative Clustering"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Raw data Extraction, data cleansing, validation of data and Data reformat using Excel as per the client's specification."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Created SQL datasets and Descriptive Statistics analysis by using Python."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Cluster Analysis for grouping the shop type (Market Segmentation) which gives similar characteristics."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Expertise in Analyzing and giving insights into the client's queries by using statistical procedures like Means, Univariate, etc."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Providing insights using retail sales data from the previous and current periods to determine the patterns and trends."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Data management activities like merging, appending datasets, handling missing values reading raw data files, handling programming errors, and accessing and managing data."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Providing weekly and monthly reports as per the client's requirement."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Classifying variables into different segments basis various customer variables like: - Wallet size, website visit frequency, time spent on the website, Product views, etc."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Coming up with meaningful customer segments that were given to CRM and social channels like Facebook and LinkedIn for targeting them with relevant offers and increase the revenue per customer"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Identifying customer basis parameters like: - last transaction date, number of returned orders, number of calls, etc., that have the highest probability of not returning to the website in the next 90 days."
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project Name"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Face emotion detection"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Environment/Technology"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Python, OpenCV ,YOLOv8, YOLOs ,Deep learning."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Description:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Spearheaded a project focused on real-time facial emotion detection using state of the art computer vision techniques, specifically YOLOv8 and YOLOs (You Only Look Once) models. Successfully developed a system that accurately detects and classifies facial emotions in images and video streams, contributing to applications in customer sentiment analysis and market research."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Researched and selected appropriate pre-trained YOLOv8 and YOLOs models for object detection."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Designed and implemented a custom dataset by collecting and annotating facial images depicting various emotions."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Pre processed the dataset, including image resizing, augmentation, and normalization, to improve model performance."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Fine-tuned the selected YOLO models using transfer learning on the emotion dataset."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Integrated OpenCV to capture real-time video streams from webcams and process frames for emotion detection."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Developed a user-friendly interface to display real-time video with emotion labels overlay."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Conducted extensive testing to evaluate the accuracy and robustness of the models across diverse scenarios."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Optimized model parameters and hyperparameters to achieve higher accuracy and faster processing speed."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Collaborated with UX/UI team to design intuitive visuals for the interface, enhancing user experience."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\uf076 Documented the entire process, including data collection, model selection, training strategies, and technical details."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Educational Qualification:"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Universities/Institutes: NBKR Institute of Science and Technology, Andhra Pradesh. Qualification: Bachelor of Technology (2019)."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Declaration:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "I hereby declare that the information furnished above is true and correct to the best of my knowledge."
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Place: - Bangalore"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Vinay Katuru"
+                },
+                {
+                    "contentType": "text",
+                    "source": "+91 9550836645"
+                }
+            ]
+        }
+    ]
+}

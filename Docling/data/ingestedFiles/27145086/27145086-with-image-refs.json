@@ -1,0 +1,1316 @@
+{
+  "schema_name": "DoclingDocument",
+  "version": "1.0.0",
+  "name": "Sudheer_P",
+  "origin": {
+    "mimetype": "application/pdf",
+    "binary_hash": 13037725072525016547,
+    "filename": "Sudheer_P.pdf"
+  },
+  "furniture": {
+    "self_ref": "#/furniture",
+    "children": [],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "body": {
+    "self_ref": "#/body",
+    "children": [
+      {
+        "$ref": "#/texts/0"
+      },
+      {
+        "$ref": "#/groups/0"
+      },
+      {
+        "$ref": "#/texts/3"
+      },
+      {
+        "$ref": "#/groups/1"
+      },
+      {
+        "$ref": "#/texts/5"
+      },
+      {
+        "$ref": "#/groups/2"
+      },
+      {
+        "$ref": "#/texts/11"
+      },
+      {
+        "$ref": "#/groups/3"
+      },
+      {
+        "$ref": "#/texts/18"
+      },
+      {
+        "$ref": "#/groups/4"
+      },
+      {
+        "$ref": "#/texts/22"
+      },
+      {
+        "$ref": "#/groups/5"
+      },
+      {
+        "$ref": "#/texts/25"
+      },
+      {
+        "$ref": "#/texts/26"
+      },
+      {
+        "$ref": "#/texts/27"
+      },
+      {
+        "$ref": "#/texts/28"
+      },
+      {
+        "$ref": "#/texts/29"
+      },
+      {
+        "$ref": "#/texts/30"
+      },
+      {
+        "$ref": "#/texts/31"
+      },
+      {
+        "$ref": "#/texts/32"
+      },
+      {
+        "$ref": "#/groups/6"
+      },
+      {
+        "$ref": "#/texts/36"
+      },
+      {
+        "$ref": "#/texts/37"
+      },
+      {
+        "$ref": "#/texts/38"
+      }
+    ],
+    "name": "_root_",
+    "label": "unspecified"
+  },
+  "groups": [
+    {
+      "self_ref": "#/groups/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/1"
+        },
+        {
+          "$ref": "#/texts/2"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/1",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/4"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/2",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/6"
+        },
+        {
+          "$ref": "#/texts/7"
+        },
+        {
+          "$ref": "#/texts/8"
+        },
+        {
+          "$ref": "#/texts/9"
+        },
+        {
+          "$ref": "#/texts/10"
+        }
+      ],
+      "name": "group",
+      "label": "key_value_area"
+    },
+    {
+      "self_ref": "#/groups/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/12"
+        },
+        {
+          "$ref": "#/texts/13"
+        },
+        {
+          "$ref": "#/texts/14"
+        },
+        {
+          "$ref": "#/texts/15"
+        },
+        {
+          "$ref": "#/texts/16"
+        },
+        {
+          "$ref": "#/texts/17"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/4",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/19"
+        },
+        {
+          "$ref": "#/texts/20"
+        },
+        {
+          "$ref": "#/texts/21"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/23"
+        },
+        {
+          "$ref": "#/texts/24"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    },
+    {
+      "self_ref": "#/groups/6",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [
+        {
+          "$ref": "#/texts/33"
+        },
+        {
+          "$ref": "#/texts/34"
+        },
+        {
+          "$ref": "#/texts/35"
+        }
+      ],
+      "name": "list",
+      "label": "list"
+    }
+  ],
+  "texts": [
+    {
+      "self_ref": "#/texts/0",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 717.8200073242188,
+            "r": 532.1510009765625,
+            "b": 706.780029296875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            136
+          ]
+        }
+      ],
+      "orig": "Parlapati Sudheer Kumar                                                                               Email: parlapati.sudheer@gmail.com",
+      "text": "Parlapati Sudheer Kumar                                                                               Email: parlapati.sudheer@gmail.com",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/1",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 377.83,
+            "t": 704.41,
+            "r": 446.245,
+            "b": 694.45,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            14
+          ]
+        }
+      ],
+      "orig": "Mobile Number:",
+      "text": "Mobile Number:"
+    },
+    {
+      "self_ref": "#/texts/2",
+      "parent": {
+        "$ref": "#/groups/0"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 448.63,
+            "t": 704.41,
+            "r": 499.03,
+            "b": 694.45,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "8074158392",
+      "text": "8074158392"
+    },
+    {
+      "self_ref": "#/texts/3",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 658.2100219726562,
+            "r": 111.59100341796875,
+            "b": 648.25,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "Objective:",
+      "text": "Objective:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/4",
+      "parent": {
+        "$ref": "#/groups/1"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 630.3900146484375,
+            "r": 544.947021484375,
+            "b": 558.8499755859375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            471
+          ]
+        }
+      ],
+      "orig": "\u00b7 A Computer Science graduate with comprehensive knowledge of SDLC and STLC, along with expertise in key testing phases. Proficient in Testing methodologies and experienced in utilizing test management tools such as JIRA. Skilled in automation testing using Selenium with Java and Cucumber BDD Framework. Seeking a challenging position where I can leverage my skills in automation testing, SDLC, and agile methodologies to contribute to high-quality software development.",
+      "text": "\u00b7 A Computer Science graduate with comprehensive knowledge of SDLC and STLC, along with expertise in key testing phases. Proficient in Testing methodologies and experienced in utilizing test management tools such as JIRA. Skilled in automation testing using Selenium with Java and Cucumber BDD Framework. Seeking a challenging position where I can leverage my skills in automation testing, SDLC, and agile methodologies to contribute to high-quality software development.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/5",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 530.1400146484375,
+            "r": 113.39099884033203,
+            "b": 520.1799926757812,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "Education:",
+      "text": "Education:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/6",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.984,
+            "t": 502.80000000000007,
+            "r": 559.991,
+            "b": 490.30000000000007,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            111
+          ]
+        }
+      ],
+      "orig": "\u2022 B. Tech (CSE) from B. V. Raju Institute of Technology, Vishnupur, Telangana.               (2019-2023) -- 67%",
+      "text": "\u2022 B. Tech (CSE) from B. V. Raju Institute of Technology, Vishnupur, Telangana.               (2019-2023) -- 67%",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/7",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.984,
+            "t": 484.44,
+            "r": 496.167,
+            "b": 471.94,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            109
+          ]
+        }
+      ],
+      "orig": "\u2022 Intermediate (MPC) from Sri Chaitanya Junior College, Hyderabad.                                (2017-2019)",
+      "text": "\u2022 Intermediate (MPC) from Sri Chaitanya Junior College, Hyderabad.                                (2017-2019)",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/8",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 496.18000000000006,
+            "t": 481.9,
+            "r": 523.031,
+            "b": 471.94,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "- 87%",
+      "text": "- 87%"
+    },
+    {
+      "self_ref": "#/texts/9",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.984,
+            "t": 466.08,
+            "r": 496.87699999999995,
+            "b": 453.58,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            123
+          ]
+        }
+      ],
+      "orig": "\u2022 SSC from Gayatri Grammar School, Hyderabad.                                                                   (2016-2017)",
+      "text": "\u2022 SSC from Gayatri Grammar School, Hyderabad.                                                                   (2016-2017)",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/10",
+      "parent": {
+        "$ref": "#/groups/2"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 496.9,
+            "t": 463.53999999999996,
+            "r": 523.751,
+            "b": 453.58,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            5
+          ]
+        }
+      ],
+      "orig": "- 90%",
+      "text": "- 90%"
+    },
+    {
+      "self_ref": "#/texts/11",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 438.82000732421875,
+            "r": 92.875,
+            "b": 428.8599853515625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            7
+          ]
+        }
+      ],
+      "orig": "Skills:",
+      "text": "Skills:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/12",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 411.0,
+            "r": 293.4209899902344,
+            "b": 398.5,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            45
+          ]
+        }
+      ],
+      "orig": "\u00b7 Programming Languages: C, Java, Python, SQL",
+      "text": "\u00b7 Programming Languages: C, Java, Python, SQL",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/13",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 392.760009765625,
+            "r": 487.27099609375,
+            "b": 380.260009765625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            89
+          ]
+        }
+      ],
+      "orig": "\u00b7 Testing Frameworks: Selenium WebDriver, Cucumber (BDD), TestNG, POM, REST API, Jenkins.",
+      "text": "\u00b7 Testing Frameworks: Selenium WebDriver, Cucumber (BDD), TestNG, POM, REST API, Jenkins.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/14",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 374.3800048828125,
+            "r": 545.0800170898438,
+            "b": 347.1199951171875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            144
+          ]
+        }
+      ],
+      "orig": "\u00b7 Testing Methodologies: Manual/Automation testing, API testing, Agile methodologies, Scrum, SDLC, STLC, Unit Testing, Integration Testing, etc.",
+      "text": "\u00b7 Testing Methodologies: Manual/Automation testing, API testing, Agile methodologies, Scrum, SDLC, STLC, Unit Testing, Integration Testing, etc.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/15",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 341.260009765625,
+            "r": 349.1210021972656,
+            "b": 328.760009765625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            56
+          ]
+        }
+      ],
+      "orig": "\u00b7 Test Management Tools: JIRA, ALM, Test Tool Management",
+      "text": "\u00b7 Test Management Tools: JIRA, ALM, Test Tool Management",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/16",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 322.8999938964844,
+            "r": 240.14100646972656,
+            "b": 310.3999938964844,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            33
+          ]
+        }
+      ],
+      "orig": "\u00b7 Version Control Systems: GitHub",
+      "text": "\u00b7 Version Control Systems: GitHub",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/17",
+      "parent": {
+        "$ref": "#/groups/3"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 304.6600036621094,
+            "r": 290.9010009765625,
+            "b": 292.1600036621094,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            47
+          ]
+        }
+      ],
+      "orig": "\u00b7 CI/CD Pipelines: Familiar with CI/CD concepts",
+      "text": "\u00b7 CI/CD Pipelines: Familiar with CI/CD concepts",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/18",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 277.3999938964844,
+            "r": 109.79100036621094,
+            "b": 267.44000244140625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "Trainings:",
+      "text": "Trainings:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/19",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 247.5399932861328,
+            "r": 544.5570068359375,
+            "b": 220.27999877929688,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            132
+          ]
+        }
+      ],
+      "orig": "\u00b7 Have undergone exclusive training on Software Testing course which includes both Manual & Automation Testing at Q-Icon, Hyderabad.",
+      "text": "\u00b7 Have undergone exclusive training on Software Testing course which includes both Manual & Automation Testing at Q-Icon, Hyderabad.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/20",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 214.38999938964844,
+            "r": 544.6160278320312,
+            "b": 187.1300048828125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            125
+          ]
+        }
+      ],
+      "orig": "\u00b7 Conducted  manual  and  automated  testing  activities,  including  test  case  creation,  execution  and  defect tracking.",
+      "text": "\u00b7 Conducted  manual  and  automated  testing  activities,  including  test  case  creation,  execution  and  defect tracking.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/21",
+      "parent": {
+        "$ref": "#/groups/4"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 181.27000427246094,
+            "r": 509.95098876953125,
+            "b": 168.77000427246094,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            101
+          ]
+        }
+      ],
+      "orig": "\u00b7 Utilized TestNG and Cucumber for automation testing, ensuring robust test coverage and reliability.",
+      "text": "\u00b7 Utilized TestNG and Cucumber for automation testing, ensuring robust test coverage and reliability.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/22",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 141.88999938964844,
+            "r": 127.19100189208984,
+            "b": 131.92999267578125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            15
+          ]
+        }
+      ],
+      "orig": "Certifications:",
+      "text": "Certifications:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/23",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 114.55000305175781,
+            "r": 367.3609924316406,
+            "b": 102.05000305175781,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            64
+          ]
+        }
+      ],
+      "orig": "\u00b7 Participated in OOPs in Java at Udemy, Great Learning Academy.",
+      "text": "\u00b7 Participated in OOPs in Java at Udemy, Great Learning Academy.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/24",
+      "parent": {
+        "$ref": "#/groups/5"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 1,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 96.19400024414062,
+            "r": 349.96099853515625,
+            "b": 83.69400024414062,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            61
+          ]
+        }
+      ],
+      "orig": "\u00b7 Participated in Software Testing at Great Learning Academy.",
+      "text": "\u00b7 Participated in Software Testing at Great Learning Academy.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/25",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 717.8499755859375,
+            "r": 105.47100067138672,
+            "b": 707.8900146484375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            9
+          ]
+        }
+      ],
+      "orig": "Projects:",
+      "text": "Projects:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/26",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 688.2100219726562,
+            "r": 305.781005859375,
+            "b": 678.25,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            50
+          ]
+        }
+      ],
+      "orig": "a. Auditory responses to sign language conversion:",
+      "text": "a. Auditory responses to sign language conversion:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/27",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 102.9800033569336,
+            "t": 670.4500122070312,
+            "r": 544.5170288085938,
+            "b": 645.72998046875,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            204
+          ]
+        }
+      ],
+      "orig": "This project describes the development of a sign language translator that coverts sign language into speech and text using wearable devices and makes abled citizen lives easy to communicate with everyone.",
+      "text": "This project describes the development of a sign language translator that coverts sign language into speech and text using wearable devices and makes abled citizen lives easy to communicate with everyone."
+    },
+    {
+      "self_ref": "#/texts/28",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 620.0499877929688,
+            "r": 202.9409942626953,
+            "b": 610.0900268554688,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            28
+          ]
+        }
+      ],
+      "orig": "b. Traffic sign recognition:",
+      "text": "b. Traffic sign recognition:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/29",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 102.9800033569336,
+            "t": 602.2899780273438,
+            "r": 544.5770263671875,
+            "b": 577.5700073242188,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            179
+          ]
+        }
+      ],
+      "orig": "This project classifies traffic signs on the road and provides information about traffic rules, road conditions, route directions, and assists drivers for better and safe driving.",
+      "text": "This project classifies traffic signs on the road and provides information about traffic rules, road conditions, route directions, and assists drivers for better and safe driving."
+    },
+    {
+      "self_ref": "#/texts/30",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 84.98400115966797,
+            "t": 551.97998046875,
+            "r": 148.31100463867188,
+            "b": 542.02001953125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            13
+          ]
+        }
+      ],
+      "orig": "c. Smart Eat:",
+      "text": "c. Smart Eat:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/31",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 102.9800033569336,
+            "t": 534.0999755859375,
+            "r": 544.43701171875,
+            "b": 509.3800048828125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            113
+          ]
+        }
+      ],
+      "orig": "Smart Eat is an online food ordering website that can encourage many small restaurants by making their work easy.",
+      "text": "Smart Eat is an online food ordering website that can encourage many small restaurants by making their work easy."
+    },
+    {
+      "self_ref": "#/texts/32",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 494.6199951171875,
+            "r": 111.71099853515625,
+            "b": 484.6600036621094,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            10
+          ]
+        }
+      ],
+      "orig": "Strengths:",
+      "text": "Strengths:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/33",
+      "parent": {
+        "$ref": "#/groups/6"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 90.02400207519531,
+            "t": 470.0400085449219,
+            "r": 261.8609924316406,
+            "b": 457.5400085449219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            39
+          ]
+        }
+      ],
+      "orig": "\u00b7 Smart Learning and Positive Attitude.",
+      "text": "\u00b7 Smart Learning and Positive Attitude.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/34",
+      "parent": {
+        "$ref": "#/groups/6"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 90.02400207519531,
+            "t": 451.20001220703125,
+            "r": 241.1009979248047,
+            "b": 438.70001220703125,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            34
+          ]
+        }
+      ],
+      "orig": "\u00b7 Creative Thinking and Energetic.",
+      "text": "\u00b7 Creative Thinking and Energetic.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/35",
+      "parent": {
+        "$ref": "#/groups/6"
+      },
+      "children": [],
+      "label": "list_item",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 90.02400207519531,
+            "t": 432.3599853515625,
+            "r": 303.6210021972656,
+            "b": 419.8599853515625,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            48
+          ]
+        }
+      ],
+      "orig": "\u00b7 Active Listening, Hardworking and Team Player.",
+      "text": "\u00b7 Active Listening, Hardworking and Team Player.",
+      "enumerated": false,
+      "marker": "-"
+    },
+    {
+      "self_ref": "#/texts/36",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "section_header",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 401.3800048828125,
+            "r": 120.11100006103516,
+            "b": 391.4200134277344,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            12
+          ]
+        }
+      ],
+      "orig": "Declaration:",
+      "text": "Declaration:",
+      "level": 1
+    },
+    {
+      "self_ref": "#/texts/37",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 363.20001220703125,
+            "r": 489.3110046386719,
+            "b": 353.239990234375,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            103
+          ]
+        }
+      ],
+      "orig": "I hereby affirm that the information in this document is accurate and true to the best of my knowledge.",
+      "text": "I hereby affirm that the information in this document is accurate and true to the best of my knowledge."
+    },
+    {
+      "self_ref": "#/texts/38",
+      "parent": {
+        "$ref": "#/body"
+      },
+      "children": [],
+      "label": "text",
+      "prov": [
+        {
+          "page_no": 2,
+          "bbox": {
+            "l": 66.98400115966797,
+            "t": 314.0,
+            "r": 511.3909912109375,
+            "b": 304.0400085449219,
+            "coord_origin": "BOTTOMLEFT"
+          },
+          "charspan": [
+            0,
+            164
+          ]
+        }
+      ],
+      "orig": "Place: Hyderabad                                                                                                                                    P. Sudheer Kumar",
+      "text": "Place: Hyderabad                                                                                                                                    P. Sudheer Kumar"
+    }
+  ],
+  "pictures": [],
+  "tables": [],
+  "key_value_items": [],
+  "pages": {
+    "1": {
+      "size": {
+        "width": 612.0,
+        "height": 792.0
+      },
+      "page_no": 1
+    },
+    "2": {
+      "size": {
+        "width": 612.0,
+        "height": 792.0
+      },
+      "page_no": 2
+    }
+  }
+}

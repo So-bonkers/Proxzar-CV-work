@@ -1,0 +1,855 @@
+{
+    "url": "Reena_Latest_Resume.pdf",
+    "title": "Reena_Latest_Resume",
+    "content": [
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Reena"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "E-Mail:-9reenadahiya@gmail.com"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Mobile: +91-9813788421, 9990014624"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Professional Summary"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Sr. QA Engineer with ~8+ years of experience in testing of software solutions and has worked with National and International clients on several projects ranging from Functional testing to manual/automation web & Mobile app testing over various domains like e-learning, e-commerce, hospitality, travel, resource management, payment gateways etc."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Skills"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience of 8+ years in software testing on Web & Mobile"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf 3+ Years of experience in team handling"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf 2+Years of experience in Web automation using Selenium java"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf 2+ years of experience in Mobile automation using Appium"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience in Framework designing like Cucumber using POM, TestNG"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Working experience with code management tool like GIT"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Working experience with CI/CD tool like Jenkins and in creating builds"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience with Deployment of pipelines for test environment using AWS"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience in checking logs using logz.io"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Good Experience of Cross Browser and Platform testing (windows,IOS & android)"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf REST Assured API testing using Postman , Swagger Doc"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience in database testing using MySQL workbench, DynamoDB"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience in testing Payments using different devices/methods like Stripe, Adyen, Gpay, izettle, iDeal, Paypal, Gift card,  Split payments etc."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experienced in Mobile Application Testing on Android and iOS and experience with different devices like Tabs, Kiosk, POS, Elo etc ."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Knowledge of SDLC & STLC models, Agile -Scrum etc."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience in analyzing requirements/functional specification documents."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Proficient in identifying & reporting defects on tools like Jira, , Redmine, PMS, Test link etc."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Extensive experience in preparing test scenarios & writing Test cases ."
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "\u25cf"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Responsible for testing deliverable like Test strategy,"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Test estimation"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": ","
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Test plan"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "and Test scenarios on"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "assigned projects"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Work closely with the development team to identify and resolve defects"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Participate in product design and review meetings to ensure testability"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Provide feedback to the development team on usability, functionality and performance of software products"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Designing & optimizing Test cases using Test Design techniques"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience in Functional testing , Regression testing , Smoke testing , Sanity testing , Retesting testing etc."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Coordination with Release Manage, Business Analysts & Delivery team to establish project priorities and estimates"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Experience using industry standard software and tools and developing test scenarios, test cases to authenticate the quality of software release"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Detecting bugs & classifying them based on Severity , Priority and attending Triage call"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Proven ability in working individually or as a part of a team, Problem solving, Process improvement activities, Reporting and Assisting to Manager."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Analytical skills, communication skills, work ethics, and the Ability to take ownership and work under own initiative."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Ability to Multi Task and A hard worker with 'go and get it' attitude to Meet Strict Deadlines of assigned tasks"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Keep learning new things with all enthusiasm."
+                }
+            ]
+        },
+        {
+            "header": "page_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Work History"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Company:  ImpactQA (03/2022- Present)"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Client:      Vitamojo(Web , Mobile app)"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Role:         Sr. Test Engineer"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Vita Mojo is a leading brand in the UK in the hospitality business providing services to almost 20000 stores to digitize their operations by reducing their manual efforts and staff shortage. Providing a vast range of products like web application, Mobile application, KIOSK and Back in store tools for management."
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project : Web Based/Mobile application for placing orders for pickup, Delivery and OPAT."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Team Size: Web (6)/Mobile (2)"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Roles & Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "1. Have successfully delivered several features to facilitate the end user to place food orders for pickup from  stores, deliver to doorsteps and orders to pay at table inside a restaurant at one place."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "2. Tested end to end flow from creating the account, selection of dine type, add food in cart and proceed to pay flow in Web for desktop/mobile browsers and Mobile application for both Android and IOS"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "3. Writing automation scripts using Cucumber framework in Selenium"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "4. Analyzing automation reports and checking failures, minimizing script failures to achieve 100% success"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "5. Updating scripts as per requirements"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "6. API testing using Postman and validate response, data and status"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "7. DB testing using Mysql and validating data for updation, deletion and addition in table"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "8. Assigning and reviewing task of junior QAs"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "9. Tested the integration of information with restaurants screens for correct info for right stores with right details of the order."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "10. Assess clients' needs, identifies and documents requirements critical to achieving business objectives"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "11. Designed detailed level test scenarios, system integration test cases."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "12. Regression testing, Defect analysis, Defect logging and tracking"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "13. Integration system testing between different systems"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "14. Part of stand-ups, sprint planning, retros and defect triage calls and responsible for KTs for new joiners"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "15. Sanity Testing and Hotfixes"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "16. Analyzing automation reports for failures"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "17. Testing different Payment methods like Stripe, Adyen, Gpay, Izettle, Paypal, ideal and split payments etc."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Company:  Netlink Software (09/2020-03/2022)"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Client:         RA"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Role:         Sr. Test Engineer"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Rainforest Alliance is an international non-profit organization which is building an alliance to protect forests, improve the livelihoods of farmers and forest communities, and promote their human rights. They provides business solutions to farmers and organizations through signing legal agreement and getting certifications for their crops"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project : Web Based/Mobile application for registering and getting certification by signing agreement Roles and Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "1. Independent preparation of Test cases and executing the same."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "2. Perform regression, retesting, ad-hoc,smoke,integration and system testing"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "3. Sanity testing and Hotfixes"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "4. Handling junior QAs and helping them to deliver on time"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "5. Check the status of every issue across each module day to day and keep tracking bugs and retesting the bugs ."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "6. Writing the scripts in selenium for regression testing"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "7. Part of stand-ups, sprint planning, retros and defect triage calls and responsible for KTs for new joiners"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "8. Coordination with developers to understand them defects"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Company:  Abbie IT Mart Pvt. Ltd (01/2019-08/2020)"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": []
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Role:            Software Tester"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Abbie IT Mart is the IT and Media industry. They have major products and services in various fields like media, live broadcast etc. They help customers to advertise their business, offers through lift media and through live broadcast."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project:  Web Based/Mobile application for managing customers data and organizing media functionality Roles and Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "1. Independent preparation of Test scenarios, Test cases based on requirements and executing the same."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "2. Perform regression testing and Involved in Execution and creating Reusable functions which improves the robustness, reusability and maintainability of the test scripts in Selenium"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "3. Check the status of every issue across each module day to day and Keep tracking bugs, retesting and updating the bug's status."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "4. Writing the scripts in selenium for regression testing."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "5. Help the developers to understand the bugs and Reporting to the IT Head"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "6. Involved in the end to end testing for each sprint version of the product"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "7. Helping in building QA team and took interviews"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "8. Prepared Test plan for team, part of efforts estimation and sprint planning"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "9. Represented and demo new functionalities to other teams"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Company: Yugasa Software Labs (10/2017-01/2019)"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Clients:  US,Denmark, Indian"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Role:    Associate QA"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Project: Websites/Web portals, Mobile apps( PikNik App, Halo app, Locate-M, Appotek, Headsup, Raffl etc. )"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Roles and Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "1. Understanding the designing, Functional and other Requirements."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "2. Preparing the Test Cases and executing test cases as per requirements."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "3. Testing on different browsers and devices for compatibility."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "4. Reporting and tracking of bugs"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "5. Performed smoke testing once the build is ready to test. Interaction with clients and developers"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "6. Independently manage the all testing task."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "7. Preparing test script for mobile automation using appium"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "8. Daily automation reports analysis and updating scripts as per requirements"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Company: Magic Software ( Payroll on Stratosphere)(04/2017-09/2017)"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Client: HMH"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Role: Testing Trainee"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Houghton Mifflin Harcourt s an American publisher of textbooks, instructional technology materials, assessments, and reference works. HMH provides educational content and related services for grades K-12 via set of online learning platforms, including but not limited to ThinkCentral, HMOF, Write Source, and ClassZone platforms"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Projects: E-Books, Game/Mobile app (Personal Math Trainer (PMT), Games, Books and Drawing Tools) Roles and Responsibilities:"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "1. Involvement in Test cases and executing the same."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "2. Preparing Test Summary and Test cases based on the Functional document received."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "3. Updated to the team lead on a daily basis through emails and status trackers."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "4. Keep tracking bugs and retesting the bugs and updating the bug's status with comments."
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Company: Avantha Business solutions (2015-April 2017)"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Client: Healthcare Project(US client)"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Role: Process Associate"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Education Details"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf M.Tech(CSE) from SGT College Of Engineering, MDU University with 68%"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf B.Tech(CSE) from SWIET college, MDU University with 73%"
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Schooling from Haryana Board with 77% in 10th and 68% in 12th"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Certification"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Certification in Manual Software Testing from DUCAT"
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Personal Strength"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Optimistic, Honest, Responsible, Reliable, Confident and Dynamic."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Team player, quick learner with can-do attitude."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Likely to maintain good Time management."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Achievements & Extra Curricular"
+                }
+            ]
+        },
+        {
+            "header": "list",
+            "subContent": [
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Participated in school level debate and essay competition."
+                },
+                {
+                    "contentType": "list_item",
+                    "source": "\u25cf Event organizer in all school and college annual day functions."
+                }
+            ]
+        },
+        {
+            "header": "section_header",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Personal Information"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Full Name:               Reena Dahiya DOB:                         09/05/1990"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Passport:                  Yes"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Nationality:              Indian"
+                },
+                {
+                    "contentType": "text",
+                    "source": "Address:                    Sec-10, Sonepat, Haryana(131001)"
+                }
+            ]
+        },
+        {
+            "header": "key_value_area",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Date:"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Reena"
+                }
+            ]
+        },
+        {
+            "header": "text",
+            "subContent": [
+                {
+                    "contentType": "text",
+                    "source": "Place: Sonepat"
+                }
+            ]
+        }
+    ]
+}
