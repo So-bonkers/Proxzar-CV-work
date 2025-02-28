@@ -1,0 +1,140 @@
+/* Red Bull Racing Inspired Theme */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #1D1F2A;  /* Deep navy blue */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container Box */
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    background: linear-gradient(145deg, #1D1F2A, #2A2D3E); /* Dark blue gradient */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(255, 221, 0, 0.6); /* Yellow glow */
+    border: 2px solid #FFCC00; /* Red Bull yellow */
+}
+
+/* Headers */
+h1 {
+    color: #FFCC00; /* Bright yellow */
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h2 {
+    color: #DA291C; /* Red Bull red */
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+/* Paragraph */
+p {
+    font-size: 14px;
+    color: #BBB;
+}
+
+/* Text Input Box */
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #222; /* Dark grey */
+    color: white;
+    border: 2px solid #DA291C; /* Red border */
+    border-radius: 5px;
+    resize: none;
+}
+
+/* Buttons */
+button {
+    margin-top: 15px;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+/* Primary Button - Summarize */
+button:first-of-type {
+    background: linear-gradient(45deg, #DA291C, #FFCC00); /* Red to Yellow gradient */
+}
+
+button:first-of-type:hover {
+    background: linear-gradient(45deg, #FFCC00, #DA291C);
+}
+
+/* Refresh Session Button */
+.refresh-btn {
+    background: linear-gradient(45deg, #001F5B, #DA291C); /* Dark blue to red */
+    border: 2px solid #FFCC00;
+}
+
+.refresh-btn:hover {
+    background: linear-gradient(45deg, #DA291C, #001F5B);
+}
+
+/* Hidden Elements */
+.hidden {
+    display: none;
+}
+
+/* Loading Message */
+#loading {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #FFCC00;
+    font-weight: bold;
+}
+
+/* Progress Bar */
+#progress-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 5px;
+    border: 2px solid #FFCC00;
+}
+
+#progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #DA291C, #FFCC00);
+    transition: width 0.3s ease-in-out;
+}
+
+/* Summaries Display Box */
+#results {
+    margin-top: 20px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Individual Summary Box */
+.summary-box {
+    background: linear-gradient(145deg, #292E43, #1D1F2A); /* Dark navy gradient */
+    padding: 12px;
+    border-radius: 5px;
+    margin-top: 10px;
+    border-left: 4px solid #FFCC00; /* Yellow left highlight */
+    color: white;
+}

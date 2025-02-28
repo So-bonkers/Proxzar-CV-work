@@ -18,47 +18,27 @@ form {
     margin-bottom: 20px;
 }
 
-.loader {
-    font-weight: bold;
-    color: blue;
-    animation: blink 1s infinite alternate;
-}
-
-@keyframes blink {
-    from { opacity: 1; }
-    to { opacity: 0.5; }
-}
-
-.success {
-    color: green;
-    font-weight: bold;
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     margin-top: 10px;
-    padding: 10px;
-    background: #eaffea;
-    border-radius: 5px;
 }
 
-.error {
-    color: red;
-    font-weight: bold;
-    margin-top: 10px;
-    padding: 10px;
-    background: #ffeaea;
-    border-radius: 5px;
+button:hover {
+    background-color: #0056b3;
 }
 
-#logContainer {
+#result {
     margin-top: 20px;
-    text-align: left;
+    font-size: 1rem;
+    color: #212529;
+    background: #e9ecef;
     padding: 10px;
-    background: #eef;
-    border-radius: 5px;
-    max-height: 200px;
-    overflow-y: auto;
-    font-size: 14px;
-}
-
-.log-entry {
-    padding: 4px;
-    border-bottom: 1px solid #ccc;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
 }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Summarization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Text Summarization</h1>
+        <p>Enter multiple paragraphs (each on a new line) and click "Summarize".</p>
+
+        <!-- ✅ Only ONE textarea -->
+        <textarea id="textInput" placeholder="Example:\nParagraph 1: The construction industry has evolved...\nParagraph 2: AI is transforming automation..."></textarea>
+        
+        <!-- ✅ Only ONE set of buttons -->
+        <button onclick="summarizeText()">Summarize</button>
+        <button onclick="clearSession()" class="refresh-btn">Refresh Session</button>
+
+        <div id="loading" class="hidden">⏳ Summarizing...</div>
+
+        <div id="progress-container" class="hidden">
+            <p>Progress: <span id="progress-text">0</span> / <span id="total-text">0</span> summarized</p>
+            <div id="progress-bar"><div id="progress-fill"></div></div>
+        </div>
+
+        <h2>Summaries:</h2>
+        <div id="results"></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

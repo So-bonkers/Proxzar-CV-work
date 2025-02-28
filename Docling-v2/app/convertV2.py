@@ -7,7 +7,7 @@ def docling_to_custom_json(client_id, input_dir):
     """
     Converts an HTML file to a structured JSON format including paths for extracted figures and tables.
     """
-    from app.utils import loadClientMapping  
+    from app.utilsV2 import loadClientMapping  
 
     input_path = Path(input_dir) / f"{client_id}-with-image-refs.html"
     output_path = Path("data/convertedToJSON") / f"{client_id}-converted.json"

@@ -1,84 +1,86 @@
-document.addEventListener("DOMContentLoaded", async () => {
-    const processForm = document.getElementById("processForm");
-    const processResult = document.getElementById("processResult");
-    const logOutput = document.getElementById("logOutput");
+document.addEventListener("DOMContentLoaded", () => {
+    const resultContainer = document.getElementById("result");
 
+    // Function to get JWT token automatically
     async function getToken() {
         try {
-            const res = await fetch('/api/v1/authenticate', { method: 'POST' });
-            const data = await res.json();
+            const response = await fetch("/api/v2/token", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: "username=testuser&password=password123"  // Change to your credentials
+            });
+
+            if (!response.ok) {
+                throw new Error("Authentication failed");
+            }
+
+            const data = await response.json();
             return data.access_token;
         } catch (err) {
-            console.error("Error fetching token:", err);
+            resultContainer.innerHTML = `<div class="error">❌ Authentication Error: ${err.message}</div>`;
             return null;
         }
     }
 
-    function logMessage(message) {
-        const logEntry = document.createElement("p");
-        logEntry.classList.add("log-entry");
-        logEntry.textContent = message;
-        logOutput.prepend(logEntry);
-        logOutput.scrollTop = 0;
+    // Function to send API requests with token
+    async function sendRequest(endpoint, body, isFormData = false) {
+        const token = await getToken();
+        if (!token) return; // Stop if authentication fails
+
+        const headers = { "Authorization": `Bearer ${token}` };
+        if (!isFormData) headers["Content-Type"] = "application/json";
+
+        const res = await fetch(endpoint, {
+            method: "POST",
+            headers: headers,
+            body: isFormData ? body : JSON.stringify(body),
+        });
+
+        const data = await res.json();
+        handleResponse(data);
     }
 
-    processForm.onsubmit = async function (e) {
+    // Function to handle API responses
+    function handleResponse(data) {
+        if (data.error) {
+            resultContainer.innerHTML = `<div class="error">❌ ${data.error}</div>`;
+        } else {
+            resultContainer.innerHTML = `<div class="success">✅ ${data.message}<br>📄 JSON Output: <a href="${data.output_json}" target="_blank">View JSON</a></div>`;
+        }
+    }
+
+    // Convert by Link
+    document.getElementById("convertLinkForm").onsubmit = async (e) => {
         e.preventDefault();
-        const fileLink = document.getElementById("fileLink").value.trim();
+        resultContainer.innerHTML = "⏳ Processing...";
 
-        if (!fileLink) {
-            alert("Please enter a valid file link!");
-            return;
-        }
+        const proxzarKeyID = document.getElementById("proxzarKeyIDLink").value;
+        const fileLink = document.getElementById("fileLink").value;
 
-        processResult.innerHTML = '<div class="loader">Processing...</div>';
-        logMessage("🟡 Processing started...");
+        await sendRequest("/api/v2/convertLink", { proxzarKeyID, file_link: fileLink });
+    };
 
-        const token = await getToken();
-        if (!token) {
-            processResult.innerHTML = `<div class="error">Error: Authentication failed</div>`;
-            return;
-        }
+    // Convert by Upload
+    document.getElementById("convertUploadForm").onsubmit = async (e) => {
+        e.preventDefault();
+        resultContainer.innerHTML = "⏳ Uploading & Processing...";
 
-        try {
-            const res = await fetch('/api/v1/process-file', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`
-                },
-                body: JSON.stringify({ file_link: fileLink })
-            });
+        const formData = new FormData();
+        formData.append("proxzarKeyID", document.getElementById("proxzarKeyIDUpload").value);
+        formData.append("file", document.getElementById("fileUpload").files[0]);
 
-            const reader = res.body.getReader();
-            const decoder = new TextDecoder();
-            let responseText = "";
+        await sendRequest("/api/v2/convertUpload", formData, true);
+    };
 
-            while (true) {
-                const { done, value } = await reader.read();
-                if (done) break;
-                const chunk = decoder.decode(value, { stream: true });
-                responseText += chunk;
-                logMessage(chunk);
-            }
+    // Convert by S3
+    document.getElementById("convertS3Form").onsubmit = async (e) => {
+        e.preventDefault();
+        resultContainer.innerHTML = "⏳ Processing from S3...";
 
-            // ✅ Fix: Parse JSON from the accumulated response text
-            const data = JSON.parse(responseText.trim());
+        const proxzarKeyID = document.getElementById("proxzarKeyIDS3").value;
+        const bucketName = document.getElementById("bucketName").value;
+        const fileKey = document.getElementById("fileKey").value;
 
-            if (data.error) {
-                processResult.innerHTML = `<div class="error">${data.error}</div>`;
-                logMessage(`🔴 Error: ${data.error}`);
-            } else {
-                processResult.innerHTML = `<div class="success">
-                    <p>✅ File processed successfully!</p>
-                    <p>🔹 Client ID: <b>${data.client_id}</b></p>
-                    <p>📄 JSON Output: <a href="${data.output_json}" target="_blank">View JSON</a></p>
-                </div>`;
-                logMessage("🟢 Processing completed successfully!");
-            }
-        } catch (err) {
-            processResult.innerHTML = `<div class="error">Error: ${err.message}</div>`;
-            logMessage(`🔴 Error: ${err.message}`);
-        }
+        await sendRequest("/api/v2/convertS3", { proxzarKeyID, bucket_name: bucketName, file_key: fileKey });
     };
 });
