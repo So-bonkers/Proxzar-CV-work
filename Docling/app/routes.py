@@ -1,22 +1,14 @@
+from flask import Blueprint, request, jsonify, render_template, send_from_directory, session
 import logging
-import mimetypes
 import requests
-from flask import Blueprint, render_template, request, jsonify, send_from_directory
-from pathlib import Path
-from werkzeug.utils import secure_filename
-from app.convert import docling_to_custom_json
-from app.utils import (
-    generateClientID,
-    validateFileFormat,
-    getClientOutputDir,
-    processDocument,
-    loadClientMapping,
-    saveClientMapping,
-    parseHTMLToJSON,
-    loadConfig,
-    processStreamDocument
-)
+import mimetypes
 import os
+import datetime
+from werkzeug.utils import secure_filename
+from pathlib import Path
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from app.utils import generateClientID, getClientOutputDir, saveClientMapping, processDocument, loadClientMapping, loadConfig, validateFileFormat, processStreamDocument, parseHTMLToJSON
+from app.convert import docling_to_custom_json
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -30,6 +22,12 @@ main_blueprint = Blueprint("main", __name__)
 
 # Load client mapping from file
 client_mapping, mapping_file = loadClientMapping()
+
+# Ensure JWT is available before request
+@main_blueprint.before_request
+def ensure_jwt_token():
+    if 'jwt_token' not in session:
+        session['jwt_token'] = create_access_token(identity="user")
 
 @main_blueprint.route('/')
 def index():
@@ -316,4 +314,81 @@ def json_conversion():
 
     except Exception as e:
         logger.error(f"Error in JSON conversion: {e}")
+        return jsonify({"error": str(e)}), 500
+
+@main_blueprint.route('/api/v1/full-process', methods=['POST'])
+@jwt_required()
+def full_process():
+    user = get_jwt_identity()
+    logger.info(f"Authenticated user: {user}")
+
+    data = request.get_json()
+    file_link = data.get("file_link")
+
+    if not file_link:
+        return jsonify({"error": "File link is required"}), 400
+
+    logger.info(f"Processing file from {file_link} with internally managed JWT")
+
+    try:
+        # Step 1: Download the file
+        logger.info(f"Downloading file from {file_link}")
+        response = requests.get(file_link)
+        response.raise_for_status()
+        
+        # Step 2: Save the file temporarily
+        temp_dir = 'data/temp_files'
+        os.makedirs(temp_dir, exist_ok=True)
+        filename = secure_filename(file_link.split('/')[-1])
+        file_path = os.path.join(temp_dir, filename)
+        
+        with open(file_path, 'wb') as file:
+            file.write(response.content)
+        logger.info(f"File downloaded and saved temporarily at {file_path}")
+        
+        # Step 3: Generate Client ID and assign output directory
+        client_id = generateClientID(client_mapping)
+        output_dir = getClientOutputDir(client_id)
+        output_dir.mkdir(parents=True, exist_ok=True)
+        
+        # Move file to output directory
+        saved_file_path = output_dir / filename
+        os.rename(file_path, saved_file_path)
+        
+        client_mapping[client_id] = {
+            "original_file": filename,
+            "output_path": str(output_dir),
+            "saved_file": str(saved_file_path),
+        }
+        saveClientMapping(client_mapping, mapping_file)
+        logger.info(f"File successfully moved to output directory: {output_dir}")
+
+        # Step 4: Extract document content
+        logger.info(f"Starting extraction process for Client ID: {client_id}")
+        extract_result = processDocument(saved_file_path, output_dir, client_id)
+        if "error" in extract_result:
+            logger.error(f"Extraction failed for Client ID {client_id}: {extract_result['error']}")
+            return jsonify({"error": extract_result["error"]}), 500
+        logger.info(f"Extraction successful for Client ID: {client_id}")
+
+        # Step 5: Convert extracted content to JSON
+        logger.info(f"Starting JSON conversion for Client ID: {client_id}")
+        json_conversion_result = docling_to_custom_json(client_id, output_dir)
+        if "error" in json_conversion_result:
+            logger.error(f"JSON conversion failed for Client ID {client_id}: {json_conversion_result['error']}")
+            return jsonify({"error": json_conversion_result["error"]}), 500
+        logger.info(f"JSON conversion successful for Client ID: {client_id}")
+        
+        return jsonify({
+            "message": "Full process completed successfully",
+            "client_id": client_id,
+            "output_path": str(output_dir),
+            "json_file": json_conversion_result["output_path"]
+        }), 200
+    
+    except requests.RequestException as e:
+        logger.error(f"Failed to download file: {str(e)}")
+        return jsonify({"error": f"Failed to download file: {str(e)}"}), 500
+    except Exception as e:
+        logger.exception("Unexpected error occurred during full process")
         return jsonify({"error": str(e)}), 500

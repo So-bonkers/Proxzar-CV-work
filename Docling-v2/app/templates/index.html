@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Processing</title>
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Document Processing</h1>
+        
+        <form id="processForm">
+            <label for="fileLink">🔗 File Link:</label>
+            <input type="url" id="fileLink" name="fileLink" placeholder="Enter file URL" required>
+            <button type="submit">🚀 Process File</button>
+        </form>
+        
+        <div id="processResult"></div>
+        
+        <div id="logContainer">
+            <h3>📝 Processing Logs</h3>
+            <div id="logOutput"></div>
+        </div>
+    </div>
+
+    <script src="/static/js/custom.js"></script>
+</body>
+</html>
