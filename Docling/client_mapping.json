@@ -1,1 +1,146 @@
-{"11283833": {"original_file": "2206.01062v1.pdf", "output_path": "data\\IngestedFiles\\11283833", "saved_file": "data\\IngestedFiles\\11283833\\2206.01062v1.pdf"}, "27591024": {"original_file": "ezinst_sampleregistrationform.pdf", "output_path": "data\\IngestedFiles\\27591024", "saved_file": "data\\IngestedFiles\\27591024\\ezinst_sampleregistrationform.pdf"}, "36813329": {"original_file": "sv600_c_excellent.pdf", "output_path": "data\\IngestedFiles\\36813329", "bucket_name": "shubankar", "is_stream": true}, "45594504": {"original_file": "2412.13195v1.pdf", "output_path": "data\\IngestedFiles\\45594504", "saved_file": "data\\IngestedFiles\\45594504\\2412.13195v1.pdf"}, "49797941": {"original_file": "sample-pdf-file.pdf", "output_path": "data\\IngestedFiles\\49797941", "bucket_name": "shubankar", "is_stream": true}, "57544918": {"original_file": "sv600_c_excellent.pdf", "output_path": "data\\IngestedFiles\\57544918", "bucket_name": "shubankar", "is_stream": true}, "58819670": {"original_file": "2412.13195v1.pdf", "output_path": "data\\IngestedFiles\\58819670", "saved_file": "data\\IngestedFiles\\58819670\\2412.13195v1.pdf"}, "60979139": {"original_file": "sv600_c_excellent.pdf", "output_path": "data\\IngestedFiles\\60979139", "saved_file": "data\\IngestedFiles\\60979139\\sv600_c_excellent.pdf"}, "77724820": {"original_file": "2412.16158v1.pdf", "output_path": "data\\IngestedFiles\\77724820", "saved_file": "data\\IngestedFiles\\77724820\\2412.16158v1.pdf"}, "87080289": {"original_file": "2412.13195v1.pdf", "output_path": "data\\IngestedFiles\\87080289", "bucket_name": "shubankar", "is_stream": true}, "15823692": {"original_file": "ezinst_sampleregistrationform.pdf", "output_path": "data\\IngestedFiles\\15823692", "saved_file": "data\\IngestedFiles\\15823692\\ezinst_sampleregistrationform.pdf"}, "65555687": {"original_file": "form-15g-8.11.35-PM.pdf", "output_path": "data\\IngestedFiles\\65555687", "saved_file": "data\\IngestedFiles\\65555687\\form-15g-8.11.35-PM.pdf"}, "10177187": {"original_file": "Aishwarya_Manwar_Python_3_Years.pdf", "output_path": "data\\IngestedFiles\\10177187", "saved_file": "data\\IngestedFiles\\10177187\\Aishwarya_Manwar_Python_3_Years.pdf"}, "46561107": {"original_file": "HEMA-PATANKAR CV.pdf", "output_path": "data\\IngestedFiles\\46561107", "saved_file": "data\\IngestedFiles\\46561107\\HEMA-PATANKAR_CV.pdf"}, "44856344": {"original_file": "Ratnasri G.pdf", "output_path": "data\\IngestedFiles\\44856344", "saved_file": "data\\IngestedFiles\\44856344\\Ratnasri_G.pdf"}, "68033406": {"original_file": "Sandeep Vaggu.pdf", "output_path": "data\\IngestedFiles\\68033406", "saved_file": "data\\IngestedFiles\\68033406\\Sandeep_Vaggu.pdf"}, "86343475": {"original_file": "SANJAYVENKAT_Resume.pdf", "output_path": "data\\IngestedFiles\\86343475", "saved_file": "data\\IngestedFiles\\86343475\\SANJAYVENKAT_Resume.pdf"}, "47267384": {"original_file": "Sasi Sekhar Resume.pdf.pdf", "output_path": "data\\IngestedFiles\\47267384", "saved_file": "data\\IngestedFiles\\47267384\\Sasi_Sekhar_Resume.pdf.pdf"}, "27145086": {"original_file": "Sudheer P.pdf", "output_path": "data\\IngestedFiles\\27145086", "saved_file": "data\\IngestedFiles\\27145086\\Sudheer_P.pdf"}, "27666918": {"original_file": "Sunil M.pdf", "output_path": "data\\IngestedFiles\\27666918", "saved_file": "data\\IngestedFiles\\27666918\\Sunil_M.pdf"}, "55126847": {"original_file": "Swapnil Lehemge.pdf", "output_path": "data\\IngestedFiles\\55126847", "saved_file": "data\\IngestedFiles\\55126847\\Swapnil_Lehemge.pdf"}, "91404667": {"original_file": "Syed Salma.pdf", "output_path": "data\\IngestedFiles\\91404667", "saved_file": "data\\IngestedFiles\\91404667\\Syed_Salma.pdf"}, "27403391": {"original_file": "VINAY_K_DataScientist.pdf", "output_path": "data\\IngestedFiles\\27403391", "saved_file": "data\\IngestedFiles\\27403391\\VINAY_K_DataScientist.pdf"}, "97006156": {"original_file": "Yaswanth K.pdf", "output_path": "data\\IngestedFiles\\97006156", "saved_file": "data\\IngestedFiles\\97006156\\Yaswanth_K.pdf"}, "89642181": {"original_file": "Athul joy.software banglore.docx", "output_path": "data\\IngestedFiles\\89642181", "saved_file": "data\\IngestedFiles\\89642181\\Athul_joy.software_banglore.docx"}, "14265340": {"original_file": "Reena Latest Resume.docx", "output_path": "data\\IngestedFiles\\14265340", "saved_file": "data\\IngestedFiles\\14265340\\Reena_Latest_Resume.docx"}, "65881933": {"original_file": "Sneha.pdf", "output_path": "data\\IngestedFiles\\65881933", "saved_file": "data\\IngestedFiles\\65881933\\Sneha.docx"}, "14359256": {"original_file": "Sudheer P.pdf", "output_path": "data\\IngestedFiles\\14359256", "saved_file": "data\\IngestedFiles\\14359256\\Sudheer_P.pdf"}}
+{
+    "11283833": {
+        "original_file": "2206.01062v1.pdf",
+        "output_path": "data\\IngestedFiles\\11283833",
+        "saved_file": "data\\IngestedFiles\\11283833\\2206.01062v1.pdf"
+    },
+    "27591024": {
+        "original_file": "ezinst_sampleregistrationform.pdf",
+        "output_path": "data\\IngestedFiles\\27591024",
+        "saved_file": "data\\IngestedFiles\\27591024\\ezinst_sampleregistrationform.pdf"
+    },
+    "36813329": {
+        "original_file": "sv600_c_excellent.pdf",
+        "output_path": "data\\IngestedFiles\\36813329",
+        "bucket_name": "shubankar",
+        "is_stream": true
+    },
+    "45594504": {
+        "original_file": "2412.13195v1.pdf",
+        "output_path": "data\\IngestedFiles\\45594504",
+        "saved_file": "data\\IngestedFiles\\45594504\\2412.13195v1.pdf"
+    },
+    "49797941": {
+        "original_file": "sample-pdf-file.pdf",
+        "output_path": "data\\IngestedFiles\\49797941",
+        "bucket_name": "shubankar",
+        "is_stream": true
+    },
+    "57544918": {
+        "original_file": "sv600_c_excellent.pdf",
+        "output_path": "data\\IngestedFiles\\57544918",
+        "bucket_name": "shubankar",
+        "is_stream": true
+    },
+    "58819670": {
+        "original_file": "2412.13195v1.pdf",
+        "output_path": "data\\IngestedFiles\\58819670",
+        "saved_file": "data\\IngestedFiles\\58819670\\2412.13195v1.pdf"
+    },
+    "60979139": {
+        "original_file": "sv600_c_excellent.pdf",
+        "output_path": "data\\IngestedFiles\\60979139",
+        "saved_file": "data\\IngestedFiles\\60979139\\sv600_c_excellent.pdf"
+    },
+    "77724820": {
+        "original_file": "2412.16158v1.pdf",
+        "output_path": "data\\IngestedFiles\\77724820",
+        "saved_file": "data\\IngestedFiles\\77724820\\2412.16158v1.pdf"
+    },
+    "87080289": {
+        "original_file": "2412.13195v1.pdf",
+        "output_path": "data\\IngestedFiles\\87080289",
+        "bucket_name": "shubankar",
+        "is_stream": true
+    },
+    "15823692": {
+        "original_file": "ezinst_sampleregistrationform.pdf",
+        "output_path": "data\\IngestedFiles\\15823692",
+        "saved_file": "data\\IngestedFiles\\15823692\\ezinst_sampleregistrationform.pdf"
+    },
+    "65555687": {
+        "original_file": "form-15g-8.11.35-PM.pdf",
+        "output_path": "data\\IngestedFiles\\65555687",
+        "saved_file": "data\\IngestedFiles\\65555687\\form-15g-8.11.35-PM.pdf"
+    },
+    "10177187": {
+        "original_file": "Aishwarya_Manwar_Python_3_Years.pdf",
+        "output_path": "data\\IngestedFiles\\10177187",
+        "saved_file": "data\\IngestedFiles\\10177187\\Aishwarya_Manwar_Python_3_Years.pdf"
+    },
+    "46561107": {
+        "original_file": "HEMA-PATANKAR CV.pdf",
+        "output_path": "data\\IngestedFiles\\46561107",
+        "saved_file": "data\\IngestedFiles\\46561107\\HEMA-PATANKAR_CV.pdf"
+    },
+    "44856344": {
+        "original_file": "Ratnasri G.pdf",
+        "output_path": "data\\IngestedFiles\\44856344",
+        "saved_file": "data\\IngestedFiles\\44856344\\Ratnasri_G.pdf"
+    },
+    "68033406": {
+        "original_file": "Sandeep Vaggu.pdf",
+        "output_path": "data\\IngestedFiles\\68033406",
+        "saved_file": "data\\IngestedFiles\\68033406\\Sandeep_Vaggu.pdf"
+    },
+    "86343475": {
+        "original_file": "SANJAYVENKAT_Resume.pdf",
+        "output_path": "data\\IngestedFiles\\86343475",
+        "saved_file": "data\\IngestedFiles\\86343475\\SANJAYVENKAT_Resume.pdf"
+    },
+    "47267384": {
+        "original_file": "Sasi Sekhar Resume.pdf.pdf",
+        "output_path": "data\\IngestedFiles\\47267384",
+        "saved_file": "data\\IngestedFiles\\47267384\\Sasi_Sekhar_Resume.pdf.pdf"
+    },
+    "27145086": {
+        "original_file": "Sudheer P.pdf",
+        "output_path": "data\\IngestedFiles\\27145086",
+        "saved_file": "data\\IngestedFiles\\27145086\\Sudheer_P.pdf"
+    },
+    "27666918": {
+        "original_file": "Sunil M.pdf",
+        "output_path": "data\\IngestedFiles\\27666918",
+        "saved_file": "data\\IngestedFiles\\27666918\\Sunil_M.pdf"
+    },
+    "55126847": {
+        "original_file": "Swapnil Lehemge.pdf",
+        "output_path": "data\\IngestedFiles\\55126847",
+        "saved_file": "data\\IngestedFiles\\55126847\\Swapnil_Lehemge.pdf"
+    },
+    "91404667": {
+        "original_file": "Syed Salma.pdf",
+        "output_path": "data\\IngestedFiles\\91404667",
+        "saved_file": "data\\IngestedFiles\\91404667\\Syed_Salma.pdf"
+    },
+    "27403391": {
+        "original_file": "VINAY_K_DataScientist.pdf",
+        "output_path": "data\\IngestedFiles\\27403391",
+        "saved_file": "data\\IngestedFiles\\27403391\\VINAY_K_DataScientist.pdf"
+    },
+    "97006156": {
+        "original_file": "Yaswanth K.pdf",
+        "output_path": "data\\IngestedFiles\\97006156",
+        "saved_file": "data\\IngestedFiles\\97006156\\Yaswanth_K.pdf"
+    },
+    "89642181": {
+        "original_file": "Athul joy.software banglore.docx",
+        "output_path": "data\\IngestedFiles\\89642181",
+        "saved_file": "data\\IngestedFiles\\89642181\\Athul_joy.software_banglore.docx"
+    },
+    "14265340": {
+        "original_file": "Reena Latest Resume.docx",
+        "output_path": "data\\IngestedFiles\\14265340",
+        "saved_file": "data\\IngestedFiles\\14265340\\Reena_Latest_Resume.docx"
+    },
+    "65881933": {
+        "original_file": "Sneha.pdf",
+        "output_path": "data\\IngestedFiles\\65881933",
+        "saved_file": "data\\IngestedFiles\\65881933\\Sneha.docx"
+    },
+    "14359256": {
+        "original_file": "Sudheer P.pdf",
+        "output_path": "data\\IngestedFiles\\14359256",
+        "saved_file": "data\\IngestedFiles\\14359256\\Sudheer_P.pdf"
+    }
+}

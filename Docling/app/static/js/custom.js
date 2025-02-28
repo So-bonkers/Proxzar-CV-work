@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const extractForm = document.getElementById("extractForm");
     const htmlToJsonForm = document.getElementById("htmlToJsonForm");
     const jsonConversionForm = document.getElementById("jsonConversionForm");
+    const fullProcessForm = document.getElementById("fullProcessForm");
+    const fullProcessResult = document.getElementById("fullProcessResult");
 
     // Utility function to handle API responses
     async function handleResponse(response, resultElement) {
@@ -209,4 +211,44 @@ document.addEventListener("DOMContentLoaded", () => {
             jsonConversionResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
         }
     };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const fullProcessForm = document.getElementById("fullProcessForm");
+        const fullProcessResult = document.getElementById("fullProcessResult");
+    
+        fullProcessForm.onsubmit = async function (e) {
+            e.preventDefault();
+            const fileLink = document.getElementById("fileLink").value.trim();
+    
+            if (!fileLink) {
+                alert("Please enter a valid file link!");
+                return;
+            }
+    
+            fullProcessResult.innerHTML = '<div class="spinner-border text-primary" role="status"></div> Processing...';
+    
+            try {
+                const res = await fetch('/api/v1/full-process', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ file_link: fileLink })
+                });
+                const data = await res.json();
+    
+                if (data.error) {
+                    fullProcessResult.innerHTML = `<div class="alert alert-danger">${data.error}</div>`;
+                } else {
+                    fullProcessResult.innerHTML = `
+                        <div class="alert alert-success">
+                            <p>${data.message}</p>
+                        </div>
+                    `;
+                }
+            } catch (err) {
+                fullProcessResult.innerHTML = `<div class="alert alert-danger">Error: ${err.message}</div>`;
+            }
+        };
+    });   
 });

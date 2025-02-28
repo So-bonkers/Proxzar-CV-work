@@ -4,5 +4,5 @@
     "mapping_file": "client_mapping.json",
     "supported_formats": ["pdf", "docx", "xlsx", "odt", "ods", "png", "tiff", "application/pdf", "application/vnd.openxmlformats-officedocument.wordprocessingml.document", "application/vnd.ms-excel", ".pdf"],
     "template_folder": "Docling\\project\\templates",
-    "static_folder": "Docling\\project\\static",
+    "static_folder": "Docling\\project\\static"
 }

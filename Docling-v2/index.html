@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Processing</title>
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>📄 Document Processing</h1>
+
+        <!-- Convert by File Link -->
+        <h2>Convert by URL</h2>
+        <form id="convertLinkForm">
+            <label for="proxzarKeyID">Proxzar Key ID:</label>
+            <input type="text" id="proxzarKeyIDLink" placeholder="Enter your Proxzar Key ID" required>
+            
+            <label for="fileLink">File URL:</label>
+            <input type="url" id="fileLink" placeholder="https://example.com/document.pdf" required>
+            
+            <button type="submit">🚀 Process Link</button>
+        </form>
+
+        <!-- Convert by File Upload -->
+        <h2>Upload File</h2>
+        <form id="convertUploadForm" enctype="multipart/form-data">
+            <label for="proxzarKeyID">Proxzar Key ID:</label>
+            <input type="text" id="proxzarKeyIDUpload" placeholder="Enter your Proxzar Key ID" required>
+
+            <label for="fileUpload">Select File:</label>
+            <input type="file" id="fileUpload" required>
+
+            <button type="submit">📂 Upload & Process</button>
+        </form>
+
+        <!-- Convert by S3 -->
+        <h2>Process from S3</h2>
+        <form id="convertS3Form">
+            <label for="proxzarKeyID">Proxzar Key ID:</label>
+            <input type="text" id="proxzarKeyIDS3" placeholder="Enter your Proxzar Key ID" required>
+
+            <label for="bucketName">S3 Bucket:</label>
+            <input type="text" id="bucketName" placeholder="my-s3-bucket-name" required>
+
+            <label for="fileKey">File Key:</label>
+            <input type="text" id="fileKey" placeholder="path/to/document.pdf" required>
+
+            <button type="submit">☁️ Process from S3</button>
+        </form>
+
+        <div id="result">Results will appear here.</div>
+    </div>
+
+    <script src="/static/js/custom.js"></script>
+</body>
+</html>
