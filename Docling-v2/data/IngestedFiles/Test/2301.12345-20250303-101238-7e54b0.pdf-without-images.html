@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png"
+    href="https://ds4sd.github.io/docling/assets/logo.png"/>
+    <meta charset="UTF-8">
+    <title>
+    Powered by Docling
+    </title>
+    <style>
+    html {
+    background-color: LightGray;
+    }
+    body {
+    margin: 0 auto;
+    width:800px;
+    padding: 30px;
+    background-color: White;
+    font-family: Arial, sans-serif;
+    box-shadow: 10px 10px 10px grey;
+    }
+    figure{
+    display: block;
+    width: 100%;
+    margin: 0px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    img {
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 640px;
+    max-height: 640px;
+    }
+    table {
+    min-width:500px;
+    background-color: White;
+    border-collapse: collapse;
+    cell-padding: 5px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    }
+    th, td {
+    border: 1px solid black;
+    padding: 8px;
+    }
+    th {
+    font-weight: bold;
+    }
+    table tr:nth-child(even) td{
+    background-color: LightGray;
+    }
+    </style>
+    </head>
+<h2>Chemotactic motility-induced phase separation</h2>
+<p>Hongbo Zhao, 1 Andrej Koˇsmrlj, 2, 3 and Sujit S. Datta 1, ∗</p>
+<p>1 Department of Chemical and Biological Engineering, Princeton University, Princeton, NJ 08544 2 Department of Mechanical and Aerospace Engineering, Princeton University, Princeton, NJ 08544 3 Princeton Materials Institute, Princeton University, Princeton, NJ 08544 (Dated: January 31, 2023)</p>
+<p>Collectives of actively-moving particles can spontaneously separate into dilute and dense phases-a fascinating phenomenon known as motility-induced phase separation (MIPS). MIPS is well-studied for randomly-moving particles with no directional bias. However, many forms of active matter exhibit collective chemotaxis, directed motion along a chemical gradient that the constituent particles can generate themselves. Here, using theory and simulations, we demonstrate that collective chemotaxis strongly competes with MIPS-in some cases, arresting or completely suppressing phase separation, or in other cases, generating fundamentally new dynamic instabilities. We establish quantitative principles describing this competition, thereby helping to reveal and clarify the rich physics underlying active matter systems that perform chemotaxis, ranging from cells to robots.</p>
+<p>The thermodynamics of active matter-collections of active agents that consume energy-has been studied extensively due to its fundamental richness as well as its importance to biological and engineering applications [1, 2]. One prominent class of active matter is that composed of self-propelled agents, ranging from enzymes [3-5], motile microorganisms [6, 7], and mammalian cells [8, 9] to synthetic microswimmers and robots [10-12]. These forms of active matter can often be modeled as collections of Active Brownian Particles (ABPs), each of which selfpropels with a velocity of magnitude U 0 and a direction that is continually reoriented by random thermal fluctuations, eventually decorrelating over a time scale τ R . The persistence length of an ABP trajectory is then given by ∼ U 0 τ R ; for a particle of radius a , its directedness can therefore be described by the reorientation P'eclet number Pe R ≡ a/ ( U 0 τ R ).</p>
+<p>Studies of this canonical model have led to fascinating insights into the nonequilibrium thermodynamics of active matter. For example, phase separation in passive equilibrium systems typically requires attractive interactions between the constituents; in stark contrast, for sufficiently small Pe R , collections of ABPs undergo motilityinduced phase separation (MIPS) into dense and dilute phases without requiring attractive interactions [1316]. Even more surprisingly, despite this process being highly out-of-equilibrium, its spatiotemporal dynamics can in some cases be described using models inspired by the classical Cahn-Hilliard theory of phase separation of thermally-equilibrated passive systems [15, 17-20].</p>
+<p>This prior work focused on ABPs that move randomly, with no preferred direction. However, many examples of active matter exhibit collective chemotaxis -directed motion in response to an external chemical gradient that</p>
+<p>can be generated collectively by the agents themselves. In biology, this phenomenon enables populations of cells to escape from harmful environments, colonize new terrain, and migrate as groups [6, 21-27]; at the subcellular level, enzymes may also perform chemotaxis [35]. Synthetic forms of active matter that can perform chemotaxis have also been developed. Studies using these model systems have revealed new surprises in their phase behavior-e.g., unusual clustering and oscillatory density fluctuations that are not captured by current models of MIPS [10, 11, 28-37]. However, despite these hints that chemotaxis can influence the physics of active matter, a broader understanding of how exactly chemotaxis alters MIPS remains lacking.</p>
+<p>Here, we address this gap in knowledge by developing a theoretical model that combines both MIPS and chemotaxis, which are usually studied in isolation. We find that collective chemotaxis can dramatically suppress MIPS, arrest phase separation, or engender new complex phase separation dynamics-as controlled by the competition between MIPS, which drives ABPs to cluster into dense phases, and chemotaxis, which instead drives them to disperse away. Our analysis of this competition establishes quantitative principles describing how chemotaxis influences MIPS, thereby expanding current understanding of its rich phenomenology.</p>
+<p>Governing equations. Building on existing continuum models of MIPS [15, 17-20], we describe the time evolution of the volume fraction φ of chemotactic ABPs via the continuity equation,</p>
+<p>∂φ ∂t = -∇· J , (1)</p>
+<p>J = -M 0 φ ∇ ( ˜ µ h ( φ, Pe R ) -κ ∇ 2 φ ) ︸ ︷︷ ︸ MIPS + χ 0 φ ∇ f (˜ c ) ︸ ︷︷ ︸ chemotaxis , (2)</p>
+<p>where t is time and J is the flux of particles. This flux has two contributions, as indicated by the underbraces in</p>
+<p>Eq. (2). The first reflects active Brownian motion, as established by the classical Cahn-Hilliard model of MIPS (referred to as 'model B' in the literature); in future work, it would be interesting to explore other models of MIPS that treat additional complexities [18]. As detailed in Sec. I in [SI], M 0 = 0 . 5 U 2 0 τ R is the active diffusivity reflecting the random undirected motion of the particles, ˜ µ h is the bulk chemical potential nondimensionalized by the energy scale 0 . 5 ζU 2 0 τ R , where ζ is the drag coefficient, and the characteristic length scale √ κ ∼ U 0 τ R sets the width of the interface between the dense and dilute phases in MIPS [15, 17].</p>
+<p>The second term in Eq. (2) represents a new addition of chemotaxis to this classical model of MIPS. Here, ˜ c is the concentration, nondimensionalized by a fixed characteristic concentration, of a diffusible chemical signal (the chemoattractant ) that the particles sense and direct their motion in response to. The function f (˜ c ) describes the ability of the particles to sense the chemoattractant, and typically increases monotonically with ˜ c ; as an illustrative example, we take f (˜ c ) = ˜ c as is often done for simplicity [38, 39]. The chemotactic coefficient χ 0 describes the ability of the particles to move up the sensed chemoattractant gradient. Thus, χ 0 ∇ f (˜ c ) describes the chemotactic velocity, and when multiplied by φ describes the chemotactic flux [40, 41]. Hence, we define a new chemotactic P'eclet number Pe C ≡ χ 0 /M 0 to describe the competition between directed chemotaxis and undirected active diffusion.</p>
+<p>Chemoattractants (e.g., nutrients) are often taken up by the particles themselves-thereby collectively generating a local chemoattractant gradient that the particles bias their motion in response to [22, 23, 26, 29, 32, 34, 35, 42-45]. Thus, we describe the chemoattractant via</p>
+<p>∂ ˜ c ∂t = D c ∇ 2 ˜ c -kφg (˜ c ) + S, (3)</p>
+<p>where D c is the chemoattractant diffusivity, k is the characteristic rate of chemoattractant uptake per particle, and g (˜ c ) describes how uptake rate increases with ˜ c ; while g (˜ c ) is often described by Michaelis-Menten kinetics, here we use the linearized form g (˜ c ) = ˜ c for simplicity. Finally, S represents the rate at which chemoattractant is externally supplied, which we take to be constant and spatially uniform as an illustrative example.</p>
+<p>Chemotaxis suppresses MIPS. First, we establish the conventional case of MIPS as a baseline, described by our governing Eqs. (1)-(3) in the absence of chemotaxis (Pe C = 0). To do so, we choose a functional form for ˜ µ h ( φ, Pe R ), given by Eq. (7) in [SI], that derives from a previously-established ABP equation of state [16, 46]. The homogeneous state with constant, spatially-uniform φ ( x ) = φ 0 , where x denotes position, becomes unstable to fluctuations in φ when the free energy is nonconvex ( ∂ φ ˜ µ h < 0). Therefore, the spinodal curve that demarcates the limit of stability is given by ∂ φ ˜ µ h = 0, shown by the black curves in the Pe R -φ 0 phase diagrams in Fig. 1, where φ 0 represents the ABP volume</p>
+<p>fraction averaged over the entire system. Above this spinodal curve, the homogeneous state is linearly stable. Below the spinodal, ABPs spontaneously separates into dense and dilute phases via spinodal decomposition (Movie S1)-initially forming domains with a characteristic most unstable wavelength ∼ q -1 sp ≡ √ -2 κ/∂ φ ˜ µ h that coarsen over time, as established previously [17, 46].</p>
+<p>How do the features of MIPS change upon the introduction of chemotaxis (Pe C > 0)? Given a constant and uniform S , the homogeneous state is now described by spatially-uniform ABP and chemoattractant profiles, φ ( x ) = φ 0 and ˜ c ( x ) = ˜ c 0 , where ˜ c 0 is given by the steadystate solution to Eq. (3), ˜ c 0 = S/ ( kφ 0 ). By perturbing this steady state with small-amplitude fluctuations δφ = δ ˆ φe i q · x + ωt and δ ˜ c = δ ˆ ce i q · x + ωt of spatial wavevector q and growth rate ω , we obtain the dispersion relation ω ( q ), given by Eq. (16) in [SI], where q = | q | is the wavenumber of a given mode. The homogeneous state is linearly stable if Re ω < 0, which is always true when ∂ φ ˜ µ h > 0. We therefore focus our subsequent analysis on the spinodal region of non-chemotactic MIPS where ∂ φ ˜ µ h < 0, and nondimensionalize q and ω by the characteristic non-chemotactic MIPS quantities q sp and ω sp ≡ ω ( q sp ; Pe C = 0). As detailed in Sec. II in [SI], the dispersion relation for chemotactic MIPS [Eq. (20)] solely depends on three dimensionless parameters:</p>
+<ul>
+<li>· α ≡ -M 0 φ 0 ∂ φ ˜ µ h /D c , which compares the effective collective ABP diffusivity -M 0 φ 0 ∂ φ ˜ µ h to that of the chemoattractant,</li>
+<li>· The Damkohler number Da ≡ kφ 0 / (2 D c q 2 sp ) = -κkφ 0 / ( D c ∂ φ ˜ µ h ), which compares the rates of chemoattractant uptake and diffusion over the characteristic length scale q -1 sp / √ 2, and</li>
+<li>· The reduced chemotactic P'eclet number Pe ' C ≡ χ 0 ˜ c 0 / ( -M 0 φ 0 ∂ φ ˜ µ h ).</li>
+</ul>
+<p>Because the MIPS phase diagram is conventionally parameterized by φ 0 and Pe R , which together set ∂ φ ˜ µ h (Eq. (8) in [SI]), we also define versions of the three dimensionless parameters that are independent of these variables: α 0 ≡ M 0 /D c , Da 0 ≡ κk/D c , and Pe C given earlier, such that α = -α 0 φ 0 ∂ φ ˜ µ h , Da = -Da 0 φ 0 /∂ φ ˜ µ h , and Pe ' C = -Pe C · S/ ( kφ 2 0 ∂ φ ˜ µ h ). Furthermore, because the proportionality between Pe ' C and Pe C is scaled by S/k , without loss of generality, we fix the chemoattractant supply rate S/k = 1. Chemotactic MIPS is then parameterized by a total of five governing parameters: { φ 0 , Pe R , α 0 , Da 0 , Pe C } , as summarized in Table I in [SI]. Thus, to examine how chemotaxis influences MIPS, we first examine how the conventional φ 0 -Pe R phase diagram of MIPS changes upon varying α 0 , Da 0 , and Pe C .</p>
+<p>As detailed in Sec. II B in [SI], our first main result from the linear stability analysis is that phase separation is suppressed by chemotaxis, but only when two criteria are simultaneously satisfied: (1) Pe ' C ≥ Pe ' C,crit , and (2) α ≤ α crit , where Pe ' C,crit = (1 + min { Da , 1 } ) 2 / (4 · min { Da , 1 } ) and α crit = 1 + 2 · Da+2 √ Da(1 + Da). We therefore designate the limits given by Pe ' C = Pe ' C,crit and</p>
+<figure><figcaption>FIG. 1: Chemotaxis suppresses MIPS. (a, c, e) Phase diagram, which is typically parameterized by φ 0 and Pe R , as predicted by linear stability analysis for different Da 0 and α 0 . The black curve shows the limit of stability without chemotaxis, below which we observe conventional MIPS. The colored solid and red dotted curves show Boundaries 1 and 2, which are defined in the main text; different colors indicate different values of Pe C . Boundary 2 is below the horizontal axis in (a). The region above both Boundaries is stable, with ABPs in the homogeneous state, while the region below either Boundary is unstable. The different instability types-finite (F) or unbounded (U), stationary (S) or oscillatory (O)-are denoted by the shaded, unshaded, non-hashed, and hashed regions, respectively.</figcaption></figure>
+<p>Dash-dotted and dashed curves indicate the boundaries between F/U and S/O instabilities, respectively. The linear stability analysis predictions are corroborated by full numerical simulations (Movies S2-S4), snapshots of which are shown in (b, d, f), which focus on the grey boxed regions shown in (a, c, e).</p>
+<p>α = α crit as 'Boundary 1' and 'Boundary 2'-shown in the Pe R -φ 0 phase diagrams (Fig. 1) by the solid and red dotted curves, respectively. Boundary 1 is colored by the different values of Pe C . Boundary 2 does not depend on Pe C . Criteria (1) and (2) correspond to the regions above Boundaries 1 and 2, respectively; hence, the region above both Boundaries represents the stable regime in which the ABPs are in the homogeneous state, while conversely, the region below either Boundary 1 or 2 represents the unstable regime in which the ABPs phase separate.</p>
+<p>As a starting example, we examine the ABP phase diagram for Da 0 = 0 . 2 and α 0 = 1, shown in Fig. 1(a). In this case, Boundary 2 is below the horizontal axis; hence, the system is linearly stable above Boundary 1 and unstable below it. Boundary 1 shifts to lower Pe R and a narrower range of φ 0 with increasing Pe C . That is, the region</p>
+<p>of instability shrinks, and phase separation is suppressed, when chemotaxis is stronger. Numerical simulations at Pe C = 1 confirm this linear stability result: ABPs are in the homogeneous state above Boundary 1, while phase separation occurs below it, as shown in Fig. 1(b). Intriguingly, the features of this phase separation appear to be fundamentally distinct from the spinodal decomposition observed in conventional non-chemotactic MIPS. For example, as shown in Movie S2, ABPs phase separate into finite-sized domains that remain stationary, and do not subsequently coarsen-unlike in conventional MIPS.</p>
+<p>Next, by increasing α 0 to 4, Boundary 1 remains unaltered, but Boundary 2 shifts downward, as shown in Fig. 1(c). As a result, for the case of Pe C = 1, Boundary 2 rises above Boundary 1, which is omitted since Boundary 2 now corresponds to the limit of stability, as confirmed by numerical simulations shown in Fig. 1(d).</p>
+<p>As shown in Movie S3, ABPs phase separate into finitesized domains and bands that form traveling waves, a feature that is fundamentally distinct both from conventional MIPS and Fig. 1(b).</p>
+<p>Finally, to highlight yet another distinct form of phase separation, we then increase both α 0 and Da 0 in Fig. 1(e), where Boundary 1 shifts downward while Boundary 2 shifts upward, part of which becomes the limit of stability for Pe C = 0 . 35, confirmed by simulations in Fig. 1(f). Strikingly, we find that throughout the unstable region, the patterns vary from traveling bands that are extended (shaded green + hashed region) or less extended (unshaded + hashed region) to domains that stretch, rotate, and translate (unshaded region below the green dashed curve), as shown in Movie S4.</p>
+<p>Taken altogether, these results demonstrate that MIPS is suppressed when (1) the strength of chemotaxis, as quantified by Pe C , and (2) chemoattractant diffusivity relative to that of the ABPs, as quantified by α -1 0 , are sufficiently high. Moreover, our simulations reveal that the features of phase separation are dramatically altered by chemotaxis-with separated domains that initially can either be finite-sized or unbounded in space, and can either be stationary or exhibit complex oscillatory dynamics in time, depending on the values of { φ 0 , Pe R , α 0 , Da 0 , Pe C } . We summarize these results in the α 0 -Pe C phase diagram shown in Fig. 2(a), holding φ 0 , Pe R , and Da 0 fixed, and show the region of stability (which lies above Boundary 1 and to the left of Boundary 2 in the α 0 -Pe C plane shown) and snapshots of these different types of instability (animated in Movie S7) that we now seek to categorize.</p>
+<p>Chemotaxis arrests phase separation. We first classify the instabilities by their distinct spatial characteristics. In particular, depending on the range of initially-unstable wavenumbers q -< q < q + in the dispersion relation ω ( q ) (Eq. (16) in [SI]) derived using our linear stability analysis, we differentiate instabilities as being either finite-wavelength (F) when the unstable modes are spatially bounded ( q -> 0), and therefore phase-separated domains do not coarsen, or unbounded (U) when the unstable modes can instead extend indefinitely in space ( q -= 0) [47]. While conventional MIPS is a Type U instability [17, 46, 48], our second main result is that chemotaxis can give rise to Type F instabilities as well-as shown by the domains that do not coarsen in e.g., Movies S2-S3 noted earlier. Comparing the ABP (Movies S2-3) and chemoattractant (Movies S5-6) profiles reveals the underlying reason: ABPs in an extended, dense domain collectively establish a strong local chemoattractant gradient through uptake-which in turn causes them to bias their motion up the gradient and disperse away, arresting phase separation.</p>
+<p>This behavior is also reflected in the simulations shown in Fig. 2(a) and Movie S7. For the example of α 0 = 2 (left of Boundary 2), as Pe C increases, the coarsening slows and eventually becomes arrested (Sec. V in [SI]), forming finite-sized domains and stripes-ultimately reaching the</p>
+<p>glyph[negationslash]</p>
+<p>homogeneous state at the largest Pe C above Boundary 1. Examining the dispersion relations in Fig. 2(b) and the inset corroborates this observation. At low non-zero Pe C , the unstable modes extend to q -= 0 (blue to green curves), indicating a Type U instability. By contrast, for the larger Pe C = 0 . 76, q -> 0 (chartreuse curve), indicating a Type F instability.</p>
+<p>Indeed, determining q -directly from the dispersion relation as described in Sec. II C in [SI] yields the quantitative criterion that Type F is given by Pe ' C > 1 (shaded regions in Fig. 1), while Type U is given by Pe ' C < 1 (unshaded). The boundary between the two, given by Pe ' C = 1 (Eq. 49 in [SI]), is represented by the dashdotted curves in Figs. 1 and 2(a). In all cases, our predictions for the Type F/U boundary agree well with the simulations, as detailed in Sec. VI in [SI]-thereby providing a quantitative description of how chemotaxis can arrest MIPS.</p>
+<p>glyph[negationslash]</p>
+<p>Chemotaxis engenders complex oscillatory dynamics. Following Cross and Hohenberg [48], we further classify the instabilities by their distinct temporal characteristics - 'Stationary' (S) if all unstable modes are nonoscillatory with Im ω = 0, or 'Oscillatory' (O) if there exist unstable and oscillatory modes with Re ω ( q ) > 0 and Im ω ( q ) = 0. While conventional MIPS is a Type S instability, our third main result is that chemotaxis can give rise to Type O instabilities as well-e.g., Movies S3-4 noted earlier. This behavior is also reflected in Fig. 2(a) and Movie S7. As shown in Fig. 2(c) for the example of α 0 = 8, at low Pe C (blue and cyan curves), all unstable modes (with Re ω > 0) are stationary (having Im ω = 0), indicating a Type S instability; by contrast, at higher Pe C (green to orange curves), some unstable modes have Im ω = 0, indicating a Type O instability. As a result, in this regime, the phase-separated domains continually move in complex ways-e.g., stretching, rotating, and translating-as indicated by the arrows in Fig. 2(a) showing the local velocity field u .</p>
+<p>Why do these complex dynamics emerge for sufficiently strong chemotaxis (large Pe C ) and slow chemoattractant diffusion (large α 0 )? Comparing the ABP and chemoattractant profiles, φ ( x ) and ˜ c ( x ) respectively, again sheds light on the underlying physics. Fig. 2(d) shows the illustrative case of α 0 = 8 for the five different Pe C shown in (a). For the lowest two Pe C , chemotaxis is weak, enabling ˜ c ( x ) to equilibrate in response to changes in φ ( x ). Consequently, the phase-separated patterns remain stationary, reflective of a Type S instability. For larger Pe C , however, chemotaxis proceeds more rapidly and the diffusing chemoattractant cannot equilibrate fast enough. As a result, variations in ˜ c ( x ) lag behind φ ( x ), driving directed large-scale motion of the phase-separated domains, reflective of a Type O instability. Intriguingly, a similar mechanism has been proposed to explain the spontaneous autophoresis of chemically-active particles [49, 50].</p>
+<p>The dispersion relation again yields a quantitative criterion for the Type O instability, shown as the hashed regions in Fig. 1. The Type S/O boundary given by</p>
+<figure><figcaption>FIG. 2: Chemotaxis arrests phase separation and generates dynamic instabilities. (a) Phase diagram parameterized instead by α 0 and Pe C , holding φ 0 = 0 . 8, Pe R = 10 -3 , and Da 0 = 0 . 5 fixed. Different instability types and the boundaries between them, as predicted by our linear stability analysis, are indicated using the same labels as in Fig. 1. These predictions are again corroborated by numerical simulations (Movie S7), snapshots of which are shown. Arrows show the local velocity field u , with the scale indicated by the characteristic velocity u 0 ≡ M 0 / √ κ ∼ U 0 ; velocities for which | u | < 0 . 005 u 0 are not shown. (b-c) Dispersion relations ω ( q ) corresponding to α 0 = 2 and α 0 = 8 in (a); solid (dashed) lines show the Real (Imaginary) components. Insets zoom in on long wavelengths. (d) Magnified views of the contours of φ = φ 0 and ˜ c = ¯ ˜ c (the spatial average of ˜ c ) for the small regions indicated by the dashed rectangles in the snapshots of (a) at α 0 = 8. Different colors in (b-d) show the different values of Pe C corresponding to the simulations shown in (a).</figcaption></figure>
+<p>C</p>
+<p>Eq. (43) in [SI] is represented using the dashed curves in Figs. 1(e)-(f) and 2(a); in Fig. 1(c)-(d), this Boundary coincides with Boundary 2. We again observe good agreement betweeb the predicted Type S/O boundary and the numerical simulations [51]. Thus, our analysis provides a quantitative explanation of how the interplay between chemotaxis and chemoattractant diffusion can generate more complex phase separation dynamics than in conventional MIPS.</p>
+<p>Discussion. Motivated by the prevalence of chemotaxis in active systems, we have developed an illustrative model of chemotactic MIPS. We find that chemotaxis strongly competes with MIPS-in some cases, arresting or completely suppressing phase separation, or in other cases, generating fundamentally new dynamic instabilities that share features with other pattern-forming systems, but arise due to completely different physics [48, 52-67]. This work thus helps to reveal and clarify the rich new physics underlying active systems that perform chemotaxis, ranging from enzymes at the subcellular scale to collectives of living cells and chemically-active colloids and beyond.</p>
+<p>Our work also provides quantitative guidelines to rationalize existing observations and guide new experiments to search for the fascinating behaviors predicted here.</p>
+<p>For example, simple estimates based on our findings (Sec. VIII in [SI]) suggest that chemotaxis may help suspensions of motile microorganisms overcome MIPS and remain in the homogeneous state under nutrient-replete conditions. When starved, however, our analysis suggests that such suspensions will separate into dense communities that may confer functional benefits-as has indeed been observed in many experiments [7, 68]. We also expect that the different instabilities described here could be explored using synthetic forms of active matter with tunable velocities and chemical dynamics, as detailed further in Sec. VIII in [SI]. More broadly, while we focused on biased motion up a chemoattractant gradient as an illustrative example, our theoretical framework also provides a foundation to describe the influence of chemorepulsion, as well as other forms of taxis-e.g., durotaxis, electrotaxis, and phototaxis [12, 69-75]-on MIPS.</p>
+<h2>ACKNOWLEDGMENTS</h2>
+<p>We acknowledge support from NSF Grants CBET1941716 and DMR-2011750, the Pew Biomedical Scholars Program, and a Princeton Bioengineering Initiative (PBI 2 ) Postdoctoral Fellowship.</p>
+<h2>SUPPLEMENTARY INFORMATION</h2>
+<h2>I. THERMODYNAMICS OF NON-CHEMOTACTIC ABPS</h2>
+<p>As derived in [16], the non-dimensional active pressure generated by ABPs in 2D is</p>
+<p>Π nζU 2 0 τ R / 2 = 1 -φ -0 . 2 φ 2 + 4 π φ Pe R ( 1 -φ φ m ) -1 , (4)</p>
+<p>where n is the particle number density, φ is the area fraction φ = nv 0 , where v 0 = πa 2 is the area taken up by each particle, and φ m = 0 . 9 is the maximum area fraction (0 ≤ φ < φ m ). This pressure is also related to a nonequilibrium Helmholtz free energy per volume f ,</p>
+<p>Π = φ 2 ∂ ∂φ ( f φ ) = f ' φ -f. (5)</p>
+<p>Combining Eqs. (4)- (5) then yields</p>
+<p>f ζU 2 0 τ R / 2 = φ v 0 [ ln φ -φ -0 . 1 φ 2 -4 π Pe R · φ m ln ( 1 -φ φ m )] . (6)</p>
+<p>Given this Helmholtz free energy, one can further define the bulk chemical potential, which we use in the calculations described in the main text: µ h ≡ ∂f/∂n = ∂ ( v 0 f ) /∂φ . As explained in the main text, we define a nondimensionalized version of it as ˜ µ h ≡ µ h / ( ζU 2 0 τ R / 2). This definition yields</p>
+<p>˜ µ h = ln φ +1 -2 φ -0 . 3 φ 2 -4 π Pe R · φ m [ ln ( 1 -φ φ m ) -φ φ m -φ ] . (7)</p>
+<p>When analyzing the linear stability in Sec. II, we often need to evaluate the derivative of the non-dimensional chemical potential with respect to φ ,</p>
+<p>∂ φ ˜ µ h = 1 φ -2 -0 . 6 φ -4 π Pe R · φ m ( φ -2 φ m ) ( φ -φ m ) 2 . (8)</p>
+<p>It is useful to note that -∂ φ ˜ µ h has an upper bound:</p>
+<p>sup φ, Pe R ( -∂ φ ˜ µ h ) = lim φ → φ m , Pe R → 0 -∂ φ ˜ µ h = -1 φ m +2+0 . 6 φ m ≈ 1 . 43 . (9)</p>
+<p>Consistent with the classical Cahn-Hilliard theory of phase separation, the free energy can be extended to penalize a sharp interface [17, 76]. The total free energy in a spatial field is</p>
+<p>F = ∫ ( f + 1 2 ζU 2 0 τ R 2 v 0 κ ‖∇ φ ‖ 2 ) d x , (10)</p>
+<p>from which the overall chemical potential can be defined variationally by µ ≡ δF/δn = v 0 δF/δφ ; here, κ = l 2 0 as noted in the main text. Again, we define a normalized version of this overall chemical potential ˜ µ ≡ µ/ ( ζU 2 0 τ R / 2). Therefore,</p>
+<p>˜ µ = ˜ µ h -κ ∇ 2 φ, (11)</p>
+<p>Using these thermodynamic rules, we next describe the phase dynamics following Ref. [16]. The particle volume fraction satisfies the conservation equation:</p>
+<p>∂φ ∂t = ∇· ( φ ζ ∇ µ ) = ∇· ( M 0 φ ∇ ( ˜ µ h ( φ, Pe R ) -˜ κ ∇ 2 φ ) ) , (12)</p>
+<p>where M 0 = U 2 0 τ R / 2. For convenience of notation, we define the collective diffusivity M ( φ ) ≡ M 0 φ . This expression thereby yields the part of Eq. (1) of the main text that reflects active Brownian motion.</p>
+<h2>II. LINEAR STABILITY ANALYSIS</h2>
+<h2>A. Dispersion relation</h2>
+<p>In this section, we study the linear stability of the governing equations, Eqs. (1)-(3) of the main text. For generality, here we do not assume any particular functional form for the chemotactic sensing function f (˜ c ) or chemoattractant uptake rate g (˜ c ). We perturb the homogeneous steady state φ ( x ) = φ 0 and ˜ c ( x ) = ˜ c 0 = g -1 ( Sk -1 φ -1 0 ) with small amplitude perturbations δφ = δ ˆ φe i q · x + ωt , and δ ˜ c = δ ˆ ce i q · x + ωt . Linearizing Eqs. (1)-(3) and substituting δφ and δ ˜ c yields</p>
+<p>ωδ ˆ φ = -M ( φ 0 ) q 2 ( ∂ φ ˜ µ ' h ( φ 0 ) + κq 2 ) δ ˆ φ + χ 0 φ 0 q 2 f ' (˜ c 0 ) δ ˆ c,</p>
+<p>(13)</p>
+<p>ωδ ˆ c = -D c q 2 δ ˆ c -k ( g (˜ c 0 ) δ ˆ φ + φ 0 g ' (˜ c 0 ) δ ˆ c ) , (14)</p>
+<p>where q = | q | . For simplicity of notation, in the following text, the arguments φ 0 and ˜ c 0 in ∂ φ ˜ µ ' h ( φ 0 ), g (˜ c 0 ), g ' (˜ c 0 ), and f ' (˜ c 0 ) are omitted. The eigenvalue ω satisfies</p>
+<p>ω 2 +( M + D ) ω + MD + X = 0 . (15)</p>
+<p>The solution to ω is</p>
+<p>ω ± = 1 2 ( -( M + D ) ± √ ( M-D ) 2 -4 X ) , (16)</p>
+<p>where</p>
+<p>M≡ Mq 2 ( ∂ φ ˜ µ h + κq 2 ) , D ≡ D c q 2 + kφ 0 g ' , X ≡ kχ 0 φ 0 f ' gq 2 . (17)</p>
+<p>In conventional non-chemotactic MIPS ( χ 0 = 0), the two eigenvalues are -M and -D , respectively. Because D ≥ 0, the stability is determined by M . When</p>
+<p>∂ φ ˜ µ h < 0, or in the spinodal region as defined in the main text, ω can be positive in a range of wavenumber q , and the most unstable wavenumber that corresponds to maximum instability growth rate ω is q -1 sp ≡ √ -2 κ/∂ φ ˜ µ h . Because of Eq. (9), q -1 sp glyph[greaterorsimilar] l 0 . By nondimensionalizing wavenumber with the characteristic length scale of spinodal decomposition,</p>
+<p>˜ q ≡ √ -κ ∂ φ ˜ µ h q = q √ 2 q sp , (18)</p>
+<p>and nondimensionalizing rate with the characteristic growth rate of non-chemotactic spinodal decomposition 4 ω sp = 4 ω ( q sp , Pe C = 0) = M ( ∂ φ ˜ µ h ) 2 /κ , ˜ ω ≡ ω/ (4 ω sp ), ˜ M ≡ M / (4 ω sp ), ˜ D ≡ D / (4 ω sp ), ˜ X ≡ X / (4 ω sp ) 2 , we obtain the nondimensionalized equation for the eigenvalues</p>
+<p>˜ ω 2 +( ˜ M + ˜ D )˜ ω + ˜ M ˜ D + ˜ X = 0 . (19)</p>
+<p>The solution is then</p>
+<p>˜ ω ± = 1 2 ( -( ˜ M + ˜ D ) ± √ ( ˜ M-˜ D ) 2 -4 ˜ X ) , (20)</p>
+<p>where</p>
+<p>˜ M = ˜ q 2 ( -1 + ˜ q 2 ) , ˜ D = 1 α ( ˜ q 2 +Da ) , ˜ X = Da α Pe ' C ˜ q 2 , (21)</p>
+<p>and the dimensionless parameters are</p>
+<p>α = -M∂ φ ˜ µ h D c , Da = -κkφ 0 g ' D c ∂ φ ˜ µ h , Pe ' C = -χ 0 M∂ φ ˜ µ h f ' g g ' . (22)</p>
+<p>We restrict our discussion below to ∂ φ ˜ µ h < 0 (in the spinodal region), α > 0, Da > 0, and Pe ' C ≥ 0.</p>
+<h2>B. Stability condition</h2>
+<p>When the discriminant of the quadratic equation Eq. (19) is positive, i.e., ∆ ≡ ( ˜ M-˜ D ) 2 -4 ˜ X > 0, it can be seen from Eq. (20) that ˜ ω + decreases with increasing Pe ' C . In other words, chemotaxis has a stabilizing effect. Therefore, next, we derive the condition under which the system is stable, that is, Re ˜ ω ± (˜ q ) ≤ 0 for all ˜ q . This condition is equivalent to (1) I 2 ≡ ˜ ω + ˜ ω -= ˜ M ˜ D + ˜ X ≥ 0, and (2) I 1 ≡ ˜ ω + + ˜ ω -= -( ˜ M + ˜ D ) ≤ 0 for all ˜ q .</p>
+<p>Criterion (1) ( I 2 ≥ 0) can be achieved with sufficiently large Pe ' C : since</p>
+<p>I 2 = ˜ q 2 α ( (˜ q 2 -1)(˜ q 2 +Da) + DaPe ' C ) , (23)</p>
+<p>I 2 ≥ 0 for all ˜ q is equivalent to min ˜ q α ˜ q -2 I 2 ≥ 0. When Da ≤ 1, the minimum is obtained at ˜ q = 0, and min ˜ q α ˜ q -2 I 2 = Da(Pe ' C -1); hence, criterion (1) is equivalent to Pe ' C > 1. When Da > 1, the minimum is obtained at ˜ q 2 = (1 -Da) / 2, and</p>
+<p>min ˜ q α ˜ q -2 I 2 = -(1 + Da) 2 4 +DaPe ' C . (24)</p>
+<p>In this case criterion (1) is equivalent to Pe ' C > (1 + Da) 2 / (4Da). Therefore, we can summarize criterion (1) in a more compact form as</p>
+<p>Pe ' C > Pe ' C,crit = (1 + min { Da , 1 } ) 2 4min { Da , 1 } . (25)</p>
+<p>In other words, in order to suppress phase separation, chemotactic rate needs to be sufficiently fast.</p>
+<p>As noted above, at the critical point of stability where max ˜ q I 2 = 0, the critical wavenumber is</p>
+<p>˜ q 2 crit,2 = 1 -min { Da , 1 } 2 . (26)</p>
+<p>This result indicates that if criterion (2) is satisfied so that the stability of the system is solely determined by criterion (1), as the control parameter Pe ' C varies near the critical condition of stability, the range of unstable wavelength can either be unbounded (˜ q near 0) if Da ≥ 1 or finite (˜ q near √ (1 -Da) / 2) if Da ≤ 1. The former belongs to type F instability while the latter belongs to type U instability according to Cross and Hohenberg's classification of dispersion relations [48].</p>
+<p>Having large Pe ' C is a necessary but insufficient condition for the suppression of phase separation. Another way to interpret criterion (2) ( I 1 ≤ 0) is that, when Pe ' C is sufficiently large, ∆ becomes negative, and Re ˜ ω ± = -( ˜ M + ˜ D ) / 2 = I 1 / 2. Hence, sufficiently large Pe ' C can fully stabilize the system only when I 1 < 0.</p>
+<p>Since</p>
+<p>I 1 = -q 4 + ( 1 -1 α ) ˜ q 2 -Da α , (27)</p>
+<p>when α ≤ 1, the maximum is obtained at ˜ q = 0, and max ˜ q I 1 = -Da /α < 0. When α > 1, the maximum is obtained at ˜ q 2 = ( α -1) / 2 α , and</p>
+<p>max ˜ q I 1 = 1 α ( ( α -1) 2 4 α -Da ) . (28)</p>
+<p>I 1 ≤ 0 for all ˜ q is equivalent to max ˜ q I 1 < 0, or equivalently α ≤ 1 or Da ≥ ( α -1) 2 / 4 α . This condition can be written in a more compact form as shown in the main text,</p>
+<p>α ≤ α crit = 1 + 2 · Da + 2 √ Da(1 + Da) . (29)</p>
+<p>Or alternatively,</p>
+<p>Da ≥ Da crit = (1 -max { α, 1 } ) 2 4max { α, 1 } . (30)</p>
+<p>In other words, in order to suppress phase separation, chemoattractant diffusion or uptake rate needs to be sufficiently fast.</p>
+<p>As noted above, at the critical condition of stability where max ˜ q I 1 = 0, the critical wavenumber is</p>
+<p>˜ q 2 crit,1 = 1 -α -1 2 . (31)</p>
+<p>This result indicates that if criterion (1) is satisfied so that the stability of the system is solely determined by criterion (2), as the control parameter α or Da varies near the critical condition of stability, the range of unstable mode is finite and near ˜ q crit,1 . This belongs to type F instability according to Cross and Hohenberg's classification of dispersion relations [48].</p>
+<p>In summary, the stability criteria (1) and (2) are equivalent to Pe ' C ≥ Pe ' C,crit and α ≤ α crit (or Da ≥ Da crit ), indicating that MIPS can be suppressed with sufficiently fast chemotaxis and chemoattractant diffusion (or uptake rate).</p>
+<h2>C. Finite and unbounded wavelength instabilities</h2>
+<p>In the main text, we define finite and unbounded wavelength instabilities based on the range of unstable modes, which we here express in dimensionless form: ˜ q u -< ˜ q < ˜ q u + . When ˜ q u -= 0, the unstable wavelength extends all the way to infinity-we thus call this an unbounded instability (type U). Otherwise when ˜ q u -> 0, the range of unstable wavelengths is finite-we thus call this a finite wavelength instability (type F).</p>
+<p>From Eq. (20), we see that ˜ ω + (˜ q = 0) = 0 and ˜ ω ' + (˜ q = 0) = 0. Hence the sign of the second order derivative determines whether modes near ˜ q = 0 are stable. At ˜ q = 0,</p>
+<p>˜ ω '' + = -( ˜ M ˜ D + ˜ X ) '' ˜ M + ˜ D ∣ ∣ ∣ ∣ ∣ ˜ q =0 = 2(1 -Pe ' C ) . (32)</p>
+<p>When Pe ' C < 1, ˜ ω '' (˜ q = 0) > 0, we have ˜ q u -= 0, hence the system has an unbounded instability. Otherwise, when Pe ' C > 1 and the system is in the unstable regime, it has a finite wavelength instability. These results suggest that as the chemotactic rate increases, modes near zero wavenumber become stabilized-and thus, phase separated domains are less likely to coarsen since chemotaxis disperses the particles.</p>
+<p>When criterion (2) described in Sec. II B is satisfied, the dispersion relation can be classified by Pe ' C . If Da < 1, the system has type U instability when Pe ' C < 1, type F instability when 1 < Pe ' C < Pe ' C,crit , and is stable when Pe ' C > Pe ' C,crit . The transition from instability to stability by increasing chemotactic rate is of type F [48]. Hence, when chemoattractant uptake rate is slow such that Da < 1, finite-sized domains can be observed near the boundary of stability.</p>
+<p>glyph[negationslash]</p>
+<p>If Da > 1, the system has type U instability when Pe ' C < 1, and is stable when Pe ' C > 1. The transition from instability to stability by increasing chemotactic rate is of type U [48]. Hence when chemoattractant uptake rate is fast such that Da > 1, phase separated domains are more likely to coarsen near the boundary of stability.</p>
+<p>The classification of type F/U instability also applies when criterion (2) is not satisfied, which we describe in the next section.</p>
+<h2>D. Oscillatory instability condition</h2>
+<p>glyph[negationslash]</p>
+<p>In Sec. II B we have shown that when criterion (2) is not satisfied, large Pe ' C cannot suppress phase separation. Instead, at high enough Pe ' C , the discriminant becomes negative ∆ < 0, which means that eigenvalues can have imaginary part (Im ˜ ω = 0). Therefore, next, we derive the condition for oscillatory instability-that there exists ˜ q for which Re ˜ ω > 0 and Im ˜ ω = 0, or equivalently I 1 > 0 and ∆ < 0.</p>
+<p>Since I 1 is a quadratic polynomial of ˜ q 2 , I 1 > 0 can be obtained by finding the values of ˜ q 2 that correspond to the zeros of I 1 :</p>
+<p>˜ q 2 ± = α -1 ± √ ( α -1) 2 -4 α Da 2 α . (33)</p>
+<p>In this section, we always require that α > 1 and Da < ( α -1) 2 / 4 α (criterion (2) is not satisfied). This ensures that ˜ q 2 ± exist and are positive. I 1 > 0 when ˜ q -< ˜ q < ˜ q + . Notice that ˜ q + < ( α -1) /α < 1.</p>
+<p>Fig. S1 shows a typical plot of ( ˜ M-˜ D ) 2 as a function of ˜ q 2 in blue while ˜ X as a function of ˜ q 2 is a line that passes through the origin whose slope is proportional to Pe ' C . The intersection of these two curves is where ∆ = 0, and the region of ∆ < 0 is where ( ˜ M-˜ D ) 2 is below the line ˜ X . When Pe ' C = 0, ∆ ≥ 0. As Pe ' C increases, the slope of ˜ X increases, the range of wavenumbers in which ∆ < 0 expands.</p>
+<p>Because ∆ is a quartic polynomial of ˜ q 2 , it has at most four roots. Now we would like to analyze the properties of its roots in order to determine the region of ∆ < 0.</p>
+<p>Notice that ˜ M-˜ D has one valid root,</p>
+<p>˜ q 2 c = α +1+ √ ( α +1) 2 +4 α Da 2 α , (34)</p>
+<p>as shown in Fig. S1. Note that ˜ q 2 c > ( α + 1) /α > 1. Hence, when Pe ' C > 0, ( ˜ M-˜ D ) 2 and ˜ X has at least one intersection beyond ˜ q 2 c . This is shown graphically in Fig. S1, where we see that any straight line that goes through the origin has one interaction with the blue curve at ˜ q 2 > ˜ q 2 c . In other words, ∆ has one root greater than ˜ q 2 c .</p>
+<p>Since we are interested in the region I 1 > 0, or ˜ q -< ˜ q < ˜ q + , and we have ˜ q + < 1 < ˜ q c , next, we focus on the</p>
+<figure><figcaption>FIG. S1: A plot of ( ˜ M-˜ D ) 2 (˜ q 2 ) and two lines that pass through the origin and are tangent to the curve at ˜ q 2 l and ˜ q 2 r . Da = 0 . 05, α = 1 . 5.</figcaption></figure>
+<p>roots of ∆ within [0 , q c ]. Because at ˜ q = 0, ( ˜ M-˜ D ) 2 > 0 and ˜ X = 0, there is at least one root within [0 , q c ]. Therefore, within this interval, there can be 1, 2, or 3 roots in total.</p>
+<p>Having 2 roots in this interval or 3 roots in total for a quartic polynomial means that it has one root of multiplicity 2, or ∆ = 0 and d ∆ /d ˜ q 2 = 0. Graphically, this corresponds to the line ˜ X being tangent to ( ˜ M-˜ D ) 2 , as shown in Fig. S1, where there are two solutions, and the root of multiplicity 2 is denoted as ˜ q 2 l and ˜ q 2 r respectively. Mathematically it is equivalent to:</p>
+<p>( ˜ M-˜ D ) 2 ˜ q 2 = d ( ( ˜ M-˜ D ) 2 ) d ˜ q 2 , (35)</p>
+<p>or</p>
+<p>˜ M-˜ D ˜ q 2 = 2 d ( ˜ M-˜ D ) d ˜ q 2 . (36)</p>
+<p>Substituting in ˜ M and ˜ D [Eq. (17)], we obtain</p>
+<p>3 αq 4 -(1 + α ) q 2 +Da = 0 . (37)</p>
+<p>A solution exists when</p>
+<p>Da ≤ ( α +1) 2 12 α , (38)</p>
+<p>and the roots are</p>
+<p>˜ q 2 l,r = α +1 ± √ ( α +1) 2 -12 α Da 6 α . (39)</p>
+<p>In the above equation, ˜ q 2 l takes the minus sign and ˜ q 2 r takes the plus sign. In the discussion below, whenever</p>
+<p>we refer to ˜ q l,r , we imply that the inequality in Eq. (38) holds. The P'eclet number Pe ' C that corresponds to the tangent lines ∆(˜ q 2 l,r ) = 0 is</p>
+<p>Pe ' C ,l,r = ( ˜ M-˜ D ) 2 (˜ q 2 l,r ) 4 α -1 Da˜ q 2 l,r = ( α ˜ q 4 l,r -(1 + α )˜ q 2 l,r -Da) 2 4 α Da˜ q 2 l,r = (( α +1)˜ q 2 l,r +2Da) 2 9 α Da˜ q 2 l,r . (40)</p>
+<p>When 0 < Pe ' C < Pe ' C ,l , ∆ has one root ˜ q 1 in (˜ q r , ˜ q c ) and ∆ < 0 in ( q 1 , q c ]. When Pe C ,l < Pe ' C < Pe C ,r , ∆ has three roots, ˜ q 2 ∈ (0 , ˜ q l ), ˜ q 3 ∈ (˜ q l , ˜ q r ), and ˜ q 4 ∈ (˜ q r , ˜ q c ), and ∆ < 0 in ( q 2 , q 3 ) and ( q 4 , q c ]. When Pe ' C > Pe C ,r , ∆ has one root ˜ q 5 ∈ [0 , ˜ q l ], and ∆ < 0 in ( q 5 , q c ]. When Da > ( α + 1) 2 / 12 α , ˜ q l,r does not exist and ∆ has one root in [0 , ˜ q c ].</p>
+<p>Recall that we are seeking the condition for unstable oscillatory modes, or ∆ < 0 within the interval of [˜ q -, ˜ q + ]. Since the interval in which ∆ < 0 expands with increasing Pe ' C , we need to find the critical condition that there exists ˜ q ∗ ∈ [˜ q -, ˜ q + ] for which ∆(˜ q ∗ ) = 0 and for all ˜ q ∈ [˜ q -, ˜ q + ], ∆(˜ q ) ≥ 0. Therefore it is important to determine the order of ˜ q ± and ˜ q l,r .</p>
+<p>Setting ˜ q ± = ˜ q l,r , we find that ˜ q -or ˜ q + is equal to ˜ q l or ˜ q r when</p>
+<p>Da = 1 -2 α . (41)</p>
+<p>Furthermore, we find that when Da < 1 -2 /α , ˜ q l < ˜ q -< ˜ q r < ˜ q + . When Da > 1 -2 /α , the orders are: ˜ q l < ˜ q -< ˜ q + < ˜ q r when 1 < α < 3; ˜ q l < ˜ q r < ˜ q -< ˜ q + , when 3 < α < 5, and ˜ q -< ˜ q l < ˜ q r < ˜ q + when α > 5. Based on the analysis of the region of ∆ < 0, we see that when ˜ q -< ˜ q l < ˜ q + , the critical wavenumber ˜ q ∗ can be ˜ q -, ˜ q + , or ˜ q l , whichever makes ∆(˜ q ∗ ) = 0 at the smallest Pe ' C . In all other cases, including when ˜ q l,r do not exist (Da > ( α +1) 2 / 12 α ), ˜ q ∗ can only be ˜ q -, ˜ q + , whichever makes ∆(˜ q ∗ ) = 0 at the smallest Pe ' C . Therefore, we define the P'eclet number Pe ' C that corresponds to ∆(˜ q ± ) = 0,</p>
+<p>Pe ' C , ± = ( ˜ M-˜ D ) 2 (˜ q 2 ± ) 4 α -1 Da˜ q 2 ± = (˜ q 2 ± +Da) 2 α Da˜ q 2 ± . (42)</p>
+<p>In summary, when α > α crit , the unstable modes become oscillatory when Pe ' C > Pe ' C , ∗ , where</p>
+<p>Pe ' C , ∗ =              min { Pe ' C , + , Pe ' C , -, Pe ' C ,l } when Da < ( α +1) 2 / 12 α, Da > 1 -2 /α, and α > 5 min { Pe ' C , + , Pe ' C , -} otherwise . (43)</p>
+<p>Therefore, we have established that oscillatory instability occurs when chemoattractant diffusion is slow and chemotaxis is sufficiently fast.</p>
+<p>Lastly, we note that by setting Pe ' C , + = Pe ' C , -, we find further that when α Da < 1, Pe ' C , + < Pe ' C , -, and when α Da ≥ 1, Pe ' C , + ≥ Pe ' C , -.</p>
+<h2>III. LINEAR STABILITY ANALYSIS IN THE Pe R -φ 0 PHASE DIAGRAM</h2>
+<p>The results of linear stability analysis in Sec. II are described in terms of the three dimensionless parameters α , Da, and Pe ' C . In their expressions (Eq. 22), ∂ φ ˜ µ h is a function of φ 0 and Pe R , and M is a function of φ 0 . φ 0 and Pe R are the two dimensionless parameters in the conventional MIPS phase diagram. Therefore, in the main text, we define another version of the parameters that do not involve any dependence on φ 0 and Pe R : α 0 , Da 0 and Pe C . Using linear models for chemotactic sensing function and chemoattractant rate f (˜ c ) = ˜ c and g (˜ c ) = ˜ c , the two versions of dimensionless parameters are related by</p>
+<p>α = -φ 0 ( ∂ φ ˜ µ h ) α 0 Da = -φ 0 ∂ φ ˜ µ h Da 0 Pe ' C = Pe C S k · ( -1) φ 2 0 ∂ φ ˜ µ h . (44)</p>
+<p>Fig. 2 in the main text shows the chemotactic MIPS phase diagram in the plane of Pe C -α 0 at given Da 0 , φ 0 and Pe R . The linear stability analysis results can be easily applied using the conversion in Eq. (44).</p>
+<p>Fig. 1 in the main text shows the chemotactic MIPS phase diagram in the plane of Pe R -φ 0 at given α 0 , Da 0 , and Pe C . In this phase diagram, we would like to obtain the stability criteria and different types of instabilities expressed in terms of Pe R and φ 0 , which we derive in this section.</p>
+<p>When there is no chemotaxis, the stability boundary is the spinodal curve ∂ φ ˜ µ h ( φ 0 , Pe R,sp ) = 0. Using Eq. (8), the spinodal curve can be written explicitly in terms of Pe R :</p>
+<p>Pe R,sp = π ( φ 0 -φ m ) 2 ( φ -1 0 -2 -0 . 6 φ 0 ) 4 φ m ( φ 0 -2 φ m ) . (45)</p>
+<p>Because ∂ φ ˜ µ h is linear with respect to Pe R , in the following text, we give the stability and instability type conditions in terms of ∂ φ ˜ µ h ; the expression can then be easily written explicitly in terms of Pe R . Based on Eq. (45), because Pe R,sp > 0 and 0 < φ 0 < φ m , we have φ -1 0 -2 -0 . 6 φ 0 < 0. Hence, we find that the spinodal curve spans the range of volume fractions given by ( -5 + 2 √ 10) / 3 < φ 0 < φ m .</p>
+<p>Based on Eq. (25), the criterion (1) (Pe ' C ≥ Pe ' C,crit ) can be written in terms Pe C , Da 0 , φ 0 , and ∂ φ ˜ µ h as</p>
+<p>S k · Pe C ≥ φ 3 0 { -∂ φ ˜ µ h /φ 0 , for ( -µ ' h /φ 0 ≤ Da 0 ) (Da 0 -∂ φ ˜ µ h φ -1 0 ) 2 4Da 0 , for ( -µ ' h /φ 0 > Da 0 ) , (46)</p>
+<p>or explicitly in terms of ∂ φ ˜ µ h :</p>
+<p>-∂ φ ˜ µ h φ 0 ≤    S Pe C kφ 3 0 , for ( S Pe C kφ 3 0 < Da 0 ) 2 √ S Pe C kφ 3 0 Da 0 -Da 0 , otherwise . (47)</p>
+<p>and</p>
+<p>Because</p>
+<p>h ( u ) ≥ 8 α Da , (54)</p>
+<p>and the equality is attained at u = 2 α Da, this puts a lower bound on Pe C :</p>
+<p>Pe C S k > 4 φ 0 α 0 . (55)</p>
+<p>Given the above constraint, the roots of P = h ( u ) are</p>
+<p>u ± = 1 2 [ P -4 α Da ± √ P 2 -8 α Da P ] . (56)</p>
+<p>Thus we have also obtained the expression for Boundary 1 in the Pe R -φ phase diagram by setting Eq. (47) to equality, and the region above Boundary 1 satisfies criterion (1).</p>
+<p>Similarly, criterion (2) ( α ≤ 1 or Da ≥ ( α -1) 2 / 4 α ) can be written in terms of α 0 , Da 0 , φ 0 , and ∂ φ ˜ µ h as</p>
+<p>-∂ φ ˜ µ h ≤ 1 φ 0 α 0 ( 1 + 2 φ 0 √ Da 0 α 0 ) . (48)</p>
+<p>Thus we have also obtained the expression for Boundary 2 in the Pe R -φ phase diagram by setting Eq. (48) to equality, and the region above Boundary 2 satisfies criterion (2).</p>
+<p>Finite-wavelength instability Pe ' C > 1 can be expressed as</p>
+<p>-∂ φ ˜ µ h < S Pe C kφ 2 0 , (49)</p>
+<p>which coincides with criterion (1) if S Pe C / ( kφ 3 0 ) < Da 0 . Setting Eq. (49) to equality gives the expression for the F/U boundary. Finite-wavelength instability exists between the F/U boundary and Boundary 1 when S Pe C / ( kφ 3 0 ) > Da 0 .</p>
+<p>Finally, oscillatory instability occurs when Pe ' C > Pe ' C , ∗ and α > α crit . The following derivation needs to be discussed separately depending on whether Da < ( α +1) 2 / 12 α, Da > 1 -2 /α, and α > 5, which is equivalent to</p>
+<p>max { 5 , φ 0 √ 12 α 0 Da 0 -1 } < α < 2 + φ 2 0 α 0 Da 0 . (50)</p>
+<p>If outside this region, the condition for oscillatory unstable mode is Pe ' C > min { Pe ' C , + , Pe ' C , -} , which is equivalent to</p>
+<p>P ≡ 2Pe C S k α 2 0 Da 0 φ 0 > min { h ( u + ) , h ( u -) } , (51)</p>
+<p>where</p>
+<p>h ( u ) = ( u +2 α Da) 2 u , (52)</p>
+<p>u ± = α -1 ± √ ( α -1) 2 -4 α Da . (53)</p>
+<p>Hence, Eq. (51) is equivalent to u -< u + < u + or u -< u -< u + , that is, at least one of u ± is in between the two roots u ± . Recall that we would like to express the condition of oscillatory instability in terms of ∂ φ ˜ µ h explicitly. Because α Da = α 0 Da 0 φ 2 0 , u ± does not depend on ∂ φ ˜ µ h . But u ± depends on ∂ φ ˜ µ h because of α . Our goal, then, is to express u -< u + < u + or u -< u -< u + explicitly in terms of α , from which we obtain the condition in terms of ∂ φ ˜ µ h via ∂ φ ˜ µ h = -α/ ( α 0 φ 0 ).</p>
+<p>To achieve the above goal, we first notice that</p>
+<p>α -1 = j ( u ± ) ≡ u 2 ± +4 α Da 2 u ± . (57)</p>
+<p>The following derivation uses the property that the minimum of h ( u ) is obtained at u = 2 α Da and the minimum of j ( u ) is obtained at u = 2 √ α Da. √</p>
+<p>We first consider condition (a) 2 α Da ≤ u -< u + . Because h ( u -) = P , this requires: 2 α Da ≥ 2 √ α Da, or α Da ≥ 1 (which corresponds to Pe ' C , + > Pe ' C , -as noted in Sec. VII), and P ≤ h (2 √ α Da), or</p>
+<p>P ≤ 2 √ α Da( √ α Da + 1) 2 . (58)</p>
+<p>Under condition (a), u -< u + < u + or u -< u -< u + is equivalent to j ( u -) < α -1 < j ( u + ). √</p>
+<p>Lastly, if (c) u -< 2 α Da < u + , which requires P > h (2 √ α Da), or the opposite of Eq. (58), then u -< u + < u + or u -< u -< u + is equivalent to 2 √ α Da < α -1 < max { j ( u -) , j ( u + ) } , where the lower bound is the minimum of j ( u ) (min u j ( u ) = 2 √ α Da). Notice that α -1 > 2 √ α Da is equivalent to Da < ( α -1) 2 / 4 α . Hence all conditions above imply Da < Da crit (or α > α crit ).</p>
+<p>Next, we consider condition (b) u -< u + ≤ 2 α Da, which requires α Da ≤ 1 and Eq. (58), then u -< u + < u + or u -< u -< u + is equivalent to j ( u + ) < α -1 < j ( u -). √</p>
+<p>Now we have obtained the condition of oscillatory instability in terms of α and hence ∂ φ ˜ µ h explicitly, which has an upper and lower bound. The upper bound coincides with or is below Boundary 2.</p>
+<p>In summary, in this section, we have derived the conditions for stability or instability (both type F/U and type S/O) in the Pe R -φ 0 phase diagram, by expressing them explicitly in terms of ∂ φ ˜ µ h .</p>
+<h2>IV. NUMERICAL SIMULATIONS</h2>
+<p>In this section, we describe the details of numerical simulations. Firstly, we define the characteristic length scale to be l 0 ≡ √ κ ∼ U 0 τ R , which is on the order of the persistence length [15, 17]. We define the characteristic time scale to be t 0 ≡ κ/M 0 ∼ τ R , which is on the order of the ABP reorientation time. The characteristic length and time scales motivate us to define the characteristic velocity u 0 ≡ l 0 /t 0 ∼ U 0 , which we will use in Sec. VII.</p>
+<p>All simulations in this work are performed in a periodic domain of size [100 l 0 , 100 l 0 ]. The governing equations are solved using the finite volume method to ensure conservation of particle volume fraction and chemoattractant concentration. We use an implicit solver of variable order as the time-stepper with adaptive time stepping, adaptive order and error control [77]. Simulations are solved on a grid of size [256 , 256]. The initial condition for φ ( x, t = 0) is the homogeneous state φ 0 with added spatially uncorrelated Gaussian noise at each grid point with a standard deviation of 0.02. The initial condition for the chemoattractant concentration is the homogeneous state ˜ c ( x, t = 0) = ˜ c 0 = S/ ( kφ 0 ) which satisfies the steady state condition.</p>
+<p>Snapshots in Fig. 1 and Fig. 2 in the main text are taken at t = 4 × 10 4 t 0 and t = 2 × 10 4 t 0 , respectively. Note that in Fig. 2(b-c), of the two eigenvalues, only the higher one ˜ ω + is shown since it determines the stability. In all phase diagrams where simulations are displayed (Fig. 1-2, SI Movie 1-7), the parameters for the simulations correspond to the coordinates of the center of the images.</p>
+<h2>V. CHARACTERIZATION OF COARSENING DYNAMICS</h2>
+<figure><figcaption>0 0.15 0.35 0.55 0.76 0.96 Pe C</figcaption></figure>
+<p>FIG. S2: Evolution of the characteristic domain sizes that correspond to the simulations at α 0 = 2 and 8 and increasing values of Pe C in Fig. 2(a) in the main text.</p>
+<p>It is known that in conventional MIPS the size of phase-separated domain coarsens over time [17]. However, as shown in the main text, chemotaxis can arrest such coarsening. In this section, we quantify the coarsening dynamics by plotting the evolution of the characteristic domain size over time, defined to be [78-80]</p>
+<p>R ( t ) = [∫ | q |S ( q , t ) d q ∫ S ( q , t ) d q ] -1 , (59)</p>
+<p>where S ( q , t ) is the structure factor associated with spa-</p>
+<p>tial variations in particle volume fraction</p>
+<p>S ( q , t ) = | ∆ ˆ φ ( q , t ) | 2 , (60)</p>
+<p>where ∆ ˆ φ is the Fourier transform of ∆ φ = φ -φ 0 .</p>
+<p>Fig. S2(a-b) shows the normalized characteristic domain size Rq sp with respect to time that correspond to the simulations with α 0 = 2 and 8 in Fig. 2(a) in the main text (Da 0 = 0 . 5, Pe R = 10 -3 , φ = 0 . 8). The domain size of the case of non-chemotactic MIPS (Pe C = 0) grows as R ∼ t 1 / 3 (black curve), consistent with the growth law of spinodal decomposition [81], showing that the coarsening persists. With increasing Pe C , this coarsening slows down (blue to chartreuse curves), eventually becomes arrested and gives rise instead to finite-sized domains characteristic of a Type F instability.</p>
+<p>Next, we show more examples of the coarsening dynamics with smaller steps of increasing Pe C . Fig. S3 shows the snapshots of the coarsening process and the dependence on Pe C when Da 0 = 0 . 5, Pe R = 10 -3 , φ = 0 . 8 and α 0 = 2 and 10, along with the corresponding R ( t ). Pe C is chosen such that it is equally spaced between 0 and 90% of the critical Pe C that corresponds to Boundary 1. We see that when the patterns are stationary ( α 0 = 2), with increasing Pe C , the coarsening generally slows down, and the domain size at steady state decreases. For α 0 = 10, coarsening also slows down with increasing Pe C until the pattern becomes oscillatory, when initially, the coarsening may be faster than stationary patterns. Note that R ( t ) is typically non-monotonic for oscillatory patterns, and when R ( t ) converges to a steady value at longer time, the steady value decreases with increasing Pe C .</p>
+<p>The observation above can also be seen in Fig. S4, which shows the results for φ 0 = 0 . 65 (other dimensionless parameters are identical to Fig. S3). Because the pattern for φ 0 = 0 . 65 is bicontinuous for a larger fraction of the time, at Pe C = 0, the growth curve R ( t ) is smoother than φ 0 = 0 . 8 shown in Fig. S2, which shows step increase due to events of dissolution and merger of phases. Again, we confirm the R ∼ t 1 / 3 power law for non-chemotactic MIPS (Pe C = 0). In the main text, we referred the readers to Figs. S3 and S4 for snapshots of the non-chemotactic spinodal decomposition.</p>
+<p>Fig. S4 also shows that the slope of ln R -ln t decreases with increasing Pe C for stationary patterns at both α 0 = 2 and 10, again indicating slower coarsening. A traveling pattern is instead observed at α 0 = 10 and Pe C = 0 . 39, for which R ( t ) shows non-monotonic behavior.</p>
+<h2>VI. CHARACETERIZATION OF SMALL-AMPLITUDE FLUCTUATION</h2>
+<p>In this section, we verify the classification of type F/U instability based on the linear stability analysis using numerical simulations. To compare with the dispersion relation shown in Fig. 2(b-c) in the main text, we per-</p>
+<p>(a)</p>
+<p>C</p>
+<p>4</p>
+<figure><figcaption>FIG. S3: (a-b) Snapshots of simulations and (c-d) evolution of the characteristic domain size R ( t ) at Da 0 = 0 . 5, Pe R = 10 -3 , φ 0 = 0 . 8, α 0 = 2 (a,c) and 10 (b,d), and increasing values of Pe C .</figcaption></figure>
+<p>form simulations at these parameters. The initial condition for φ ( x ) is a homogeneous φ 0 with added spatially uncorrelated Gaussian noise at each grid point with a standard deviation of 0.001. We use a small amplitude perturbation here to reduce the nonlinear effect. The initial condition for the chemoattractant concentration is the homogeneous state ˜ c ( x, t = 0) = ˜ c 0 = S/ ( kφ 0 ) with added noise that has the opposite sign as the added noise for φ ( x ). We observe the early time evolution of long, medium, and short wavelength modes by defining the following quantities based on the structure factor: A 1 ( t ) = ∫ 0 . 16 q sp 0 S ( q , t ) d q , A 2 ( t ) = ∫ q sp 0 . 5 q sp S ( q , t ) d q , A 3 ( t ) = ∫ ∞ √ 2 q sp S ( q , t ) d q . Fig. S5 shows that in the long wavelength regime for both α 0 = 2 and α 0 = 8, the am-</p>
+<p>(a)</p>
+<p>Pe</p>
+<figure><figcaption>Fig. S6 summarizes the velocity of patterns shown in Fig. 2(a). We compute the average speed u at t/t 0 = 2 × 10 4 . The level set velocity is averaged over all grid points for which |∇ φ | > 0 . 03 l -1 0 to avoid inaccuracy when the magnitude of the gradient is small (level set velocity is undefined when |∇ φ | = 0), while the center of mass velocity is averaged over all disjoint regions. We see that patterns move faster with increasing Pe C and the onset of motion occurs at lower Pe C with increasing α 0 .</figcaption></figure>
+<p>= 0</p>
+<p>0 0.078 0.16 0.23 0.31 0.39 Pe C</p>
+<p>FIG. S4: (a-b) Snapshots of simulations and (c-d) evolution of the characteristic domain size R ( t ) at Da 0 = 0 . 5, Pe R = 10 -3 , φ 0 = 0 . 65 for α 0 = 2 (a,c) and 10 (b,d).</p>
+<p>plitude of the perturbation decreases for Pe C = 0 . 75 and 0 . 95 and increases for other cases, consistent with the dispersion relation in Fig. 2(b-c), verifying that Pe C = 0 . 75 and Pe C = 0 . 95 correspond to type F and other cases correspond to type U. In the medium wavelength regime where the instability grows the fastest, the perturbation grows for all cases except for α 0 = 2 and Pe C = 0 . 95, which is linearly stable at all wavelengths. Note that the curve is nonmotonic for α 0 = 2 and Pe C = 0 . 75. This can be due to the coupling between φ and c , since the perturbation we impose is not an eigenvector in the lin-</p>
+<figure><figcaption>FIG. S5: The time evolution of the perturbation in the long ( A 1 ), medium ( A 2 ) and short wavelength ( A 3 ) regimes. The parameters correspond to the columns of α 0 = 2 and α 0 = 8 in Fig. 2(a) in the main text.</figcaption></figure>
+<p> stability analysis. In the short wavelength regime, initially all amplitudes decrease sharply.</p>
+<h2>VII. CHARACTERIZATION OF OSCILLATORY PATTERN FORMATION</h2>
+<p>In Fig. 2(a) in the main text, we plot the velocity (red arrows) of the patterns. In this section, we show the definition of the velocity and its dependence on Pe C and α 0 .</p>
+<p>To quantify the velocity of stripes that span the entire domain and spirals, we define a level set velocity u , that is, the velocity at which contours of φ move in the direction along the gradient: u = -∂ t φ · ∇ φ/ |∇ φ | 2 . Note that the level set velocity is undefined when the gradient vanishes. Cases that use this definition are: Pe C = 0 . 96, α 0 = 4 , 6 , 8 , 10, and Pe C = 0 . 76, α 0 = 10. For all other cases, which exhibit dot-like and short stripe-like patterns, u is instead defined to be the velocity of the center of mass of each of the disjoint regions defined by { x | φ ( x ) < 0 . 7 } to facilitate ease of visualization. The vectors of u are indicated by the red arrows in Fig. 2(a). The scale bar u 0 ≡ l 0 /t 0 ∼ U 0 indicates the characteristic velocity.</p>
+<p>As a reference, the average speed of the patterns at Pe C = 0 . 95 is on the order of 0 . 1 u 0 , which means that the pattern travels at a speed that is an order of magnitude smaller than the speed at which ABP particles</p>
+<figure><figcaption>FIG. S6: Average speed of patterns corresponding to Fig. 2(a) in the main text.</figcaption></figure>
+<p>0</p>
+<p>self-propel.</p>
+<h2>VIII. APPLICATION IN LIVING AND SYNTHETIC SYSTEMS</h2>
+<p>In this section, we estimate the values of the dimensionless parameters of living systems and discuss ways to study the phase diagram of chemotactic MIPS experimentally by tuning certain properties of synthetic colloidal systems.</p>
+<p>Populations of motile bacteria. We use Myxococcus xanthus and Escherichia coli as representative examples to draw estimates of parameter values from. Pe R ∼ 10 -2 , and hence, cells may undergo MIPS at sufficiently high cell density [7]. We therefore take ∂ φ ˜ µ h ∼ 1 as shown in Eq. (9) for cells in the spinodal region of MIPS. The experimentally measured diffusivity M 0 can range from ∼ 0 . 1 to ∼ 10 2 µ m 2 /s [7, 23, 82], typically lower than chemoattractant diffusivity, which suggests that α glyph[lessorsimilar] 1. The typical chemoattractant depletion length is √ D c /k ∼ 1 µ m [82], and persistence length l 0 [83] is about 20 µ m, hence Da ∼ 10 2 . These estimates suggest that populations of motile bacteria satisfy cri-</p>
+<p>that MIPS can be suppressed by chemotaxis when Pe ' C ≈ Pe C · S/k is sufficiently large. Because Pe C ∼ 10 [23, 26, 82], when chemoattractant is abundant ( S is large), MIPS is suppressed. Conversely, when chemoattractant is limited, we expect that MIPS can occur.</p>
+<p>For synthetic systems such as self-propelled colloids, because Da ∼ U 2 0 τ 2 R k/D c , and α ∼ U 2 0 τ R /D c , Da and α can be tuned via the swimming velocity U 0 e.g., using external stimuli such as light [84-87]. In addition, Da can be tuned by changing the reactive material to alter the chemoattractant uptake rate k . Finite-sized domains arise experimentally if synthetic chemotactic colloids have a low uptake rate k , which leads to smaller Da. With a smaller Da and a larger α (such as by increasing U 0 ), oscillatory dynamics involving clusters of colloidal particles traveling in space may arise.</p>
+<h2>IX. SUPPLEMENTARY MOVIES (AVAILABLE UPON REQUEST)</h2>
+<ul>
+<li>1. Animated profiles of φ ( x ) that show nonchemotactic MIPS in the Pe R -φ 0 phase diagram (Pe C = 0).</li>
+<li>2. Animated profiles of φ ( x ) for the simulations in Fig. 1(b). Da 0 = 0 . 2, α 0 = 1, Pe C = 1.</li>
+<li>3. Animated profiles of φ ( x ) for the simulations in Fig. 1(d). Da 0 = 0 . 2, α 0 = 4, Pe C = 1.</li>
+<li>4. Animated profiles of φ ( x ) for the simulations in Fig. 1(f). Da 0 = 0 . 5, α 0 = 10, Pe C = 0 . 35.</li>
+<li>5. Animated profiles of c ( x ) for the simulations in Fig. 1(b). Da 0 = 0 . 2, α 0 = 1, Pe C = 1.</li>
+<li>6. Animated profiles of c ( x ) for the simulations in Fig. 1(d). Da 0 = 0 . 2, α 0 = 4, Pe C = 1.</li>
+<li>7. Animated profiles of φ ( x ) for the simulations in Fig. 2(a). Da 0 = 0 . 5, Pe R = 10 -3 , φ 0 = 0 . 8.</li>
+</ul>
+<p>M</p>
+<p>0</p>
+<p>φ</p>
+<p>˜</p>
+<p>µ</p>
+<p>h</p>
+<p>φ</p>
+<table><caption>TABLE I: Summary of variables and dimensionless parameters.</caption><tbody><tr><th>Variable</th><th>Physical meaning</th></tr><tr><td>a</td><td>ABP particle radius</td></tr><tr><td>U 0</td><td>ABP self-propulsion speed</td></tr><tr><td>τ R</td><td>ABP reorientation time</td></tr><tr><td>M 0 = 1 2 U 2 0 τ R</td><td>ABP active diffusivity</td></tr><tr><td>φ 0</td><td>Average ABP volume fraction</td></tr><tr><td>˜ µ h</td><td>Normalized ABP chemical potential</td></tr><tr><td>l 0 ≡ √ κ ∼ U 0 τ R</td><td>Characteristic length scale of the width of the MIPS interface</td></tr><tr><td>D c</td><td>Chemoattractant diffusivity</td></tr><tr><td>k</td><td>Chemoattractant uptake rate coefficient</td></tr><tr><td>S</td><td>Chemoattractant supply rate</td></tr><tr><td>χ 0</td><td>Chemotactic coefficient</td></tr><tr><td>f (˜ c ) = ˜ c</td><td>Chemotactic sensing function</td></tr><tr><td>g (˜ c ) = ˜ c</td><td>Dependence of chemoattractant uptake rate on chemoattractant concentration</td></tr><tr><td>Pe R ≡ a U 0 τ R</td><td>Reorientational P'eclet number: directedness of ABPs</td></tr><tr><td>α 0 ≡ M 0 D c</td><td>Ratio of single-particle ABP to chemoattractant diffusivity</td></tr><tr><td>Da 0 ≡ κk D c</td><td>Chemoattractant uptake rate to diffusion rate over √ κ</td></tr><tr><td>Pe C ≡ χ 0 M 0</td><td>Chemotactic P'eclet number: ratio of ABP chemotactic coefficient to diffusivity</td></tr><tr><td>α ≡ - M 0 φ 0 ∂ φ ˜ µ h D c = - α 0 φ 0 ∂ φ ˜ µ h</td><td>Ratio of effective collective ABP to chemoattractant diffusivity</td></tr><tr><td>Da ≡ - κkφ 0 g ' D c ∂ φ ˜ µ h = - Da 0 φ 0 g ' ∂ φ ˜ µ h '</td><td>Damkohler number: effective chemoattractant uptake to diffusion rate</td></tr></tbody></table>
+<p>Pe</p>
+<p>0</p>
+<p>∂</p>
+<p>=</p>
+<p>-</p>
+<p>Pe</p>
+<p>C</p>
+<p>0</p>
+<p>f</p>
+<p>g</p>
+<p>∂</p>
+<p>φ</p>
+<p>˜</p>
+<p>µ</p>
+<p>h</p>
+<p>g</p>
+<p>'</p>
+<p>115 , E10812 (2018).</p>
+<ul>
+<li>[6] J. D. Murray, Mathematical biology: I. An introduction (Springer Science and Business Media., 2007).</li>
+<li>[7] G. Liu, A. Patch, F. Bahar, D. Yllanes, R. D. Welch, M. C. Marchetti, S. Thutupalli, and J. W. Shaevitz, Selfdriven phase transitions drive myxococcus xanthus fruiting body formation, Physical Review Letters 122 , 248102 (2019).</li>
+<li>[8] R. Alert and X. Trepat, Physical models of collective cell migration, The Annual Review of Condensed Matter Physics is Annu. Rev. Condens. Matter Phys. 2020 11 , 77 (2019).</li>
+<li>[9] E. Scarpa and R. Mayor, Collective cell migration in development, Journal of Cell Biology 212 , 143 (2016).</li>
+<li>[10] J. Palacci, S. Sacanna, A. P. Steinberg, D. J. Pine, and P. M. Chaikin, Living crystals of light-activated colloidal surfers, Science 339 , 936 (2013).</li>
+<li>[11] I. Theurkauff, C. Cottin-Bizonne, J. Palacci, C. Ybert, and L. Bocquet, Dynamic clustering in active colloidal suspensions with chemical signaling, Physical Review Letters 108 , 268303 (2012).</li>
+<li>[12] S. Palagi and P. Fischer, Bioinspired microrobots, Nature Reviews Materials 3 , 113 (2018).</li>
+<li>[13] G. S. Redner, M. F. Hagan, and A. Baskaran, Structure and dynamics of a phase-separating active colloidal fluid, Physical Review Letters 110 , 055701 (2013).</li>
+<li>[14] Y. Fily and M. C. Marchetti, Athermal phase separation of self-propelled particles with no alignment, Physical Review Letters 108 , 235702 (2012).</li>
+<li>[15] M. E. Cates and J. Tailleur, Motility-induced phase separation, Annual Review of Condensed Matter Physics 6 , 219 (2015).</li>
+<li>[16] S. C. Takatori and J. F. Brady, Towards a thermodynamics of active matter, Physical Review E 91 , 032117 (2015).</li>
+<li>[17] J. Stenhammar, A. Tiribocchi, R. J. Allen, D. Marenduzzo, and M. E. Cates, Continuum theory of phase separation kinetics for active brownian particles, Physical Review Letters 111 , 145702 (2013).</li>
+<li>[18] E. Tjhung, C. Nardini, and M. E. Cates, Cluster phases and bubbly phase separation in active fluids: Reversal of the ostwald process, Physical Review X 8 , 031080 (2018).</li>
+<li>[19] T. Speck, J. Bialke, A. M. Menzel, and H. Lowen, Effective cahn-hilliard equation for the phase separation of active brownian particles, Physical Review Letters 112 , 218304 (2014).</li>
+<li>[20] M. E. Cates, D. Marenduzzo, I. Pagonabarraga, and J. Tailleur, Arrested phase separation in reproducing bacteria creates a generic route to pattern formation, Proceedings of the National Academy of Sciences of the United States of America 107 , 11715 (2010).</li>
+<li>[21] H. C. Berg, Chemotaxis in bacteria :-:9050, Annual Review of Biophysics and bioengineering (1975).</li>
+<li>[22] J. Cremer, T. Honda, Y. Tang, J. Wong-ng, M. Vergassola, and T. Hwa, Chemotaxis as a navigation strategy to boost range expansion, Nature 575 , 10.1038/s41586019-1733-y (2019).</li>
+<li>[23] X. Fu, S. Kato, J. Long, H. H. Mattingly, C. He, D. C. Vural, S. W. Zucker, and T. Emonet, Spatial self-organization resolves conflicts between individuality and collective migration, Nature Communications 9 , 10.1038/s41467-018-04539-4 (2018).</li>
+<li>[24] T. Bhattacharjee and S. S. Datta, Confinement and activity regulate bacterial motion in porous media, Soft Mat-</li>
+</ul>
+<p>Reduced chemotactic P'eclet number: effective ABP chemotactic to diffusivity rate</p>
+<p>'</p>
+<p>C</p>
+<p>≡ -</p>
+<p>χ</p>
+<p>φ</p>
+<p>0</p>
+<p>f</p>
+<p>g</p>
+<p>g</p>
+<p>'</p>
+<p>ter 15 , 9920 (2019).</p>
+<ul>
+<li>[25] T. Bhattacharjee and S. S. Datta, Bacterial hopping and trapping in porous media, Nature Communications 10 , 2 (2019).</li>
+<li>[26] T. Bhattacharjee, D. B. Amchin, J. A. Ott, F. Kratz, and S. S. Datta, Chemotactic migration of bacteria in porous media, Biophysj 120 , 3483 (2021).</li>
+<li>[27] T. Bhattacharjee, D. B. Amchin, R. Alert, J. A. Ott, and S. S. Datta, Chemotactic smoothing of collective migration, eLife , 1 (2022).</li>
+<li>[28] H. Stark, Artificial chemotaxis of self-phoretic active colloids: Collective behavior, Accounts of Chemical Research 51 , 2681 (2018).</li>
+<li>[29] O. Pohl and H. Stark, Dynamic clustering and chemotactic collapse of self-phoretic active particles, Physical Review Letters 112 , 238303 (2014).</li>
+<li>[30] B. Liebchen and H. Lowen, Synthetic chemotaxis and collective behavior in active matter, Accounts of Chemical Research 51 , 2982 (2018).</li>
+<li>[31] B. Liebchen, D. Marenduzzo, I. Pagonabarraga, and M. E. Cates, Clustering and pattern formation in chemorepulsive active colloids, Physical Review Letters 115 , 258301 (2015).</li>
+<li>[32] B. Liebchen, D. Marenduzzo, and M. E. Cates, Phoretic interactions generically induce dynamic clusters and wave patterns in active colloids, Physical Review Letters 118 , 268001 (2017).</li>
+<li>[33] B. Liebchen and D. Levis, Collective behavior of chiral active matter: Pattern formation and enhanced flocking, Physical Review Letters 119 , 058002 (2017).</li>
+<li>[34] S. Saha, R. Golestanian, and S. Ramaswamy, Clusters, asters, and collective oscillations in chemotactic colloids, Physical Review E 89 , 062316 (2014).</li>
+<li>[35] S. Saha, S. Ramaswamy, and R. Golestanian, Pairing, waltzing and scattering of chemotactic active colloids, New Journal of Physics 21 , 10.1088/1367-2630/ab20fd (2019).</li>
+<li>[36] L. Varga, A. Libal, C. J. O. Reichhardt, and C. Reichhardt, Active regimes for particles on resource landscapes, Physical Review Research 4 , 013061 (2022).</li>
+<li>[37] L. Varga, A. Libal, C. Reichhardt, and C. J. O. Reichhardt, Pattern formation and flocking for particles near the jamming transition on resource gradient substrates, Physical Review E 106 , 064602 (2022).</li>
+<li>[38] M. P. Brenner, L. S. Levitov, and E. O. Budrene, Physical mechanisms for chemotactic pattern formation by bacteria, Biophysical Journal 74 , 1677 (1998).</li>
+<li>[39] M. A. Herrero and J. J. L. Vel'azquez, Chemotactic collapse for the keller-segel model, Journal of Mathematical Biology 35 , 177 (1996).</li>
+<li>[40] E. F. Keller and L. A. Segel, Model for chemotaxis, Journal of Theoretical Biology 30 , 225 (1971).</li>
+<li>[41] E. F. Keller and L. A. Segel, Traveling bands of chemotactic bacteria: A theoretical analysis, Journal of Theoretical Biology 30 , 235 (1971).</li>
+<li>[42] J. D. Murray, Mathematical Biology II: Spatial Models and Biomedical Applications , edited by J. D. Murray, Vol. 18 (Springer New York, 2003).</li>
+<li>[43] R. Colin, B. Ni, L. Laganenka, and V. Sourjik, Multiple functions of flagellar motility and chemotaxis in bacterial physiology (2021).</li>
+<li>[44] J. Adler, Chemotaxis in bacteria, Science 153 , 708 (1966).</li>
+<li>[45] Y. Bai, C. He, P. Chu, J. Long, X. Li, and X. Fu, Spatial</li>
+</ul>
+<ul>
+<li>modulation of individual behaviors enables an ordered structure of diverse phenotypes during bacterial group migration, eLife 10 , 10.7554/eLife.67316 (2021).</li>
+<li>[46] S. Takatori, W. Yan, and J. Brady, Swim pressure: Stress generation in active matter, Physical Review Letters 113 , 028103 (2014).</li>
+<li>[47] V. M. Worlitzer, G. Ariel, A. Be'er, H. Stark, M. Bar, and S. Heidenreich, Motility-induced clustering and mesoscale turbulence in active polar fluids, New Journal of Physics 23 , 033012 (2021).</li>
+<li>[48] M. C. Cross and P. C. Hohenberg, Pattern formation outside of equilibrium, Reviews of Modern Physics 65 , 851 (1993).</li>
+<li>[49] S. Michelin, E. Lauga, and D. Bartolo, Spontaneous autophoretic motion of isotropic particles, Physics of Fluids 25 , 061701 (2013).</li>
+<li>[50] S. Michelin and E. Lauga, Phoretic self-propulsion at finite p'eclet numbers, Journal of Fluid Mechanics 747 , 572 (2014).</li>
+<li>[51] We note, however, that below the S/O boundary shown by the dashed curve in Fig. 1(e)-(f), the simulations still show some initial non-stationary behavior-reflecting the limitation of our linear stability analysis, which is strictly only applicable to conditions close to the initial homogeneous state.</li>
+<li>[52] S. Kondo and T. Miura, Reaction-diffusion model as a framework for understanding biological pattern formation, Science 329 , 1616 (2010).</li>
+<li>[53] M. Bar, R. Großmann, S. Heidenreich, and F. Peruani, Self-propelled rods: Insights and perspectives for active matter, Annual Review of Condensed Matter Physics 11 , 441 (2020).</li>
+<li>[54] D. Zwicker, A. A. Hyman, and F. Julicher, Suppression of ostwald ripening in active emulsions, Physical Review E 92 , 012317 (2015).</li>
+<li>[55] D. Zwicker, R. Seyboldt, C. A. Weber, A. A. Hyman, and F. Julicher, Growth and division of active droplets provides a model for protocells, Nature Physics 13 , 408 (2017).</li>
+<li>[56] A. M. Menzel and H. Lowen, Traveling and resting crystals in active systems, Physical Review Letters 110 , 055702 (2013).</li>
+<li>[57] A. Ziepke, I. Maryshev, I. S. Aranson, and E. Frey, Multiscale organization in communicating active matter, Nature Communications 13 , 6727 (2022).</li>
+<li>[58] S. Saha, J. Agudo-Canalejo, and R. Golestanian, Scalar active mixtures: The nonreciprocal cahn-hilliard model, Physical Review X 10 , 041009 (2020).</li>
+<li>[59] Z. You, A. Baskaran, and M. C. Marchetti, Nonreciprocity as a generic route to traveling states, Proceedings of the National Academy of Sciences 117 , 19767 (2020).</li>
+<li>[60] J. van der Kolk, F. Rasshofer, R. Swiderski, A. Haldar, A. Basu, and E. Frey, Anomalous collective dynamics of auto-chemotactic populations (2022).</li>
+<li>[61] R. Matas-Navarro, R. Golestanian, T. B. Liverpool, and S. M. Fielding, Hydrodynamic suppression of phase separation in active suspensions, Physical Review E 90 , 032304 (2014).</li>
+<li>[62] R. M. Navarro and S. M. Fielding, Clustering and phase behaviour of attractive active particles with hydrodynamics, Soft Matter 11 , 7525 (2015).</li>
+<li>[63] S. Yin and L. Mahadevan, Contractility-induced phase separation in active solids, (2022).</li>
+<li>[64] M. Z. Bazant, Thermodynamic stability of driven open</li>
+<li>systems and control of phase separation by electroautocatalysis, Faraday Discussions 199 , 423 (2017).</li>
+<li>[65] R. Adkins, I. Kolvin, Z. You, S. Witthaus, M. C. Marchetti, and Z. Dogic, Dynamics of active liquid interfaces, Science 377 , 768 (2022).</li>
+<li>[66] A. M. Tayar, F. Caballero, T. Anderberg, O. A. Saleh, M. C. Marchetti, and Z. Dogic, Controlling liquid-liquid phase behavior with an active fluid (2022).</li>
+<li>[67] F. Caballero and M. C. Marchetti, Activity-suppressed phase separation, Physical Review Letters 129 , 268002 (2022).</li>
+<li>[68] E. O. Budrene and H. C. Berg, Complex patterns formed by motile cells of escherichia coli, Nature 349 , 630 (1991).</li>
+<li>[69] P. Roca-Cusachs, R. Sunyer, and X. Trepat, Mechanical guidance of cell migration: lessons from chemotaxis, Current Opinion in Cell Biology 25 , 543 (2013).</li>
+<li>[70] A. Shellard and R. Mayor, All roads lead to directional cell migration, Trends in Cell Biology 30 , 852 (2020).</li>
+<li>[71] S. SenGupta, C. A. Parent, and J. E. Bear, The principles of directed cell migration, Nature Reviews Molecular Cell Biology 22 , 529 (2021).</li>
+<li>[72] R. Sunyer, V. Conte, J. Escribano, A. Elosegui-Artola, A. Labernadie, L. Valon, D. Navajas, J. M. Garc'ıaAznar, J. J. Mu˜noz, P. Roca-Cusachs, and X. Trepat, Collective cell durotaxis emerges from long-range intercellular force transmission, Science 353 , 1157 (2016).</li>
+<li>[73] R. Alert and J. Casademunt, Role of substrate stiffness in tissue spreading: Wetting transition and tissue durotaxis, Langmuir 35 , 7571 (2019).</li>
+<li>[74] D. J. Cohen, W. J. Nelson, and M. M. Maharbiz, Galvanotactic control of collective cell migration in epithelial monolayers, Nature Materials 13 , 409 (2014).</li>
+<li>[75] M. Mijalkov, A. McDaniel, J. Wehr, and G. Volpe, Engineering sensorial delay to control phototaxis and emergent collective behaviors, Physical Review X 6 , 011008 (2016).</li>
+<li>[76] M. E. Cates and J. Tailleur, When are active brownian particles and run-and-tumble particles equivalent?</li>
+</ul>
+<ul>
+<li>consequences for motility-induced phase separation, EPL (Europhysics Letters) 101 , 20010 (2013).</li>
+<li>[77] L. Shampine and M. Reichelt, Ode matlab solvers, Journal of Scientific Computing 18 , 1 (1997).</li>
+<li>[78] H. Furukawa, Spinodal decomposition of two-dimensional fluid mixtures: A spectral analysis of droplet growth, Physical Review E - Statistical Physics, Plasmas, Fluids, and Related Interdisciplinary Topics 61 , 1423 (2000).</li>
+<li>[79] M. Laradji, S. Toxvaerd, and O. G. Mouritsen, Molecular dynamics simulation of spinodal decomposition in threedimensional binary fluids, Physical Review Letters 77 , 2253 (1996).</li>
+<li>[80] S. Mao, D. Kuldinow, M. P. Haataja, and A. Koˇsmrlj, Phase behavior and morphology of multicomponent liquid mixtures, Soft Matter 15 , 1297 (2019).</li>
+<li>[81] A. J. Bray, Theory of phase-ordering kinetics, Advances in Physics 51 , 481 (2002).</li>
+<li>[82] R. Alert, A. Mart'ınez-Calvo, and S. S. Datta, Cellular sensing governs the stability of chemotactic fronts, Physical Review Letters 128 , 148101 (2022).</li>
+<li>[83] M. E. Cates, Diffusive transport without detailed balance in motile bacteria: Does microbiology need statistical physics?, Reports on Progress in Physics 75 , 10.1088/0034-4885/75/4/042601 (2012).</li>
+<li>[84] I. Buttinoni, G. Volpe, F. Kummel, G. Volpe, and C. Bechinger, Active brownian motion tunable by light, Journal of Physics Condensed Matter 24 , 10.1088/09538984/24/28/284129 (2012).</li>
+<li>[85] J. Stenhammar, R. Wittkowski, D. Marenduzzo, and M. E. Cates, Light-induced self-assembly of active rectification devices, Science Advances 2 , 1 (2016).</li>
+<li>[86] J. Arlt, V. A. Martinez, A. Dawson, T. Pilizota, and W. C. Poon, Painting with light-powered bacteria, Nature Communications 9 , 1 (2018).</li>
+<li>[87] G. Frangipane, D. Dell'Arciprete, S. Petracchini, C. Maggi, F. Saglimbeni, S. Bianchi, G. Vizsnyiczai, M. L. Bernardini, and R. di Leonardo, Dynamic density shaping of photokinetic e. coli, eLife 7 , 1 (2018).</li>
+</html>

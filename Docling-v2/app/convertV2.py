@@ -9,7 +9,7 @@ def docling_to_custom_json(client_id, input_dir):
     """
     from app.utilsV2 import loadClientMapping  
 
-    input_path = Path(input_dir) / f"{client_id}-with-image-refs.html"
+    input_path = Path(input_dir) / f"{client_id}-with-images.html"
     output_path = Path("data/convertedToJSON") / f"{client_id}-converted.json"
 
     if not input_path.exists():

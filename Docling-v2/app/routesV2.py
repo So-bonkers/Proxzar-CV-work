@@ -5,9 +5,16 @@ import jwt
 import os
 import shutil
 from pathlib import Path
+import uuid
 import logging
 import requests
 from app.utilsV2 import processStreamDocument, processDocument  # Adjust imports
+from pydantic import BaseModel
+
+# Define request model for JSON input
+class ConvertLinkRequest(BaseModel):
+    proxzarKeyID: str
+    file_link: str
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -46,16 +53,24 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 
 # Convert by URL (Download & Process)
 @router.post("/convertLink")
-async def convert_link(proxzarKeyID: str, file_link: str, token: str = Depends(oauth2_scheme)):
+async def convert_link(request: ConvertLinkRequest, token: str = Depends(oauth2_scheme)):
     """
-    Download file from a link, process it, and return JSON output.
+    Download file from a link, save it uniquely, process it, and return JSON output.
     """
+    proxzarKeyID = request.proxzarKeyID
+    file_link = request.file_link
+
     storage_dir = BASE_STORAGE_DIR / proxzarKeyID
     storage_dir.mkdir(parents=True, exist_ok=True)
-    
-    file_name = file_link.split("/")[-1]
-    file_path = storage_dir / file_name
-    
+
+    # Generate a unique filename with timestamp
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    unique_id = uuid.uuid4().hex[:6]
+    file_name = file_link.split("/")[-1].split("?")[0]  # Extract filename from URL
+    file_ext = file_name.split(".")[-1]
+    unique_filename = f"{file_name.rsplit('.', 1)[0]}-{timestamp}-{unique_id}.{file_ext}"
+
+    file_path = storage_dir / unique_filename
     try:
         response = requests.get(file_link)
         response.raise_for_status()
@@ -63,30 +78,34 @@ async def convert_link(proxzarKeyID: str, file_link: str, token: str = Depends(o
             f.write(response.content)
     except requests.RequestException as e:
         raise HTTPException(status_code=500, detail=f"File download failed: {str(e)}")
-    
-    logger.info(f"Processing file {file_name} from link")
-    result = processDocument(str(file_path), storage_dir, file_name)
-    
+
+    logger.info(f"Processing file {unique_filename} from link")
+    result = processDocument(str(file_path), storage_dir, unique_filename)
+
     return {**result}
 
 # Convert by File Upload
 @router.post("/convertUpload")
 async def convert_upload(proxzarKeyID: str, file: UploadFile = File(...), token: str = Depends(oauth2_scheme)):
     """
-    Upload file, process it, and return JSON output.
+    Upload file, save it uniquely, process it, and return JSON output.
     """
     storage_dir = BASE_STORAGE_DIR / proxzarKeyID
-    file_name = file.filename
-    file_dir = storage_dir / file_name
-    file_dir.mkdir(parents=True, exist_ok=True)
-    
-    file_path = file_dir / file.filename
+    storage_dir.mkdir(parents=True, exist_ok=True)
+
+    # Generate a unique filename with timestamp
+    timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+    unique_id = uuid.uuid4().hex[:6]  # Short unique identifier
+    file_ext = file.filename.split(".")[-1]  # Extract file extension
+    unique_filename = f"{file.filename.rsplit('.', 1)[0]}-{timestamp}-{unique_id}.{file_ext}"
+
+    file_path = storage_dir / unique_filename
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(file.file, buffer)
-    
-    logger.info(f"Processing uploaded file {file_name}")
-    result = processDocument(str(file_path), file_dir, file_name)
-    
+
+    logger.info(f"Processing uploaded file {unique_filename}")
+    result = processDocument(str(file_path), storage_dir, unique_filename)
+
     return {**result}
 
 # Convert by S3 (Fetch & Process)
